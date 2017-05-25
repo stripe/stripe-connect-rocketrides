@@ -1,0 +1,10 @@
+# Configuration for a flexible environment on Google Cloud Platform.
+
+runtime: nodejs
+env: flex
+
+# Force https for all requests.
+handlers:
+  - url: .*
+    script: None
+    secure: always

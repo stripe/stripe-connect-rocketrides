@@ -1,0 +1,15 @@
+extends layout
+
+block header
+  .title
+    h1 Log into your pilot account
+
+block content
+  section.form.account
+    form(method='POST', autocomplete='off')
+      fieldset
+        .row(label='Email')
+          input(type='email', name='email', placeholder='john@example.com', required, autofocus)
+        .row(label='Password')
+          input(type='password', name='password', placeholder='••••••••', required)
+      input(type='submit', value='Login')

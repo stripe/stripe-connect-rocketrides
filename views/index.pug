@@ -1,0 +1,28 @@
+extends layout
+
+block header
+  .intro
+    .illustration
+      .rocket
+    .pilots
+      h1 Get ready for take off.
+      h2 Rocket Rides is the world’s leading air travel platform. #[br] Join our elite team of pilots and help people travel faster than ever.
+      a.button(href='/pilots/signup') Become a Pilot
+
+block content
+  .features
+    section.schedule
+      h3 Fly when you want
+      p You can be a part of the Rocket Rides pilots team anytime—you pick your own schedule. Fly as little or as much as you want.
+    section.earnings
+      h3 Earn more with each trip
+      p Trip fares increase with time and distance. Cash out whenever you want and get instant transfers to your account.
+    section.app
+      h3 Augmented reality app
+      p Ready, set, download. Get weather and air traffic updates, directions, and 24/7 support. Don’t have a smartphone? No problem.
+
+block footer
+  .annotation
+    a.stripe(href='https://stripe.com') Stripe
+    p Rocket Rides is a demo application for #[a(href='https://stripe.com/connect') Stripe Connect]. It is not a real product.
+    a.github.arrow(href='https://github.com/stripe/stripe-connect-rocketrides') View on GitHub

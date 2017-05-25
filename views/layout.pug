@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no')
+    title Rocket Rides
+    link(rel='stylesheet', type='text/css', href='/stylesheets/rocketrides.css')
+    link(rel='icon', type='image/png', sizes='64x64', href='/images/favicon.png')
+
+  body
+    header
+      #top
+        a.rocketrides(href='/') Rocket Rides
+        if pilot
+          .links
+            if pilot.stripeAccountId
+              a(href='/pilots/dashboard') Dashboard
+            a(href='/pilots/logout') Logout
+        else
+          a.arrow(href='/pilots/login') Login
+      block header
+
+    #content
+      block content
+
+    footer
+      block footer

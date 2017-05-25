@@ -1,0 +1,88 @@
+extends layout
+
+block header
+  .title
+    h1 Sign up to become a pilot
+  nav
+    ol
+      li(class=(step == 'account' ? 'active' : 'done')) Create Your Account
+      li(class=(step == 'profile' ? 'active' : step != 'account' ? 'done' : '')) Complete Your Profile
+      li(class=(step == 'payments' ? 'active' : step == 'done' ? 'done' : '')) Setup Payments
+
+block content
+  section.form.account
+    if error
+      p.error= error
+
+    case step
+      when 'account'
+        form(method='POST', autocomplete='off')
+          fieldset
+            .row(label='Email')
+              input(type='email', name='email', placeholder='jane@example.com', required, autofocus)
+            .row(label='Password')
+              input(type='password', name='password', placeholder='••••••••', required)
+          input(type='submit', value='Create Account')
+
+      when 'profile'
+        form(method='POST', autocomplete='off')
+          h4 Personal Information
+          fieldset
+            .row(label='* First Name')
+              input(type='text', name='firstName', placeholder='Jane', value='Jane')
+            .row(label='* Last Name')
+              input(type='text', name='lastName', placeholder='Diaz', value='Diaz')
+            .row(label='Address')
+              input(type='text', name='address', placeholder='185 Berry St', value='185 Berry St')
+            .row(label='Postal Code')
+              input(type='text', name='postalCode', placeholder='94107', value='94107')
+            .row(label='City')
+              input(type='text', name='city', placeholder='San Francisco', value='San Francisco')
+            .row.select(label='Country')
+              select(name='country')
+                option(value='US') United States
+          aside (*) indicates required fields for this demo.
+          h4 Rocket Information
+          fieldset
+            .row(label='Make & Model')
+              input(type='text', name='rocket[model]', placeholder='Lightspeed 3000', value='Lightspeed 3000')
+            .row(label='License Plate')
+              input(type='text', name='rocket[license]', placeholder='FUTURE 7', value='FUTURE 7')
+            .row.select(label='Color')
+              select(name='rocket[color]')
+                option(value='red') Red
+                option(value='orange') Orange
+                option(value='yellow') Yellow
+                option(value='green') Green
+                option(value='blue', selected) Blue
+                option(value='purple') Purple
+                option(value='black') Black
+                option(value='white') White
+          input(type='submit', value='Save Profile')
+
+      when 'payments'
+        h2 Connect your Rocket Rides account to Stripe
+        p We use Stripe to make sure you get paid on time and keep your personal and bank details secure. 
+        a.button(href='/pilots/stripe/authorize') Setup Payments on Stripe
+
+      when 'done'
+        .checkmark
+        h2 You’re ready to get paid!
+        p Download the app, fire up your rocket, and start taking your first passengers!
+        a.button(href='/pilots/dashboard') View Your Pilot Dashboard
+
+block footer
+  .annotation.info
+
+    case step
+      when 'account'
+        p To get started, Rocket Rides will create an account for their pilots on their own backend. The platform can use any kind of authentication here, like email or OAuth. A real product would typically have terms of service and a privacy policy linked here as well.
+
+      when 'profile'
+        p The platform can choose to request additional information from the user before it collects any payments details. Here, Rocket Rides asks a few questions about pilots and their rockets. This information will be stored in the platform’s database.
+
+      when 'payments'
+        p This platform uses #[a(href='https://stripe.com/connect/account-types') Connect Express] accounts to pay its pilots. We’ll pass some of the user information we have collected to Express in order to make onboarding as simple as possible. This app is in test mode, so no real payments are going through. Use the Stripe test Visa debit card number as a payout method: #[strong 4000 0566 5566 5556]
+
+      when 'done'
+        p The Connect Express onboarding flow is now complete! The platform can now use a simple API call to retrieve the Stripe account ID that was just created and save it to its database. This Stripe account ID can then be used to retrieve the pilot’s balance, as a destination for payments, or to create instant payouts.

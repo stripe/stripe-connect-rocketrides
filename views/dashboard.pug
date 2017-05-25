@@ -1,0 +1,58 @@
+extends layout
+
+block header
+  .user
+    .block.profile
+      .photo
+      p Pilot since #{moment(pilot.created).format('MMMM YYYY')}
+      h1 #{pilot.firstName} #{pilot.lastName}
+      .rating
+    .block.week
+      p This Week
+      h1 $#{(ridesTotalAmount / 100).toFixed(2)}
+      h2 #{rides.length} Rides
+    .block.available
+      p Your Balance
+      h1 $#{((balanceAvailable + balancePending) / 100).toFixed(2)}
+      h2 $#{(balanceAvailable / 100).toFixed(2)} Available
+    .block.stripe
+      a.button(href='/pilots/stripe/transfers', target='_blank') View Transfers
+      form(action='/pilots/stripe/payout', method='POST', autocomplete='off')
+        input(type='submit', value='Pay Out Now')
+
+block content
+  section.rides
+    h4 Recent Rides
+    if rides.length == 0
+      p No rocket rides to display for the past 7 days. Fly with some passengers!
+    else
+      .list
+        each ride in rides
+          .row
+            .cell.name= ride.passenger.displayName()
+            .cell.date= moment(new Date(Date.parse(ride.created))).calendar()
+            .cell.price $#{(ride.amountForPilot() / 100).toFixed(2)}
+
+  section.rides
+    h4 Simulate Rides
+    p This will generate a sample rocket ride and associated payment to your account.
+    div.form
+      form(action='/pilots/rides', method='POST', autocomplete='off')
+        .options
+          label
+            input(type='radio', name='trigger', value='immediate-balance', checked)
+            strong Trigger immediate balance
+            span Make the payment immediately available, bypassing the pending stage.
+          label
+            input(type='radio', name='trigger', value='account-verification')
+            strong Trigger account verification
+            span You will get an email from Stripe to ask you to fill more information.
+          label
+            input(type='radio', name='trigger', value='payout-limit')
+            strong Trigger payout limit
+            span Simulate what happens when a pilot’s payout limit is reached.
+        input(type='submit', value='Simulate Passenger Ride')
+
+block footer
+  .annotation.info
+    p Simulate a few passenger rides to generate payments to the pilot account. The balance is automatically fetched from the Stripe API. “View Transfers” lets pilots see their payments and edit their account information. “Pay Out Now” generates an instant payout of the available balance using the Stripe API.
