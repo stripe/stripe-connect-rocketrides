@@ -748,8 +748,12 @@ form a.button {
     background: none;
   }
 
+  .intro .illustration {
+    display: none;
+  }
+
   .intro h1 {
-    font-size: 36px;
+    font-size: 34px;
   }
 
   .intro h2 {
@@ -874,7 +878,7 @@ form a.button {
   }
 
   .account {
-    min-height: 0;
+    min-height: 250px;
   }
 
   .annotation {
