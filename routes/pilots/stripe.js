@@ -77,28 +77,21 @@ router.get('/token', pilotRequired, async (req, res) => {
  *
  * Redirect to Stripe to view transfers and edit payment details.
  */
-router.get('/transfers', pilotRequired, (req, res) => {
+router.get('/transfers', pilotRequired, async (req, res) => {
   const pilot = req.user;
-  // Retrieve the Stripe account ID of the logged-in pilot.
+  // Make sure the logged-in pilot had completed the Stripe onboarding.
   if (!pilot.stripeAccountId) {
     return res.redirect('/pilots/signup');
   }
-  // Generate a unique link for the associated Stripe account.
-  request.post(`${config.stripe.apiUri}/v1/accounts/${pilot.stripeAccountId}/login_links`, {
-    auth: {
-      user: config.stripe.secretKey
-    },
-    json: true
-  }, (err, response, body) => {
-    if (err) {
-      console.log('Failed to create a Stripe login link.');
-      return res.redirect('/pilots/signup');
-    } else {
-      // Retrieve the URL from the response and redirect the user to Stripe.
-      const { url } = body;
-      return res.redirect(url);
-    }
-  });
+  try {
+    // Generate a unique login link for the associated Stripe account.
+    const loginLink = await stripe.accounts.createLoginLink(pilot.stripeAccountId);
+    // Retrieve the URL from the response and redirect the user to Stripe.
+    return res.redirect(loginLink.url);
+  } catch (err) {
+    console.log('Failed to create a Stripe login link.');
+    return res.redirect('/pilots/signup');
+  }
 });
 
 /**
