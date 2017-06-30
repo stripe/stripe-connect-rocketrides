@@ -60,7 +60,7 @@ router.get('/token', pilotRequired, async (req, res) => {
     json: true
   }, (err, response, body) => {
     if (err || body.error) {
-      console.log('The Stripe onboarding process has not succeeded.')
+      console.log('The Stripe onboarding process has not succeeded.');
     } else {
       // Update the model and store the Stripe account ID in the datastore.
       // This Stripe account ID will be used to pay out to the pilot.

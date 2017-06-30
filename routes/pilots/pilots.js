@@ -55,11 +55,11 @@ router.post('/rides', pilotRequired, async (req, res) => {
   // Find a random passenger.
   const passenger = await Passenger.getRandom();
   // Create a new ride for the pilot and this random passenger.
-  // Generate a random amount between $10 and $200 for this ride.
+  // Generate a random amount between $10 and $100 for this ride.
   const ride = new Ride({
     pilot: pilot.id,
     passenger: passenger.id,
-    amount: getRandomInt(1000, 20000)
+    amount: getRandomInt(1000, 10000)
   });
   // Save the ride.
   await ride.save();
@@ -73,6 +73,7 @@ router.post('/rides', pilotRequired, async (req, res) => {
       currency: ride.currency,
       description: config.appName,
       statement_descriptor: config.appName,
+      // The destination parameter directs the funds.
       destination: {
         // Send the amount for the pilot after collecting a 20% platform fee.
         // Typically, the `amountForPilot` method simply computes `ride.amount * 0.8`.

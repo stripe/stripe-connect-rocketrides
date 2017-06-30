@@ -5,6 +5,8 @@ const stripe = require('stripe')(config.stripe.secretKey);
 const express = require('express');
 const router = express.Router();
 const Pilot = require('../../models/pilot');
+const Passenger = require('../../models/passenger');
+const Ride = require('../../models/ride');
 
 /**
  * POST /api/rides

@@ -1,7 +1,5 @@
 'use strict';
 
-require('dotenv').config();
-
 const config = require('./config');
 const stripe = require('stripe')(config.stripe.secretKey);
 const express = require('express');

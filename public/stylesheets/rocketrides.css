@@ -386,7 +386,7 @@ fieldset .row select {
 }
 
 fieldset .row select:focus {
-  color: #0090FA;
+  color: #00B67C;
 }
 
 fieldset .row.date span {
@@ -795,6 +795,21 @@ form a.button {
     font-size: 15px;
   }
 
+  .user .block.stripe a.button,
+  .user .block.stripe input[type="submit"] {
+    height: 32px;
+    line-height: 32px;
+    font-size: 15px;
+  }
+
+  .user .block.stripe a.button {
+    margin: 0 0 10px;
+  }
+
+  .user .block.stripe input[type="submit"] {
+    margin: 0px 0 15px;
+  }
+
   .user .block + .block {
     margin: 0;
   }
@@ -810,8 +825,13 @@ form a.button {
     opacity: 1;
   }
 
+  footer {
+    padding: 10px;
+  }
+
   #content {
-    margin-bottom: 0;
+    width: 100%;
+    margin: 10px 0;
     padding: 15px;
   }
 
@@ -850,13 +870,9 @@ form a.button {
     padding: 12px 5px 13px;
   }
 
-  footer {
-    padding: 10px;
-  }
-
   .form {
-    width: auto;
-    margin: 20px 10px;
+    width: 100%;
+    margin: 15px 0;
   }
 
   .form label {
