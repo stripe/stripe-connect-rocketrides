@@ -8,6 +8,11 @@ const Pilot = require('../../models/pilot');
 const Passenger = require('../../models/passenger');
 const Ride = require('../../models/ride');
 
+// Note: For this demo, we're making the assumption that we're
+// going to always authenticate with the latest passenger.
+// Of course, in a production app, you would typically have a
+// user authentication system for passengers as well.
+
 /**
  * POST /api/rides
  *
@@ -21,26 +26,28 @@ router.post('/', async (req, res, next) => {
   // the payment amount from their web browser or client-side environment.
   const { source, amount, currency } = req.body;
 
-  // For the purpose of this demo, let's assume we are automatically
-  // matching with the most recent pilot rather than using their location.
-  const pilot = await Pilot.getLatest();
-  // Find a random passenger.
-  const passenger = await Passenger.getRandom();
-  // Create a new ride.
-  const ride = new Ride({
-    pilot: pilot.id,
-    passenger: passenger.id,
-    amount: amount,
-    currency: currency
-  });
-  // Save the ride.
-  await ride.save();
   try {
+    // For the purpose of this demo, let's assume we are automatically
+    // matching with the most recent pilot rather than using their location.
+    const pilot = await Pilot.getLatest();
+    // Find the latest passenger (see note above).
+    const passenger = await Passenger.getLatest();
+    // Create a new ride.
+    const ride = new Ride({
+      pilot: pilot.id,
+      passenger: passenger.id,
+      amount: amount,
+      currency: currency
+    });
+    // Save the ride.
+    await ride.save();
+
     // Create a charge and set its destination to the pilot's account.
     const charge = await stripe.charges.create({
       source: source,
       amount: ride.amount,
       currency: ride.currency,
+      customer: passenger.stripeCustomerId,
       description: config.appName,
       statement_descriptor: config.appName,
       destination: {
@@ -54,13 +61,17 @@ router.post('/', async (req, res, next) => {
     // Add the Stripe charge reference to the ride and save it.
     ride.stripeChargeId = charge.id;
     ride.save();
+
+    // Return the ride info.
+    res.send({
+      pilot_name: [pilot.firstName, pilot.lastName].join(' '),
+      pilot_vehicle: pilot.rocket.model,
+      pilot_license: pilot.rocket.license,
+    });
   } catch (err) {
-    // Return a 402 Payment Required error code.
-    res.sendStatus(402);
+    res.sendStatus(500);
     next(`Error adding token to customer: ${err.message}`);
   }
-  // Return an 200 OK success code.
-  res.sendStatus(200);
 });
 
 module.exports = router;
