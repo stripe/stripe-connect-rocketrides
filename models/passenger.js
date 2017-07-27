@@ -25,10 +25,21 @@ PassengerSchema.methods.displayName = function() {
 };
 
 // Get the latest passenger.
-PassengerSchema.statics.getLatest = function() {
-  return Passenger.findOne()
-    .sort({ created: -1 })
-    .exec();
+PassengerSchema.statics.getLatest = async function() {
+  try {
+    // Count all the passengers.
+    const count = await Passenger.count().exec();
+    if (count === 0) {
+      // Create default passengers.
+      await Passenger.insertDefaultPassengers();
+    }
+    // Return latest passenger.
+    return Passenger.findOne()
+      .sort({ created: -1 })
+      .exec();
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 // Find a random passenger.
