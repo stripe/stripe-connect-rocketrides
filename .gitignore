@@ -1,6 +1,15 @@
 # Rocket Rides
 config.js
 
+# macOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+
+# Carthage
+Carthage/Checkouts
+
 # Logs
 logs
 *.log

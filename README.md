@@ -42,6 +42,12 @@ Run the app:
 
 Go to http://localhost:3000 in your browser to start using the app.
 
+## iOS App
+
+There's also a Rocket Rides iOS demo app available in the `ios/` subdirectory.
+
+Follow the `README.md` in that folder to try it out!
+
 ## Credits
 
 * Code: [Romain Huet](https://twitter.com/romainhuet)
