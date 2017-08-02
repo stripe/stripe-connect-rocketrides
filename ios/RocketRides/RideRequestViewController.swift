@@ -218,11 +218,10 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
             mapView.selectAnnotation(destinationAnnotation, animated: true)
         }
 
-        // Show flight path in map view
-        if let pickupPlacemark = pickupPlacemark, let destinationPlacemark = destinationPlacemark {
-            let coordinates = [pickupPlacemark.coordinate, destinationPlacemark.coordinate]
-            let polyline = MKGeodesicPolyline(coordinates: coordinates, count: 2)
-            mapView.add(polyline, level: .aboveRoads)
+        // Show rocket path in map view
+        if let pickupCoordinate = pickupPlacemark?.coordinate, let destinationCoordinate = destinationPlacemark?.coordinate {
+            let rocketPathOverlay = RocketPathOverlay(start: pickupCoordinate, end: destinationCoordinate)
+            mapView.add(rocketPathOverlay, level: .aboveRoads)
         }
     }
 
@@ -451,15 +450,15 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
     }
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if let polyline = overlay as? MKPolyline {
-            // Use styled polyline for flight path
-            let renderer = MKPolylineRenderer(polyline: polyline)
-            renderer.lineWidth = 4.0
+        if let rocketPathOverlay = overlay as? RocketPathOverlay {
+            // Use styled rocket path overlay renderer
+            let renderer = RocketPathOverlayRenderer(rocketPathOverlay: rocketPathOverlay)
             renderer.strokeColor = UIColor.riderBlueColor.withAlphaComponent(0.8)
 
             return renderer
         }
 
+        // Use default renderer
         return MKOverlayRenderer()
     }
 

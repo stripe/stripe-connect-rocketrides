@@ -21,6 +21,7 @@
 		8B9722181F293CEF0013333D /* UIAlertController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9722171F293CEF0013333D /* UIAlertController+Utility.swift */; };
 		8B9BC5301F192F7F007173D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9BC52E1F192F7F007173D8 /* Main.storyboard */; };
 		8BAC132C1F280FFF005CE143 /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC132B1F280FFF005CE143 /* UIView+Utility.swift */; };
+		8BF6C4061F326D5F00FB6ECD /* RocketPathOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF6C4051F326D5F00FB6ECD /* RocketPathOverlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		8B9722171F293CEF0013333D /* UIAlertController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Utility.swift"; sourceTree = "<group>"; };
 		8B9BC52F1F192F7F007173D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BAC132B1F280FFF005CE143 /* UIView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
+		8BF6C4051F326D5F00FB6ECD /* RocketPathOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketPathOverlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		8B06347A1F16C54A0091F2E3 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				8BF6C4051F326D5F00FB6ECD /* RocketPathOverlay.swift */,
 				8B9722171F293CEF0013333D /* UIAlertController+Utility.swift */,
 				8B06347B1F16C5610091F2E3 /* UIColor+Palette.swift */,
 				8BAC132B1F280FFF005CE143 /* UIView+Utility.swift */,
@@ -246,6 +249,7 @@
 				7A1BBCD71CF7B8E3004B1751 /* LocationSearchViewController.swift in Sources */,
 				7A1BBD031CF7B95C004B1751 /* RideRequestViewController.swift in Sources */,
 				7A1BBD071CF7BBB7004B1751 /* LocationSearchViewCell.swift in Sources */,
+				8BF6C4061F326D5F00FB6ECD /* RocketPathOverlay.swift in Sources */,
 				7A1BBD051CF7BACB004B1751 /* MainAPIClient.swift in Sources */,
 				8B9722181F293CEF0013333D /* UIAlertController+Utility.swift in Sources */,
 				8B06347C1F16C5610091F2E3 /* UIColor+Palette.swift in Sources */,
