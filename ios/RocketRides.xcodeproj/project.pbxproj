@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A1BBCD51CF7B8E3004B1751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1BBCD41CF7B8E3004B1751 /* AppDelegate.swift */; };
+		7A1BBCD71CF7B8E3004B1751 /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1BBCD61CF7B8E3004B1751 /* LocationSearchViewController.swift */; };
+		7A1BBCDC1CF7B8E3004B1751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A1BBCDB1CF7B8E3004B1751 /* Assets.xcassets */; };
+		7A1BBCDF1CF7B8E3004B1751 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1BBCDD1CF7B8E3004B1751 /* LaunchScreen.storyboard */; };
+		7A1BBD031CF7B95C004B1751 /* RideRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1BBD021CF7B95C004B1751 /* RideRequestViewController.swift */; };
+		7A1BBD051CF7BACB004B1751 /* MainAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1BBD041CF7BACB004B1751 /* MainAPIClient.swift */; };
+		7A1BBD071CF7BBB7004B1751 /* LocationSearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1BBD061CF7BBB7004B1751 /* LocationSearchViewCell.swift */; };
+		7A49FA681CFE6711004C026C /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A49FA671CFE6711004C026C /* Ride.swift */; };
+		8B0634781F16C3990091F2E3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA5271F1E30449B0013FE6A /* Alamofire.framework */; };
+		8B0634791F16C3990091F2E3 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A46C6F61D0EF104003F7EB1 /* Stripe.framework */; };
+		8B06347C1F16C5610091F2E3 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B06347B1F16C5610091F2E3 /* UIColor+Palette.swift */; };
+		8B9722181F293CEF0013333D /* UIAlertController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9722171F293CEF0013333D /* UIAlertController+Utility.swift */; };
+		8B9BC5301F192F7F007173D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9BC52E1F192F7F007173D8 /* Main.storyboard */; };
+		8BAC132C1F280FFF005CE143 /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC132B1F280FFF005CE143 /* UIView+Utility.swift */; };
+		8BF6C4061F326D5F00FB6ECD /* RocketPathOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF6C4051F326D5F00FB6ECD /* RocketPathOverlay.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7A1BBCD11CF7B8E3004B1751 /* RocketRides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketRides.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A1BBCD41CF7B8E3004B1751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7A1BBCD61CF7B8E3004B1751 /* LocationSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
+		7A1BBCDB1CF7B8E3004B1751 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7A1BBCDE1CF7B8E3004B1751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7A1BBCE01CF7B8E3004B1751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A1BBD021CF7B95C004B1751 /* RideRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideRequestViewController.swift; sourceTree = "<group>"; };
+		7A1BBD041CF7BACB004B1751 /* MainAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAPIClient.swift; sourceTree = "<group>"; };
+		7A1BBD061CF7BBB7004B1751 /* LocationSearchViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchViewCell.swift; sourceTree = "<group>"; };
+		7A46C6F61D0EF104003F7EB1 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = Carthage/Build/iOS/Stripe.framework; sourceTree = "<group>"; };
+		7A49FA671CFE6711004C026C /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
+		7A9E9D271E68CF68006509AC /* RocketRides.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RocketRides.entitlements; sourceTree = "<group>"; };
+		7AA5271F1E30449B0013FE6A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		8B06347B1F16C5610091F2E3 /* UIColor+Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
+		8B9722171F293CEF0013333D /* UIAlertController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Utility.swift"; sourceTree = "<group>"; };
+		8B9BC52F1F192F7F007173D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8BAC132B1F280FFF005CE143 /* UIView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
+		8BF6C4051F326D5F00FB6ECD /* RocketPathOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketPathOverlay.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A1BBCCE1CF7B8E3004B1751 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B0634781F16C3990091F2E3 /* Alamofire.framework in Frameworks */,
+				8B0634791F16C3990091F2E3 /* Stripe.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7A1BBCC81CF7B8E3004B1751 = {
+			isa = PBXGroup;
+			children = (
+				7A1BBCD31CF7B8E3004B1751 /* RocketRides */,
+				7A49FA791CFE7337004C026C /* Frameworks */,
+				7A1BBCD21CF7B8E3004B1751 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7A1BBCD21CF7B8E3004B1751 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A1BBCD11CF7B8E3004B1751 /* RocketRides.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A1BBCD31CF7B8E3004B1751 /* RocketRides */ = {
+			isa = PBXGroup;
+			children = (
+				7A1BBCD41CF7B8E3004B1751 /* AppDelegate.swift */,
+				7A49FA661CFE6702004C026C /* Models */,
+				8B06347E1F16C75A0091F2E3 /* Controllers */,
+				8B06347D1F16C7240091F2E3 /* Components */,
+				8B06347A1F16C54A0091F2E3 /* Utility */,
+				8BBD845E1F16C006001B6860 /* Supporting Files */,
+			);
+			path = RocketRides;
+			sourceTree = "<group>";
+		};
+		7A49FA661CFE6702004C026C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7A49FA671CFE6711004C026C /* Ride.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7A49FA791CFE7337004C026C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7AA5271F1E30449B0013FE6A /* Alamofire.framework */,
+				7A46C6F61D0EF104003F7EB1 /* Stripe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B06347A1F16C54A0091F2E3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8BF6C4051F326D5F00FB6ECD /* RocketPathOverlay.swift */,
+				8B9722171F293CEF0013333D /* UIAlertController+Utility.swift */,
+				8B06347B1F16C5610091F2E3 /* UIColor+Palette.swift */,
+				8BAC132B1F280FFF005CE143 /* UIView+Utility.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		8B06347D1F16C7240091F2E3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7A1BBD021CF7B95C004B1751 /* RideRequestViewController.swift */,
+				7A1BBCD61CF7B8E3004B1751 /* LocationSearchViewController.swift */,
+				7A1BBD061CF7BBB7004B1751 /* LocationSearchViewCell.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		8B06347E1F16C75A0091F2E3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7A1BBD041CF7BACB004B1751 /* MainAPIClient.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8BBD845E1F16C006001B6860 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7A1BBCDB1CF7B8E3004B1751 /* Assets.xcassets */,
+				7A1BBCE01CF7B8E3004B1751 /* Info.plist */,
+				7A1BBCDD1CF7B8E3004B1751 /* LaunchScreen.storyboard */,
+				8B9BC52E1F192F7F007173D8 /* Main.storyboard */,
+				7A9E9D271E68CF68006509AC /* RocketRides.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7A1BBCD01CF7B8E3004B1751 /* RocketRides */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A1BBCF91CF7B8E3004B1751 /* Build configuration list for PBXNativeTarget "RocketRides" */;
+			buildPhases = (
+				7A1BBCCD1CF7B8E3004B1751 /* Sources */,
+				7A1BBCCE1CF7B8E3004B1751 /* Frameworks */,
+				7A1BBCCF1CF7B8E3004B1751 /* Resources */,
+				7A9471811CF929D7006E2F82 /* Run Script */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RocketRides;
+			productName = Rider;
+			productReference = 7A1BBCD11CF7B8E3004B1751 /* RocketRides.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7A1BBCC91CF7B8E3004B1751 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Romain Huet";
+				TargetAttributes = {
+					7A1BBCD01CF7B8E3004B1751 = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 7A1BBCCC1CF7B8E3004B1751 /* Build configuration list for PBXProject "RocketRides" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7A1BBCC81CF7B8E3004B1751;
+			productRefGroup = 7A1BBCD21CF7B8E3004B1751 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A1BBCD01CF7B8E3004B1751 /* RocketRides */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A1BBCCF1CF7B8E3004B1751 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B9BC5301F192F7F007173D8 /* Main.storyboard in Resources */,
+				7A1BBCDC1CF7B8E3004B1751 /* Assets.xcassets in Resources */,
+				7A1BBCDF1CF7B8E3004B1751 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7A9471811CF929D7006E2F82 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Stripe.framework",
+			);
+			name = "Run Script";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Stripe.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A1BBCCD1CF7B8E3004B1751 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A1BBCD71CF7B8E3004B1751 /* LocationSearchViewController.swift in Sources */,
+				7A1BBD031CF7B95C004B1751 /* RideRequestViewController.swift in Sources */,
+				7A1BBD071CF7BBB7004B1751 /* LocationSearchViewCell.swift in Sources */,
+				8BF6C4061F326D5F00FB6ECD /* RocketPathOverlay.swift in Sources */,
+				7A1BBD051CF7BACB004B1751 /* MainAPIClient.swift in Sources */,
+				8B9722181F293CEF0013333D /* UIAlertController+Utility.swift in Sources */,
+				8B06347C1F16C5610091F2E3 /* UIColor+Palette.swift in Sources */,
+				7A1BBCD51CF7B8E3004B1751 /* AppDelegate.swift in Sources */,
+				7A49FA681CFE6711004C026C /* Ride.swift in Sources */,
+				8BAC132C1F280FFF005CE143 /* UIView+Utility.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7A1BBCDD1CF7B8E3004B1751 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A1BBCDE1CF7B8E3004B1751 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8B9BC52E1F192F7F007173D8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B9BC52F1F192F7F007173D8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7A1BBCF71CF7B8E3004B1751 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7A1BBCF81CF7B8E3004B1751 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7A1BBCFA1CF7B8E3004B1751 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RocketRides/RocketRides.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RocketRides/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stripe.rocketrides;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7A1BBCFB1CF7B8E3004B1751 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RocketRides/RocketRides.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RocketRides/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stripe.rocketrides;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7A1BBCCC1CF7B8E3004B1751 /* Build configuration list for PBXProject "RocketRides" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A1BBCF71CF7B8E3004B1751 /* Debug */,
+				7A1BBCF81CF7B8E3004B1751 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A1BBCF91CF7B8E3004B1751 /* Build configuration list for PBXNativeTarget "RocketRides" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A1BBCFA1CF7B8E3004B1751 /* Debug */,
+				7A1BBCFB1CF7B8E3004B1751 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7A1BBCC91CF7B8E3004B1751 /* Project object */;
+}

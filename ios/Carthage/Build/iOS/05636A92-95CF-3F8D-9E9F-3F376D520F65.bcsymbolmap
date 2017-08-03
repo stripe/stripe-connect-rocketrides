@@ -1,0 +1,3386 @@
+BCSymbolMap Version: 2.0
++[STPCardValidator sanitizedNumericStringForString:]
+_stringByRemovingCharactersFromSet
++[STPCardValidator stringByRemovingSpacesFromString:]
++[STPCardValidator stringIsNumeric:]
++[STPCardValidator validationStateForExpirationMonth:]
++[STPCardValidator validationStateForExpirationYear:inMonth:inCurrentYear:currentMonth:]
++[STPCardValidator validationStateForExpirationYear:inMonth:]
++[STPCardValidator validationStateForCVC:cardBrand:]
++[STPCardValidator validationStateForNumber:validatingCardBrand:]
++[STPCardValidator validationStateForCard:inCurrentYear:currentMonth:]
++[STPCardValidator validationStateForCard:]
++[STPCardValidator minCVCLength]
++[STPCardValidator maxCVCLengthForCardBrand:]
++[STPCardValidator brandForNumber:]
++[STPCardValidator possibleBrandsForNumber:]
++[STPCardValidator lengthsForCardBrand:]
++[STPCardValidator maxLengthForCardBrand:]
++[STPCardValidator fragmentLengthForCardBrand:]
++[STPCardValidator stringIsValidLuhn:]
++[STPCardValidator currentYear]
++[STPCardValidator currentMonth]
+_invertedAsciiDigitCharacterSet
+___invertedAsciiDigitCharacterSet_block_invoke
+_invertedAsciiDigitCharacterSet.cs
+_invertedAsciiDigitCharacterSet.onceToken
+___block_descriptor_tmp
+___block_literal_global
+Apple LLVM version 8.1.0 (clang-802.0.42)
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPCardValidator.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios
+__invertedAsciiDigitCharacterSet_block_invoke
+invertedAsciiDigitCharacterSet
+_dispatch_once
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/include/dispatch/once.h
+NSMakeRange
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRange.h
+stringByRemovingCharactersFromSet
+NSMaxRange
++[STPSourceCardDetails requiredFields]
++[STPSourceCardDetails decodedObjectFromAPIResponse:]
+-[STPSourceCardDetails initWithDictionary:]
++[STPSourceCardDetails stringToThreeDSecureStatusMapping]
++[STPSourceCardDetails threeDSecureStatusFromString:]
++[STPSourceCardDetails stringFromThreeDSecureStatus:]
+-[STPSourceCardDetails description]
+-[STPSourceCardDetails last4]
+-[STPSourceCardDetails expMonth]
+-[STPSourceCardDetails expYear]
+-[STPSourceCardDetails brand]
+-[STPSourceCardDetails funding]
+-[STPSourceCardDetails country]
+-[STPSourceCardDetails threeDSecure]
+-[STPSourceCardDetails allResponseFields]
+-[STPSourceCardDetails setAllResponseFields:]
+-[STPSourceCardDetails .cxx_destruct]
+_OBJC_IVAR_$_STPSourceCardDetails._last4
+_OBJC_IVAR_$_STPSourceCardDetails._brand
+_OBJC_IVAR_$_STPSourceCardDetails._funding
+_OBJC_IVAR_$_STPSourceCardDetails._country
+_OBJC_IVAR_$_STPSourceCardDetails._expMonth
+_OBJC_IVAR_$_STPSourceCardDetails._expYear
+_OBJC_IVAR_$_STPSourceCardDetails._threeDSecure
+_OBJC_IVAR_$_STPSourceCardDetails._allResponseFields
+l_OBJC_PROTOCOL_$_NSObject
+l_OBJC_LABEL_PROTOCOL_$_NSObject
+l_OBJC_PROTOCOL_$_STPAPIResponseDecodable
+l_OBJC_LABEL_PROTOCOL_$_STPAPIResponseDecodable
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPSourceCardDetails.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPSourceCardDetails.h
+-[UINavigationBar(Stripe_Theme) stp_theme]
+-[UINavigationBar(Stripe_Theme) setStp_theme:]
+-[UINavigationBar(Stripe_Theme) stp_setTheme:]
+-[UINavigationBar(Stripe_Theme) stp_artificialHairlineView]
+-[UINavigationBar(Stripe_Theme) stp_hairlineImageView]
+-[UINavigationBar(Stripe_Theme) stp_hairlineImageView:]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/UINavigationBar+Stripe_Theme.m
+linkUINavigationBarThemeCategory
+-[STPSourcePoller initWithAPIClient:clientSecret:sourceID:timeout:completion:]
+-[STPSourcePoller dealloc]
+-[STPSourcePoller pollAfter:lastError:]
+-[STPSourcePoller poll]
+___23-[STPSourcePoller poll]_block_invoke
+___copy_helper_block_
+___destroy_helper_block_
+___23-[STPSourcePoller poll]_block_invoke.59
+___copy_helper_block_.64
+___destroy_helper_block_.65
+-[STPSourcePoller continueWithSource:response:error:]
+-[STPSourcePoller shouldContinuePollingSource:]
+-[STPSourcePoller restartPolling]
+-[STPSourcePoller pausePolling]
+-[STPSourcePoller cleanupAndFireCompletionWithSource:error:]
+___60-[STPSourcePoller cleanupAndFireCompletionWithSource:error:]_block_invoke
+___copy_helper_block_.101
+___destroy_helper_block_.102
+-[STPSourcePoller stopPolling]
+-[STPSourcePoller apiClient]
+-[STPSourcePoller setApiClient:]
+-[STPSourcePoller sourceID]
+-[STPSourcePoller setSourceID:]
+-[STPSourcePoller clientSecret]
+-[STPSourcePoller setClientSecret:]
+-[STPSourcePoller completion]
+-[STPSourcePoller setCompletion:]
+-[STPSourcePoller latestSource]
+-[STPSourcePoller setLatestSource:]
+-[STPSourcePoller pollInterval]
+-[STPSourcePoller setPollInterval:]
+-[STPSourcePoller timeout]
+-[STPSourcePoller setTimeout:]
+-[STPSourcePoller dataTask]
+-[STPSourcePoller setDataTask:]
+-[STPSourcePoller timer]
+-[STPSourcePoller setTimer:]
+-[STPSourcePoller startTime]
+-[STPSourcePoller setStartTime:]
+-[STPSourcePoller retryCount]
+-[STPSourcePoller setRetryCount:]
+-[STPSourcePoller requestCount]
+-[STPSourcePoller setRequestCount:]
+-[STPSourcePoller pollingPaused]
+-[STPSourcePoller setPollingPaused:]
+-[STPSourcePoller pollingStopped]
+-[STPSourcePoller setPollingStopped:]
+-[STPSourcePoller .cxx_destruct]
+_OBJC_IVAR_$_STPSourcePoller._apiClient
+_OBJC_IVAR_$_STPSourcePoller._sourceID
+_OBJC_IVAR_$_STPSourcePoller._clientSecret
+_OBJC_IVAR_$_STPSourcePoller._completion
+_OBJC_IVAR_$_STPSourcePoller._pollInterval
+_OBJC_IVAR_$_STPSourcePoller._timeout
+_OBJC_IVAR_$_STPSourcePoller._startTime
+_OBJC_IVAR_$_STPSourcePoller._retryCount
+_OBJC_IVAR_$_STPSourcePoller._requestCount
+_OBJC_IVAR_$_STPSourcePoller._pollingPaused
+_OBJC_IVAR_$_STPSourcePoller._pollingStopped
+___block_descriptor_tmp.67
+___block_descriptor_tmp.103
+_OBJC_IVAR_$_STPSourcePoller._latestSource
+_OBJC_IVAR_$_STPSourcePoller._dataTask
+_OBJC_IVAR_$_STPSourcePoller._timer
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPSourcePoller.m
+__destroy_helper_block_
+__copy_helper_block_
+__60-[STPSourcePoller cleanupAndFireCompletionWithSource:error:]_block_invoke
+__23-[STPSourcePoller poll]_block_invoke.59
+__23-[STPSourcePoller poll]_block_invoke
+-[STPAddressFieldTableViewCell initWithType:contents:lastInList:delegate:]
+___74-[STPAddressFieldTableViewCell initWithType:contents:lastInList:delegate:]_block_invoke
+-[STPAddressFieldTableViewCell setTheme:]
+-[STPAddressFieldTableViewCell setLastInList:]
+-[STPAddressFieldTableViewCell updateTextFieldsAndCaptions]
++[STPAddressFieldTableViewCell stateFieldCaptionForCountryCode:]
+-[STPAddressFieldTableViewCell placeholderForAddressField:]
+-[STPAddressFieldTableViewCell delegateCountryCodeDidChange:]
+-[STPAddressFieldTableViewCell updateAppearance]
+-[STPAddressFieldTableViewCell countryCodeIsUnitedStates]
+-[STPAddressFieldTableViewCell layoutSubviews]
+-[STPAddressFieldTableViewCell becomeFirstResponder]
+-[STPAddressFieldTableViewCell nextTapped:]
+-[STPAddressFieldTableViewCell formTextFieldTextDidChange:]
+-[STPAddressFieldTableViewCell textFieldShouldReturn:]
+-[STPAddressFieldTableViewCell textFieldDidEndEditing:]
+-[STPAddressFieldTableViewCell formTextFieldDidBackspaceOnEmpty:]
+-[STPAddressFieldTableViewCell setCaption:]
+-[STPAddressFieldTableViewCell caption]
+-[STPAddressFieldTableViewCell setContents:]
+-[STPAddressFieldTableViewCell validContents]
+-[STPAddressFieldTableViewCell potentiallyValidContents]
+-[STPAddressFieldTableViewCell pickerView:didSelectRow:inComponent:]
+-[STPAddressFieldTableViewCell pickerView:titleForRow:forComponent:]
+-[STPAddressFieldTableViewCell numberOfComponentsInPickerView:]
+-[STPAddressFieldTableViewCell pickerView:numberOfRowsInComponent:]
+-[STPAddressFieldTableViewCell type]
+-[STPAddressFieldTableViewCell setType:]
+-[STPAddressFieldTableViewCell textField]
+-[STPAddressFieldTableViewCell setTextField:]
+-[STPAddressFieldTableViewCell contents]
+-[STPAddressFieldTableViewCell theme]
+-[STPAddressFieldTableViewCell lastInList]
+-[STPAddressFieldTableViewCell inputAccessoryToolbar]
+-[STPAddressFieldTableViewCell setInputAccessoryToolbar:]
+-[STPAddressFieldTableViewCell countryPickerView]
+-[STPAddressFieldTableViewCell setCountryPickerView:]
+-[STPAddressFieldTableViewCell countryCodes]
+-[STPAddressFieldTableViewCell setCountryCodes:]
+-[STPAddressFieldTableViewCell delegate]
+-[STPAddressFieldTableViewCell setDelegate:]
+-[STPAddressFieldTableViewCell ourCountryCode]
+-[STPAddressFieldTableViewCell setOurCountryCode:]
+-[STPAddressFieldTableViewCell postalCodeType]
+-[STPAddressFieldTableViewCell setPostalCodeType:]
+-[STPAddressFieldTableViewCell .cxx_destruct]
+_OBJC_IVAR_$_STPAddressFieldTableViewCell._delegate
+_OBJC_IVAR_$_STPAddressFieldTableViewCell._theme
+_OBJC_IVAR_$_STPAddressFieldTableViewCell._contents
+_OBJC_IVAR_$_STPAddressFieldTableViewCell._textField
+_OBJC_IVAR_$_STPAddressFieldTableViewCell._inputAccessoryToolbar
+_OBJC_IVAR_$_STPAddressFieldTableViewCell._countryCodes
+_OBJC_IVAR_$_STPAddressFieldTableViewCell._countryPickerView
+_OBJC_IVAR_$_STPAddressFieldTableViewCell._lastInList
+_OBJC_IVAR_$_STPAddressFieldTableViewCell._type
+_OBJC_IVAR_$_STPAddressFieldTableViewCell._postalCodeType
+_OBJC_IVAR_$_STPAddressFieldTableViewCell._ourCountryCode
+l_OBJC_PROTOCOL_$_UITextFieldDelegate
+l_OBJC_LABEL_PROTOCOL_$_UITextFieldDelegate
+l_OBJC_PROTOCOL_$_STPFormTextFieldDelegate
+l_OBJC_LABEL_PROTOCOL_$_STPFormTextFieldDelegate
+l_OBJC_PROTOCOL_$_UIPickerViewDelegate
+l_OBJC_LABEL_PROTOCOL_$_UIPickerViewDelegate
+l_OBJC_PROTOCOL_$_UIPickerViewDataSource
+l_OBJC_LABEL_PROTOCOL_$_UIPickerViewDataSource
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPAddressFieldTableViewCell.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPAddressFieldTableViewCell.h
+STPLocalizedString
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPLocalizationUtils.h
+__74-[STPAddressFieldTableViewCell initWithType:contents:lastInList:delegate:]_block_invoke
++[NSDecimalNumber(Stripe_Currency) stp_currenciesWithNoDecimal]
++[NSDecimalNumber(Stripe_Currency) stp_decimalNumberWithAmount:currency:]
+-[NSDecimalNumber(Stripe_Currency) stp_amountWithCurrency:]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/NSDecimalNumber+Stripe_Currency.m
+linkNSDecimalNumberCurrencyCategory
++[STPAddress shippingInfoForChargeWithAddress:shippingMethod:]
+-[STPAddress initWithABRecord:]
+-[STPAddress ABRecordValue]
+-[STPAddress sanitizedPhoneStringFromCNPhoneNumber:]
+-[STPAddress initWithCNContact:]
+-[STPAddress initWithPKContact:]
+-[STPAddress setAddressFromCNPostalAddress:]
+-[STPAddress PKContactValue]
+-[STPAddress firstName]
+-[STPAddress lastName]
+-[STPAddress street]
+-[STPAddress containsRequiredFields:]
+-[STPAddress containsRequiredShippingAddressFields:]
+-[STPAddress hasValidPostalAddress]
++[STPAddress applePayAddressFieldsFromBillingAddressFields:]
++[STPAddress requiredFields]
++[STPAddress decodedObjectFromAPIResponse:]
+-[STPAddress name]
+-[STPAddress setName:]
+-[STPAddress line1]
+-[STPAddress setLine1:]
+-[STPAddress line2]
+-[STPAddress setLine2:]
+-[STPAddress city]
+-[STPAddress setCity:]
+-[STPAddress state]
+-[STPAddress setState:]
+-[STPAddress postalCode]
+-[STPAddress setPostalCode:]
+-[STPAddress country]
+-[STPAddress setCountry:]
+-[STPAddress phone]
+-[STPAddress setPhone:]
+-[STPAddress email]
+-[STPAddress setEmail:]
+-[STPAddress allResponseFields]
+-[STPAddress setAllResponseFields:]
+-[STPAddress givenName]
+-[STPAddress setGivenName:]
+-[STPAddress familyName]
+-[STPAddress setFamilyName:]
+-[STPAddress .cxx_destruct]
+_OBJC_IVAR_$_STPAddress._name
+_OBJC_IVAR_$_STPAddress._email
+_OBJC_IVAR_$_STPAddress._phone
+_OBJC_IVAR_$_STPAddress._line1
+_OBJC_IVAR_$_STPAddress._city
+_OBJC_IVAR_$_STPAddress._state
+_OBJC_IVAR_$_STPAddress._postalCode
+_OBJC_IVAR_$_STPAddress._country
+_OBJC_IVAR_$_STPAddress._givenName
+_OBJC_IVAR_$_STPAddress._familyName
+_OBJC_IVAR_$_STPAddress._line2
+_OBJC_IVAR_$_STPAddress._allResponseFields
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPAddress.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPAddress.h
+stringIfHasContentsElseNil
+-[STPPaymentMethodsInternalViewController initWithConfiguration:theme:prefilledInformation:shippingAddress:paymentMethodTuple:delegate:]
+-[STPPaymentMethodsInternalViewController createAndSetupViews]
+-[STPPaymentMethodsInternalViewController handleBackOrCancelTapped:]
+-[STPPaymentMethodsInternalViewController numberOfSectionsInTableView:]
+-[STPPaymentMethodsInternalViewController tableView:numberOfRowsInSection:]
+-[STPPaymentMethodsInternalViewController tableView:cellForRowAtIndexPath:]
+-[STPPaymentMethodsInternalViewController tableView:didSelectRowAtIndexPath:]
+-[STPPaymentMethodsInternalViewController tableView:willDisplayCell:forRowAtIndexPath:]
+-[STPPaymentMethodsInternalViewController tableView:heightForFooterInSection:]
+-[STPPaymentMethodsInternalViewController tableView:heightForHeaderInSection:]
+-[STPPaymentMethodsInternalViewController updateWithPaymentMethodTuple:]
+-[STPPaymentMethodsInternalViewController addCardViewControllerDidCancel:]
+-[STPPaymentMethodsInternalViewController addCardViewController:didCreateToken:completion:]
+-[STPPaymentMethodsInternalViewController configuration]
+-[STPPaymentMethodsInternalViewController setConfiguration:]
+-[STPPaymentMethodsInternalViewController prefilledInformation]
+-[STPPaymentMethodsInternalViewController setPrefilledInformation:]
+-[STPPaymentMethodsInternalViewController shippingAddress]
+-[STPPaymentMethodsInternalViewController setShippingAddress:]
+-[STPPaymentMethodsInternalViewController paymentMethods]
+-[STPPaymentMethodsInternalViewController setPaymentMethods:]
+-[STPPaymentMethodsInternalViewController selectedPaymentMethod]
+-[STPPaymentMethodsInternalViewController setSelectedPaymentMethod:]
+-[STPPaymentMethodsInternalViewController delegate]
+-[STPPaymentMethodsInternalViewController setDelegate:]
+-[STPPaymentMethodsInternalViewController cardImageView]
+-[STPPaymentMethodsInternalViewController setCardImageView:]
+-[STPPaymentMethodsInternalViewController .cxx_destruct]
+_OBJC_IVAR_$_STPPaymentMethodsInternalViewController._configuration
+_OBJC_IVAR_$_STPPaymentMethodsInternalViewController._prefilledInformation
+_OBJC_IVAR_$_STPPaymentMethodsInternalViewController._shippingAddress
+_OBJC_IVAR_$_STPPaymentMethodsInternalViewController._paymentMethods
+_OBJC_IVAR_$_STPPaymentMethodsInternalViewController._selectedPaymentMethod
+_OBJC_IVAR_$_STPPaymentMethodsInternalViewController._delegate
+_OBJC_IVAR_$_STPPaymentMethodsInternalViewController._cardImageView
+l_OBJC_PROTOCOL_$_UITableViewDataSource
+l_OBJC_LABEL_PROTOCOL_$_UITableViewDataSource
+l_OBJC_PROTOCOL_$_UIScrollViewDelegate
+l_OBJC_LABEL_PROTOCOL_$_UIScrollViewDelegate
+l_OBJC_PROTOCOL_$_UITableViewDelegate
+l_OBJC_LABEL_PROTOCOL_$_UITableViewDelegate
+l_OBJC_PROTOCOL_$_STPAddCardViewControllerDelegate
+l_OBJC_LABEL_PROTOCOL_$_STPAddCardViewControllerDelegate
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPaymentMethodsInternalViewController.m
+-[UIImage(Stripe) stp_jpegDataWithMaxFileSize:]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/UIImage+Stripe.m
+linkUIImageCategory
+-[STPCoreScrollViewController createScrollView]
+-[STPCoreScrollViewController createAndSetupViews]
+-[STPCoreScrollViewController viewDidLayoutSubviews]
+-[STPCoreScrollViewController updateAppearance]
+-[STPCoreScrollViewController viewWillAppear:]
+-[STPCoreScrollViewController scrollView]
+-[STPCoreScrollViewController .cxx_destruct]
+_OBJC_IVAR_$_STPCoreScrollViewController._scrollView
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPCoreScrollViewController.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPCoreScrollViewController+Private.h
+-[STPTextFieldDelegateProxy textField:shouldChangeCharactersInRange:replacementString:]
+-[STPTextFieldDelegateProxy unformattedStringForString:]
+-[STPTextFieldDelegateProxy autoformattingBehavior]
+-[STPTextFieldDelegateProxy setAutoformattingBehavior:]
+-[STPTextFieldDelegateProxy selectionEnabled]
+-[STPTextFieldDelegateProxy setSelectionEnabled:]
+-[STPFormTextField reloadInputViews]
++[STPFormTextField attributesForAttributedString:]
+-[STPFormTextField setSelectionEnabled:]
+-[STPFormTextField setAutoFormattingBehavior:]
+___46-[STPFormTextField setAutoFormattingBehavior:]_block_invoke
+___46-[STPFormTextField setAutoFormattingBehavior:]_block_invoke_2
+-[STPFormTextField setFormDelegate:]
+-[STPFormTextField insertText:]
+-[STPFormTextField deleteBackward]
+-[STPFormTextField measureTextSize]
+-[STPFormTextField setText:]
+-[STPFormTextField setAttributedText:]
+-[STPFormTextField setPlaceholder:]
+-[STPFormTextField setAttributedPlaceholder:]
+-[STPFormTextField placeholderTextAttributes]
+-[STPFormTextField setDefaultColor:]
+-[STPFormTextField setErrorColor:]
+-[STPFormTextField setValidText:]
+-[STPFormTextField setPlaceholderColor:]
+-[STPFormTextField updateColor]
+-[STPFormTextField editingRectForBounds:]
+-[STPFormTextField keyCommands]
+-[STPFormTextField commandDeleteBackwards]
+-[STPFormTextField closestPositionToPoint:]
+-[STPFormTextField canPerformAction:withSender:]
+-[STPFormTextField paste:]
+-[STPFormTextField setDelegate:]
+-[STPFormTextField delegate]
+-[STPFormTextField placeholderColor]
+-[STPFormTextField defaultColor]
+-[STPFormTextField errorColor]
+-[STPFormTextField selectionEnabled]
+-[STPFormTextField preservesContentsOnPaste]
+-[STPFormTextField setPreservesContentsOnPaste:]
+-[STPFormTextField autoFormattingBehavior]
+-[STPFormTextField validText]
+-[STPFormTextField formDelegate]
+-[STPFormTextField delegateProxy]
+-[STPFormTextField setDelegateProxy:]
+-[STPFormTextField textFormattingBlock]
+-[STPFormTextField setTextFormattingBlock:]
+-[STPFormTextField skipsReloadingInputViews]
+-[STPFormTextField setSkipsReloadingInputViews:]
+-[STPFormTextField .cxx_destruct]
+_OBJC_IVAR_$_STPTextFieldDelegateProxy._autoformattingBehavior
+_OBJC_IVAR_$_STPTextFieldDelegateProxy._selectionEnabled
+_OBJC_IVAR_$_STPFormTextField._selectionEnabled
+_OBJC_IVAR_$_STPFormTextField._autoFormattingBehavior
+___block_descriptor_tmp.151
+_OBJC_IVAR_$_STPFormTextField._formDelegate
+_OBJC_IVAR_$_STPFormTextField._defaultColor
+_OBJC_IVAR_$_STPFormTextField._errorColor
+_OBJC_IVAR_$_STPFormTextField._validText
+_OBJC_IVAR_$_STPFormTextField._placeholderColor
+_OBJC_IVAR_$_STPFormTextField._preservesContentsOnPaste
+_OBJC_IVAR_$_STPFormTextField._delegateProxy
+_OBJC_IVAR_$_STPFormTextField._textFormattingBlock
+_OBJC_IVAR_$_STPFormTextField._skipsReloadingInputViews
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPFormTextField.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPFormTextField.h
+__46-[STPFormTextField setAutoFormattingBehavior:]_block_invoke_2
+__46-[STPFormTextField setAutoFormattingBehavior:]_block_invoke
++[NSObject(Aspects) stp_aspect_hookSelector:withOptions:usingBlock:error:]
+_stp_aspect_add
+-[NSObject(Aspects) stp_aspect_hookSelector:withOptions:usingBlock:error:]
+-[STPAspectTracker initWithTrackedClass:]
+-[STPAspectTracker subclassHasHookedSelectorName:]
+-[STPAspectTracker addSubclassTracker:hookingSelectorName:]
+-[STPAspectTracker removeSubclassTracker:hookingSelectorName:]
+-[STPAspectTracker subclassTrackersHookingSelectorName:]
+-[STPAspectTracker trackedClassName]
+-[STPAspectTracker description]
+-[STPAspectTracker trackedClass]
+-[STPAspectTracker setTrackedClass:]
+-[STPAspectTracker selectorNames]
+-[STPAspectTracker setSelectorNames:]
+-[STPAspectTracker selectorNamesToSubclassTrackers]
+-[STPAspectTracker setSelectorNamesToSubclassTrackers:]
+-[STPAspectTracker .cxx_destruct]
+-[NSInvocation(STPAspects) stp_aspect_argumentAtIndex:]
+-[NSInvocation(STPAspects) stp_aspects_arguments]
++[STPAspectIdentifier identifierWithSelector:object:options:block:error:]
+-[STPAspectIdentifier invokeWithInfo:]
+-[STPAspectIdentifier description]
+-[STPAspectIdentifier remove]
+-[STPAspectIdentifier selector]
+-[STPAspectIdentifier setSelector:]
+-[STPAspectIdentifier block]
+-[STPAspectIdentifier setBlock:]
+-[STPAspectIdentifier blockSignature]
+-[STPAspectIdentifier setBlockSignature:]
+-[STPAspectIdentifier object]
+-[STPAspectIdentifier setObject:]
+-[STPAspectIdentifier options]
+-[STPAspectIdentifier setOptions:]
+-[STPAspectIdentifier .cxx_destruct]
+-[STPAspectsContainer hasAspects]
+-[STPAspectsContainer addAspect:withOptions:]
+-[STPAspectsContainer removeAspect:]
+-[STPAspectsContainer description]
+-[STPAspectsContainer beforeAspects]
+-[STPAspectsContainer setBeforeAspects:]
+-[STPAspectsContainer insteadAspects]
+-[STPAspectsContainer setInsteadAspects:]
+-[STPAspectsContainer afterAspects]
+-[STPAspectsContainer setAfterAspects:]
+-[STPAspectsContainer .cxx_destruct]
+-[STPAspectInfo initWithInstance:invocation:]
+-[STPAspectInfo arguments]
+-[STPAspectInfo instance]
+-[STPAspectInfo originalInvocation]
+-[STPAspectInfo .cxx_destruct]
+___Block_byref_object_copy_
+___Block_byref_object_dispose_
+_stp_aspect_performLocked
+___stp_aspect_add_block_invoke
+_stp_aspect_getContainerForObject
+___stp_aspect_isSelectorAllowedAndTrack_block_invoke
+_stp_aspect_getSwizzledClassesDict
+___stp_aspect_getSwizzledClassesDict_block_invoke
+_stp_aspect_aliasForSelector
+_stp_aspect_swizzleClassInPlace
+_stp_aspect_swizzleForwardInvocation
+_stp_aspect_hookedGetClass
+__stp_aspect_modifySwizzledClasses
+___stp_aspect_swizzleClassInPlace_block_invoke
+___copy_helper_block_.409
+___destroy_helper_block_.410
+____stp_aspect_modifySwizzledClasses_block_invoke
+___STP_ASPECTS_ARE_BEING_CALLED__
+___stp_aspect_hookedGetClass_block_invoke
+___stp_aspect_remove_block_invoke
+___copy_helper_block_.460
+___destroy_helper_block_.461
+_stp_aspect_undoSwizzleClassInPlace
+___stp_aspect_undoSwizzleClassInPlace_block_invoke
+___copy_helper_block_.472
+___destroy_helper_block_.473
+_OBJC_IVAR_$_STPAspectTracker._trackedClass
+_OBJC_IVAR_$_STPAspectTracker._selectorNames
+_OBJC_IVAR_$_STPAspectTracker._selectorNamesToSubclassTrackers
+_OBJC_IVAR_$_STPAspectIdentifier._selector
+_OBJC_IVAR_$_STPAspectIdentifier._block
+_OBJC_IVAR_$_STPAspectIdentifier._blockSignature
+_OBJC_IVAR_$_STPAspectIdentifier._object
+_OBJC_IVAR_$_STPAspectIdentifier._options
+_OBJC_IVAR_$_STPAspectsContainer._beforeAspects
+_OBJC_IVAR_$_STPAspectsContainer._insteadAspects
+_OBJC_IVAR_$_STPAspectsContainer._afterAspects
+_OBJC_IVAR_$_STPAspectInfo._instance
+_OBJC_IVAR_$_STPAspectInfo._originalInvocation
+_OBJC_IVAR_$_STPAspectInfo._arguments
+l_OBJC_PROTOCOL_$_STPAspectInfo
+l_OBJC_LABEL_PROTOCOL_$_STPAspectInfo
+_stp_aspect_performLocked.aspect_lock
+_stp_aspect_isSelectorAllowedAndTrack.disallowedSelectorList
+_stp_aspect_isSelectorAllowedAndTrack.pred
+___block_descriptor_tmp.356
+_stp_aspect_getSwizzledClassesDict.swizzledClassesDict
+_stp_aspect_getSwizzledClassesDict.pred
+___block_descriptor_tmp.390
+___block_literal_global.391
+___block_descriptor_tmp.413
+__stp_aspect_modifySwizzledClasses.swizzledClasses
+__stp_aspect_modifySwizzledClasses.pred
+___block_descriptor_tmp.414
+___block_literal_global.415
+___block_descriptor_tmp.438
+___block_descriptor_tmp.462
+___block_descriptor_tmp.475
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPAspects.m
+__stp_aspect_undoSwizzleClassInPlace_block_invoke
+stp_aspect_undoSwizzleForwardInvocation
+stp_aspect_undoSwizzleClassInPlace
+__stp_aspect_remove_block_invoke
+stp_aspect_cleanupHookedClassAndSelector
+stp_aspect_destroyContainerForObject
+stp_aspect_deregisterTrackedSelector
+stp_aspect_isMsgForwardIMP
+__stp_aspect_hookedGetClass_block_invoke
+__STP_ASPECTS_ARE_BEING_CALLED__
+stp_aspect_getContainerForClass
+___stp_aspect_modifySwizzledClasses_block_invoke
+__stp_aspect_swizzleClassInPlace_block_invoke
+_stp_aspect_modifySwizzledClasses
+stp_aspect_hookedGetClass
+stp_aspect_swizzleForwardInvocation
+stp_aspect_swizzleClassInPlace
+stp_aspect_aliasForSelector
+__stp_aspect_getSwizzledClassesDict_block_invoke
+stp_aspect_getSwizzledClassesDict
+__stp_aspect_isSelectorAllowedAndTrack_block_invoke
+stp_aspect_getContainerForObject
+__stp_aspect_add_block_invoke
+stp_aspect_prepareClassAndHookSelector
+stp_aspect_hookClass
+stp_aspect_isSelectorAllowedAndTrack
+stp_aspect_performLocked
+__Block_byref_object_dispose_
+__Block_byref_object_copy_
+linkAspectsCategory
+stp_aspect_remove
+stp_aspect_isCompatibleBlockSignature
+stp_aspect_blockMethodSignature
+stp_aspect_add
+-[STPRedirectContext initWithSource:completion:]
+-[STPRedirectContext dealloc]
+-[STPRedirectContext startRedirectFlowFromViewController:]
+-[STPRedirectContext startSafariViewControllerRedirectFlowFromViewController:]
+-[STPRedirectContext startSafariAppRedirectFlow]
+-[STPRedirectContext cancel]
+-[STPRedirectContext safariViewControllerDidFinish:]
+___52-[STPRedirectContext safariViewControllerDidFinish:]_block_invoke
+-[STPRedirectContext safariViewController:didCompleteInitialLoad:]
+___66-[STPRedirectContext safariViewController:didCompleteInitialLoad:]_block_invoke
+___copy_helper_block_.49
+___destroy_helper_block_.50
+-[STPRedirectContext handleWillForegroundNotification]
+___54-[STPRedirectContext handleWillForegroundNotification]_block_invoke
+___copy_helper_block_.52
+___destroy_helper_block_.53
+-[STPRedirectContext handleURLCallback:]
+___40-[STPRedirectContext handleURLCallback:]_block_invoke
+___copy_helper_block_.55
+___destroy_helper_block_.56
+-[STPRedirectContext handleRedirectCompletionWithError:shouldDismissViewController:]
+-[STPRedirectContext subscribeToUrlAndForegroundNotifications]
+-[STPRedirectContext unsubscribeFromNotificationsAndDismissPresentedViewControllers]
+-[STPRedirectContext unsubscribeFromNotifications]
+-[STPRedirectContext dismissPresentedViewController]
+-[STPRedirectContext state]
+-[STPRedirectContext completion]
+-[STPRedirectContext setCompletion:]
+-[STPRedirectContext source]
+-[STPRedirectContext setSource:]
+-[STPRedirectContext safariVC]
+-[STPRedirectContext setSafariVC:]
+-[STPRedirectContext .cxx_destruct]
+_OBJC_IVAR_$_STPRedirectContext._source
+_OBJC_IVAR_$_STPRedirectContext._completion
+_OBJC_IVAR_$_STPRedirectContext._state
+___block_descriptor_tmp.51
+___block_descriptor_tmp.54
+___block_descriptor_tmp.57
+_OBJC_IVAR_$_STPRedirectContext._safariVC
+l_OBJC_PROTOCOL_$_SFSafariViewControllerDelegate
+l_OBJC_LABEL_PROTOCOL_$_SFSafariViewControllerDelegate
+l_OBJC_PROTOCOL_$_STPURLCallbackListener
+l_OBJC_LABEL_PROTOCOL_$_STPURLCallbackListener
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPRedirectContext.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPRedirectContext.h
+__40-[STPRedirectContext handleURLCallback:]_block_invoke
+__54-[STPRedirectContext handleWillForegroundNotification]_block_invoke
+__66-[STPRedirectContext safariViewController:didCompleteInitialLoad:]_block_invoke
+__52-[STPRedirectContext safariViewControllerDidFinish:]_block_invoke
+-[STPPaymentCardTextFieldCell init]
+-[STPPaymentCardTextFieldCell layoutSubviews]
+-[STPPaymentCardTextFieldCell setTheme:]
+-[STPPaymentCardTextFieldCell updateAppearance]
+-[STPPaymentCardTextFieldCell setInputAccessoryView:]
+-[STPPaymentCardTextFieldCell isEmpty]
+-[STPPaymentCardTextFieldCell becomeFirstResponder]
+-[STPPaymentCardTextFieldCell paymentField]
+-[STPPaymentCardTextFieldCell setPaymentField:]
+-[STPPaymentCardTextFieldCell theme]
+-[STPPaymentCardTextFieldCell inputAccessoryView]
+-[STPPaymentCardTextFieldCell .cxx_destruct]
+_OBJC_IVAR_$_STPPaymentCardTextFieldCell._paymentField
+_OBJC_IVAR_$_STPPaymentCardTextFieldCell._theme
+_OBJC_IVAR_$_STPPaymentCardTextFieldCell._inputAccessoryView
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPaymentCardTextFieldCell.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPaymentCardTextFieldCell.h
+-[PKPayment(Stripe) stp_isSimulated]
++[PKPayment(Stripe) stp_testTransactionIdentifier]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PKPayment+Stripe.m
+linkPKPaymentCategory
++[STPStringUtils parseRangesFromString:withTags:completion:]
+___60+[STPStringUtils parseRangesFromString:withTags:completion:]_block_invoke
+___60+[STPStringUtils parseRangesFromString:withTags:completion:]_block_invoke.14
++[STPStringUtils parseRangeFromString:withTag:completion:]
+___block_descriptor_tmp.18
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPStringUtils.m
+__60+[STPStringUtils parseRangesFromString:withTags:completion:]_block_invoke.14
+__60+[STPStringUtils parseRangesFromString:withTags:completion:]_block_invoke
++[STPMultipartFormDataEncoder multipartFormDataForParts:boundary:]
++[STPMultipartFormDataEncoder generateBoundary]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPMultipartFormDataEncoder.m
++[STPCard brandFromString:]
++[STPCard stringFromBrand:]
++[STPCard stringToFundingMapping]
++[STPCard fundingFromString:]
++[STPCard stringFromFunding:]
+-[STPCard initWithID:brand:last4:expMonth:expYear:funding:]
+-[STPCard init]
+-[STPCard last4]
+-[STPCard isApplePayCard]
+-[STPCard address]
+-[STPCard isEqual:]
+-[STPCard hash]
+-[STPCard isEqualToCard:]
+-[STPCard description]
+-[STPCard stripeObject]
++[STPCard requiredFields]
++[STPCard decodedObjectFromAPIResponse:]
+-[STPCard stripeID]
+-[STPCard label]
+-[STPCard image]
+-[STPCard templateImage]
+-[STPCard dynamicLast4]
+-[STPCard setDynamicLast4:]
+-[STPCard cardId]
+-[STPCard setCardId:]
+-[STPCard brand]
+-[STPCard setBrand:]
+-[STPCard funding]
+-[STPCard setFunding:]
+-[STPCard country]
+-[STPCard setCountry:]
+-[STPCard setLast4:]
+-[STPCard allResponseFields]
+-[STPCard setAllResponseFields:]
+-[STPCard .cxx_destruct]
+_OBJC_IVAR_$_STPCard._cardId
+_OBJC_IVAR_$_STPCard._brand
+_OBJC_IVAR_$_STPCard._last4
+_OBJC_IVAR_$_STPCard._funding
+_OBJC_IVAR_$_STPCard._dynamicLast4
+_OBJC_IVAR_$_STPCard._country
+_OBJC_IVAR_$_STPCard._allResponseFields
+l_OBJC_PROTOCOL_$_STPInternalAPIResponseDecodable
+l_OBJC_LABEL_PROTOCOL_$_STPInternalAPIResponseDecodable
+l_OBJC_PROTOCOL_$_STPPaymentMethod
+l_OBJC_LABEL_PROTOCOL_$_STPPaymentMethod
+l_OBJC_PROTOCOL_$_STPSourceProtocol
+l_OBJC_LABEL_PROTOCOL_$_STPSourceProtocol
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPCard.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPCard.h
++[Stripe setDefaultPublishableKey:]
++[Stripe defaultPublishableKey]
++[STPAPIClient apiVersion]
++[STPAPIClient initialize]
++[STPAPIClient sharedClient]
+___28+[STPAPIClient sharedClient]_block_invoke
+-[STPAPIClient init]
+-[STPAPIClient initWithPublishableKey:]
+-[STPAPIClient initWithConfiguration:]
+-[STPAPIClient initWithPublishableKey:baseURL:]
+-[STPAPIClient setApiKey:]
+-[STPAPIClient setPublishableKey:]
+-[STPAPIClient publishableKey]
+-[STPAPIClient createTokenWithParameters:completion:]
+___53-[STPAPIClient createTokenWithParameters:completion:]_block_invoke
+___copy_helper_block_.116
+___destroy_helper_block_.117
++[STPAPIClient validateKey:]
+___28+[STPAPIClient validateKey:]_block_invoke
++[STPAPIClient stripeUserAgentDetails]
++[STPAPIClient bundleIdentifier]
++[STPAPIClient kitDisplayVersion]
++[STPAPIClient initializeIfNeeded]
+-[STPAPIClient configuration]
+-[STPAPIClient setConfiguration:]
+-[STPAPIClient apiURL]
+-[STPAPIClient setApiURL:]
+-[STPAPIClient urlSession]
+-[STPAPIClient setUrlSession:]
+-[STPAPIClient sourcePollers]
+-[STPAPIClient setSourcePollers:]
+-[STPAPIClient sourcePollersQueue]
+-[STPAPIClient setSourcePollersQueue:]
+-[STPAPIClient .cxx_destruct]
+-[STPAPIClient(BankAccounts) createTokenWithBankAccount:completion:]
+-[STPAPIClient(PII) createTokenWithPersonalIDNumber:completion:]
+-[STPAPIClient(Upload) dataForUploadedImage:purpose:]
+-[STPAPIClient(Upload) uploadImage:purpose:completion:]
+___55-[STPAPIClient(Upload) uploadImage:purpose:completion:]_block_invoke
+___55-[STPAPIClient(Upload) uploadImage:purpose:completion:]_block_invoke_2
+___copy_helper_block_.346
+___destroy_helper_block_.347
+___copy_helper_block_.349
+___destroy_helper_block_.350
+-[STPAPIClient(CreditCards) createTokenWithCard:completion:]
++[Stripe(ApplePay) canSubmitPaymentRequest:]
++[Stripe(ApplePay) supportedPKPaymentNetworks]
++[Stripe(ApplePay) deviceSupportsApplePay]
++[Stripe(ApplePay) paymentRequestWithMerchantIdentifier:]
++[Stripe(ApplePay) paymentRequestWithMerchantIdentifier:country:currency:]
+-[STPAPIClient(Sources) createSourceWithParams:completion:]
+___59-[STPAPIClient(Sources) createSourceWithParams:completion:]_block_invoke
+___copy_helper_block_.421
+___destroy_helper_block_.422
+-[STPAPIClient(Sources) retrieveSourceWithId:clientSecret:completion:]
+___70-[STPAPIClient(Sources) retrieveSourceWithId:clientSecret:completion:]_block_invoke
+___copy_helper_block_.429
+___destroy_helper_block_.430
+-[STPAPIClient(Sources) retrieveSourceWithId:clientSecret:responseCompletion:]
+-[STPAPIClient(Sources) startPollingSourceWithId:clientSecret:timeout:completion:]
+___82-[STPAPIClient(Sources) startPollingSourceWithId:clientSecret:timeout:completion:]_block_invoke
+___copy_helper_block_.447
+___destroy_helper_block_.448
+-[STPAPIClient(Sources) stopPollingSourceWithId:]
+___49-[STPAPIClient(Sources) stopPollingSourceWithId:]_block_invoke
+___copy_helper_block_.452
+___destroy_helper_block_.453
++[STPAPIClient(Customers) apiClientWithEphemeralKey:]
++[STPAPIClient(Customers) retrieveCustomerUsingKey:completion:]
+___63+[STPAPIClient(Customers) retrieveCustomerUsingKey:completion:]_block_invoke
+___copy_helper_block_.469
+___destroy_helper_block_.470
++[STPAPIClient(Customers) updateCustomerWithParameters:usingKey:completion:]
+___76+[STPAPIClient(Customers) updateCustomerWithParameters:usingKey:completion:]_block_invoke
+___copy_helper_block_.473
+___destroy_helper_block_.474
++[STPAPIClient(Customers) addSource:toCustomerUsingKey:completion:]
+___67+[STPAPIClient(Customers) addSource:toCustomerUsingKey:completion:]_block_invoke
+___copy_helper_block_.481
+___destroy_helper_block_.482
+_sharedClient.sharedClient
+_sharedClient.onceToken
+_OBJC_IVAR_$_STPAPIClient._apiURL
+_OBJC_IVAR_$_STPAPIClient._configuration
+_OBJC_IVAR_$_STPAPIClient._sourcePollers
+_OBJC_IVAR_$_STPAPIClient._sourcePollersQueue
+___block_descriptor_tmp.119
+_validateKey:.onceToken
+___block_descriptor_tmp.138
+_OBJC_IVAR_$_STPAPIClient._urlSession
+l_OBJC_PROTOCOL_$_FABKit
+l_OBJC_LABEL_PROTOCOL_$_FABKit
+___block_descriptor_tmp.348
+___block_descriptor_tmp.352
+___block_descriptor_tmp.424
+___block_descriptor_tmp.431
+___block_descriptor_tmp.449
+___block_descriptor_tmp.454
+___block_descriptor_tmp.472
+___block_descriptor_tmp.484
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPAPIClient.m
+__67+[STPAPIClient(Customers) addSource:toCustomerUsingKey:completion:]_block_invoke
+__76+[STPAPIClient(Customers) updateCustomerWithParameters:usingKey:completion:]_block_invoke
+__63+[STPAPIClient(Customers) retrieveCustomerUsingKey:completion:]_block_invoke
+__49-[STPAPIClient(Sources) stopPollingSourceWithId:]_block_invoke
+__82-[STPAPIClient(Sources) startPollingSourceWithId:clientSecret:timeout:completion:]_block_invoke
+__70-[STPAPIClient(Sources) retrieveSourceWithId:clientSecret:completion:]_block_invoke
+__59-[STPAPIClient(Sources) createSourceWithParams:completion:]_block_invoke
+__55-[STPAPIClient(Upload) uploadImage:purpose:completion:]_block_invoke_2
+__55-[STPAPIClient(Upload) uploadImage:purpose:completion:]_block_invoke
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPAPIClient.h
+__28+[STPAPIClient validateKey:]_block_invoke
+__53-[STPAPIClient createTokenWithParameters:completion:]_block_invoke
+__28+[STPAPIClient sharedClient]_block_invoke
+-[STPEphemeralKeyManager initWithKeyProvider:apiVersion:]
+-[STPEphemeralKeyManager dealloc]
+-[STPEphemeralKeyManager setExpirationInterval:]
+-[STPEphemeralKeyManager currentKeyIsUnexpired]
+-[STPEphemeralKeyManager shouldPerformEagerRefresh]
+-[STPEphemeralKeyManager handleWillForegroundNotification]
+___58-[STPEphemeralKeyManager handleWillForegroundNotification]_block_invoke
+-[STPEphemeralKeyManager getCustomerKey:]
+___41-[STPEphemeralKeyManager getCustomerKey:]_block_invoke
+___copy_helper_block_.43
+___destroy_helper_block_.44
+___41-[STPEphemeralKeyManager getCustomerKey:]_block_invoke.49
+___copy_helper_block_.50
+___destroy_helper_block_.51
+___41-[STPEphemeralKeyManager getCustomerKey:]_block_invoke.59
+___copy_helper_block_.60
+___destroy_helper_block_.61
+___41-[STPEphemeralKeyManager getCustomerKey:]_block_invoke.63
+___41-[STPEphemeralKeyManager getCustomerKey:]_block_invoke.69
+___copy_helper_block_.77
+___destroy_helper_block_.78
+-[STPEphemeralKeyManager expirationInterval]
+-[STPEphemeralKeyManager customerKey]
+-[STPEphemeralKeyManager setCustomerKey:]
+-[STPEphemeralKeyManager apiVersion]
+-[STPEphemeralKeyManager setApiVersion:]
+-[STPEphemeralKeyManager keyProvider]
+-[STPEphemeralKeyManager setKeyProvider:]
+-[STPEphemeralKeyManager lastEagerKeyRefresh]
+-[STPEphemeralKeyManager setLastEagerKeyRefresh:]
+-[STPEphemeralKeyManager createKeyPromise]
+-[STPEphemeralKeyManager setCreateKeyPromise:]
+-[STPEphemeralKeyManager .cxx_destruct]
+_OBJC_IVAR_$_STPEphemeralKeyManager._expirationInterval
+_OBJC_IVAR_$_STPEphemeralKeyManager._keyProvider
+_OBJC_IVAR_$_STPEphemeralKeyManager._apiVersion
+___block_descriptor_tmp.46
+___block_descriptor_tmp.53
+___block_descriptor_tmp.62
+___block_descriptor_tmp.66
+___block_descriptor_tmp.79
+_OBJC_IVAR_$_STPEphemeralKeyManager._customerKey
+_OBJC_IVAR_$_STPEphemeralKeyManager._lastEagerKeyRefresh
+_OBJC_IVAR_$_STPEphemeralKeyManager._createKeyPromise
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPEphemeralKeyManager.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPEphemeralKeyManager.h
+__41-[STPEphemeralKeyManager getCustomerKey:]_block_invoke.69
+__41-[STPEphemeralKeyManager getCustomerKey:]_block_invoke.63
+__41-[STPEphemeralKeyManager getCustomerKey:]_block_invoke.59
+__41-[STPEphemeralKeyManager getCustomerKey:]_block_invoke.49
+__41-[STPEphemeralKeyManager getCustomerKey:]_block_invoke
+__58-[STPEphemeralKeyManager handleWillForegroundNotification]_block_invoke
++[STPBankAccount stringToStatusMapping]
++[STPBankAccount statusFromString:]
++[STPBankAccount stringFromStatus:]
+-[STPBankAccount setAccountNumber:]
+-[STPBankAccount last4]
+-[STPBankAccount isEqual:]
+-[STPBankAccount hash]
+-[STPBankAccount isEqualToBankAccount:]
+-[STPBankAccount description]
++[STPBankAccount requiredFields]
++[STPBankAccount decodedObjectFromAPIResponse:]
+-[STPBankAccount routingNumber]
+-[STPBankAccount setRoutingNumber:]
+-[STPBankAccount country]
+-[STPBankAccount setCountry:]
+-[STPBankAccount currency]
+-[STPBankAccount setCurrency:]
+-[STPBankAccount accountHolderName]
+-[STPBankAccount setAccountHolderName:]
+-[STPBankAccount accountHolderType]
+-[STPBankAccount setAccountHolderType:]
+-[STPBankAccount bankAccountId]
+-[STPBankAccount setBankAccountId:]
+-[STPBankAccount bankName]
+-[STPBankAccount setBankName:]
+-[STPBankAccount fingerprint]
+-[STPBankAccount setFingerprint:]
+-[STPBankAccount status]
+-[STPBankAccount setStatus:]
+-[STPBankAccount setLast4:]
+-[STPBankAccount allResponseFields]
+-[STPBankAccount setAllResponseFields:]
+-[STPBankAccount .cxx_destruct]
+_OBJC_IVAR_$_STPBankAccount._last4
+_OBJC_IVAR_$_STPBankAccount.routingNumber
+_OBJC_IVAR_$_STPBankAccount.country
+_OBJC_IVAR_$_STPBankAccount.currency
+_OBJC_IVAR_$_STPBankAccount.accountHolderName
+_OBJC_IVAR_$_STPBankAccount.accountHolderType
+_OBJC_IVAR_$_STPBankAccount._bankAccountId
+_OBJC_IVAR_$_STPBankAccount._bankName
+_OBJC_IVAR_$_STPBankAccount._fingerprint
+_OBJC_IVAR_$_STPBankAccount._status
+_OBJC_IVAR_$_STPBankAccount._allResponseFields
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPBankAccount.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPBankAccount.h
+-[STPKeyboardDetectingViewController initWithKeyboardFrameBlock:scrollView:]
+-[STPKeyboardDetectingViewController dealloc]
+-[STPKeyboardDetectingViewController loadView]
+-[STPKeyboardDetectingViewController textFieldWillBeginEditing:]
+___64-[STPKeyboardDetectingViewController textFieldWillBeginEditing:]_block_invoke
+-[STPKeyboardDetectingViewController keyboardWillChangeFrame:]
+___62-[STPKeyboardDetectingViewController keyboardWillChangeFrame:]_block_invoke
+___copy_helper_block_.73
+___destroy_helper_block_.74
+-[STPKeyboardDetectingViewController doKeyboardChangeAnimationWithNewFrame:]
+-[STPKeyboardDetectingViewController lastKeyboardFrame]
+-[STPKeyboardDetectingViewController setLastKeyboardFrame:]
+-[STPKeyboardDetectingViewController lastResponder]
+-[STPKeyboardDetectingViewController setLastResponder:]
+-[STPKeyboardDetectingViewController keyboardFrameBlock]
+-[STPKeyboardDetectingViewController setKeyboardFrameBlock:]
+-[STPKeyboardDetectingViewController managedScrollView]
+-[STPKeyboardDetectingViewController setManagedScrollView:]
+-[STPKeyboardDetectingViewController currentBottomInsetChange]
+-[STPKeyboardDetectingViewController setCurrentBottomInsetChange:]
+-[STPKeyboardDetectingViewController .cxx_destruct]
+-[UIViewController(Stripe_KeyboardAvoiding) stp_keyboardDetectingViewController]
+___80-[UIViewController(Stripe_KeyboardAvoiding) stp_keyboardDetectingViewController]_block_invoke
+-[UIViewController(Stripe_KeyboardAvoiding) stp_beginObservingKeyboardAndInsettingScrollView:onChangeBlock:]
+_OBJC_IVAR_$_STPKeyboardDetectingViewController._keyboardFrameBlock
+_OBJC_IVAR_$_STPKeyboardDetectingViewController._managedScrollView
+_OBJC_IVAR_$_STPKeyboardDetectingViewController._currentBottomInsetChange
+___block_descriptor_tmp.75
+_OBJC_IVAR_$_STPKeyboardDetectingViewController._lastKeyboardFrame
+_OBJC_IVAR_$_STPKeyboardDetectingViewController._lastResponder
+___block_descriptor_tmp.146
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/UIViewController+Stripe_KeyboardAvoiding.m
+linkUIViewControllerKeyboardAvoidingCategory
+__80-[UIViewController(Stripe_KeyboardAvoiding) stp_keyboardDetectingViewController]_block_invoke
+__62-[STPKeyboardDetectingViewController keyboardWillChangeFrame:]_block_invoke
+__64-[STPKeyboardDetectingViewController textFieldWillBeginEditing:]_block_invoke
+-[STPAddCardViewController init]
+-[STPAddCardViewController initWithConfiguration:theme:]
+-[STPAddCardViewController commonInitWithConfiguration:]
+-[STPAddCardViewController createAndSetupViews]
+-[STPAddCardViewController setUpCardScanningIfAvailable]
+-[STPAddCardViewController presentCardIO]
+-[STPAddCardViewController cardIOProxy:didFinishWithCardParams:]
+-[STPAddCardViewController endEditing]
+-[STPAddCardViewController updateAppearance]
+-[STPAddCardViewController setLoading:]
+___39-[STPAddCardViewController setLoading:]_block_invoke
+-[STPAddCardViewController viewDidAppear:]
+-[STPAddCardViewController firstEmptyField]
+-[STPAddCardViewController handleBackOrCancelTapped:]
+-[STPAddCardViewController nextPressed:]
+___40-[STPAddCardViewController nextPressed:]_block_invoke
+___40-[STPAddCardViewController nextPressed:]_block_invoke_2
+___40-[STPAddCardViewController nextPressed:]_block_invoke_3
+___copy_helper_block_.272
+___destroy_helper_block_.273
+___copy_helper_block_.275
+___destroy_helper_block_.276
+___copy_helper_block_.281
+___destroy_helper_block_.282
+-[STPAddCardViewController handleCardTokenError:]
+-[STPAddCardViewController updateDoneButton]
+-[STPAddCardViewController paymentCardTextFieldDidChange:]
+-[STPAddCardViewController paymentFieldNextTapped]
+-[STPAddCardViewController paymentCardTextFieldDidBeginEditingCVC:]
+___67-[STPAddCardViewController paymentCardTextFieldDidBeginEditingCVC:]_block_invoke
+___copy_helper_block_.311
+___destroy_helper_block_.312
+-[STPAddCardViewController paymentCardTextFieldDidEndEditingCVC:]
+___65-[STPAddCardViewController paymentCardTextFieldDidEndEditingCVC:]_block_invoke
+___copy_helper_block_.316
+___destroy_helper_block_.317
+-[STPAddCardViewController addressViewModel:addedCellAtIndex:]
+-[STPAddCardViewController addressViewModel:removedCellAtIndex:]
+-[STPAddCardViewController addressViewModelDidChange:]
+-[STPAddCardViewController numberOfSectionsInTableView:]
+-[STPAddCardViewController tableView:numberOfRowsInSection:]
+-[STPAddCardViewController tableView:cellForRowAtIndexPath:]
+-[STPAddCardViewController tableView:willDisplayCell:forRowAtIndexPath:]
+-[STPAddCardViewController tableView:heightForFooterInSection:]
+-[STPAddCardViewController tableView:heightForHeaderInSection:]
+-[STPAddCardViewController tableView:viewForHeaderInSection:]
+-[STPAddCardViewController tableView:viewForFooterInSection:]
+-[STPAddCardViewController useShippingAddress:]
+___47-[STPAddCardViewController useShippingAddress:]_block_invoke
+___copy_helper_block_.369
+___destroy_helper_block_.370
+-[STPAddCardViewController delegate]
+-[STPAddCardViewController setDelegate:]
+-[STPAddCardViewController prefilledInformation]
+-[STPAddCardViewController setPrefilledInformation:]
+-[STPAddCardViewController managedAccountCurrency]
+-[STPAddCardViewController setManagedAccountCurrency:]
+-[STPAddCardViewController configuration]
+-[STPAddCardViewController setConfiguration:]
+-[STPAddCardViewController shippingAddress]
+-[STPAddCardViewController setShippingAddress:]
+-[STPAddCardViewController hasUsedShippingAddress]
+-[STPAddCardViewController setHasUsedShippingAddress:]
+-[STPAddCardViewController apiClient]
+-[STPAddCardViewController setApiClient:]
+-[STPAddCardViewController cardImageView]
+-[STPAddCardViewController setCardImageView:]
+-[STPAddCardViewController doneItem]
+-[STPAddCardViewController setDoneItem:]
+-[STPAddCardViewController cardHeaderView]
+-[STPAddCardViewController setCardHeaderView:]
+-[STPAddCardViewController cardIOProxy]
+-[STPAddCardViewController setCardIOProxy:]
+-[STPAddCardViewController addressHeaderView]
+-[STPAddCardViewController setAddressHeaderView:]
+-[STPAddCardViewController paymentCell]
+-[STPAddCardViewController setPaymentCell:]
+-[STPAddCardViewController loading]
+-[STPAddCardViewController activityIndicator]
+-[STPAddCardViewController setActivityIndicator:]
+-[STPAddCardViewController lookupActivityIndicator]
+-[STPAddCardViewController setLookupActivityIndicator:]
+-[STPAddCardViewController addressViewModel]
+-[STPAddCardViewController setAddressViewModel:]
+-[STPAddCardViewController inputAccessoryToolbar]
+-[STPAddCardViewController setInputAccessoryToolbar:]
+-[STPAddCardViewController lookupSucceeded]
+-[STPAddCardViewController setLookupSucceeded:]
+-[STPAddCardViewController .cxx_destruct]
+_OBJC_IVAR_$_STPAddCardViewController._configuration
+_OBJC_IVAR_$_STPAddCardViewController._shippingAddress
+_OBJC_IVAR_$_STPAddCardViewController._hasUsedShippingAddress
+_OBJC_IVAR_$_STPAddCardViewController._apiClient
+_OBJC_IVAR_$_STPAddCardViewController._addressViewModel
+_OBJC_IVAR_$_STPAddCardViewController._addressHeaderView
+_OBJC_IVAR_$_STPAddCardViewController._cardHeaderView
+_OBJC_IVAR_$_STPAddCardViewController._loading
+___block_descriptor_tmp.274
+___block_descriptor_tmp.278
+___block_descriptor_tmp.284
+___block_descriptor_tmp.313
+___block_descriptor_tmp.318
+___block_descriptor_tmp.371
+_OBJC_IVAR_$_STPAddCardViewController._delegate
+_OBJC_IVAR_$_STPAddCardViewController._prefilledInformation
+_OBJC_IVAR_$_STPAddCardViewController._managedAccountCurrency
+_OBJC_IVAR_$_STPAddCardViewController._cardImageView
+_OBJC_IVAR_$_STPAddCardViewController._doneItem
+_OBJC_IVAR_$_STPAddCardViewController._cardIOProxy
+_OBJC_IVAR_$_STPAddCardViewController._paymentCell
+_OBJC_IVAR_$_STPAddCardViewController._activityIndicator
+_OBJC_IVAR_$_STPAddCardViewController._lookupActivityIndicator
+_OBJC_IVAR_$_STPAddCardViewController._inputAccessoryToolbar
+_OBJC_IVAR_$_STPAddCardViewController._lookupSucceeded
+l_OBJC_PROTOCOL_$_STPAddressViewModelDelegate
+l_OBJC_LABEL_PROTOCOL_$_STPAddressViewModelDelegate
+l_OBJC_PROTOCOL_$_STPCardIOProxyDelegate
+l_OBJC_LABEL_PROTOCOL_$_STPCardIOProxyDelegate
+l_OBJC_PROTOCOL_$_STPPaymentCardTextFieldDelegate
+l_OBJC_LABEL_PROTOCOL_$_STPPaymentCardTextFieldDelegate
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPAddCardViewController.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPAddCardViewController.h
+__47-[STPAddCardViewController useShippingAddress:]_block_invoke
+__65-[STPAddCardViewController paymentCardTextFieldDidEndEditingCVC:]_block_invoke
+__67-[STPAddCardViewController paymentCardTextFieldDidBeginEditingCVC:]_block_invoke
+__40-[STPAddCardViewController nextPressed:]_block_invoke_3
+__40-[STPAddCardViewController nextPressed:]_block_invoke_2
+__40-[STPAddCardViewController nextPressed:]_block_invoke
+__39-[STPAddCardViewController setLoading:]_block_invoke
++[STPPostalCodeValidator stringIsValidPostalCode:type:]
++[STPPostalCodeValidator stringIsValidPostalCode:countryCode:]
++[STPPostalCodeValidator postalCodeTypeForCountryCode:]
++[STPPostalCodeValidator countriesWithNoPostalCodes]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPostalCodeValidator.m
+-[STPUserInformation copyWithZone:]
+-[STPUserInformation billingAddress]
+-[STPUserInformation setBillingAddress:]
+-[STPUserInformation shippingAddress]
+-[STPUserInformation setShippingAddress:]
+-[STPUserInformation .cxx_destruct]
+_OBJC_IVAR_$_STPUserInformation._billingAddress
+_OBJC_IVAR_$_STPUserInformation._shippingAddress
+l_OBJC_PROTOCOL_$_NSCopying
+l_OBJC_LABEL_PROTOCOL_$_NSCopying
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPUserInformation.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPUserInformation.h
++[STPBundleLocator stripeResourcesBundle]
+___41+[STPBundleLocator stripeResourcesBundle]_block_invoke
+_stripeResourcesBundle.ourBundle
+_stripeResourcesBundle.onceToken
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPBundleLocator.m
+__41+[STPBundleLocator stripeResourcesBundle]_block_invoke
+-[STPSwitchTableViewCell initWithStyle:reuseIdentifier:]
+-[STPSwitchTableViewCell setTheme:]
+-[STPSwitchTableViewCell layoutSubviews]
+-[STPSwitchTableViewCell switchToggled:]
+-[STPSwitchTableViewCell updateAppearance]
+-[STPSwitchTableViewCell configureWithLabel:delegate:]
+-[STPSwitchTableViewCell setSelected:animated:]
+-[STPSwitchTableViewCell on]
+-[STPSwitchTableViewCell setOn:]
+-[STPSwitchTableViewCell theme]
+-[STPSwitchTableViewCell captionLabel]
+-[STPSwitchTableViewCell setCaptionLabel:]
+-[STPSwitchTableViewCell switchView]
+-[STPSwitchTableViewCell setSwitchView:]
+-[STPSwitchTableViewCell delegate]
+-[STPSwitchTableViewCell setDelegate:]
+-[STPSwitchTableViewCell .cxx_destruct]
+_OBJC_IVAR_$_STPSwitchTableViewCell._switchView
+_OBJC_IVAR_$_STPSwitchTableViewCell._captionLabel
+_OBJC_IVAR_$_STPSwitchTableViewCell._theme
+_OBJC_IVAR_$_STPSwitchTableViewCell._delegate
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPSwitchTableViewCell.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPSwitchTableViewCell.h
+-[STPCoreTableViewController createScrollView]
+-[STPCoreTableViewController tableView]
+-[STPCoreTableViewController viewWillAppear:]
+-[STPCoreTableViewController updateAppearance]
+-[STPCoreTableViewController tableView:heightForHeaderInSection:]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPCoreTableViewController.m
++[UIBarButtonItem(Stripe) stp_backButtonItemWithTitle:style:target:action:]
+-[UIBarButtonItem(Stripe) stp_setTheme:]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/UIBarButtonItem+Stripe.m
+linkUIBarButtonItemCategory
++[NSError(Stripe) stp_errorFromStripeResponse:]
++[NSError(Stripe) stp_genericFailedToParseResponseError]
++[NSError(Stripe) stp_genericConnectionError]
+-[NSError(Stripe) stp_isUnknownCheckoutError]
+-[NSError(Stripe) stp_isURLSessionCancellationError]
++[NSError(Stripe) stp_cardErrorInvalidNumberUserMessage]
++[NSError(Stripe) stp_cardInvalidCVCUserMessage]
++[NSError(Stripe) stp_cardErrorInvalidExpMonthUserMessage]
++[NSError(Stripe) stp_cardErrorInvalidExpYearUserMessage]
++[NSError(Stripe) stp_cardErrorExpiredCardUserMessage]
++[NSError(Stripe) stp_cardErrorDeclinedUserMessage]
++[NSError(Stripe) stp_unexpectedErrorMessage]
++[NSError(Stripe) stp_cardErrorProcessingErrorUserMessage]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/StripeError.m
+linkNSErrorCategory
+-[STPShippingMethodsViewController initWithShippingMethods:selectedShippingMethod:currency:theme:]
+-[STPShippingMethodsViewController createAndSetupViews]
+-[STPShippingMethodsViewController updateAppearance]
+-[STPShippingMethodsViewController done:]
+-[STPShippingMethodsViewController numberOfSectionsInTableView:]
+-[STPShippingMethodsViewController tableView:numberOfRowsInSection:]
+-[STPShippingMethodsViewController tableView:cellForRowAtIndexPath:]
+-[STPShippingMethodsViewController tableView:willDisplayCell:forRowAtIndexPath:]
+-[STPShippingMethodsViewController tableView:heightForRowAtIndexPath:]
+-[STPShippingMethodsViewController tableView:heightForFooterInSection:]
+-[STPShippingMethodsViewController tableView:heightForHeaderInSection:]
+-[STPShippingMethodsViewController tableView:viewForHeaderInSection:]
+-[STPShippingMethodsViewController tableView:didSelectRowAtIndexPath:]
+-[STPShippingMethodsViewController delegate]
+-[STPShippingMethodsViewController setDelegate:]
+-[STPShippingMethodsViewController shippingMethods]
+-[STPShippingMethodsViewController setShippingMethods:]
+-[STPShippingMethodsViewController selectedShippingMethod]
+-[STPShippingMethodsViewController setSelectedShippingMethod:]
+-[STPShippingMethodsViewController currency]
+-[STPShippingMethodsViewController setCurrency:]
+-[STPShippingMethodsViewController imageView]
+-[STPShippingMethodsViewController setImageView:]
+-[STPShippingMethodsViewController doneItem]
+-[STPShippingMethodsViewController setDoneItem:]
+-[STPShippingMethodsViewController .cxx_destruct]
+_OBJC_IVAR_$_STPShippingMethodsViewController._shippingMethods
+_OBJC_IVAR_$_STPShippingMethodsViewController._selectedShippingMethod
+_OBJC_IVAR_$_STPShippingMethodsViewController._currency
+_OBJC_IVAR_$_STPShippingMethodsViewController._delegate
+_OBJC_IVAR_$_STPShippingMethodsViewController._imageView
+_OBJC_IVAR_$_STPShippingMethodsViewController._doneItem
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPShippingMethodsViewController.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPShippingMethodsViewController.h
+-[STPPaymentMethodTableViewCell initWithStyle:reuseIdentifier:]
+-[STPPaymentMethodTableViewCell layoutSubviews]
+-[STPPaymentMethodTableViewCell configureForNewCardRowWithTheme:]
+-[STPPaymentMethodTableViewCell configureWithPaymentMethod:selected:theme:]
+-[STPPaymentMethodTableViewCell primaryColorForPaymentMethodWithSelectedState:]
+-[STPPaymentMethodTableViewCell buildAttributedStringForPaymentMethod:selected:]
+-[STPPaymentMethodTableViewCell buildAttributedStringForCard:selected:]
+-[STPPaymentMethodTableViewCell paymentMethod]
+-[STPPaymentMethodTableViewCell setPaymentMethod:]
+-[STPPaymentMethodTableViewCell theme]
+-[STPPaymentMethodTableViewCell setTheme:]
+-[STPPaymentMethodTableViewCell leftIcon]
+-[STPPaymentMethodTableViewCell setLeftIcon:]
+-[STPPaymentMethodTableViewCell titleLabel]
+-[STPPaymentMethodTableViewCell setTitleLabel:]
+-[STPPaymentMethodTableViewCell checkmarkIcon]
+-[STPPaymentMethodTableViewCell setCheckmarkIcon:]
+-[STPPaymentMethodTableViewCell .cxx_destruct]
+_OBJC_IVAR_$_STPPaymentMethodTableViewCell._leftIcon
+_OBJC_IVAR_$_STPPaymentMethodTableViewCell._titleLabel
+_OBJC_IVAR_$_STPPaymentMethodTableViewCell._checkmarkIcon
+_OBJC_IVAR_$_STPPaymentMethodTableViewCell._theme
+_OBJC_IVAR_$_STPPaymentMethodTableViewCell._paymentMethod
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPaymentMethodTableViewCell.m
+-[STPShippingAddressViewController init]
+-[STPShippingAddressViewController initWithPaymentContext:]
+-[STPShippingAddressViewController initWithConfiguration:theme:currency:shippingAddress:selectedShippingMethod:prefilledInformation:]
+-[STPShippingAddressViewController createAndSetupViews]
+-[STPShippingAddressViewController endEditing]
+-[STPShippingAddressViewController updateAppearance]
+-[STPShippingAddressViewController viewDidAppear:]
+-[STPShippingAddressViewController firstEmptyField]
+-[STPShippingAddressViewController setLoading:]
+___47-[STPShippingAddressViewController setLoading:]_block_invoke
+-[STPShippingAddressViewController handleBackOrCancelTapped:]
+-[STPShippingAddressViewController next:]
+___41-[STPShippingAddressViewController next:]_block_invoke
+___copy_helper_block_.218
+___destroy_helper_block_.219
+-[STPShippingAddressViewController updateDoneButton]
+-[STPShippingAddressViewController handleShippingValidationError:]
+-[STPShippingAddressViewController dismissWithCompletion:]
+-[STPShippingAddressViewController addressViewModel:addedCellAtIndex:]
+-[STPShippingAddressViewController addressViewModel:removedCellAtIndex:]
+-[STPShippingAddressViewController addressViewModelDidChange:]
+-[STPShippingAddressViewController numberOfSectionsInTableView:]
+-[STPShippingAddressViewController tableView:numberOfRowsInSection:]
+-[STPShippingAddressViewController tableView:cellForRowAtIndexPath:]
+-[STPShippingAddressViewController tableView:willDisplayCell:forRowAtIndexPath:]
+-[STPShippingAddressViewController tableView:heightForFooterInSection:]
+-[STPShippingAddressViewController tableView:viewForFooterInSection:]
+-[STPShippingAddressViewController tableView:heightForHeaderInSection:]
+-[STPShippingAddressViewController tableView:viewForHeaderInSection:]
+-[STPShippingAddressViewController useBillingAddress:]
+___54-[STPShippingAddressViewController useBillingAddress:]_block_invoke
+___copy_helper_block_.309
+___destroy_helper_block_.310
+-[STPShippingAddressViewController titleForShippingType:]
+-[STPShippingAddressViewController headerTitleForShippingType:]
+-[STPShippingAddressViewController shippingMethodsViewController:didFinishWithShippingMethod:]
+-[STPShippingAddressViewController delegate]
+-[STPShippingAddressViewController setDelegate:]
+-[STPShippingAddressViewController configuration]
+-[STPShippingAddressViewController setConfiguration:]
+-[STPShippingAddressViewController currency]
+-[STPShippingAddressViewController setCurrency:]
+-[STPShippingAddressViewController selectedShippingMethod]
+-[STPShippingAddressViewController setSelectedShippingMethod:]
+-[STPShippingAddressViewController imageView]
+-[STPShippingAddressViewController setImageView:]
+-[STPShippingAddressViewController nextItem]
+-[STPShippingAddressViewController setNextItem:]
+-[STPShippingAddressViewController loading]
+-[STPShippingAddressViewController activityIndicator]
+-[STPShippingAddressViewController setActivityIndicator:]
+-[STPShippingAddressViewController addressViewModel]
+-[STPShippingAddressViewController setAddressViewModel:]
+-[STPShippingAddressViewController billingAddress]
+-[STPShippingAddressViewController setBillingAddress:]
+-[STPShippingAddressViewController hasUsedBillingAddress]
+-[STPShippingAddressViewController setHasUsedBillingAddress:]
+-[STPShippingAddressViewController addressHeaderView]
+-[STPShippingAddressViewController setAddressHeaderView:]
+-[STPShippingAddressViewController .cxx_destruct]
+_OBJC_IVAR_$_STPShippingAddressViewController._configuration
+_OBJC_IVAR_$_STPShippingAddressViewController._currency
+_OBJC_IVAR_$_STPShippingAddressViewController._selectedShippingMethod
+_OBJC_IVAR_$_STPShippingAddressViewController._billingAddress
+_OBJC_IVAR_$_STPShippingAddressViewController._hasUsedBillingAddress
+_OBJC_IVAR_$_STPShippingAddressViewController._addressViewModel
+_OBJC_IVAR_$_STPShippingAddressViewController._addressHeaderView
+_OBJC_IVAR_$_STPShippingAddressViewController._loading
+___block_descriptor_tmp.221
+___block_descriptor_tmp.311
+_OBJC_IVAR_$_STPShippingAddressViewController._delegate
+_OBJC_IVAR_$_STPShippingAddressViewController._imageView
+_OBJC_IVAR_$_STPShippingAddressViewController._nextItem
+_OBJC_IVAR_$_STPShippingAddressViewController._activityIndicator
+l_OBJC_PROTOCOL_$_STPShippingMethodsViewControllerDelegate
+l_OBJC_LABEL_PROTOCOL_$_STPShippingMethodsViewControllerDelegate
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPShippingAddressViewController.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPShippingAddressViewController.h
+__54-[STPShippingAddressViewController useBillingAddress:]_block_invoke
+__41-[STPShippingAddressViewController next:]_block_invoke
+__47-[STPShippingAddressViewController setLoading:]_block_invoke
+-[STPAPIClient(ApplePay) createTokenWithPayment:completion:]
+-[STPAPIClient(ApplePay) createSourceWithPayment:completion:]
+___61-[STPAPIClient(ApplePay) createSourceWithPayment:completion:]_block_invoke
++[STPAPIClient(ApplePay) addressParamsFromABRecord:]
++[STPAPIClient(ApplePay) addressParamsFromPKContact:]
++[STPAPIClient(ApplePay) parametersForPayment:]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPAPIClient+ApplePay.m
+linkSTPAPIClientApplePayCategory
+__61-[STPAPIClient(ApplePay) createSourceWithPayment:completion:]_block_invoke
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPDispatchFunctions.m
+stpDispatchToMainThreadIfNecessary
++[STPTelemetryClient shouldSendTelemetry]
++[STPTelemetryClient sharedInstance]
+___36+[STPTelemetryClient sharedInstance]_block_invoke
+-[STPTelemetryClient init]
+-[STPTelemetryClient dealloc]
+-[STPTelemetryClient addTelemetryFieldsToParams:]
+-[STPTelemetryClient applicationDidBecomeActive]
+-[STPTelemetryClient muid]
+-[STPTelemetryClient timeOnPage]
+-[STPTelemetryClient language]
+-[STPTelemetryClient platform]
+-[STPTelemetryClient deviceModel]
+-[STPTelemetryClient osVersion]
+-[STPTelemetryClient screenSize]
+-[STPTelemetryClient timeZoneOffset]
+-[STPTelemetryClient encodeValue:]
+-[STPTelemetryClient payload]
+-[STPTelemetryClient sendTelemetryData]
+-[STPTelemetryClient appOpenTime]
+-[STPTelemetryClient setAppOpenTime:]
+-[STPTelemetryClient urlSession]
+-[STPTelemetryClient setUrlSession:]
+-[STPTelemetryClient .cxx_destruct]
+_sharedInstance.sharedClient
+_sharedInstance.onceToken
+_OBJC_IVAR_$_STPTelemetryClient._urlSession
+_OBJC_IVAR_$_STPTelemetryClient._appOpenTime
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPTelemetryClient.m
+__36+[STPTelemetryClient sharedInstance]_block_invoke
+-[UIViewController(Stripe_NavigationItemProxy) setStp_navigationItemProxy:]
+-[UIViewController(Stripe_NavigationItemProxy) stp_navigationItemProxy]
+_kSTPNavigationItemProxyKey
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/UIViewController+Stripe_NavigationItemProxy.m
+linkUIViewControllerNavigationItemProxyCategory
++[STPTheme initialize]
++[STPTheme defaultTheme]
+___24+[STPTheme defaultTheme]_block_invoke
+-[STPTheme init]
+-[STPTheme primaryBackgroundColor]
+-[STPTheme secondaryBackgroundColor]
+-[STPTheme tertiaryBackgroundColor]
+-[STPTheme primaryForegroundColor]
+-[STPTheme secondaryForegroundColor]
+-[STPTheme tertiaryForegroundColor]
+-[STPTheme quaternaryBackgroundColor]
+-[STPTheme accentColor]
+-[STPTheme errorColor]
+-[STPTheme font]
+-[STPTheme emphasisFont]
+-[STPTheme smallFont]
+-[STPTheme largeFont]
+-[STPTheme barStyleForColor:]
+-[STPTheme setBarStyle:]
+-[STPTheme barStyle]
+-[STPTheme copyWithZone:]
+-[STPTheme setPrimaryBackgroundColor:]
+-[STPTheme setSecondaryBackgroundColor:]
+-[STPTheme setPrimaryForegroundColor:]
+-[STPTheme setSecondaryForegroundColor:]
+-[STPTheme setAccentColor:]
+-[STPTheme setErrorColor:]
+-[STPTheme setFont:]
+-[STPTheme setEmphasisFont:]
+-[STPTheme translucentNavigationBar]
+-[STPTheme setTranslucentNavigationBar:]
+-[STPTheme internalBarStyle]
+-[STPTheme setInternalBarStyle:]
+-[STPTheme .cxx_destruct]
+_STPThemeDefaultPrimaryBackgroundColor
+_STPThemeDefaultSecondaryBackgroundColor
+_STPThemeDefaultPrimaryForegroundColor
+_STPThemeDefaultSecondaryForegroundColor
+_STPThemeDefaultAccentColor
+_STPThemeDefaultErrorColor
+_STPThemeDefaultFont
+_STPThemeDefaultMediumFont
+_defaultTheme.STPThemeDefaultTheme
+_defaultTheme.onceToken
+_OBJC_IVAR_$_STPTheme._primaryBackgroundColor
+_OBJC_IVAR_$_STPTheme._secondaryBackgroundColor
+_OBJC_IVAR_$_STPTheme._primaryForegroundColor
+_OBJC_IVAR_$_STPTheme._secondaryForegroundColor
+_OBJC_IVAR_$_STPTheme._accentColor
+_OBJC_IVAR_$_STPTheme._errorColor
+_OBJC_IVAR_$_STPTheme._font
+_OBJC_IVAR_$_STPTheme._emphasisFont
+_OBJC_IVAR_$_STPTheme._translucentNavigationBar
+_OBJC_IVAR_$_STPTheme._internalBarStyle
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPTheme.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPTheme.h
+__24+[STPTheme defaultTheme]_block_invoke
+-[STPShippingMethodTableViewCell initWithStyle:reuseIdentifier:]
+-[STPShippingMethodTableViewCell setTheme:]
+-[STPShippingMethodTableViewCell setShippingMethod:currency:]
+-[STPShippingMethodTableViewCell setSelected:]
+-[STPShippingMethodTableViewCell updateAppearance]
+-[STPShippingMethodTableViewCell layoutSubviews]
+-[STPShippingMethodTableViewCell theme]
+-[STPShippingMethodTableViewCell titleLabel]
+-[STPShippingMethodTableViewCell setTitleLabel:]
+-[STPShippingMethodTableViewCell subtitleLabel]
+-[STPShippingMethodTableViewCell setSubtitleLabel:]
+-[STPShippingMethodTableViewCell amountLabel]
+-[STPShippingMethodTableViewCell setAmountLabel:]
+-[STPShippingMethodTableViewCell checkmarkIcon]
+-[STPShippingMethodTableViewCell setCheckmarkIcon:]
+-[STPShippingMethodTableViewCell shippingMethod]
+-[STPShippingMethodTableViewCell setShippingMethod:]
+-[STPShippingMethodTableViewCell numberFormatter]
+-[STPShippingMethodTableViewCell setNumberFormatter:]
+-[STPShippingMethodTableViewCell .cxx_destruct]
+_OBJC_IVAR_$_STPShippingMethodTableViewCell._theme
+_OBJC_IVAR_$_STPShippingMethodTableViewCell._titleLabel
+_OBJC_IVAR_$_STPShippingMethodTableViewCell._subtitleLabel
+_OBJC_IVAR_$_STPShippingMethodTableViewCell._amountLabel
+_OBJC_IVAR_$_STPShippingMethodTableViewCell._checkmarkIcon
+_OBJC_IVAR_$_STPShippingMethodTableViewCell._numberFormatter
+_OBJC_IVAR_$_STPShippingMethodTableViewCell._shippingMethod
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPShippingMethodTableViewCell.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPShippingMethodTableViewCell.h
++[STPSourceOwner requiredFields]
++[STPSourceOwner decodedObjectFromAPIResponse:]
+-[STPSourceOwner address]
+-[STPSourceOwner setAddress:]
+-[STPSourceOwner email]
+-[STPSourceOwner setEmail:]
+-[STPSourceOwner name]
+-[STPSourceOwner setName:]
+-[STPSourceOwner phone]
+-[STPSourceOwner setPhone:]
+-[STPSourceOwner verifiedAddress]
+-[STPSourceOwner setVerifiedAddress:]
+-[STPSourceOwner verifiedEmail]
+-[STPSourceOwner setVerifiedEmail:]
+-[STPSourceOwner verifiedName]
+-[STPSourceOwner setVerifiedName:]
+-[STPSourceOwner verifiedPhone]
+-[STPSourceOwner setVerifiedPhone:]
+-[STPSourceOwner allResponseFields]
+-[STPSourceOwner setAllResponseFields:]
+-[STPSourceOwner .cxx_destruct]
+_OBJC_IVAR_$_STPSourceOwner._address
+_OBJC_IVAR_$_STPSourceOwner._email
+_OBJC_IVAR_$_STPSourceOwner._name
+_OBJC_IVAR_$_STPSourceOwner._phone
+_OBJC_IVAR_$_STPSourceOwner._verifiedAddress
+_OBJC_IVAR_$_STPSourceOwner._verifiedEmail
+_OBJC_IVAR_$_STPSourceOwner._verifiedName
+_OBJC_IVAR_$_STPSourceOwner._verifiedPhone
+_OBJC_IVAR_$_STPSourceOwner._allResponseFields
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPSourceOwner.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPSourceOwner.h
+-[STPCoreViewController init]
+-[STPCoreViewController initWithNibName:bundle:]
+-[STPCoreViewController initWithCoder:]
+-[STPCoreViewController initWithTheme:]
+-[STPCoreViewController commonInitWithTheme:]
+-[STPCoreViewController setTheme:]
+-[STPCoreViewController createAndSetupViews]
+-[STPCoreViewController viewDidLoad]
+-[STPCoreViewController updateAppearance]
+-[STPCoreViewController viewWillAppear:]
+-[STPCoreViewController viewWillDisappear:]
+-[STPCoreViewController preferredStatusBarStyle]
+-[STPCoreViewController handleBackOrCancelTapped:]
+-[STPCoreViewController theme]
+-[STPCoreViewController cancelItem]
+-[STPCoreViewController setCancelItem:]
+-[STPCoreViewController backItem]
+-[STPCoreViewController setBackItem:]
+-[STPCoreViewController .cxx_destruct]
+_OBJC_IVAR_$_STPCoreViewController._theme
+_OBJC_IVAR_$_STPCoreViewController._cancelItem
+_OBJC_IVAR_$_STPCoreViewController._backItem
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPCoreViewController.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPCoreViewController+Private.h
++[STPSource stringToTypeMapping]
++[STPSource typeFromString:]
++[STPSource stringFromType:]
++[STPSource stringToFlowMapping]
++[STPSource flowFromString:]
++[STPSource stringFromFlow:]
++[STPSource stringToStatusMapping]
++[STPSource statusFromString:]
++[STPSource stringFromStatus:]
++[STPSource stringToUsageMapping]
++[STPSource usageFromString:]
++[STPSource stringFromUsage:]
+-[STPSource isEqual:]
+-[STPSource hash]
+-[STPSource isEqualToSource:]
+-[STPSource description]
+-[STPSource stripeObject]
++[STPSource requiredFields]
++[STPSource decodedObjectFromAPIResponse:]
+-[STPSource amount]
+-[STPSource setAmount:]
+-[STPSource clientSecret]
+-[STPSource setClientSecret:]
+-[STPSource created]
+-[STPSource setCreated:]
+-[STPSource currency]
+-[STPSource setCurrency:]
+-[STPSource flow]
+-[STPSource setFlow:]
+-[STPSource livemode]
+-[STPSource setLivemode:]
+-[STPSource metadata]
+-[STPSource setMetadata:]
+-[STPSource owner]
+-[STPSource setOwner:]
+-[STPSource receiver]
+-[STPSource setReceiver:]
+-[STPSource redirect]
+-[STPSource setRedirect:]
+-[STPSource status]
+-[STPSource setStatus:]
+-[STPSource type]
+-[STPSource setType:]
+-[STPSource usage]
+-[STPSource setUsage:]
+-[STPSource verification]
+-[STPSource setVerification:]
+-[STPSource details]
+-[STPSource setDetails:]
+-[STPSource cardDetails]
+-[STPSource setCardDetails:]
+-[STPSource sepaDebitDetails]
+-[STPSource setSepaDebitDetails:]
+-[STPSource stripeID]
+-[STPSource setStripeID:]
+-[STPSource allResponseFields]
+-[STPSource setAllResponseFields:]
+-[STPSource .cxx_destruct]
+_OBJC_IVAR_$_STPSource._amount
+_OBJC_IVAR_$_STPSource._clientSecret
+_OBJC_IVAR_$_STPSource._created
+_OBJC_IVAR_$_STPSource._currency
+_OBJC_IVAR_$_STPSource._flow
+_OBJC_IVAR_$_STPSource._livemode
+_OBJC_IVAR_$_STPSource._metadata
+_OBJC_IVAR_$_STPSource._owner
+_OBJC_IVAR_$_STPSource._receiver
+_OBJC_IVAR_$_STPSource._redirect
+_OBJC_IVAR_$_STPSource._status
+_OBJC_IVAR_$_STPSource._type
+_OBJC_IVAR_$_STPSource._usage
+_OBJC_IVAR_$_STPSource._verification
+_OBJC_IVAR_$_STPSource._details
+_OBJC_IVAR_$_STPSource._cardDetails
+_OBJC_IVAR_$_STPSource._sepaDebitDetails
+_OBJC_IVAR_$_STPSource._stripeID
+_OBJC_IVAR_$_STPSource._allResponseFields
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPSource.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPSource.h
+-[STPPaymentContext initWithCustomerContext:]
+-[STPPaymentContext initWithCustomerContext:configuration:theme:]
+-[STPPaymentContext initWithAPIAdapter:]
+-[STPPaymentContext initWithAPIAdapter:configuration:theme:]
+-[STPPaymentContext retryLoading]
+___33-[STPPaymentContext retryLoading]_block_invoke
+___33-[STPPaymentContext retryLoading]_block_invoke.45
+___33-[STPPaymentContext retryLoading]_block_invoke_2
+___33-[STPPaymentContext retryLoading]_block_invoke_3
+___copy_helper_block_.56
+___destroy_helper_block_.57
+___copy_helper_block_.62
+___destroy_helper_block_.63
+___copy_helper_block_.66
+___destroy_helper_block_.67
+___33-[STPPaymentContext retryLoading]_block_invoke.76
+___33-[STPPaymentContext retryLoading]_block_invoke_2.77
+___copy_helper_block_.118
+___destroy_helper_block_.119
+___copy_helper_block_.121
+___destroy_helper_block_.122
+-[STPPaymentContext loading]
+-[STPPaymentContext setHostViewController:]
+-[STPPaymentContext setDelegate:]
+___33-[STPPaymentContext setDelegate:]_block_invoke
+___copy_helper_block_.156
+___destroy_helper_block_.157
+-[STPPaymentContext currentValuePromise]
+___40-[STPPaymentContext currentValuePromise]_block_invoke
+___copy_helper_block_.163
+___destroy_helper_block_.164
+-[STPPaymentContext setPrefilledInformation:]
+-[STPPaymentContext setPaymentMethods:]
+___39-[STPPaymentContext setPaymentMethods:]_block_invoke
+-[STPPaymentContext setSelectedPaymentMethod:]
+___46-[STPPaymentContext setSelectedPaymentMethod:]_block_invoke
+___copy_helper_block_.184
+___destroy_helper_block_.185
+-[STPPaymentContext setPaymentAmount:]
+-[STPPaymentContext paymentAmount]
+-[STPPaymentContext setPaymentSummaryItems:]
+-[STPPaymentContext paymentSummaryItems]
+-[STPPaymentContext setShippingMethods:]
+-[STPPaymentContext presentPaymentMethodsViewController]
+-[STPPaymentContext presentPaymentMethodsViewControllerWithNewState:]
+___69-[STPPaymentContext presentPaymentMethodsViewControllerWithNewState:]_block_invoke
+___copy_helper_block_.243
+___destroy_helper_block_.244
+-[STPPaymentContext pushPaymentMethodsViewController]
+___53-[STPPaymentContext pushPaymentMethodsViewController]_block_invoke
+___copy_helper_block_.252
+___destroy_helper_block_.253
+-[STPPaymentContext paymentMethodsViewController:didSelectPaymentMethod:]
+-[STPPaymentContext paymentMethodsViewControllerDidFinish:]
+___59-[STPPaymentContext paymentMethodsViewControllerDidFinish:]_block_invoke
+___copy_helper_block_.257
+___destroy_helper_block_.258
+-[STPPaymentContext paymentMethodsViewControllerDidCancel:]
+___59-[STPPaymentContext paymentMethodsViewControllerDidCancel:]_block_invoke
+___copy_helper_block_.262
+___destroy_helper_block_.263
+-[STPPaymentContext paymentMethodsViewController:didFailToLoadWithError:]
+-[STPPaymentContext appropriatelyDismissPaymentMethodsViewController:completion:]
+___81-[STPPaymentContext appropriatelyDismissPaymentMethodsViewController:completion:]_block_invoke
+___copy_helper_block_.269
+___destroy_helper_block_.270
+___81-[STPPaymentContext appropriatelyDismissPaymentMethodsViewController:completion:]_block_invoke.274
+-[STPPaymentContext presentShippingViewController]
+-[STPPaymentContext presentShippingViewControllerWithNewState:]
+___63-[STPPaymentContext presentShippingViewControllerWithNewState:]_block_invoke
+___copy_helper_block_.285
+___destroy_helper_block_.286
+-[STPPaymentContext pushShippingViewController]
+___47-[STPPaymentContext pushShippingViewController]_block_invoke
+___copy_helper_block_.292
+___destroy_helper_block_.293
+-[STPPaymentContext shippingAddressViewControllerDidCancel:]
+___60-[STPPaymentContext shippingAddressViewControllerDidCancel:]_block_invoke
+___copy_helper_block_.295
+___destroy_helper_block_.296
+-[STPPaymentContext shippingAddressViewController:didEnterAddress:completion:]
+___78-[STPPaymentContext shippingAddressViewController:didEnterAddress:completion:]_block_invoke
+___copy_helper_block_.306
+___destroy_helper_block_.307
+-[STPPaymentContext shippingAddressViewController:didFinishWithAddress:shippingMethod:]
+___87-[STPPaymentContext shippingAddressViewController:didFinishWithAddress:shippingMethod:]_block_invoke
+___copy_helper_block_.313
+___destroy_helper_block_.314
+-[STPPaymentContext appropriatelyDismissViewController:completion:]
+___67-[STPPaymentContext appropriatelyDismissViewController:completion:]_block_invoke
+___67-[STPPaymentContext appropriatelyDismissViewController:completion:]_block_invoke.319
+___copy_helper_block_.320
+___destroy_helper_block_.321
+-[STPPaymentContext requestPaymentShouldPresentShippingViewController]
+-[STPPaymentContext requestPayment]
+___35-[STPPaymentContext requestPayment]_block_invoke
+___copy_helper_block_.331
+___destroy_helper_block_.332
+___35-[STPPaymentContext requestPayment]_block_invoke.337
+___35-[STPPaymentContext requestPayment]_block_invoke_2
+___35-[STPPaymentContext requestPayment]_block_invoke_3
+___copy_helper_block_.343
+___destroy_helper_block_.344
+___35-[STPPaymentContext requestPayment]_block_invoke.353
+___35-[STPPaymentContext requestPayment]_block_invoke_2.354
+___copy_helper_block_.357
+___destroy_helper_block_.358
+___copy_helper_block_.362
+___destroy_helper_block_.363
+___35-[STPPaymentContext requestPayment]_block_invoke.366
+___copy_helper_block_.367
+___destroy_helper_block_.368
+___35-[STPPaymentContext requestPayment]_block_invoke.371
+___copy_helper_block_.377
+___destroy_helper_block_.378
+___35-[STPPaymentContext requestPayment]_block_invoke.381
+___35-[STPPaymentContext requestPayment]_block_invoke_2.382
+___35-[STPPaymentContext requestPayment]_block_invoke_3.383
+___35-[STPPaymentContext requestPayment]_block_invoke_4
+___copy_helper_block_.386
+___destroy_helper_block_.387
+___copy_helper_block_.389
+___destroy_helper_block_.390
+___copy_helper_block_.392
+___destroy_helper_block_.393
+___copy_helper_block_.397
+___destroy_helper_block_.398
+___35-[STPPaymentContext requestPayment]_block_invoke.404
+___35-[STPPaymentContext requestPayment]_block_invoke_2.405
+___copy_helper_block_.406
+___destroy_helper_block_.407
+___copy_helper_block_.415
+___destroy_helper_block_.416
+___35-[STPPaymentContext requestPayment]_block_invoke.418
+___copy_helper_block_.419
+___destroy_helper_block_.420
+-[STPPaymentContext didFinishWithStatus:error:]
+-[STPPaymentContext buildPaymentRequest]
++[STPPaymentContext pkShippingType:]
+-[STPPaymentContext artificiallyRetain:]
+-[STPPaymentContext apiAdapter]
+-[STPPaymentContext setApiAdapter:]
+-[STPPaymentContext configuration]
+-[STPPaymentContext setConfiguration:]
+-[STPPaymentContext theme]
+-[STPPaymentContext setTheme:]
+-[STPPaymentContext prefilledInformation]
+-[STPPaymentContext hostViewController]
+-[STPPaymentContext delegate]
+-[STPPaymentContext selectedPaymentMethod]
+-[STPPaymentContext paymentMethods]
+-[STPPaymentContext selectedShippingMethod]
+-[STPPaymentContext setSelectedShippingMethod:]
+-[STPPaymentContext shippingMethods]
+-[STPPaymentContext shippingAddress]
+-[STPPaymentContext setShippingAddress:]
+-[STPPaymentContext paymentCurrency]
+-[STPPaymentContext setPaymentCurrency:]
+-[STPPaymentContext paymentCountry]
+-[STPPaymentContext setPaymentCountry:]
+-[STPPaymentContext modalPresentationStyle]
+-[STPPaymentContext setModalPresentationStyle:]
+-[STPPaymentContext apiClient]
+-[STPPaymentContext setApiClient:]
+-[STPPaymentContext loadingPromise]
+-[STPPaymentContext setLoadingPromise:]
+-[STPPaymentContext willAppearPromise]
+-[STPPaymentContext setWillAppearPromise:]
+-[STPPaymentContext didAppearPromise]
+-[STPPaymentContext setDidAppearPromise:]
+-[STPPaymentContext paymentMethodsViewController]
+-[STPPaymentContext setPaymentMethodsViewController:]
+-[STPPaymentContext state]
+-[STPPaymentContext setState:]
+-[STPPaymentContext paymentAmountModel]
+-[STPPaymentContext setPaymentAmountModel:]
+-[STPPaymentContext shippingAddressNeedsVerification]
+-[STPPaymentContext setShippingAddressNeedsVerification:]
+-[STPPaymentContext .cxx_destruct]
+_OBJC_IVAR_$_STPPaymentContext._configuration
+_OBJC_IVAR_$_STPPaymentContext._apiAdapter
+_OBJC_IVAR_$_STPPaymentContext._theme
+_OBJC_IVAR_$_STPPaymentContext._willAppearPromise
+_OBJC_IVAR_$_STPPaymentContext._didAppearPromise
+_OBJC_IVAR_$_STPPaymentContext._apiClient
+_OBJC_IVAR_$_STPPaymentContext._paymentCurrency
+_OBJC_IVAR_$_STPPaymentContext._paymentCountry
+_OBJC_IVAR_$_STPPaymentContext._paymentAmountModel
+_OBJC_IVAR_$_STPPaymentContext._modalPresentationStyle
+_OBJC_IVAR_$_STPPaymentContext._state
+___block_descriptor_tmp.59
+___block_descriptor_tmp.65
+___block_descriptor_tmp.69
+___block_descriptor_tmp.120
+___block_descriptor_tmp.124
+_OBJC_IVAR_$_STPPaymentContext._hostViewController
+_OBJC_IVAR_$_STPPaymentContext._delegate
+___block_descriptor_tmp.158
+___block_descriptor_tmp.166
+_OBJC_IVAR_$_STPPaymentContext._prefilledInformation
+___block_descriptor_tmp.175
+_OBJC_IVAR_$_STPPaymentContext._paymentMethods
+_OBJC_IVAR_$_STPPaymentContext._selectedPaymentMethod
+___block_descriptor_tmp.186
+_OBJC_IVAR_$_STPPaymentContext._shippingMethods
+___block_descriptor_tmp.245
+___block_descriptor_tmp.254
+___block_descriptor_tmp.259
+___block_descriptor_tmp.264
+___block_descriptor_tmp.271
+___block_descriptor_tmp.277
+___block_descriptor_tmp.287
+___block_descriptor_tmp.294
+___block_descriptor_tmp.297
+___block_descriptor_tmp.309
+___block_descriptor_tmp.315
+___block_descriptor_tmp.322
+___block_descriptor_tmp.334
+___block_descriptor_tmp.345
+___block_descriptor_tmp.359
+___block_descriptor_tmp.365
+___block_descriptor_tmp.370
+___block_descriptor_tmp.380
+___block_descriptor_tmp.388
+___block_descriptor_tmp.391
+___block_descriptor_tmp.394
+___block_descriptor_tmp.400
+___block_descriptor_tmp.408
+___block_descriptor_tmp.412
+___block_descriptor_tmp.417
+___block_descriptor_tmp.421
+_kSTPPaymentCoordinatorAssociatedObjectKey
+_OBJC_IVAR_$_STPPaymentContext._selectedShippingMethod
+_OBJC_IVAR_$_STPPaymentContext._shippingAddress
+_OBJC_IVAR_$_STPPaymentContext._loadingPromise
+_OBJC_IVAR_$_STPPaymentContext._paymentMethodsViewController
+_OBJC_IVAR_$_STPPaymentContext._shippingAddressNeedsVerification
+l_OBJC_PROTOCOL_$_STPPaymentMethodsViewControllerDelegate
+l_OBJC_LABEL_PROTOCOL_$_STPPaymentMethodsViewControllerDelegate
+l_OBJC_PROTOCOL_$_STPShippingAddressViewControllerDelegate
+l_OBJC_LABEL_PROTOCOL_$_STPShippingAddressViewControllerDelegate
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPaymentContext.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPPaymentContext.h
+__35-[STPPaymentContext requestPayment]_block_invoke.418
+__35-[STPPaymentContext requestPayment]_block_invoke_2.405
+__35-[STPPaymentContext requestPayment]_block_invoke.404
+__35-[STPPaymentContext requestPayment]_block_invoke_4
+__35-[STPPaymentContext requestPayment]_block_invoke_3.383
+__35-[STPPaymentContext requestPayment]_block_invoke_2.382
+__35-[STPPaymentContext requestPayment]_block_invoke.381
+__35-[STPPaymentContext requestPayment]_block_invoke.371
+__35-[STPPaymentContext requestPayment]_block_invoke.366
+__35-[STPPaymentContext requestPayment]_block_invoke_2.354
+__35-[STPPaymentContext requestPayment]_block_invoke.353
+__35-[STPPaymentContext requestPayment]_block_invoke_3
+__35-[STPPaymentContext requestPayment]_block_invoke_2
+__35-[STPPaymentContext requestPayment]_block_invoke.337
+__35-[STPPaymentContext requestPayment]_block_invoke
+__67-[STPPaymentContext appropriatelyDismissViewController:completion:]_block_invoke.319
+__67-[STPPaymentContext appropriatelyDismissViewController:completion:]_block_invoke
+__87-[STPPaymentContext shippingAddressViewController:didFinishWithAddress:shippingMethod:]_block_invoke
+__78-[STPPaymentContext shippingAddressViewController:didEnterAddress:completion:]_block_invoke
+__60-[STPPaymentContext shippingAddressViewControllerDidCancel:]_block_invoke
+__47-[STPPaymentContext pushShippingViewController]_block_invoke
+__63-[STPPaymentContext presentShippingViewControllerWithNewState:]_block_invoke
+__81-[STPPaymentContext appropriatelyDismissPaymentMethodsViewController:completion:]_block_invoke.274
+__81-[STPPaymentContext appropriatelyDismissPaymentMethodsViewController:completion:]_block_invoke
+__59-[STPPaymentContext paymentMethodsViewControllerDidCancel:]_block_invoke
+__59-[STPPaymentContext paymentMethodsViewControllerDidFinish:]_block_invoke
+__53-[STPPaymentContext pushPaymentMethodsViewController]_block_invoke
+__69-[STPPaymentContext presentPaymentMethodsViewControllerWithNewState:]_block_invoke
+__46-[STPPaymentContext setSelectedPaymentMethod:]_block_invoke
+__39-[STPPaymentContext setPaymentMethods:]_block_invoke
+__40-[STPPaymentContext currentValuePromise]_block_invoke
+__33-[STPPaymentContext setDelegate:]_block_invoke
+__33-[STPPaymentContext retryLoading]_block_invoke_2.77
+__33-[STPPaymentContext retryLoading]_block_invoke.76
+__33-[STPPaymentContext retryLoading]_block_invoke_3
+__33-[STPPaymentContext retryLoading]_block_invoke_2
+__33-[STPPaymentContext retryLoading]_block_invoke.45
+__33-[STPPaymentContext retryLoading]_block_invoke
+-[STPCustomerContext initWithKeyProvider:]
+-[STPCustomerContext initWithKeyManager:]
+-[STPCustomerContext clearCachedCustomer]
+-[STPCustomerContext setCustomer:]
+-[STPCustomerContext shouldUseCachedCustomer]
+-[STPCustomerContext retrieveCustomer:]
+___39-[STPCustomerContext retrieveCustomer:]_block_invoke
+___39-[STPCustomerContext retrieveCustomer:]_block_invoke.28
+___39-[STPCustomerContext retrieveCustomer:]_block_invoke_2
+___copy_helper_block_.29
+___destroy_helper_block_.30
+___39-[STPCustomerContext retrieveCustomer:]_block_invoke.32
+___39-[STPCustomerContext retrieveCustomer:]_block_invoke_2.33
+___copy_helper_block_.34
+___destroy_helper_block_.35
+___copy_helper_block_.37
+___destroy_helper_block_.38
+-[STPCustomerContext attachSourceToCustomer:completion:]
+___56-[STPCustomerContext attachSourceToCustomer:completion:]_block_invoke
+___56-[STPCustomerContext attachSourceToCustomer:completion:]_block_invoke_2
+___56-[STPCustomerContext attachSourceToCustomer:completion:]_block_invoke.54
+___56-[STPCustomerContext attachSourceToCustomer:completion:]_block_invoke_2.55
+___copy_helper_block_.59
+___destroy_helper_block_.60
+___copy_helper_block_.65
+___destroy_helper_block_.66
+-[STPCustomerContext selectDefaultCustomerSource:completion:]
+___61-[STPCustomerContext selectDefaultCustomerSource:completion:]_block_invoke
+___61-[STPCustomerContext selectDefaultCustomerSource:completion:]_block_invoke_2
+___copy_helper_block_.68
+___destroy_helper_block_.69
+___61-[STPCustomerContext selectDefaultCustomerSource:completion:]_block_invoke.76
+___61-[STPCustomerContext selectDefaultCustomerSource:completion:]_block_invoke_2.77
+___copy_helper_block_.78
+___destroy_helper_block_.79
+___copy_helper_block_.81
+___destroy_helper_block_.82
+___copy_helper_block_.86
+___destroy_helper_block_.87
+-[STPCustomerContext updateCustomerWithShippingAddress:completion:]
+___67-[STPCustomerContext updateCustomerWithShippingAddress:completion:]_block_invoke
+___67-[STPCustomerContext updateCustomerWithShippingAddress:completion:]_block_invoke_2
+___copy_helper_block_.89
+___destroy_helper_block_.90
+___67-[STPCustomerContext updateCustomerWithShippingAddress:completion:]_block_invoke.104
+___67-[STPCustomerContext updateCustomerWithShippingAddress:completion:]_block_invoke_2.105
+___copy_helper_block_.106
+___destroy_helper_block_.107
+___copy_helper_block_.109
+___destroy_helper_block_.110
+___copy_helper_block_.112
+___destroy_helper_block_.113
+-[STPCustomerContext apiClient]
+-[STPCustomerContext setApiClient:]
+-[STPCustomerContext customer]
+-[STPCustomerContext customerRetrievedDate]
+-[STPCustomerContext setCustomerRetrievedDate:]
+-[STPCustomerContext keyManager]
+-[STPCustomerContext setKeyManager:]
+-[STPCustomerContext .cxx_destruct]
+_OBJC_IVAR_$_STPCustomerContext._keyManager
+_OBJC_IVAR_$_STPCustomerContext._customer
+_OBJC_IVAR_$_STPCustomerContext._customerRetrievedDate
+___block_descriptor_tmp.31
+___block_descriptor_tmp.36
+___block_descriptor_tmp.40
+___block_descriptor_tmp.58
+___block_descriptor_tmp.70
+___block_descriptor_tmp.80
+___block_descriptor_tmp.83
+___block_descriptor_tmp.88
+___block_descriptor_tmp.91
+___block_descriptor_tmp.108
+___block_descriptor_tmp.111
+___block_descriptor_tmp.114
+_OBJC_IVAR_$_STPCustomerContext._apiClient
+l_OBJC_PROTOCOL_$_STPBackendAPIAdapter
+l_OBJC_LABEL_PROTOCOL_$_STPBackendAPIAdapter
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPCustomerContext.m
+__67-[STPCustomerContext updateCustomerWithShippingAddress:completion:]_block_invoke_2.105
+__67-[STPCustomerContext updateCustomerWithShippingAddress:completion:]_block_invoke.104
+__67-[STPCustomerContext updateCustomerWithShippingAddress:completion:]_block_invoke_2
+__67-[STPCustomerContext updateCustomerWithShippingAddress:completion:]_block_invoke
+__61-[STPCustomerContext selectDefaultCustomerSource:completion:]_block_invoke_2.77
+__61-[STPCustomerContext selectDefaultCustomerSource:completion:]_block_invoke.76
+__61-[STPCustomerContext selectDefaultCustomerSource:completion:]_block_invoke_2
+__61-[STPCustomerContext selectDefaultCustomerSource:completion:]_block_invoke
+__56-[STPCustomerContext attachSourceToCustomer:completion:]_block_invoke_2.55
+__56-[STPCustomerContext attachSourceToCustomer:completion:]_block_invoke.54
+__56-[STPCustomerContext attachSourceToCustomer:completion:]_block_invoke_2
+__56-[STPCustomerContext attachSourceToCustomer:completion:]_block_invoke
+__39-[STPCustomerContext retrieveCustomer:]_block_invoke_2.33
+__39-[STPCustomerContext retrieveCustomer:]_block_invoke.32
+__39-[STPCustomerContext retrieveCustomer:]_block_invoke_2
+__39-[STPCustomerContext retrieveCustomer:]_block_invoke.28
+__39-[STPCustomerContext retrieveCustomer:]_block_invoke
+-[UITableViewCell(Stripe_Borders) stp_topBorderView]
+-[UITableViewCell(Stripe_Borders) stp_bottomBorderView]
+-[UITableViewCell(Stripe_Borders) stp_fakeSeparatorView]
+-[UITableViewCell(Stripe_Borders) stp_setBorderColor:]
+-[UITableViewCell(Stripe_Borders) stp_setTopBorderHidden:]
+-[UITableViewCell(Stripe_Borders) stp_setBottomBorderHidden:]
+-[UITableViewCell(Stripe_Borders) stp_setFakeSeparatorColor:]
+-[UITableViewCell(Stripe_Borders) stp_setFakeSeparatorLeftInset:]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/UITableViewCell+Stripe_Borders.m
+linkUITableViewCellBordersCategory
+-[STPSourceReceiver description]
++[STPSourceReceiver requiredFields]
++[STPSourceReceiver decodedObjectFromAPIResponse:]
+-[STPSourceReceiver address]
+-[STPSourceReceiver setAddress:]
+-[STPSourceReceiver amountCharged]
+-[STPSourceReceiver setAmountCharged:]
+-[STPSourceReceiver amountReceived]
+-[STPSourceReceiver setAmountReceived:]
+-[STPSourceReceiver amountReturned]
+-[STPSourceReceiver setAmountReturned:]
+-[STPSourceReceiver allResponseFields]
+-[STPSourceReceiver setAllResponseFields:]
+-[STPSourceReceiver .cxx_destruct]
+_OBJC_IVAR_$_STPSourceReceiver._address
+_OBJC_IVAR_$_STPSourceReceiver._amountCharged
+_OBJC_IVAR_$_STPSourceReceiver._amountReceived
+_OBJC_IVAR_$_STPSourceReceiver._amountReturned
+_OBJC_IVAR_$_STPSourceReceiver._allResponseFields
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPSourceReceiver.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPSourceReceiver.h
++[STPCustomer customerWithStripeID:defaultSource:sources:]
+-[STPCustomer description]
++[STPCustomer requiredFields]
++[STPCustomer decodedObjectFromAPIResponse:]
+-[STPCustomer stripeID]
+-[STPCustomer setStripeID:]
+-[STPCustomer defaultSource]
+-[STPCustomer setDefaultSource:]
+-[STPCustomer sources]
+-[STPCustomer setSources:]
+-[STPCustomer shippingAddress]
+-[STPCustomer setShippingAddress:]
+-[STPCustomer allResponseFields]
+-[STPCustomer setAllResponseFields:]
+-[STPCustomer .cxx_destruct]
+-[STPCustomerDeserializer initWithData:urlResponse:error:]
+-[STPCustomerDeserializer initWithError:]
+-[STPCustomerDeserializer initWithJSONResponse:]
+-[STPCustomerDeserializer customer]
+-[STPCustomerDeserializer setCustomer:]
+-[STPCustomerDeserializer error]
+-[STPCustomerDeserializer setError:]
+-[STPCustomerDeserializer .cxx_destruct]
+_OBJC_IVAR_$_STPCustomer._stripeID
+_OBJC_IVAR_$_STPCustomer._defaultSource
+_OBJC_IVAR_$_STPCustomer._sources
+_OBJC_IVAR_$_STPCustomer._shippingAddress
+_OBJC_IVAR_$_STPCustomer._allResponseFields
+_OBJC_IVAR_$_STPCustomerDeserializer._error
+_OBJC_IVAR_$_STPCustomerDeserializer._customer
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPCustomer.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPCustomer.h
+-[STPPaymentCardTextField initWithCoder:]
+-[STPPaymentCardTextField initWithFrame:]
+-[STPPaymentCardTextField commonInit]
+-[STPPaymentCardTextField viewModel]
++[STPPaymentCardTextField placeholderGrayColor]
+-[STPPaymentCardTextField setBackgroundColor:]
+-[STPPaymentCardTextField backgroundColor]
+-[STPPaymentCardTextField setFont:]
+-[STPPaymentCardTextField font]
+-[STPPaymentCardTextField setTextColor:]
+-[STPPaymentCardTextField setContentVerticalAlignment:]
+-[STPPaymentCardTextField textColor]
+-[STPPaymentCardTextField setTextErrorColor:]
+-[STPPaymentCardTextField textErrorColor]
+-[STPPaymentCardTextField setPlaceholderColor:]
+-[STPPaymentCardTextField placeholderColor]
+-[STPPaymentCardTextField setNumberPlaceholder:]
+-[STPPaymentCardTextField setExpirationPlaceholder:]
+-[STPPaymentCardTextField setCvcPlaceholder:]
+-[STPPaymentCardTextField setCursorColor:]
+-[STPPaymentCardTextField cursorColor]
+-[STPPaymentCardTextField setBorderColor:]
+-[STPPaymentCardTextField borderColor]
+-[STPPaymentCardTextField setCornerRadius:]
+-[STPPaymentCardTextField cornerRadius]
+-[STPPaymentCardTextField setBorderWidth:]
+-[STPPaymentCardTextField borderWidth]
+-[STPPaymentCardTextField setKeyboardAppearance:]
+-[STPPaymentCardTextField setInputAccessoryView:]
+-[STPPaymentCardTextField setEnabled:]
+-[STPPaymentCardTextField isFirstResponder]
+-[STPPaymentCardTextField canBecomeFirstResponder]
+-[STPPaymentCardTextField becomeFirstResponder]
+-[STPPaymentCardTextField nextFirstResponderField]
+-[STPPaymentCardTextField currentFirstResponderField]
+-[STPPaymentCardTextField canResignFirstResponder]
+-[STPPaymentCardTextField resignFirstResponder]
+-[STPPaymentCardTextField previousField]
+-[STPPaymentCardTextField clear]
+___32-[STPPaymentCardTextField clear]_block_invoke
+-[STPPaymentCardTextField isValid]
+-[STPPaymentCardTextField valid]
+-[STPPaymentCardTextField cardNumber]
+-[STPPaymentCardTextField expirationMonth]
+-[STPPaymentCardTextField expirationYear]
+-[STPPaymentCardTextField formattedExpirationMonth]
+-[STPPaymentCardTextField formattedExpirationYear]
+-[STPPaymentCardTextField cvc]
+-[STPPaymentCardTextField cardParams]
+-[STPPaymentCardTextField setCardParams:]
+-[STPPaymentCardTextField setText:inField:]
+-[STPPaymentCardTextField intrinsicContentSize]
+-[STPPaymentCardTextField brandImageRectForBounds:]
+-[STPPaymentCardTextField fieldsRectForBounds:]
+-[STPPaymentCardTextField numberFieldRectForBounds:]
+-[STPPaymentCardTextField cvcFieldRectForBounds:]
+_STPNonLocalizedString
+-[STPPaymentCardTextField expirationFieldRectForBounds:]
+-[STPPaymentCardTextField layoutSubviews]
+-[STPPaymentCardTextField buildTextField]
+-[STPPaymentCardTextField allFields]
+-[STPPaymentCardTextField setNumberFieldShrunk:animated:completion:]
+___68-[STPPaymentCardTextField setNumberFieldShrunk:animated:completion:]_block_invoke
+-[STPPaymentCardTextField shouldShrinkNumberField]
+-[STPPaymentCardTextField widthForText:]
+-[STPPaymentCardTextField widthForCardNumber:]
+-[STPPaymentCardTextField formTextFieldDidBackspaceOnEmpty:]
+-[STPPaymentCardTextField formTextField:modifyIncomingTextChange:]
+-[STPPaymentCardTextField formTextFieldTextDidChange:]
+-[STPPaymentCardTextField textFieldDidBeginEditing:]
+-[STPPaymentCardTextField textFieldShouldEndEditing:]
+-[STPPaymentCardTextField textFieldDidEndEditing:]
+-[STPPaymentCardTextField brandImage]
++[STPPaymentCardTextField cvcImageForCardBrand:]
++[STPPaymentCardTextField brandImageForCardBrand:]
++[STPPaymentCardTextField errorImageForCardBrand:]
+-[STPPaymentCardTextField brandImageForFieldType:validationState:]
+-[STPPaymentCardTextField updateImageForFieldType:]
+-[STPPaymentCardTextField defaultCVCPlaceholder]
+-[STPPaymentCardTextField updateCVCPlaceholder]
+-[STPPaymentCardTextField onChange]
+-[STPPaymentCardTextField hasText]
+-[STPPaymentCardTextField insertText:]
+-[STPPaymentCardTextField deleteBackward]
++[STPPaymentCardTextField keyPathsForValuesAffectingIsValid]
+-[STPPaymentCardTextField delegate]
+-[STPPaymentCardTextField setDelegate:]
+-[STPPaymentCardTextField numberPlaceholder]
+-[STPPaymentCardTextField expirationPlaceholder]
+-[STPPaymentCardTextField cvcPlaceholder]
+-[STPPaymentCardTextField keyboardAppearance]
+-[STPPaymentCardTextField inputAccessoryView]
+-[STPPaymentCardTextField sizingField]
+-[STPPaymentCardTextField setSizingField:]
+-[STPPaymentCardTextField brandImageView]
+-[STPPaymentCardTextField setBrandImageView:]
+-[STPPaymentCardTextField fieldsView]
+-[STPPaymentCardTextField setFieldsView:]
+-[STPPaymentCardTextField numberField]
+-[STPPaymentCardTextField setNumberField:]
+-[STPPaymentCardTextField expirationField]
+-[STPPaymentCardTextField setExpirationField:]
+-[STPPaymentCardTextField cvcField]
+-[STPPaymentCardTextField setCvcField:]
+-[STPPaymentCardTextField setViewModel:]
+-[STPPaymentCardTextField numberFieldShrunk]
+-[STPPaymentCardTextField setNumberFieldShrunk:]
+-[STPPaymentCardTextField internalCardParams]
+-[STPPaymentCardTextField setInternalCardParams:]
+-[STPPaymentCardTextField .cxx_destruct]
+_OBJC_IVAR_$_STPPaymentCardTextField._borderColor
+_OBJC_IVAR_$_STPPaymentCardTextField._cornerRadius
+_OBJC_IVAR_$_STPPaymentCardTextField._borderWidth
+_OBJC_IVAR_$_STPPaymentCardTextField._internalCardParams
+_OBJC_IVAR_$_STPPaymentCardTextField._viewModel
+_OBJC_IVAR_$_STPPaymentCardTextField._sizingField
+_OBJC_IVAR_$_STPPaymentCardTextField._font
+_OBJC_IVAR_$_STPPaymentCardTextField._textColor
+_OBJC_IVAR_$_STPPaymentCardTextField._textErrorColor
+_OBJC_IVAR_$_STPPaymentCardTextField._placeholderColor
+_OBJC_IVAR_$_STPPaymentCardTextField._numberPlaceholder
+_OBJC_IVAR_$_STPPaymentCardTextField._expirationPlaceholder
+_OBJC_IVAR_$_STPPaymentCardTextField._cvcPlaceholder
+_OBJC_IVAR_$_STPPaymentCardTextField._keyboardAppearance
+_OBJC_IVAR_$_STPPaymentCardTextField._inputAccessoryView
+_OBJC_IVAR_$_STPPaymentCardTextField._numberFieldShrunk
+___block_descriptor_tmp.275
+_OBJC_IVAR_$_STPPaymentCardTextField._delegate
+_OBJC_IVAR_$_STPPaymentCardTextField._brandImageView
+_OBJC_IVAR_$_STPPaymentCardTextField._fieldsView
+_OBJC_IVAR_$_STPPaymentCardTextField._numberField
+_OBJC_IVAR_$_STPPaymentCardTextField._expirationField
+_OBJC_IVAR_$_STPPaymentCardTextField._cvcField
+l_OBJC_PROTOCOL_$_UITextInputTraits
+l_OBJC_LABEL_PROTOCOL_$_UITextInputTraits
+l_OBJC_PROTOCOL_$_UIKeyInput
+l_OBJC_LABEL_PROTOCOL_$_UIKeyInput
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPaymentCardTextField.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPPaymentCardTextField.h
+STPNonLocalizedString
+__68-[STPPaymentCardTextField setNumberFieldShrunk:animated:completion:]_block_invoke
+__32-[STPPaymentCardTextField clear]_block_invoke
+-[STPMultipartFormDataPart composedData]
+-[STPMultipartFormDataPart data]
+-[STPMultipartFormDataPart setData:]
+-[STPMultipartFormDataPart name]
+-[STPMultipartFormDataPart setName:]
+-[STPMultipartFormDataPart filename]
+-[STPMultipartFormDataPart setFilename:]
+-[STPMultipartFormDataPart contentType]
+-[STPMultipartFormDataPart setContentType:]
+-[STPMultipartFormDataPart .cxx_destruct]
+_OBJC_IVAR_$_STPMultipartFormDataPart._name
+_OBJC_IVAR_$_STPMultipartFormDataPart._filename
+_OBJC_IVAR_$_STPMultipartFormDataPart._contentType
+_OBJC_IVAR_$_STPMultipartFormDataPart._data
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPMultipartFormDataPart.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPMultipartFormDataPart.h
++[STPImageLibrary applePayCardImage]
++[STPImageLibrary amexCardImage]
++[STPImageLibrary dinersClubCardImage]
++[STPImageLibrary discoverCardImage]
++[STPImageLibrary jcbCardImage]
++[STPImageLibrary masterCardCardImage]
++[STPImageLibrary visaCardImage]
++[STPImageLibrary unknownCardCardImage]
++[STPImageLibrary brandImageForCardBrand:]
++[STPImageLibrary templatedBrandImageForCardBrand:]
++[STPImageLibrary cvcImageForCardBrand:]
++[STPImageLibrary errorImageForCardBrand:]
++[STPImageLibrary safeImageNamed:]
++[STPImageLibrary(Private) addIcon]
++[STPImageLibrary(Private) leftChevronIcon]
++[STPImageLibrary(Private) checkmarkIcon]
++[STPImageLibrary(Private) largeCardFrontImage]
++[STPImageLibrary(Private) largeCardBackImage]
++[STPImageLibrary(Private) largeShippingImage]
++[STPImageLibrary(Private) safeImageNamed:templateIfAvailable:]
++[STPImageLibrary(Private) brandImageForCardBrand:template:]
++[STPImageLibrary(Private) imageWithTintColor:forImage:]
++[STPImageLibrary(Private) paddedImageWithInsets:forImage:]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPImageLibrary.m
++[STPFormEncoder stringByReplacingSnakeCaseWithCamelCase:]
+___58+[STPFormEncoder stringByReplacingSnakeCaseWithCamelCase:]_block_invoke
++[STPFormEncoder dictionaryForObject:]
++[STPFormEncoder keyPairDictionaryForObject:]
+___45+[STPFormEncoder keyPairDictionaryForObject:]_block_invoke
+___copy_helper_block_.32
+___destroy_helper_block_.33
+___45+[STPFormEncoder keyPairDictionaryForObject:]_block_invoke.40
+___copy_helper_block_.41
+___destroy_helper_block_.42
++[STPFormEncoder formEncodableValueForObject:]
++[STPFormEncoder stringByURLEncoding:]
++[STPFormEncoder queryStringFromParameters:]
+-[STPQueryStringPair initWithField:value:]
+-[STPQueryStringPair URLEncodedStringValue]
+-[STPQueryStringPair field]
+-[STPQueryStringPair setField:]
+-[STPQueryStringPair value]
+-[STPQueryStringPair setValue:]
+-[STPQueryStringPair .cxx_destruct]
+___block_descriptor_tmp.35
+___block_descriptor_tmp.45
+l_OBJC_PROTOCOL_$_STPFormEncodable
+l_OBJC_LABEL_PROTOCOL_$_STPFormEncodable
+l_OBJC_PROTOCOL_REFERENCE_$_STPFormEncodable
+_OBJC_IVAR_$_STPQueryStringPair._field
+_OBJC_IVAR_$_STPQueryStringPair._value
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPFormEncoder.m
+STPQueryStringPairsFromKeyAndValue
+STPQueryStringPairsFromDictionary
+STPQueryStringFromParameters
+STPPercentEscapedStringFromString
+__45+[STPFormEncoder keyPairDictionaryForObject:]_block_invoke.40
+__45+[STPFormEncoder keyPairDictionaryForObject:]_block_invoke
+__58+[STPFormEncoder stringByReplacingSnakeCaseWithCamelCase:]_block_invoke
++[STPColorUtils perceivedBrightnessForColor:]
++[STPColorUtils brighterColor:color2:]
++[STPColorUtils colorIsBright:]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPColorUtils.m
++[STPCardTuple tupleWithSelectedCard:cards:]
+-[STPCardTuple selectedCard]
+-[STPCardTuple setSelectedCard:]
+-[STPCardTuple cards]
+-[STPCardTuple setCards:]
+-[STPCardTuple .cxx_destruct]
+_OBJC_IVAR_$_STPCardTuple._selectedCard
+_OBJC_IVAR_$_STPCardTuple._cards
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPCardTuple.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPCardTuple.h
+-[STPSourceParams init]
+-[STPSourceParams type]
+-[STPSourceParams setType:]
+-[STPSourceParams flowString]
+-[STPSourceParams usageString]
+-[STPSourceParams description]
++[STPSourceParams bancontactParamsWithAmount:name:returnURL:statementDescriptor:]
++[STPSourceParams bitcoinParamsWithAmount:currency:email:]
++[STPSourceParams cardParamsWithCard:]
++[STPSourceParams giropayParamsWithAmount:name:returnURL:statementDescriptor:]
++[STPSourceParams idealParamsWithAmount:name:returnURL:statementDescriptor:bank:]
++[STPSourceParams sepaDebitParamsWithName:iban:addressLine1:city:postalCode:country:]
++[STPSourceParams sofortParamsWithAmount:returnURL:country:statementDescriptor:]
++[STPSourceParams threeDSecureParamsWithAmount:currency:returnURL:card:]
+-[STPSourceParams redirectDictionaryWithMerchantNameIfNecessary]
++[STPSourceParams rootObjectName]
++[STPSourceParams propertyNamesToFormFieldNamesMapping]
+-[STPSourceParams copyWithZone:]
+-[STPSourceParams additionalAPIParameters]
+-[STPSourceParams setAdditionalAPIParameters:]
+-[STPSourceParams rawTypeString]
+-[STPSourceParams setRawTypeString:]
+-[STPSourceParams amount]
+-[STPSourceParams setAmount:]
+-[STPSourceParams currency]
+-[STPSourceParams setCurrency:]
+-[STPSourceParams flow]
+-[STPSourceParams setFlow:]
+-[STPSourceParams metadata]
+-[STPSourceParams setMetadata:]
+-[STPSourceParams owner]
+-[STPSourceParams setOwner:]
+-[STPSourceParams redirect]
+-[STPSourceParams setRedirect:]
+-[STPSourceParams token]
+-[STPSourceParams setToken:]
+-[STPSourceParams usage]
+-[STPSourceParams setUsage:]
+-[STPSourceParams redirectMerchantName]
+-[STPSourceParams setRedirectMerchantName:]
+-[STPSourceParams .cxx_destruct]
+_OBJC_IVAR_$_STPSourceParams._rawTypeString
+_OBJC_IVAR_$_STPSourceParams._flow
+_OBJC_IVAR_$_STPSourceParams._usage
+_OBJC_IVAR_$_STPSourceParams._additionalAPIParameters
+_OBJC_IVAR_$_STPSourceParams._amount
+_OBJC_IVAR_$_STPSourceParams._currency
+_OBJC_IVAR_$_STPSourceParams._metadata
+_OBJC_IVAR_$_STPSourceParams._owner
+_OBJC_IVAR_$_STPSourceParams._redirect
+_OBJC_IVAR_$_STPSourceParams._token
+_OBJC_IVAR_$_STPSourceParams._redirectMerchantName
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPSourceParams.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPSourceParams+Private.h
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPSourceParams.h
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPFormEncodable.h
++[STPPaymentConfiguration initialize]
++[STPPaymentConfiguration sharedConfiguration]
+___46+[STPPaymentConfiguration sharedConfiguration]_block_invoke
+-[STPPaymentConfiguration init]
+-[STPPaymentConfiguration copyWithZone:]
+-[STPPaymentConfiguration applePayEnabled]
+-[STPPaymentConfiguration publishableKey]
+-[STPPaymentConfiguration setPublishableKey:]
+-[STPPaymentConfiguration additionalPaymentMethods]
+-[STPPaymentConfiguration setAdditionalPaymentMethods:]
+-[STPPaymentConfiguration requiredBillingAddressFields]
+-[STPPaymentConfiguration setRequiredBillingAddressFields:]
+-[STPPaymentConfiguration requiredShippingAddressFields]
+-[STPPaymentConfiguration setRequiredShippingAddressFields:]
+-[STPPaymentConfiguration verifyPrefilledShippingAddress]
+-[STPPaymentConfiguration setVerifyPrefilledShippingAddress:]
+-[STPPaymentConfiguration shippingType]
+-[STPPaymentConfiguration setShippingType:]
+-[STPPaymentConfiguration companyName]
+-[STPPaymentConfiguration setCompanyName:]
+-[STPPaymentConfiguration appleMerchantIdentifier]
+-[STPPaymentConfiguration setAppleMerchantIdentifier:]
+-[STPPaymentConfiguration .cxx_destruct]
+_sharedConfiguration.sharedConfiguration
+_sharedConfiguration.onceToken
+_OBJC_IVAR_$_STPPaymentConfiguration._additionalPaymentMethods
+_OBJC_IVAR_$_STPPaymentConfiguration._requiredBillingAddressFields
+_OBJC_IVAR_$_STPPaymentConfiguration._requiredShippingAddressFields
+_OBJC_IVAR_$_STPPaymentConfiguration._verifyPrefilledShippingAddress
+_OBJC_IVAR_$_STPPaymentConfiguration._companyName
+_OBJC_IVAR_$_STPPaymentConfiguration._shippingType
+_OBJC_IVAR_$_STPPaymentConfiguration._publishableKey
+_OBJC_IVAR_$_STPPaymentConfiguration._appleMerchantIdentifier
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPaymentConfiguration.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPPaymentConfiguration.h
+__46+[STPPaymentConfiguration sharedConfiguration]_block_invoke
+-[STPPaymentActivityIndicatorView initWithFrame:]
+-[STPPaymentActivityIndicatorView setTintColor:]
+-[STPPaymentActivityIndicatorView layoutSubviews]
+-[STPPaymentActivityIndicatorView setHidesWhenStopped:]
+-[STPPaymentActivityIndicatorView setAnimating:animated:]
+___57-[STPPaymentActivityIndicatorView setAnimating:animated:]_block_invoke
+___57-[STPPaymentActivityIndicatorView setAnimating:animated:]_block_invoke.81
+___copy_helper_block_.82
+___destroy_helper_block_.83
+-[STPPaymentActivityIndicatorView setAnimating:]
+-[STPPaymentActivityIndicatorView animating]
+-[STPPaymentActivityIndicatorView hidesWhenStopped]
+-[STPPaymentActivityIndicatorView indicatorLayer]
+-[STPPaymentActivityIndicatorView setIndicatorLayer:]
+-[STPPaymentActivityIndicatorView .cxx_destruct]
+_OBJC_IVAR_$_STPPaymentActivityIndicatorView._indicatorLayer
+_OBJC_IVAR_$_STPPaymentActivityIndicatorView._hidesWhenStopped
+_OBJC_IVAR_$_STPPaymentActivityIndicatorView._animating
+___block_descriptor_tmp.84
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPaymentActivityIndicatorView.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPPaymentActivityIndicatorView.h
+__57-[STPPaymentActivityIndicatorView setAnimating:animated:]_block_invoke.81
+__57-[STPPaymentActivityIndicatorView setAnimating:animated:]_block_invoke
+-[UIViewController(Stripe_Promises) stp_willAppearPromise]
+___58-[UIViewController(Stripe_Promises) stp_willAppearPromise]_block_invoke
+-[UIViewController(Stripe_Promises) stp_didAppearPromise]
+___57-[UIViewController(Stripe_Promises) stp_didAppearPromise]_block_invoke
+___copy_helper_block_.21
+___destroy_helper_block_.22
+___block_descriptor_tmp.23
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/UIViewController+Stripe_Promises.m
+linkUIViewControllerPromisesCategory
+__57-[UIViewController(Stripe_Promises) stp_didAppearPromise]_block_invoke
+__58-[UIViewController(Stripe_Promises) stp_willAppearPromise]_block_invoke
++[STPAnalyticsClient sharedClient]
+___34+[STPAnalyticsClient sharedClient]_block_invoke
++[STPAnalyticsClient initialize]
++[STPAnalyticsClient initializeIfNeeded]
+___40+[STPAnalyticsClient initializeIfNeeded]_block_invoke
+___40+[STPAnalyticsClient initializeIfNeeded]_block_invoke_2
+___copy_helper_block_.16
+___destroy_helper_block_.17
+___40+[STPAnalyticsClient initializeIfNeeded]_block_invoke.25
+___copy_helper_block_.26
+___destroy_helper_block_.27
+___40+[STPAnalyticsClient initializeIfNeeded]_block_invoke.33
+___40+[STPAnalyticsClient initializeIfNeeded]_block_invoke.41
+___copy_helper_block_.42
+___destroy_helper_block_.43
+___40+[STPAnalyticsClient initializeIfNeeded]_block_invoke.49
+___40+[STPAnalyticsClient initializeIfNeeded]_block_invoke.57
+___copy_helper_block_.58
+___destroy_helper_block_.59
++[STPAnalyticsClient shouldCollectAnalytics]
++[STPAnalyticsClient timestampWithDate:]
++[STPAnalyticsClient tokenTypeFromParameters:]
+-[STPAnalyticsClient init]
+-[STPAnalyticsClient addAdditionalInfo:]
+-[STPAnalyticsClient clearAdditionalInfo]
+-[STPAnalyticsClient additionalInfo]
+-[STPAnalyticsClient productUsage]
+-[STPAnalyticsClient productUsageDictionary]
+-[STPAnalyticsClient logTokenCreationAttemptWithConfiguration:tokenType:]
+-[STPAnalyticsClient logSourceCreationAttemptWithConfiguration:sourceType:]
+-[STPAnalyticsClient logRUMWithToken:configuration:response:start:end:]
++[STPAnalyticsClient commonPayload]
++[STPAnalyticsClient serializeConfiguration:]
+-[STPAnalyticsClient logPayload:]
+-[STPAnalyticsClient apiUsage]
+-[STPAnalyticsClient setApiUsage:]
+-[STPAnalyticsClient additionalInfoSet]
+-[STPAnalyticsClient setAdditionalInfoSet:]
+-[STPAnalyticsClient urlSession]
+-[STPAnalyticsClient setUrlSession:]
+-[STPAnalyticsClient .cxx_destruct]
+_initializeIfNeeded.onceToken
+___block_descriptor_tmp.19
+___block_descriptor_tmp.29
+___block_descriptor_tmp.37
+___block_descriptor_tmp.61
+_OBJC_IVAR_$_STPAnalyticsClient._urlSession
+_OBJC_IVAR_$_STPAnalyticsClient._apiUsage
+_OBJC_IVAR_$_STPAnalyticsClient._additionalInfoSet
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPAnalyticsClient.m
+__40+[STPAnalyticsClient initializeIfNeeded]_block_invoke.57
+__40+[STPAnalyticsClient initializeIfNeeded]_block_invoke.49
+__40+[STPAnalyticsClient initializeIfNeeded]_block_invoke.41
+__40+[STPAnalyticsClient initializeIfNeeded]_block_invoke.33
+__40+[STPAnalyticsClient initializeIfNeeded]_block_invoke.25
+__40+[STPAnalyticsClient initializeIfNeeded]_block_invoke_2
+__40+[STPAnalyticsClient initializeIfNeeded]_block_invoke
+__34+[STPAnalyticsClient sharedClient]_block_invoke
+-[STPSectionHeaderView initWithFrame:]
+-[STPSectionHeaderView setTheme:]
+-[STPSectionHeaderView updateAppearance]
+-[STPSectionHeaderView setTitle:]
+-[STPSectionHeaderView setButtonHidden:]
+-[STPSectionHeaderView layoutSubviews]
+-[STPSectionHeaderView heightThatFits:]
+-[STPSectionHeaderView heightForButtonText:width:]
+-[STPSectionHeaderView sizeThatFits:]
+-[STPSectionHeaderView theme]
+-[STPSectionHeaderView title]
+-[STPSectionHeaderView button]
+-[STPSectionHeaderView setButton:]
+-[STPSectionHeaderView buttonHidden]
+-[STPSectionHeaderView label]
+-[STPSectionHeaderView setLabel:]
+-[STPSectionHeaderView buttonInsets]
+-[STPSectionHeaderView setButtonInsets:]
+-[STPSectionHeaderView .cxx_destruct]
+_OBJC_IVAR_$_STPSectionHeaderView._label
+_OBJC_IVAR_$_STPSectionHeaderView._button
+_OBJC_IVAR_$_STPSectionHeaderView._theme
+_OBJC_IVAR_$_STPSectionHeaderView._buttonInsets
+_OBJC_IVAR_$_STPSectionHeaderView._title
+_OBJC_IVAR_$_STPSectionHeaderView._buttonHidden
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPSectionHeaderView.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPSectionHeaderView.h
++[STPLocalizationUtils localizedStripeStringForKey:]
+___52+[STPLocalizationUtils localizedStripeStringForKey:]_block_invoke
+_localizedStripeStringForKey:.useMainBundle
+_localizedStripeStringForKey:.onceToken
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPLocalizationUtils.m
+__52+[STPLocalizationUtils localizedStripeStringForKey:]_block_invoke
+-[NSArray(Stripe_BoundSafe) stp_boundSafeObjectAtIndex:]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/NSArray+Stripe_BoundSafe.m
+linkNSArrayBoundSafeCategory
+-[STPSourceSEPADebitDetails description]
++[STPSourceSEPADebitDetails requiredFields]
++[STPSourceSEPADebitDetails decodedObjectFromAPIResponse:]
+-[STPSourceSEPADebitDetails initWithDictionary:]
+-[STPSourceSEPADebitDetails last4]
+-[STPSourceSEPADebitDetails bankCode]
+-[STPSourceSEPADebitDetails country]
+-[STPSourceSEPADebitDetails fingerprint]
+-[STPSourceSEPADebitDetails mandateReference]
+-[STPSourceSEPADebitDetails mandateURL]
+-[STPSourceSEPADebitDetails allResponseFields]
+-[STPSourceSEPADebitDetails setAllResponseFields:]
+-[STPSourceSEPADebitDetails .cxx_destruct]
+_OBJC_IVAR_$_STPSourceSEPADebitDetails._last4
+_OBJC_IVAR_$_STPSourceSEPADebitDetails._bankCode
+_OBJC_IVAR_$_STPSourceSEPADebitDetails._country
+_OBJC_IVAR_$_STPSourceSEPADebitDetails._fingerprint
+_OBJC_IVAR_$_STPSourceSEPADebitDetails._mandateReference
+_OBJC_IVAR_$_STPSourceSEPADebitDetails._mandateURL
+_OBJC_IVAR_$_STPSourceSEPADebitDetails._allResponseFields
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPSourceSEPADebitDetails.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPSourceSEPADebitDetails.h
+-[UIViewController(Stripe_ParentViewController) stp_parentViewControllerOfClass:]
+-[UIViewController(Stripe_ParentViewController) stp_isTopNavigationController]
+-[UIViewController(Stripe_ParentViewController) stp_isAtRootOfNavigationController]
+-[UIViewController(Stripe_ParentViewController) stp_previousViewControllerInNavigation]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/UIViewController+Stripe_ParentViewController.m
+linkUIViewControllerParentViewControllerCategory
+-[STPAddressViewModel initWithRequiredBillingFields:]
+-[STPAddressViewModel initWithRequiredShippingFields:]
+-[STPAddressViewModel commonInit]
+-[STPAddressViewModel updatePostalCodeCellIfNecessary]
+___54-[STPAddressViewModel updatePostalCodeCellIfNecessary]_block_invoke
+___54-[STPAddressViewModel updatePostalCodeCellIfNecessary]_block_invoke_2
+-[STPAddressViewModel containsStateAndPostalFields]
+-[STPAddressViewModel cellAtIndex:]
+-[STPAddressViewModel addressFieldTableViewCellDidReturn:]
+-[STPAddressViewModel addressFieldTableViewCellDidEndEditing:]
+-[STPAddressViewModel updateCityAndStateFromZipCodeCell:]
+___57-[STPAddressViewModel updateCityAndStateFromZipCodeCell:]_block_invoke
+___57-[STPAddressViewModel updateCityAndStateFromZipCodeCell:]_block_invoke_2
+-[STPAddressViewModel addressFieldTableViewCellDidBackspaceOnEmpty:]
+-[STPAddressViewModel addressFieldTableViewCellDidUpdateText:]
+-[STPAddressViewModel isValid]
+-[STPAddressViewModel setAddressFieldTableViewCountryCode:]
+-[STPAddressViewModel setAddress:]
+-[STPAddressViewModel address]
+-[STPAddressViewModel cellBeforeCell:]
+-[STPAddressViewModel cellAfterCell:]
+-[STPAddressViewModel addressFieldTableViewCountryCode]
+-[STPAddressViewModel addressCells]
+-[STPAddressViewModel setAddressCells:]
+-[STPAddressViewModel delegate]
+-[STPAddressViewModel setDelegate:]
+-[STPAddressViewModel previousField]
+-[STPAddressViewModel setPreviousField:]
+-[STPAddressViewModel isBillingAddress]
+-[STPAddressViewModel setIsBillingAddress:]
+-[STPAddressViewModel requiredBillingAddressFields]
+-[STPAddressViewModel setRequiredBillingAddressFields:]
+-[STPAddressViewModel requiredShippingAddressFields]
+-[STPAddressViewModel setRequiredShippingAddressFields:]
+-[STPAddressViewModel showingPostalCodeCell]
+-[STPAddressViewModel setShowingPostalCodeCell:]
+-[STPAddressViewModel geocodeInProgress]
+-[STPAddressViewModel setGeocodeInProgress:]
+-[STPAddressViewModel .cxx_destruct]
+_OBJC_IVAR_$_STPAddressViewModel._isBillingAddress
+_OBJC_IVAR_$_STPAddressViewModel._requiredBillingAddressFields
+_OBJC_IVAR_$_STPAddressViewModel._addressCells
+_OBJC_IVAR_$_STPAddressViewModel._addressFieldTableViewCountryCode
+_OBJC_IVAR_$_STPAddressViewModel._requiredShippingAddressFields
+___block_descriptor_tmp.64
+___block_literal_global.65
+___block_descriptor_tmp.115
+_OBJC_IVAR_$_STPAddressViewModel._delegate
+_OBJC_IVAR_$_STPAddressViewModel._previousField
+_OBJC_IVAR_$_STPAddressViewModel._showingPostalCodeCell
+_OBJC_IVAR_$_STPAddressViewModel._geocodeInProgress
+l_OBJC_PROTOCOL_$_STPAddressFieldTableViewCellDelegate
+l_OBJC_LABEL_PROTOCOL_$_STPAddressFieldTableViewCellDelegate
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPAddressViewModel.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPAddressViewModel.h
+__57-[STPAddressViewModel updateCityAndStateFromZipCodeCell:]_block_invoke_2
+__57-[STPAddressViewModel updateCityAndStateFromZipCodeCell:]_block_invoke
+__54-[STPAddressViewModel updatePostalCodeCellIfNecessary]_block_invoke_2
+__54-[STPAddressViewModel updatePostalCodeCellIfNecessary]_block_invoke
++[STPPhoneNumberValidator countryCodeOrCurrentLocaleCountryFromString:]
++[STPPhoneNumberValidator stringIsValidPartialPhoneNumber:]
++[STPPhoneNumberValidator stringIsValidPhoneNumber:]
++[STPPhoneNumberValidator stringIsValidPartialPhoneNumber:forCountryCode:]
++[STPPhoneNumberValidator stringIsValidPhoneNumber:forCountryCode:]
++[STPPhoneNumberValidator formattedSanitizedPhoneNumberForString:]
++[STPPhoneNumberValidator formattedSanitizedPhoneNumberForString:forCountryCode:]
++[STPPhoneNumberValidator formattedRedactedPhoneNumberForString:]
++[STPPhoneNumberValidator formattedRedactedPhoneNumberForString:forCountryCode:]
++[STPPhoneNumberValidator formattedPhoneNumberForString:forCountryCode:]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPhoneNumberValidator.m
++[STPCardIOUtilitiesProxy proxiedClass]
++[STPCardIOUtilitiesProxy proxiedClassExists]
++[STPCardIOCreditCardInfoProxy proxiedClass]
++[STPCardIOCreditCardInfoProxy proxiedClassExists]
+-[STPCardIOCreditCardInfoProxy cardNumber]
+-[STPCardIOCreditCardInfoProxy setCardNumber:]
+-[STPCardIOCreditCardInfoProxy expiryMonth]
+-[STPCardIOCreditCardInfoProxy setExpiryMonth:]
+-[STPCardIOCreditCardInfoProxy expiryYear]
+-[STPCardIOCreditCardInfoProxy setExpiryYear:]
+-[STPCardIOCreditCardInfoProxy cvv]
+-[STPCardIOCreditCardInfoProxy setCvv:]
+-[STPCardIOCreditCardInfoProxy .cxx_destruct]
++[STPCardIOPaymentViewControllerProxy proxiedClass]
++[STPCardIOPaymentViewControllerProxy proxiedClassExists]
+-[STPCardIOPaymentViewControllerProxy hideCardIOLogo]
+-[STPCardIOPaymentViewControllerProxy setHideCardIOLogo:]
+-[STPCardIOPaymentViewControllerProxy disableManualEntryButtons]
+-[STPCardIOPaymentViewControllerProxy setDisableManualEntryButtons:]
+-[STPCardIOPaymentViewControllerProxy scannedImageDuration]
+-[STPCardIOPaymentViewControllerProxy setScannedImageDuration:]
++[STPCardIOProxy isCardIOAvailable]
+-[STPCardIOProxy initWithDelegate:]
+-[STPCardIOProxy presentCardIOFromViewController:]
+-[STPCardIOProxy userDidCancelPaymentViewController:]
+-[STPCardIOProxy userDidProvideCreditCardInfo:inPaymentViewController:]
+___71-[STPCardIOProxy userDidProvideCreditCardInfo:inPaymentViewController:]_block_invoke
+-[STPCardIOProxy delegate]
+-[STPCardIOProxy setDelegate:]
+-[STPCardIOProxy .cxx_destruct]
+l_OBJC_PROTOCOL_$_STPClassProxy
+l_OBJC_LABEL_PROTOCOL_$_STPClassProxy
+_OBJC_IVAR_$_STPCardIOCreditCardInfoProxy._cardNumber
+_OBJC_IVAR_$_STPCardIOCreditCardInfoProxy._expiryMonth
+_OBJC_IVAR_$_STPCardIOCreditCardInfoProxy._expiryYear
+_OBJC_IVAR_$_STPCardIOCreditCardInfoProxy._cvv
+_OBJC_IVAR_$_STPCardIOPaymentViewControllerProxy._hideCardIOLogo
+_OBJC_IVAR_$_STPCardIOPaymentViewControllerProxy._disableManualEntryButtons
+_OBJC_IVAR_$_STPCardIOPaymentViewControllerProxy._scannedImageDuration
+_OBJC_IVAR_$_STPCardIOProxy._delegate
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPCardIOProxy.m
+__71-[STPCardIOProxy userDidProvideCreditCardInfo:inPaymentViewController:]_block_invoke
+-[STPToken description]
+-[STPToken debugDescription]
+-[STPToken isEqual:]
+-[STPToken hash]
+-[STPToken isEqualToToken:]
+-[STPToken stripeID]
++[STPToken requiredFields]
++[STPToken decodedObjectFromAPIResponse:]
+-[STPToken tokenId]
+-[STPToken setTokenId:]
+-[STPToken livemode]
+-[STPToken setLivemode:]
+-[STPToken card]
+-[STPToken setCard:]
+-[STPToken bankAccount]
+-[STPToken setBankAccount:]
+-[STPToken created]
+-[STPToken setCreated:]
+-[STPToken allResponseFields]
+-[STPToken setAllResponseFields:]
+-[STPToken .cxx_destruct]
+_OBJC_IVAR_$_STPToken._tokenId
+_OBJC_IVAR_$_STPToken._livemode
+_OBJC_IVAR_$_STPToken._card
+_OBJC_IVAR_$_STPToken._bankAccount
+_OBJC_IVAR_$_STPToken._created
+_OBJC_IVAR_$_STPToken._allResponseFields
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPToken.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPToken.h
+-[STPApplePayPaymentMethod image]
+-[STPApplePayPaymentMethod templateImage]
+-[STPApplePayPaymentMethod label]
+-[STPApplePayPaymentMethod isEqual:]
+-[STPApplePayPaymentMethod hash]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPApplePayPaymentMethod.m
++[STPEmailAddressValidator stringIsValidPartialEmailAddress:]
++[STPEmailAddressValidator stringIsValidEmailAddress:]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPEmailAddressValidator.m
+-[NSDictionary(Stripe) stp_dictionaryByRemovingNullsValidatingRequiredFields:]
+___78-[NSDictionary(Stripe) stp_dictionaryByRemovingNullsValidatingRequiredFields:]_block_invoke
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/NSDictionary+Stripe.m
+linkNSDictionaryCategory
+__78-[NSDictionary(Stripe) stp_dictionaryByRemovingNullsValidatingRequiredFields:]_block_invoke
+-[STPPaymentContextAmountModel initWithAmount:]
+-[STPPaymentContextAmountModel initWithPaymentSummaryItems:]
+-[STPPaymentContextAmountModel paymentAmountWithCurrency:shippingMethod:]
+-[STPPaymentContextAmountModel paymentSummaryItemsWithCurrency:companyName:shippingMethod:]
+-[STPPaymentContextAmountModel .cxx_destruct]
+_OBJC_IVAR_$_STPPaymentContextAmountModel._paymentAmount
+_OBJC_IVAR_$_STPPaymentContextAmountModel._paymentSummaryItems
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPaymentContextAmountModel.m
+-[NSMutableURLRequest(Stripe) stp_addParametersToURL:]
+-[NSMutableURLRequest(Stripe) stp_setFormPayload:]
+-[NSMutableURLRequest(Stripe) stp_setMultipartFormData:boundary:]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/NSMutableURLRequest+Stripe.m
+linkNSMutableURLRequestCategory
+-[STPDelegateProxy init]
+-[STPDelegateProxy respondsToSelector:]
+-[STPDelegateProxy forwardingTargetForSelector:]
+-[STPDelegateProxy methodSignatureForSelector:]
+-[STPDelegateProxy forwardInvocation:]
+-[STPDelegateProxy delegate]
+-[STPDelegateProxy setDelegate:]
+-[STPDelegateProxy .cxx_destruct]
+_OBJC_IVAR_$_STPDelegateProxy._delegate
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPDelegateProxy.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPDelegateProxy.h
++[STPBINRange allRanges]
+___24+[STPBINRange allRanges]_block_invoke
+-[STPBINRange matchesNumber:]
+-[STPBINRange compare:]
++[STPBINRange binRangesForNumber:]
+___34+[STPBINRange binRangesForNumber:]_block_invoke
+___copy_helper_block_.127
+___destroy_helper_block_.128
++[STPBINRange mostSpecificBINRangeForNumber:]
+___45+[STPBINRange mostSpecificBINRangeForNumber:]_block_invoke
+___copy_helper_block_.135
+___destroy_helper_block_.136
++[STPBINRange binRangesForBrand:]
+___33+[STPBINRange binRangesForBrand:]_block_invoke
+-[STPBINRange length]
+-[STPBINRange setLength:]
+-[STPBINRange brand]
+-[STPBINRange setBrand:]
+-[STPBINRange qRangeLow]
+-[STPBINRange setQRangeLow:]
+-[STPBINRange qRangeHigh]
+-[STPBINRange setQRangeHigh:]
+-[STPBINRange .cxx_destruct]
+_allRanges.STPBINRangeAllRanges
+_allRanges.onceToken
+___block_descriptor_tmp.130
+___block_descriptor_tmp.137
+___block_descriptor_tmp.145
+_OBJC_IVAR_$_STPBINRange._length
+_OBJC_IVAR_$_STPBINRange._brand
+_OBJC_IVAR_$_STPBINRange._qRangeLow
+_OBJC_IVAR_$_STPBINRange._qRangeHigh
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPBINRange.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPBINRange.h
+__33+[STPBINRange binRangesForBrand:]_block_invoke
+__45+[STPBINRange mostSpecificBINRangeForNumber:]_block_invoke
+__34+[STPBINRange binRangesForNumber:]_block_invoke
+__24+[STPBINRange allRanges]_block_invoke
++[UIToolbar(Stripe_InputAccessory) stp_inputAccessoryToolbarWithTarget:action:]
+-[UIToolbar(Stripe_InputAccessory) stp_setEnabled:]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/UIToolbar+Stripe_InputAccessory.m
+linkUIToolbarInputAccessoryCategory
++[STPEphemeralKey requiredFields]
++[STPEphemeralKey decodedObjectFromAPIResponse:]
+-[STPEphemeralKey hash]
+-[STPEphemeralKey isEqual:]
+-[STPEphemeralKey isEqualToResourceKey:]
+-[STPEphemeralKey stripeID]
+-[STPEphemeralKey setStripeID:]
+-[STPEphemeralKey created]
+-[STPEphemeralKey setCreated:]
+-[STPEphemeralKey livemode]
+-[STPEphemeralKey setLivemode:]
+-[STPEphemeralKey secret]
+-[STPEphemeralKey setSecret:]
+-[STPEphemeralKey expires]
+-[STPEphemeralKey setExpires:]
+-[STPEphemeralKey customerID]
+-[STPEphemeralKey setCustomerID:]
+-[STPEphemeralKey allResponseFields]
+-[STPEphemeralKey setAllResponseFields:]
+-[STPEphemeralKey .cxx_destruct]
+_OBJC_IVAR_$_STPEphemeralKey._stripeID
+_OBJC_IVAR_$_STPEphemeralKey._created
+_OBJC_IVAR_$_STPEphemeralKey._livemode
+_OBJC_IVAR_$_STPEphemeralKey._secret
+_OBJC_IVAR_$_STPEphemeralKey._expires
+_OBJC_IVAR_$_STPEphemeralKey._customerID
+_OBJC_IVAR_$_STPEphemeralKey._allResponseFields
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPEphemeralKey.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPEphemeralKey.h
+-[STPPaymentCardTextFieldViewModel setCardNumber:]
+-[STPPaymentCardTextFieldViewModel setRawExpiration:]
+-[STPPaymentCardTextFieldViewModel rawExpiration]
+-[STPPaymentCardTextFieldViewModel setExpirationMonth:]
+-[STPPaymentCardTextFieldViewModel setExpirationYear:]
+-[STPPaymentCardTextFieldViewModel setCvc:]
+-[STPPaymentCardTextFieldViewModel brand]
+-[STPPaymentCardTextFieldViewModel validationStateForField:]
+-[STPPaymentCardTextFieldViewModel isValid]
+-[STPPaymentCardTextFieldViewModel defaultPlaceholder]
+-[STPPaymentCardTextFieldViewModel numberWithoutLastDigits]
++[STPPaymentCardTextFieldViewModel keyPathsForValuesAffectingValid]
+-[STPPaymentCardTextFieldViewModel cardNumber]
+-[STPPaymentCardTextFieldViewModel expirationMonth]
+-[STPPaymentCardTextFieldViewModel expirationYear]
+-[STPPaymentCardTextFieldViewModel cvc]
+-[STPPaymentCardTextFieldViewModel .cxx_destruct]
+_OBJC_IVAR_$_STPPaymentCardTextFieldViewModel._cardNumber
+_OBJC_IVAR_$_STPPaymentCardTextFieldViewModel._expirationMonth
+_OBJC_IVAR_$_STPPaymentCardTextFieldViewModel._expirationYear
+_OBJC_IVAR_$_STPPaymentCardTextFieldViewModel._cvc
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPaymentCardTextFieldViewModel.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPaymentCardTextFieldViewModel.h
++[STPSourceRedirect stringToStatusMapping]
++[STPSourceRedirect statusFromString:]
++[STPSourceRedirect stringFromStatus:]
+-[STPSourceRedirect description]
++[STPSourceRedirect requiredFields]
++[STPSourceRedirect decodedObjectFromAPIResponse:]
+-[STPSourceRedirect returnURL]
+-[STPSourceRedirect setReturnURL:]
+-[STPSourceRedirect status]
+-[STPSourceRedirect setStatus:]
+-[STPSourceRedirect url]
+-[STPSourceRedirect setUrl:]
+-[STPSourceRedirect allResponseFields]
+-[STPSourceRedirect setAllResponseFields:]
+-[STPSourceRedirect .cxx_destruct]
+_OBJC_IVAR_$_STPSourceRedirect._returnURL
+_OBJC_IVAR_$_STPSourceRedirect._status
+_OBJC_IVAR_$_STPSourceRedirect._url
+_OBJC_IVAR_$_STPSourceRedirect._allResponseFields
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPSourceRedirect.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPSourceRedirect.h
+-[STPCardParams init]
+-[STPCardParams last4]
+-[STPCardParams address]
+-[STPCardParams setAddress:]
+-[STPCardParams description]
++[STPCardParams rootObjectName]
++[STPCardParams propertyNamesToFormFieldNamesMapping]
+-[STPCardParams additionalAPIParameters]
+-[STPCardParams setAdditionalAPIParameters:]
+-[STPCardParams number]
+-[STPCardParams setNumber:]
+-[STPCardParams expMonth]
+-[STPCardParams setExpMonth:]
+-[STPCardParams expYear]
+-[STPCardParams setExpYear:]
+-[STPCardParams cvc]
+-[STPCardParams setCvc:]
+-[STPCardParams name]
+-[STPCardParams setName:]
+-[STPCardParams addressLine1]
+-[STPCardParams setAddressLine1:]
+-[STPCardParams addressLine2]
+-[STPCardParams setAddressLine2:]
+-[STPCardParams addressCity]
+-[STPCardParams setAddressCity:]
+-[STPCardParams addressState]
+-[STPCardParams setAddressState:]
+-[STPCardParams addressZip]
+-[STPCardParams setAddressZip:]
+-[STPCardParams addressCountry]
+-[STPCardParams setAddressCountry:]
+-[STPCardParams currency]
+-[STPCardParams setCurrency:]
+-[STPCardParams .cxx_destruct]
+_OBJC_IVAR_$_STPCardParams._additionalAPIParameters
+_OBJC_IVAR_$_STPCardParams._number
+_OBJC_IVAR_$_STPCardParams._expMonth
+_OBJC_IVAR_$_STPCardParams._expYear
+_OBJC_IVAR_$_STPCardParams._cvc
+_OBJC_IVAR_$_STPCardParams._name
+_OBJC_IVAR_$_STPCardParams._addressLine1
+_OBJC_IVAR_$_STPCardParams._addressLine2
+_OBJC_IVAR_$_STPCardParams._addressCity
+_OBJC_IVAR_$_STPCardParams._addressState
+_OBJC_IVAR_$_STPCardParams._addressZip
+_OBJC_IVAR_$_STPCardParams._addressCountry
+_OBJC_IVAR_$_STPCardParams._currency
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPCardParams.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPCardParams.h
+-[NSURLComponents(Stripe) stp_queryItemsDictionary]
+-[NSURLComponents(Stripe) setStp_queryItemsDictionary:]
+___55-[NSURLComponents(Stripe) setStp_queryItemsDictionary:]_block_invoke
+-[NSURLComponents(Stripe) stp_matchesURLComponents:]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/NSURLComponents+Stripe.m
+linkNSURLComponentsCategory
+__55-[NSURLComponents(Stripe) setStp_queryItemsDictionary:]_block_invoke
+-[STPPaymentResult initWithSource:]
+-[STPPaymentResult source]
+-[STPPaymentResult setSource:]
+-[STPPaymentResult .cxx_destruct]
+_OBJC_IVAR_$_STPPaymentResult._source
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPaymentResult.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPPaymentResult.h
++[STPPaymentMethodTuple tupleWithPaymentMethods:selectedPaymentMethod:]
++[STPPaymentMethodTuple tupleWithCardTuple:applePayEnabled:]
+-[STPPaymentMethodTuple selectedPaymentMethod]
+-[STPPaymentMethodTuple setSelectedPaymentMethod:]
+-[STPPaymentMethodTuple paymentMethods]
+-[STPPaymentMethodTuple setPaymentMethods:]
+-[STPPaymentMethodTuple .cxx_destruct]
+_OBJC_IVAR_$_STPPaymentMethodTuple._selectedPaymentMethod
+_OBJC_IVAR_$_STPPaymentMethodTuple._paymentMethods
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPaymentMethodTuple.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPaymentMethodTuple.h
+-[STPBlockBasedApplePayDelegate paymentAuthorizationViewController:didAuthorizePayment:completion:]
+___99-[STPBlockBasedApplePayDelegate paymentAuthorizationViewController:didAuthorizePayment:completion:]_block_invoke
+___99-[STPBlockBasedApplePayDelegate paymentAuthorizationViewController:didAuthorizePayment:completion:]_block_invoke_2
+___copy_helper_block_.10
+___destroy_helper_block_.11
+-[STPBlockBasedApplePayDelegate paymentAuthorizationViewController:didSelectShippingMethod:completion:]
+___103-[STPBlockBasedApplePayDelegate paymentAuthorizationViewController:didSelectShippingMethod:completion:]_block_invoke
+___copy_helper_block_.18
+___destroy_helper_block_.19
+-[STPBlockBasedApplePayDelegate paymentAuthorizationViewController:didSelectShippingContact:completion:]
+___104-[STPBlockBasedApplePayDelegate paymentAuthorizationViewController:didSelectShippingContact:completion:]_block_invoke
+___copy_helper_block_.28
+___destroy_helper_block_.29
+-[STPBlockBasedApplePayDelegate paymentAuthorizationViewController:didSelectShippingAddress:completion:]
+___104-[STPBlockBasedApplePayDelegate paymentAuthorizationViewController:didSelectShippingAddress:completion:]_block_invoke
+-[STPBlockBasedApplePayDelegate paymentAuthorizationViewControllerDidFinish:]
+-[STPBlockBasedApplePayDelegate apiClient]
+-[STPBlockBasedApplePayDelegate setApiClient:]
+-[STPBlockBasedApplePayDelegate onShippingAddressSelection]
+-[STPBlockBasedApplePayDelegate setOnShippingAddressSelection:]
+-[STPBlockBasedApplePayDelegate onShippingMethodSelection]
+-[STPBlockBasedApplePayDelegate setOnShippingMethodSelection:]
+-[STPBlockBasedApplePayDelegate onPaymentAuthorization]
+-[STPBlockBasedApplePayDelegate setOnPaymentAuthorization:]
+-[STPBlockBasedApplePayDelegate onTokenCreation]
+-[STPBlockBasedApplePayDelegate setOnTokenCreation:]
+-[STPBlockBasedApplePayDelegate onFinish]
+-[STPBlockBasedApplePayDelegate setOnFinish:]
+-[STPBlockBasedApplePayDelegate lastError]
+-[STPBlockBasedApplePayDelegate setLastError:]
+-[STPBlockBasedApplePayDelegate didSucceed]
+-[STPBlockBasedApplePayDelegate setDidSucceed:]
+-[STPBlockBasedApplePayDelegate .cxx_destruct]
++[PKPaymentAuthorizationViewController(Stripe_Blocks) stp_controllerWithPaymentRequest:apiClient:onShippingAddressSelection:onShippingMethodSelection:onPaymentAuthorization:onTokenCreation:onFinish:]
+___block_descriptor_tmp.13
+___block_descriptor_tmp.21
+_OBJC_IVAR_$_STPBlockBasedApplePayDelegate._apiClient
+_OBJC_IVAR_$_STPBlockBasedApplePayDelegate._onShippingAddressSelection
+_OBJC_IVAR_$_STPBlockBasedApplePayDelegate._onShippingMethodSelection
+_OBJC_IVAR_$_STPBlockBasedApplePayDelegate._onPaymentAuthorization
+_OBJC_IVAR_$_STPBlockBasedApplePayDelegate._onTokenCreation
+_OBJC_IVAR_$_STPBlockBasedApplePayDelegate._onFinish
+_OBJC_IVAR_$_STPBlockBasedApplePayDelegate._lastError
+_OBJC_IVAR_$_STPBlockBasedApplePayDelegate._didSucceed
+l_OBJC_PROTOCOL_$_PKPaymentAuthorizationViewControllerDelegate
+l_OBJC_LABEL_PROTOCOL_$_PKPaymentAuthorizationViewControllerDelegate
+_kSTPBlockBasedApplePayDelegateAssociatedObjectKey
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PKPaymentAuthorizationViewController+Stripe_Blocks.m
+linkPKPaymentAuthorizationViewControllerBlocksCategory
+__104-[STPBlockBasedApplePayDelegate paymentAuthorizationViewController:didSelectShippingAddress:completion:]_block_invoke
+__104-[STPBlockBasedApplePayDelegate paymentAuthorizationViewController:didSelectShippingContact:completion:]_block_invoke
+__103-[STPBlockBasedApplePayDelegate paymentAuthorizationViewController:didSelectShippingMethod:completion:]_block_invoke
+__99-[STPBlockBasedApplePayDelegate paymentAuthorizationViewController:didAuthorizePayment:completion:]_block_invoke_2
+__99-[STPBlockBasedApplePayDelegate paymentAuthorizationViewController:didAuthorizePayment:completion:]_block_invoke
+-[STPPaymentMethodsViewController initWithPaymentContext:]
+-[STPPaymentMethodsViewController initWithConfiguration:theme:customerContext:delegate:]
+-[STPPaymentMethodsViewController initWithConfiguration:theme:apiAdapter:delegate:]
+-[STPPaymentMethodsViewController retrieveCustomerWithConfiguration:apiAdapter:]
+___80-[STPPaymentMethodsViewController retrieveCustomerWithConfiguration:apiAdapter:]_block_invoke
+___80-[STPPaymentMethodsViewController retrieveCustomerWithConfiguration:apiAdapter:]_block_invoke_2
+-[STPPaymentMethodsViewController createAndSetupViews]
+___54-[STPPaymentMethodsViewController createAndSetupViews]_block_invoke
+___54-[STPPaymentMethodsViewController createAndSetupViews]_block_invoke_2
+___copy_helper_block_.108
+___destroy_helper_block_.109
+___54-[STPPaymentMethodsViewController createAndSetupViews]_block_invoke.111
+___copy_helper_block_.126
+___destroy_helper_block_.127
+-[STPPaymentMethodsViewController viewDidLayoutSubviews]
+-[STPPaymentMethodsViewController updateAppearance]
+-[STPPaymentMethodsViewController finishWithPaymentMethod:]
+___59-[STPPaymentMethodsViewController finishWithPaymentMethod:]_block_invoke
+-[STPPaymentMethodsViewController internalViewControllerDidSelectPaymentMethod:]
+-[STPPaymentMethodsViewController internalViewControllerDidCreateToken:completion:]
+___83-[STPPaymentMethodsViewController internalViewControllerDidCreateToken:completion:]_block_invoke
+___83-[STPPaymentMethodsViewController internalViewControllerDidCreateToken:completion:]_block_invoke_2
+___83-[STPPaymentMethodsViewController internalViewControllerDidCreateToken:completion:]_block_invoke_3
+___copy_helper_block_.162
+___destroy_helper_block_.163
+___copy_helper_block_.165
+___destroy_helper_block_.166
+___83-[STPPaymentMethodsViewController internalViewControllerDidCreateToken:completion:]_block_invoke.168
+___copy_helper_block_.171
+___destroy_helper_block_.172
+___copy_helper_block_.174
+___destroy_helper_block_.175
+-[STPPaymentMethodsViewController internalViewControllerDidCancel]
+-[STPPaymentMethodsViewController addCardViewControllerDidCancel:]
+-[STPPaymentMethodsViewController addCardViewController:didCreateToken:completion:]
+-[STPPaymentMethodsViewController dismissWithCompletion:]
+-[STPPaymentMethodsViewController delegate]
+-[STPPaymentMethodsViewController prefilledInformation]
+-[STPPaymentMethodsViewController setPrefilledInformation:]
+-[STPPaymentMethodsViewController configuration]
+-[STPPaymentMethodsViewController setConfiguration:]
+-[STPPaymentMethodsViewController shippingAddress]
+-[STPPaymentMethodsViewController setShippingAddress:]
+-[STPPaymentMethodsViewController apiAdapter]
+-[STPPaymentMethodsViewController setApiAdapter:]
+-[STPPaymentMethodsViewController apiClient]
+-[STPPaymentMethodsViewController setApiClient:]
+-[STPPaymentMethodsViewController loadingPromise]
+-[STPPaymentMethodsViewController setLoadingPromise:]
+-[STPPaymentMethodsViewController paymentMethods]
+-[STPPaymentMethodsViewController setPaymentMethods:]
+-[STPPaymentMethodsViewController selectedPaymentMethod]
+-[STPPaymentMethodsViewController setSelectedPaymentMethod:]
+-[STPPaymentMethodsViewController activityIndicator]
+-[STPPaymentMethodsViewController setActivityIndicator:]
+-[STPPaymentMethodsViewController internalViewController]
+-[STPPaymentMethodsViewController setInternalViewController:]
+-[STPPaymentMethodsViewController loading]
+-[STPPaymentMethodsViewController setLoading:]
+-[STPPaymentMethodsViewController .cxx_destruct]
+-[STPPaymentMethodsViewController(Private) initWithConfiguration:apiAdapter:loadingPromise:theme:shippingAddress:delegate:]
+___123-[STPPaymentMethodsViewController(Private) initWithConfiguration:apiAdapter:loadingPromise:theme:shippingAddress:delegate:]_block_invoke
+___copy_helper_block_.332
+___destroy_helper_block_.333
+___123-[STPPaymentMethodsViewController(Private) initWithConfiguration:apiAdapter:loadingPromise:theme:shippingAddress:delegate:]_block_invoke.337
+___copy_helper_block_.338
+___destroy_helper_block_.339
+___123-[STPPaymentMethodsViewController(Private) initWithConfiguration:apiAdapter:loadingPromise:theme:shippingAddress:delegate:]_block_invoke.344
+___copy_helper_block_.345
+___destroy_helper_block_.346
+___123-[STPPaymentMethodsViewController(Private) initWithConfiguration:apiAdapter:loadingPromise:theme:shippingAddress:delegate:]_block_invoke.348
+___copy_helper_block_.351
+___destroy_helper_block_.352
+___block_descriptor_tmp.110
+___block_descriptor_tmp.129
+___block_descriptor_tmp.147
+___block_descriptor_tmp.164
+___block_descriptor_tmp.167
+___block_descriptor_tmp.173
+___block_descriptor_tmp.176
+_OBJC_IVAR_$_STPPaymentMethodsViewController._delegate
+_OBJC_IVAR_$_STPPaymentMethodsViewController._prefilledInformation
+_OBJC_IVAR_$_STPPaymentMethodsViewController._configuration
+_OBJC_IVAR_$_STPPaymentMethodsViewController._shippingAddress
+_OBJC_IVAR_$_STPPaymentMethodsViewController._apiAdapter
+_OBJC_IVAR_$_STPPaymentMethodsViewController._apiClient
+_OBJC_IVAR_$_STPPaymentMethodsViewController._loadingPromise
+_OBJC_IVAR_$_STPPaymentMethodsViewController._paymentMethods
+_OBJC_IVAR_$_STPPaymentMethodsViewController._selectedPaymentMethod
+_OBJC_IVAR_$_STPPaymentMethodsViewController._activityIndicator
+_OBJC_IVAR_$_STPPaymentMethodsViewController._internalViewController
+_OBJC_IVAR_$_STPPaymentMethodsViewController._loading
+l_OBJC_PROTOCOL_$_STPPaymentMethodsInternalViewControllerDelegate
+l_OBJC_LABEL_PROTOCOL_$_STPPaymentMethodsInternalViewControllerDelegate
+___block_descriptor_tmp.341
+___block_descriptor_tmp.347
+___block_descriptor_tmp.353
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPaymentMethodsViewController.m
+__123-[STPPaymentMethodsViewController(Private) initWithConfiguration:apiAdapter:loadingPromise:theme:shippingAddress:delegate:]_block_invoke.348
+__123-[STPPaymentMethodsViewController(Private) initWithConfiguration:apiAdapter:loadingPromise:theme:shippingAddress:delegate:]_block_invoke.344
+__123-[STPPaymentMethodsViewController(Private) initWithConfiguration:apiAdapter:loadingPromise:theme:shippingAddress:delegate:]_block_invoke.337
+__123-[STPPaymentMethodsViewController(Private) initWithConfiguration:apiAdapter:loadingPromise:theme:shippingAddress:delegate:]_block_invoke
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPPaymentMethodsViewController.h
+__83-[STPPaymentMethodsViewController internalViewControllerDidCreateToken:completion:]_block_invoke.168
+__83-[STPPaymentMethodsViewController internalViewControllerDidCreateToken:completion:]_block_invoke_3
+__83-[STPPaymentMethodsViewController internalViewControllerDidCreateToken:completion:]_block_invoke_2
+__83-[STPPaymentMethodsViewController internalViewControllerDidCreateToken:completion:]_block_invoke
+__59-[STPPaymentMethodsViewController finishWithPaymentMethod:]_block_invoke
+__54-[STPPaymentMethodsViewController createAndSetupViews]_block_invoke.111
+__54-[STPPaymentMethodsViewController createAndSetupViews]_block_invoke_2
+__54-[STPPaymentMethodsViewController createAndSetupViews]_block_invoke
+__80-[STPPaymentMethodsViewController retrieveCustomerWithConfiguration:apiAdapter:]_block_invoke_2
+__80-[STPPaymentMethodsViewController retrieveCustomerWithConfiguration:apiAdapter:]_block_invoke
+-[UINavigationController(Stripe_Completion) stp_pushViewController:animated:completion:]
+___88-[UINavigationController(Stripe_Completion) stp_pushViewController:animated:completion:]_block_invoke
+-[UINavigationController(Stripe_Completion) stp_popViewControllerAnimated:completion:]
+___86-[UINavigationController(Stripe_Completion) stp_popViewControllerAnimated:completion:]_block_invoke
+___copy_helper_block_.7
+___destroy_helper_block_.8
+-[UINavigationController(Stripe_Completion) stp_popToViewController:animated:completion:]
+___89-[UINavigationController(Stripe_Completion) stp_popToViewController:animated:completion:]_block_invoke
+___copy_helper_block_.12
+___destroy_helper_block_.13
+___block_descriptor_tmp.9
+___block_descriptor_tmp.14
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/UINavigationController+Stripe_Completion.m
+linkUINavigationControllerCompletionCategory
+__89-[UINavigationController(Stripe_Completion) stp_popToViewController:animated:completion:]_block_invoke
+__86-[UINavigationController(Stripe_Completion) stp_popViewControllerAnimated:completion:]_block_invoke
+__88-[UINavigationController(Stripe_Completion) stp_pushViewController:animated:completion:]_block_invoke
++[STPPromise promiseWithError:]
++[STPPromise promiseWithValue:]
+-[STPPromise init]
+-[STPPromise completed]
+-[STPPromise succeed:]
+___22-[STPPromise succeed:]_block_invoke
+-[STPPromise fail:]
+___19-[STPPromise fail:]_block_invoke
+-[STPPromise completeWith:]
+___27-[STPPromise completeWith:]_block_invoke
+___27-[STPPromise completeWith:]_block_invoke.38
+___copy_helper_block_.39
+___destroy_helper_block_.40
+-[STPPromise onSuccess:]
+___24-[STPPromise onSuccess:]_block_invoke
+___copy_helper_block_.45
+___destroy_helper_block_.46
+-[STPPromise onFailure:]
+___24-[STPPromise onFailure:]_block_invoke
+-[STPPromise onCompletion:]
+___27-[STPPromise onCompletion:]_block_invoke
+___copy_helper_block_.53
+___destroy_helper_block_.54
+___27-[STPPromise onCompletion:]_block_invoke.56
+___copy_helper_block_.57
+___destroy_helper_block_.58
+-[STPPromise map:]
+___18-[STPPromise map:]_block_invoke
+___18-[STPPromise map:]_block_invoke.65
+-[STPPromise flatMap:]
+___22-[STPPromise flatMap:]_block_invoke
+___22-[STPPromise flatMap:]_block_invoke_2
+___copy_helper_block_.69
+___destroy_helper_block_.70
+___22-[STPPromise flatMap:]_block_invoke.72
+___copy_helper_block_.76
+___destroy_helper_block_.77
+___22-[STPPromise flatMap:]_block_invoke.79
+___copy_helper_block_.80
+___destroy_helper_block_.81
+-[STPPromise asVoid]
+___20-[STPPromise asVoid]_block_invoke
+___20-[STPPromise asVoid]_block_invoke.89
+___copy_helper_block_.90
+___destroy_helper_block_.91
+-[STPPromise value]
+-[STPPromise setValue:]
+-[STPPromise error]
+-[STPPromise setError:]
+-[STPPromise successCallbacks]
+-[STPPromise setSuccessCallbacks:]
+-[STPPromise errorCallbacks]
+-[STPPromise setErrorCallbacks:]
+-[STPPromise .cxx_destruct]
+-[STPVoidPromise succeed]
+-[STPVoidPromise voidCompleteWith:]
+___35-[STPVoidPromise voidCompleteWith:]_block_invoke
+___35-[STPVoidPromise voidCompleteWith:]_block_invoke.131
+___copy_helper_block_.132
+___destroy_helper_block_.133
+-[STPVoidPromise voidOnSuccess:]
+___32-[STPVoidPromise voidOnSuccess:]_block_invoke
+-[STPVoidPromise voidFlatMap:]
+___30-[STPVoidPromise voidFlatMap:]_block_invoke
+___copy_helper_block_.139
+___destroy_helper_block_.140
+-[STPVoidPromise asVoid]
+_OBJC_IVAR_$_STPPromise._successCallbacks
+_OBJC_IVAR_$_STPPromise._errorCallbacks
+___block_descriptor_tmp.42
+___block_descriptor_tmp.47
+___block_descriptor_tmp.52
+___block_descriptor_tmp.55
+___block_descriptor_tmp.68
+___block_descriptor_tmp.71
+___block_descriptor_tmp.78
+___block_descriptor_tmp.82
+___block_descriptor_tmp.92
+_OBJC_IVAR_$_STPPromise._value
+_OBJC_IVAR_$_STPPromise._error
+___block_descriptor_tmp.128
+___block_descriptor_tmp.134
+___block_descriptor_tmp.142
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPromise.m
+__30-[STPVoidPromise voidFlatMap:]_block_invoke
+__32-[STPVoidPromise voidOnSuccess:]_block_invoke
+__35-[STPVoidPromise voidCompleteWith:]_block_invoke.131
+__35-[STPVoidPromise voidCompleteWith:]_block_invoke
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPPromise.h
+__20-[STPPromise asVoid]_block_invoke.89
+__20-[STPPromise asVoid]_block_invoke
+__22-[STPPromise flatMap:]_block_invoke.79
+__22-[STPPromise flatMap:]_block_invoke.72
+__22-[STPPromise flatMap:]_block_invoke_2
+__22-[STPPromise flatMap:]_block_invoke
+__18-[STPPromise map:]_block_invoke.65
+__18-[STPPromise map:]_block_invoke
+__27-[STPPromise onCompletion:]_block_invoke.56
+__27-[STPPromise onCompletion:]_block_invoke
+__24-[STPPromise onFailure:]_block_invoke
+__24-[STPPromise onSuccess:]_block_invoke
+__27-[STPPromise completeWith:]_block_invoke.38
+__27-[STPPromise completeWith:]_block_invoke
+__19-[STPPromise fail:]_block_invoke
+__22-[STPPromise succeed:]_block_invoke
+-[NSString(Stripe) stp_safeSubstringToIndex:]
+-[NSString(Stripe) stp_safeSubstringFromIndex:]
+-[NSString(Stripe) stp_reversedString]
+___38-[NSString(Stripe) stp_reversedString]_block_invoke
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/NSString+Stripe.m
+linkNSStringCategory
+__38-[NSString(Stripe) stp_reversedString]_block_invoke
++[Stripe(STPURLCallbackHandlerAdditions) handleStripeURLCallbackWithURL:]
+-[STPURLCallback urlComponents]
+-[STPURLCallback setUrlComponents:]
+-[STPURLCallback listener]
+-[STPURLCallback setListener:]
+-[STPURLCallback .cxx_destruct]
++[STPURLCallbackHandler shared]
+___31+[STPURLCallbackHandler shared]_block_invoke
+-[STPURLCallbackHandler init]
+-[STPURLCallbackHandler handleURLCallback:]
+-[STPURLCallbackHandler registerListener:forURL:]
+-[STPURLCallbackHandler unregisterListener:]
+-[STPURLCallbackHandler callbacks]
+-[STPURLCallbackHandler setCallbacks:]
+-[STPURLCallbackHandler .cxx_destruct]
+_OBJC_IVAR_$_STPURLCallback._urlComponents
+_OBJC_IVAR_$_STPURLCallback._listener
+_shared.handler
+_shared.onceToken
+_OBJC_IVAR_$_STPURLCallbackHandler._callbacks
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPURLCallbackHandler.m
+__31+[STPURLCallbackHandler shared]_block_invoke
++[STPAPIRequest postWithAPIClient:endpoint:parameters:deserializer:completion:]
++[STPAPIRequest postWithAPIClient:endpoint:parameters:deserializers:completion:]
+___80+[STPAPIRequest postWithAPIClient:endpoint:parameters:deserializers:completion:]_block_invoke
++[STPAPIRequest getWithAPIClient:endpoint:parameters:deserializer:completion:]
+___78+[STPAPIRequest getWithAPIClient:endpoint:parameters:deserializer:completion:]_block_invoke
+___copy_helper_block_.38
+___destroy_helper_block_.39
++[STPAPIRequest parseResponse:body:error:deserializers:completion:]
+___67+[STPAPIRequest parseResponse:body:error:deserializers:completion:]_block_invoke
+___copy_helper_block_.71
+___destroy_helper_block_.72
+___block_descriptor_tmp.41
+___block_descriptor_tmp.74
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPAPIRequest.m
+__67+[STPAPIRequest parseResponse:body:error:deserializers:completion:]_block_invoke
+__78+[STPAPIRequest getWithAPIClient:endpoint:parameters:deserializer:completion:]_block_invoke
+__80+[STPAPIRequest postWithAPIClient:endpoint:parameters:deserializers:completion:]_block_invoke
++[STPFile stringToPurposeMapping]
++[STPFile purposeFromString:]
++[STPFile stringFromPurpose:]
+-[STPFile isEqual:]
+-[STPFile hash]
+-[STPFile isEqualToFile:]
++[STPFile requiredFields]
++[STPFile decodedObjectFromAPIResponse:]
+-[STPFile fileId]
+-[STPFile setFileId:]
+-[STPFile created]
+-[STPFile setCreated:]
+-[STPFile purpose]
+-[STPFile setPurpose:]
+-[STPFile size]
+-[STPFile setSize:]
+-[STPFile type]
+-[STPFile setType:]
+-[STPFile allResponseFields]
+-[STPFile setAllResponseFields:]
+-[STPFile .cxx_destruct]
+_OBJC_IVAR_$_STPFile._fileId
+_OBJC_IVAR_$_STPFile._created
+_OBJC_IVAR_$_STPFile._purpose
+_OBJC_IVAR_$_STPFile._size
+_OBJC_IVAR_$_STPFile._type
+_OBJC_IVAR_$_STPFile._allResponseFields
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPFile.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPFile.h
++[NSBundle(Stripe_AppName) stp_applicationName]
++[NSBundle(Stripe_AppName) stp_applicationVersion]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/NSBundle+Stripe_AppName.m
+linkNSBundleAppNameCategory
+-[UIView(Stripe_FirstResponder) stp_findFirstResponder]
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/UIView+Stripe_FirstResponder.m
+linkUIViewFirstResponderCategory
+-[STPBankAccountParams init]
+-[STPBankAccountParams last4]
++[STPBankAccountParams stringToAccountHolderTypeMapping]
++[STPBankAccountParams accountHolderTypeFromString:]
++[STPBankAccountParams stringFromAccountHolderType:]
+-[STPBankAccountParams description]
++[STPBankAccountParams rootObjectName]
++[STPBankAccountParams propertyNamesToFormFieldNamesMapping]
+-[STPBankAccountParams accountHolderTypeString]
+-[STPBankAccountParams additionalAPIParameters]
+-[STPBankAccountParams setAdditionalAPIParameters:]
+-[STPBankAccountParams accountNumber]
+-[STPBankAccountParams setAccountNumber:]
+-[STPBankAccountParams routingNumber]
+-[STPBankAccountParams setRoutingNumber:]
+-[STPBankAccountParams country]
+-[STPBankAccountParams setCountry:]
+-[STPBankAccountParams currency]
+-[STPBankAccountParams setCurrency:]
+-[STPBankAccountParams accountHolderName]
+-[STPBankAccountParams setAccountHolderName:]
+-[STPBankAccountParams accountHolderType]
+-[STPBankAccountParams setAccountHolderType:]
+-[STPBankAccountParams .cxx_destruct]
+_OBJC_IVAR_$_STPBankAccountParams._additionalAPIParameters
+_OBJC_IVAR_$_STPBankAccountParams._accountHolderType
+_OBJC_IVAR_$_STPBankAccountParams._accountNumber
+_OBJC_IVAR_$_STPBankAccountParams._routingNumber
+_OBJC_IVAR_$_STPBankAccountParams._country
+_OBJC_IVAR_$_STPBankAccountParams._currency
+_OBJC_IVAR_$_STPBankAccountParams._accountHolderName
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPBankAccountParams.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPBankAccountParams.h
++[STPSourceVerification stringToStatusMapping]
++[STPSourceVerification statusFromString:]
++[STPSourceVerification stringFromStatus:]
+-[STPSourceVerification description]
++[STPSourceVerification requiredFields]
++[STPSourceVerification decodedObjectFromAPIResponse:]
+-[STPSourceVerification attemptsRemaining]
+-[STPSourceVerification setAttemptsRemaining:]
+-[STPSourceVerification status]
+-[STPSourceVerification setStatus:]
+-[STPSourceVerification allResponseFields]
+-[STPSourceVerification setAllResponseFields:]
+-[STPSourceVerification .cxx_destruct]
+_OBJC_IVAR_$_STPSourceVerification._attemptsRemaining
+_OBJC_IVAR_$_STPSourceVerification._status
+_OBJC_IVAR_$_STPSourceVerification._allResponseFields
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/STPSourceVerification.m
+/Users/joeydong/stripe/stripe-connect-ios-demo/Carthage/Checkouts/stripe-ios/Stripe/PublicHeaders/STPSourceVerification.h
+/Users/joeydong/Library/Caches/org.carthage.CarthageKit/DerivedData/stripe-ios/v11.0.0/Build/Intermediates/Stripe.build/Release-iphoneos/StripeiOS.build/DerivedSources/Stripe_vers.c
+__ZL15__ARCLite__loadv
+__ZL58__arclite_NSMutableDictionary__setObject_forKeyedSubscriptP19NSMutableDictionaryP13objc_selectorP11objc_objectS4_
+__ZL22add_image_hook_swiftV1PK11mach_headerl
+__ZL42__arclite_NSUndoManagerProxy_isKindOfClassP11objc_objectP13objc_selectorP10objc_class
+__ZL13replaceMethodP10objc_classP13objc_selectorPFP11objc_objectS4_S2_zEPS6_
+__ZL30__arclite_NSManagedObject_initP11objc_objectP13objc_selector
+__ZL41__arclite_NSManagedObject_allocWithEntityP11objc_objectP13objc_selectorS0_
+__ZL36__arclite_NSManagedObject_allocBatchP11objc_objectP13objc_selectorPS0_S0_j
+__ZL37__arclite_NSKKMS_fastIndexForKnownKeyP11objc_objectP13objc_selectorS0_
+__ZL28__arclite_NSKKMS_indexForKeyP11objc_objectP13objc_selectorS0_
+__ZL29__arclite_NSKKsD_objectForKeyP11objc_objectP13objc_selectorS0_
+__ZL35__arclite_NSKKsD_removeObjectForKeyP11objc_objectP13objc_selectorS0_
+__ZL33__arclite_NSKKsD_setObject_forKeyP11objc_objectP13objc_selectorS0_S0_
+__ZL41__arclite_NSKKsD_addEntriesFromDictionaryP11objc_objectP13objc_selectorP12NSDictionary
+__ZL28__arclite_objc_readClassPairP10objc_classPK15objc_image_info
+__ZL32__arclite_objc_allocateClassPairP10objc_classPKcm
+__ZL32__arclite_object_getIndexedIvarsP11objc_object
+__ZL23__arclite_objc_getClassPKc
+__ZL27__arclite_objc_getMetaClassPKc
+__ZL31__arclite_objc_getRequiredClassPKc
+__ZL26__arclite_objc_lookUpClassPKc
+__ZL26__arclite_objc_getProtocolPKc
+__ZL23__arclite_class_getNameP10objc_class
+__ZL26__arclite_protocol_getNameP8Protocol
+__ZL37__arclite_objc_copyClassNamesForImagePKcPj
+__ZL17transcribeMethodsP10objc_classP15glue_class_ro_t
+__ZL19transcribeProtocolsP10objc_classP15glue_class_ro_t
+__ZL20transcribePropertiesP10objc_classP15glue_class_ro_t
+__ZL14initialize_impP11objc_objectP13objc_selector
+__ZL18allocateMaybeSwiftP18glue_swift_class_tm
+__ZL22copySwiftV1MangledNamePKcb
+__ZL13demangledNamePKcb
+__ZL16scanMangledFieldRPKcS0_S1_Ri
+__ZL30arclite_uninitialized_functionv
+__ZL12cxxConstructP11objc_object
+__ZL20fixStringForCoreDataP11objc_object
+_OBJC_METACLASS_$___ARCLite__
+__ZL24OBJC_CLASS_$___ARCLite__
+__ZL31OBJC_METACLASS_RO_$___ARCLite__
+__non_lazy_classes
+__ZL27OBJC_CLASS_RO_$___ARCLite__
+__ZL11_class_name
+__ZL32OBJC_$_CLASS_METHODS___ARCLite__
+__ZL17_load_method_name
+__ZL17_load_method_type
+l_OBJC_PROTOCOL_$___ARCLiteKeyedSubscripting__
+l_OBJC_LABEL_PROTOCOL_$___ARCLiteKeyedSubscripting__
+l_OBJC_PROTOCOL_REFERENCE_$___ARCLiteKeyedSubscripting__
+__ZL30NSUndoManagerProxy_targetClass
+__ZL29original_NSManagedObject_init
+__ZL40original_NSManagedObject_allocWithEntity
+__ZL35original_NSManagedObject_allocBatch
+__ZL25NSMutableDictionary_class
+__ZL22NSConstantString_class
+__ZL14NSString_class
+__ZL36original_NSKKMS_fastIndexForKnownKey
+__ZL27original_NSKKMS_indexForKey
+__ZL28original_NSKKsD_objectForKey
+__ZL34original_NSKKsD_removeObjectForKey
+__ZL32original_NSKKsD_setObject_forKey
+__ZL40original_NSKKsD_addEntriesFromDictionary
+__ZZL22add_image_hook_swiftV1PK11mach_headerlE7patches
+__ZGVZL22add_image_hook_swiftV1PK11mach_headerlE7patches
+__ZL31original_objc_allocateClassPair
+__ZL31original_object_getIndexedIvars
+__ZL22original_objc_getClass
+__ZL26original_objc_getMetaClass
+__ZL30original_objc_getRequiredClass
+__ZL25original_objc_lookUpClass
+__ZL25original_objc_getProtocol
+__ZL22original_class_getName
+__ZL25original_protocol_getName
+__ZL36original_objc_copyClassNamesForImage
+__ZL12demangleLock
+__ZL9Demangled
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -arch arm64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -Wno-trigraphs -fno-exceptions -fno-rtti -mpascal-strings -Os -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties -Wno-arc-repeated-use-of-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -D NDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.Internal.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -miphoneos-version-min=4.3 -g -fno-threadsafe-statics -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -fembed-bitcode=all -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-generated-files.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-own-target-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-all-target-headers.hmap -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-project-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/Symbols/BuiltProducts/include -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/DerivedSources/arm64 -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/DerivedSources -F/Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/Symbols/BuiltProducts -F/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.Internal.sdk/System/Library/PrivateFrameworks -Wall -Wextra -Wno-gcc-compat -Wno-error=incomplete-umbrella -Wno-error=incomplete-umbrella -MMD -MT dependencies -MF /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.d --serialize-diagnostics /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.dia -c /Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-66/source/arclite.mm -o /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.o -mlinker-version=278.4
+/Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-66/source/arclite.mm
+/Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-66
+fixStringForCoreData
+cxxConstruct
+arclite_uninitialized_function
+scanMangledField
+isdigit
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.Internal.sdk/usr/include/ctype.h
+__isctype
+demangledName
+copySwiftV1DemangledName
+copySwiftV1MangledName
+allocateMaybeSwift
+word_align
+isSwift
+initialize_imp
+transcribeProperties
+property_list_nth
+transcribeProtocols
+transcribeMethods
+data
+method_list_nth
+__arclite_objc_copyClassNamesForImage
+__arclite_protocol_getName
+__arclite_class_getName
+__arclite_objc_getProtocol
+__arclite_objc_lookUpClass
+__arclite_objc_getRequiredClass
+__arclite_objc_getMetaClass
+__arclite_objc_getClass
+__arclite_object_getIndexedIvars
+__arclite_objc_allocateClassPair
+metaclass
+__arclite_objc_readClassPair
+transcribeIvars
+ivar_list_nth
+max
+alignment
+ro
+fastFlags
+__arclite_NSKKsD_addEntriesFromDictionary
+__arclite_NSKKsD_setObject_forKey
+__arclite_NSKKsD_removeObjectForKey
+__arclite_NSKKsD_objectForKey
+__arclite_NSKKMS_indexForKey
+__arclite_NSKKMS_fastIndexForKnownKey
+__arclite_NSManagedObject_allocBatch
+__arclite_NSManagedObject_allocWithEntity
+__arclite_NSManagedObject_init
+replaceMethod
+__arclite_NSUndoManagerProxy_isKindOfClass
+add_image_hook_swiftV1
+patch_lazy_pointers
+patch_t<const char **(const char *, unsigned int *)>
+patch_t<const char *(Protocol *)>
+patch_t<const char *(Class)>
+patch_t<Protocol *(const char *)>
+patch_t<Class (const char *)>
+patch_t<void *(id)>
+patch_t<Class (Class, const char *, unsigned long)>
+patch_t<Class (Class, const objc_image_info *)>
+__arclite_NSMutableDictionary__setObject_forKeyedSubscript
+__ARCLite__load
+install_swiftV1
+install_dict_nil_value
+addOrReplaceMethod
+keyedGetter
