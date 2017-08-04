@@ -7,8 +7,8 @@ config.js
 # Xcode
 xcuserdata/
 
-# Carthage
-Carthage/Checkouts
+# Cocoapods
+Pods/
 
 # Logs
 logs

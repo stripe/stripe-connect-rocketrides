@@ -42,10 +42,10 @@ class RocketPathOverlay: NSObject, MKOverlay {
 class RocketPathOverlayRenderer: MKOverlayRenderer {
 
     private let rocketPathOverlay: RocketPathOverlay
+    private let thrustMultiplier: CGFloat = 1.5
 
     var lineWidth: CGFloat = 10.0
     var strokeColor: UIColor?
-    var arcMultiplier: CGFloat = 1.5
 
     init(rocketPathOverlay: RocketPathOverlay) {
         self.rocketPathOverlay = rocketPathOverlay
@@ -54,20 +54,55 @@ class RocketPathOverlayRenderer: MKOverlayRenderer {
     }
 
     override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
-        // Define rocket path
         let startPoint = point(for: rocketPathOverlay.startPoint)
         let endPoint = point(for: rocketPathOverlay.endPoint)
+        let controlPoint = calculateControlPoint(startPoint: startPoint, endPoint: endPoint)
 
-        let controlPointX = (startPoint.x + endPoint.x) / 2.0
-        let controlPointY = min(startPoint.y, endPoint.y) - (arcMultiplier * abs(endPoint.y - startPoint.y))
-
+        // Define and draw rocket path
         context.move(to: startPoint)
-        context.addQuadCurve(to: endPoint, control: CGPoint(x: controlPointX, y: controlPointY))
+        context.addQuadCurve(to: endPoint, control: controlPoint)
 
-        // Draw rocket path
         context.setStrokeColor((strokeColor ?? .black).cgColor)
         context.setLineWidth(lineWidth * (1.0 / zoomScale))
         context.strokePath()
+
+        // Define and draw shadow path
+        context.move(to: startPoint)
+        context.addLine(to: endPoint)
+
+        context.setStrokeColor(UIColor.black.withAlphaComponent(0.1).cgColor)
+        context.setLineWidth(lineWidth * (1.0 / zoomScale))
+        context.strokePath()
+    }
+
+    /// Calculates exactly `count` number of points that exist on the rocket path
+    func points(count: Int) -> [MKMapPoint] {
+        let startPoint = point(for: rocketPathOverlay.startPoint)
+        let endPoint = point(for: rocketPathOverlay.endPoint)
+        let controlPoint = calculateControlPoint(startPoint: startPoint, endPoint: endPoint)
+
+        func quadraticBezierPoint(_ t: CGFloat, _ p0: CGFloat, _ p1: CGFloat, _ p2: CGFloat) -> CGFloat {
+            // See: https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Quadratic_B.C3.A9zier_curves
+            return (pow(1.0 - t, 2.0) * p0) + (2.0 * (1.0 - t) * t * p1) + (pow(t, 2.0) * p2)
+        }
+
+        var result = [MKMapPoint]()
+
+        for percentage in stride(from: CGFloat(0.0), through: 1.0, by: 1.0 / CGFloat(count)) {
+            let pointX = quadraticBezierPoint(percentage, startPoint.x, controlPoint.x, endPoint.x)
+            let pointY = quadraticBezierPoint(percentage, startPoint.y, controlPoint.y, endPoint.y)
+
+            result.append(mapPoint(for: CGPoint(x: pointX, y: pointY)))
+        }
+
+        return result
+    }
+
+    private func calculateControlPoint(startPoint: CGPoint, endPoint: CGPoint) -> CGPoint {
+        let controlPointX = (startPoint.x + endPoint.x) / 2.0
+        let controlPointY = min(startPoint.y, endPoint.y) - (thrustMultiplier * abs(endPoint.y - startPoint.y))
+
+        return CGPoint(x: controlPointX, y: controlPointY)
     }
 
 }

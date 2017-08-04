@@ -153,11 +153,8 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
             // Do nothing
             break
         case .active:
-            // Reset to none state
-            rideRequestState = .none
-
-            // Hide ride details view
-            rideDetailsView.isHidden = true
+            // Complete the ride
+            completeActiveRide()
         }
     }
 
@@ -222,7 +219,7 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
         // Show rocket path in map view
         if let pickupCoordinate = pickupPlacemark?.coordinate, let destinationCoordinate = destinationPlacemark?.coordinate {
             let rocketPathOverlay = RocketPathOverlay(start: pickupCoordinate, end: destinationCoordinate)
-            mapView.add(rocketPathOverlay, level: .aboveRoads)
+            mapView.add(rocketPathOverlay, level: .aboveLabels)
         }
     }
 
@@ -313,7 +310,7 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
         }
     }
 
-    private func displayActiveRide() {
+    private func animateActiveRide() {
         guard case let .active(ride) = rideRequestState else {
             // Missing active ride
             return
@@ -326,6 +323,60 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
 
         // Show ride details view
         rideDetailsView.isHidden = false
+
+        // Animate traveling on rocket path
+        let numberOfPoints = 1000
+        let animationDuration = 5.0
+
+        guard let rocketPathOverlay = mapView.overlays.first(where: { $0 is RocketPathOverlay}) as? RocketPathOverlay else {
+            print("[ERROR] Missing expected `rocketPathOverlay`")
+            return
+        }
+
+        let rocketRiderAnnotation = MKPointAnnotation()
+        mapView.addAnnotation(rocketRiderAnnotation)
+
+        let rocketPathMapPoints = RocketPathOverlayRenderer(rocketPathOverlay: rocketPathOverlay).points(count: numberOfPoints)
+        var currentMapPointIdx = 0
+
+        func moveToNextPoint() {
+            // Move annotation to latest map point
+            let mapPoint = rocketPathMapPoints[currentMapPointIdx]
+            rocketRiderAnnotation.coordinate = MKCoordinateForMapPoint(mapPoint)
+
+            // Iterate to next map point
+            currentMapPointIdx += 1
+
+            if currentMapPointIdx < rocketPathMapPoints.count {
+                // Schedule next animation step
+                let deadline = DispatchTime.now() + (animationDuration / Double(numberOfPoints))
+                DispatchQueue.main.asyncAfter(deadline: deadline) {
+                    moveToNextPoint()
+                }
+            }
+            else {
+                mapView.removeAnnotation(rocketRiderAnnotation)
+
+                // Complete the ride
+                completeActiveRide()
+            }
+        }
+
+        // Kickoff animation loop
+        moveToNextPoint()
+    }
+
+    private func completeActiveRide() {
+        guard case .active = rideRequestState else {
+            // Missing active ride
+            return
+        }
+
+        // Reset to none state
+        rideRequestState = .none
+
+        // Hide ride details view
+        rideDetailsView.isHidden = true
     }
 
     // MARK: STPPaymentContextDelegate
@@ -389,7 +440,7 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
         switch status {
         case .success:
             // Animate active ride
-            displayActiveRide()
+            animateActiveRide()
         case .error:
             // Present error to user
             if let requestRideError = error as? MainAPIClient.RequestRideError {
@@ -469,13 +520,29 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
             return nil
         }
 
-        // Use blue pin for destination annotation
-        let annotationView = MKPinAnnotationView()
-        annotationView.annotation = annotation
-        annotationView.pinTintColor = .riderBlueColor
-        annotationView.canShowCallout = true
+        if let destinationCoordinate = destinationPlacemark?.coordinate,
+            annotation.coordinate.latitude == destinationCoordinate.latitude,
+            annotation.coordinate.longitude == destinationCoordinate.longitude {
+            // Use blue pin for destination annotation
+            let identifier = "bluePinAnnotation"
 
-        return annotationView
+            let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView ?? MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView.pinTintColor = .riderBlueColor
+            annotationView.canShowCallout = true
+
+            return annotationView
+        }
+        else {
+            // Use rocket annotation
+            let identifier = "rocketPointAnnotation"
+
+            let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) ?? MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView.image = #imageLiteral(resourceName: "Pilot")
+
+            return annotationView
+        }
+
+
     }
     
 }

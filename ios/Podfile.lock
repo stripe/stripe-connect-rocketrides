@@ -1,0 +1,15 @@
+PODS:
+  - Alamofire (4.5.0)
+  - Stripe (11.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Stripe
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Stripe: 898f83a95d72180c6eb4acd65b2ae6158fc6a8bd
+
+PODFILE CHECKSUM: df01c2ba3d529638d327c083cdf54b9821b82a0c
+
+COCOAPODS: 1.3.0

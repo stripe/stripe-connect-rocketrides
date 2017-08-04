@@ -1,0 +1,8 @@
+platform :ios, '10.0'
+
+target 'RocketRides' do
+  use_frameworks!
+
+  pod 'Alamofire'
+  pod 'Stripe'
+end
