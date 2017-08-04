@@ -282,7 +282,7 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
             requestRideButton.backgroundColor = .riderGrayColor
             requestRideButton.setTitle("Request Ride", for: .normal)
             requestRideButton.setTitleColor(.white, for: .normal)
-            requestRideButton.setImage(#imageLiteral(resourceName: "Arrow-White"), for: .normal)
+            requestRideButton.setImage(#imageLiteral(resourceName: "Arrow"), for: .normal)
             requestRideButton.isEnabled = false
             return
         }
@@ -293,7 +293,7 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
             requestRideButton.backgroundColor = .riderGreenColor
             requestRideButton.setTitle("Request Ride", for: .normal)
             requestRideButton.setTitleColor(.white, for: .normal)
-            requestRideButton.setImage(#imageLiteral(resourceName: "Arrow-White"), for: .normal)
+            requestRideButton.setImage(#imageLiteral(resourceName: "Arrow"), for: .normal)
             requestRideButton.isEnabled = true
         case .requesting:
             // Show loading state
