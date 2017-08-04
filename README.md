@@ -47,12 +47,13 @@ Go to http://localhost:3000 in your browser to start using the app.
 
 ## iOS App for Passengers
 
-The Rocket Rides iOS app is written in Swift and is built using the [Stripe iOS SDK](https://github.com/stripe/stripe-ios) to accept both card payments and Apple Pay.
+The Rocket Rides iOS app is written in Swift and is built using the [Stripe iOS SDK](https://github.com/stripe/stripe-ios) to accept both card payments and Apple Pay. 
 
+<img src="server/public/images/screenshots/rocketrides-ios-ride.png" width="296"><img src="server/public/images/screenshots/rocketrides-ios-location.png" width="296"><img src="server/public/images/screenshots/rocketrides-ios-payment.png" width="296">
 
 ### Requirements
 
-This project is written in Swift and requires Xcode 8 to build and run. The app is compatible with iOS 10.0+. You can use it both the iOS Simulator or on your iPhone.
+This project is written in Swift and requires Xcode 8 to build and run, and [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) to install the dependencies. The app is compatible with iOS 10.0+. You can use it both the iOS Simulator or on your iPhone.
 
 ### Getting Started
 

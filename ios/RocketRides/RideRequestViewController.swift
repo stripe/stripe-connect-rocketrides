@@ -537,7 +537,10 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
             let identifier = "rocketPointAnnotation"
 
             let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) ?? MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            annotationView.image = #imageLiteral(resourceName: "Pilot")
+            annotationView.image = #imageLiteral(resourceName: "Jetpack")
+            if Double((destinationPlacemark?.coordinate.longitude)!) - Double((pickupPlacemark?.coordinate.longitude)!) < 0 {
+                annotationView.transform = CGAffineTransform(scaleX: -1, y: 1)
+            }
 
             return annotationView
         }
