@@ -52,15 +52,16 @@ The Rocket Rides iOS app is written in Swift and is built using the [Stripe iOS 
 
 ### Requirements
 
-This project is written in Swift and requires Xcode 8 to build and run. The app is compatible with iOS 9+. You can use it both the iOS Simulator or on your iPhone.
+This project is written in Swift and requires Xcode 8 to build and run. The app is compatible with iOS 10.0+. You can use it both the iOS Simulator or on your iPhone.
 
 ### Getting Started
 
 To get started quickly, follow these simple steps:
 
 1. Navigate to the `ios` folder.
-2. Open `RocketRides.xcodeproj` in Xcode.
-3. Build and run the app!
+2. Run `pod install`.
+3. Open `RocketRides.xcworkspace` (not `RocketRides.xcodeproj`) in Xcode.
+4. Build and run the app!
 
 To try out the full payment experience, start by running the server locally as described above, then follow these steps:
 
