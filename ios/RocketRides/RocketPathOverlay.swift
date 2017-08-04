@@ -1,5 +1,5 @@
 //
-//  CurvedPolylineRenderer.swift
+//  RocketPathOverlay.swift
 //  RocketRides
 //
 //  Created by Joey Dong on 8/2/17.
@@ -43,7 +43,7 @@ class RocketPathOverlayRenderer: MKOverlayRenderer {
 
     private let rocketPathOverlay: RocketPathOverlay
 
-    var lineWidth: CGFloat = 5.0
+    var lineWidth: CGFloat = 10.0
     var strokeColor: UIColor?
     var arcMultiplier: CGFloat = 1.5
 

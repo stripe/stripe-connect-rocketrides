@@ -1,5 +1,5 @@
 //
-//  APIClient.swift
+//  MainAPIClient.swift
 //  RocketRides
 //
 //  Created by Romain Huet on 5/26/16.
@@ -33,6 +33,9 @@ class MainAPIClient: NSObject, STPEphemeralKeyProvider {
                 return
         }
 
+        // Important: For this demo, we're trusting the `amount` and `currency` coming from the client request.
+        // A real application should absolutely have the `amount` and `currency` securely computed on the backend
+        // to make sure the user can't change the payment amount from their web browser or client-side environment.
         let parameters: [String: Any] = [
             "source": source,
             "amount": amount,

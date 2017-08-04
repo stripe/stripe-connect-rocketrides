@@ -111,6 +111,7 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
 
         // Request location services authorization
         locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
 
     // MARK: Button Handlers

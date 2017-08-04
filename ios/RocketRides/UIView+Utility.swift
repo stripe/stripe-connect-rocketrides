@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
 
-    /// Apply clipping mask on certain corners with corner radius
+    // Apply clipping mask on certain corners with corner radius
     func layoutCornerRadiusMask(corners: UIRectCorner, cornerRadius: CGFloat) {
         let cornerRadii = CGSize(width: cornerRadius, height: cornerRadius)
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: cornerRadii)
@@ -21,7 +21,7 @@ extension UIView {
         layer.mask = mask
     }
 
-    /// Apply corner radius and rounded shadow path
+    // Apply corner radius and rounded shadow path
     func layoutCornerRadiusAndShadow(cornerRadius: CGFloat) {
         // Apply corner radius for background fill only
         layer.cornerRadius = cornerRadius

@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         STPTheme.default().primaryBackgroundColor = .riderVeryLightGrayColor
         STPTheme.default().primaryForegroundColor = .riderDarkBlueColor
         STPTheme.default().secondaryForegroundColor = .riderDarkGrayColor
-        STPTheme.default().accentColor = .riderBlueColor
+        STPTheme.default().accentColor = .riderGreenColor
 
         // Main API client configuration
         MainAPIClient.shared.baseURLString = baseURLString

@@ -33,8 +33,7 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
 
         let searchBarFont = UIFont.systemFont(ofSize: 17.0)
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = searchBarFont
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSFontAttributeName: searchBarFont]
-
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSFontAttributeName: searchBarFont, NSForegroundColorAttributeName: UIColor.riderDarkBlueColor]
     }
 
     override func viewWillAppear(_ animated: Bool) {

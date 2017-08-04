@@ -1,5 +1,5 @@
 //
-//  LocationCell.swift
+//  LocationSearchViewCell.swift
 //  RocketRides
 //
 //  Created by Romain Huet on 5/26/16.

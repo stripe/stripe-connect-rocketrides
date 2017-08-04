@@ -1,5 +1,5 @@
 //
-//  RideRequest.swift
+//  Ride.swift
 //  RocketRides
 //
 //  Created by Romain Huet on 5/31/16.
