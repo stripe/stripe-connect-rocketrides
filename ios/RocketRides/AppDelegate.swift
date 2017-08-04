@@ -22,13 +22,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      signed up for an account.
 
      @see https://dashboard.stripe.com/account/apikeys
+
+     If you'd like to use this app with https://rocketrides.io (see below),
+     you can use our test publishable key: "pk_test_hnUZptHh36jRUveejCXqRoVu".
      */
     private let publishableKey: String = ""
 
     /**
      Fill in your backend URL here to try out the full payment experience
 
-     Ex: "https://server.company.com" or "http://localhost:3000"
+     Ex: "http://localhost:3000" if you're running the Node server locally,
+     or "https://rocketrides.io" to try the app using our hosted version.
      */
     private let baseURLString: String = ""
 
