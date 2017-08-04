@@ -48,9 +48,16 @@ PilotSchema.methods.validatePassword = function(password) {
   return bcrypt.compareSync(password, this.password);
 };
 
-// Get the latest pilot.
-PilotSchema.statics.getLatest = function() {
-  return Pilot.findOne()
+// Get the first fully onboarded pilot.
+PilotSchema.statics.getFirstOnboarded = function() {
+  return Pilot.findOne({ stripeAccountId: { $ne: null } })
+    .sort({ created: 1 })
+    .exec();
+};
+
+// Get the latest fully onboarded pilot.
+PilotSchema.statics.getLatestOnboarded = function() {
+  return Pilot.findOne({ stripeAccountId: { $ne: null } })
     .sort({ created: -1 })
     .exec();
 };

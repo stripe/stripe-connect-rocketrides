@@ -28,8 +28,8 @@ router.post('/', async (req, res, next) => {
 
   try {
     // For the purpose of this demo, let's assume we are automatically
-    // matching with the most recent pilot rather than using their location.
-    const pilot = await Pilot.getLatest();
+    // matching with the first fully onboarded pilot rather than using their location.
+    const pilot = await Pilot.getFirstOnboarded();
     // Find the latest passenger (see note above).
     const passenger = await Passenger.getLatest();
     // Create a new ride.
