@@ -47,7 +47,7 @@ Go to http://localhost:3000 in your browser to start using the app.
 
 ## iOS App for Passengers
 
-The Rocket Rides iOS app is written in Swift and is built using the [Stripe iOS SDK](https://github.com/stripe/stripe-ios) to accept both card payments and Apple Pay. 
+The Rocket Rides iOS app is written in Swift and is built using the [Stripe iOS SDK](https://github.com/stripe/stripe-ios) to accept both card payments and Apple Pay.
 
 <img src="server/public/images/screenshots/rocketrides-ios-ride.png" width="296"><img src="server/public/images/screenshots/rocketrides-ios-location.png" width="296"><img src="server/public/images/screenshots/rocketrides-ios-payment.png" width="296">
 
@@ -57,14 +57,14 @@ This project is written in Swift and requires Xcode 8 to build and run, and [Coc
 
 ### Getting Started
 
-To get started quickly, follow these simple steps:
+To get started, install the dependencies using CocoaPods:
 
-1. Navigate to the `ios` folder.
-2. Run `pod install`.
-3. Open `RocketRides.xcworkspace` (not `RocketRides.xcodeproj`) in Xcode.
-4. Build and run the app!
+    cd ios
+    pod install
 
-To try out the full payment experience, start by running the server locally as described above, then follow these steps:
+Open `RocketRides.xcworkspace` (not `RocketRides.xcodeproj`) in Xcode. Build and run the app!
+
+To try out the full payment experience, run the server locally as described above, then follow these steps:
 
 1. Create a new pilot using the Rocket Rides web onboarding.
 2. Fill in the `publishableKey` property in `AppDelegate.swift`. You can find your publishable key in your [Stripe Dashboard](https://dashboard.stripe.com/account/apikeys).
