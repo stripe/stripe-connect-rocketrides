@@ -1,6 +1,8 @@
 # Rocket Rides: Stripe Connect Demo
 
-Rocket Rides is a sample on-demand platform that offers passengers rides with pilots, built on top of [Stripe Connect](https://stripe.com/connect). **You can try it live on [rocketrides.io](https://rocketrides.io).**
+Rocket Rides is a sample on-demand platform that offers passengers rides with pilots, built on top of [Stripe Connect](https://stripe.com/connect) and the [Stripe iOS SDK](https://stripe.com/docs/mobile/ios).
+
+**You can try the web app live on [rocketrides.io](https://rocketrides.io).**
 
 This repository contains two components:
 * [Web server in Node.js](#web-onboarding-for-pilots) to onboard pilots on the web and get them paid
@@ -35,7 +37,7 @@ Copy the configuration file and add your own [Stripe API keys](https://dashboard
 
     cp config.default.js config.js
 
-Make sure MongoDB is running. If you're using Homebrew on OS X:
+Make sure MongoDB is running. If you're using Homebrew on macOS:
 
     brew services start mongodb
 
