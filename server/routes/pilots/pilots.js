@@ -208,25 +208,20 @@ passport.use('pilot-login', new LocalStrategy({
   });
 }));
 
-// Function that creates a test card source for Stripe.
+// Function that returns a test card token for Stripe.
 function getTestSource(trigger) {
-  // Important: We're creating sources based on specific test card numbers
+  // Important: We're using static tokens based on specific test card numbers
   // to trigger a special behavior. This is NOT how you would create real payments!
   // You should use Stripe Elements or Stripe iOS/Android SDKs to tokenize card numbers.
-  // Create a source based on a test card.
-  const source = {
-    object: 'card',
-    number: '4242424242424242',
-    exp_month: 7,
-    exp_year: (new Date).getFullYear() + 3
-  };
-  // Change the source card number if a specific trigger is requested.
+  // Use a static token based on a test card.
+  var source = 'tok_visa';
+  // Change the test card token if a specific trigger is requested.
   if (trigger === 'immediate-balance') {
-    source.number = '4000000000000077';
+    source = 'tok_bypassPending';
   } else if (trigger === 'account-verification') {
-    source.number = '4000000000004202';
+    source = 'tok_visa_triggerVerification';
   } else if (trigger === 'payout-limit') {
-    source.number = '4000000000004236';
+    source = 'tok_visa_triggerTransferBlock';
   }
   return source;
 }
