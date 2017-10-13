@@ -12,6 +12,9 @@ mongoose.Promise = global.Promise;
 const PilotSchema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+
+  type: { type: String, default: 'individual', enum: ['individual', 'company'] },
+
   firstName: String,
   lastName: String,
   address: String,
@@ -24,10 +27,20 @@ const PilotSchema = new Schema({
     license: String,
     color: String
   },
+  businessName: String,
 
   // Stripe account ID to send payments obtained with Stripe Connect.
-  stripeAccountId: String
+  stripeAccountId: String,
 });
+
+// Return a pilot name for display.
+PilotSchema.methods.displayName = function() {
+  if (this.type === 'company') {
+    return this.businessName;
+  } else {
+    return `${this.firstName} ${this.lastName}`;
+  }
+};
 
 // List rides of the past week for the pilot.
 PilotSchema.methods.listRecentRides = function() {
@@ -63,23 +76,32 @@ PilotSchema.statics.getLatestOnboarded = function() {
 };
 
 // Make sure the email has not been used.
-PilotSchema.path('email').validate(function (email, callback) {
+PilotSchema.path('email').validate(function(email, callback) {
   const Pilot = mongoose.model('Pilot');
 
   // Check only when it is a new pilot or when the email has been modified.
   if (this.isNew || this.isModified('email')) {
-    Pilot.find({ email: email }).exec(function (err, pilots) {
+    Pilot.find({ email: email }).exec(function(err, pilots) {
       callback(!err && pilots.length === 0);
     });
   } else callback(true);
 }, 'This email already exists. Please try to login instead.');
 
-// Pre-save hook making sure the password is hashed before being stored.
-PilotSchema.pre('save', function (next) {
-  if (!this.isModified('password')) {
-    return next();
+// Pre-save hook to ensure consistency.
+PilotSchema.pre('save', function(next) {
+  // Make sure certain fields are blank depending on the pilot type.
+  if (this.isModified('type')) {
+    if (this.type === 'individual') {
+      this.businessName = null;
+    } else {
+      this.firstName = null;
+      this.lastName = null;
+    }
   }
-  this.password = this.generateHash(this.password);
+  // Make sure the password is hashed before being stored.
+  if (this.isModified('password')) {
+    this.password = this.generateHash(this.password);
+  }
   next();
 });
 

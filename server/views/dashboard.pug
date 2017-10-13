@@ -5,7 +5,7 @@ block header
     .block.profile
       .photo
       p Pilot since #{moment(pilot.created).format('MMMM YYYY')}
-      h1 #{pilot.firstName} #{pilot.lastName}
+      h1 #{pilot.displayName()}
       .rating
     .block.week
       p This Week

@@ -103,7 +103,11 @@ router.get('/signup', (req, res) => {
   let step = 'account';
   // Naive way to check which step we're on via presence of profile data.
   if (req.user) {
-    if (!req.user.firstName || !req.user.lastName) {
+    if (
+      req.user.type === 'individual' ?
+        !req.user.firstName || !req.user.lastName :
+        !req.user.businessName
+    ) {
       step = 'profile';
     } else if (!req.user.stripeAccountId) {
       step = 'payments'
@@ -120,11 +124,17 @@ router.get('/signup', (req, res) => {
  * Create a user and update profile information during the pilot onboarding process.
  */
 router.post('/signup', (req, res, next) => {
+  const body = Object.assign({}, req.body, {
+    // Use `type` instead of `pilot-type` for saving to the DB.
+    type: req.body['pilot-type'],
+    'pilot-type': undefined,
+  });
+
   // Check if we have a logged-in pilot.
   let pilot = req.user;
   if (!pilot) {
     // Try to create and save a new pilot.
-    pilot = new Pilot(req.body);
+    pilot = new Pilot(body);
     pilot.save((err, pilot) => {
       if (err) {
         // Show an error message to the user.
@@ -140,7 +150,7 @@ router.post('/signup', (req, res, next) => {
     });
   } else {
     // Try to update the logged-in pilot with the newly entered profile data.
-    pilot.set(req.body);
+    pilot.set(body);
     pilot.save((err, pilot) => {
       if (err) next(err);
       return res.redirect('/pilots/signup');
