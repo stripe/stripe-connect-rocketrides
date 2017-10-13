@@ -81,14 +81,15 @@ PilotSchema.path('email').validate(function(email, callback) {
 
   // Check only when it is a new pilot or when the email has been modified.
   if (this.isNew || this.isModified('email')) {
-    Pilot.find({ email: email }).exec(function (err, pilots) {
+    Pilot.find({ email: email }).exec(function(err, pilots) {
       callback(!err && pilots.length === 0);
     });
   } else callback(true);
 }, 'This email already exists. Please try to login instead.');
 
-// Pre-save hook making sure the password is hashed before being stored.
-PilotSchema.pre('save', function (next) {
+// Pre-save hook to ensure consistency.
+PilotSchema.pre('save', function(next) {
+  // Make sure certain fields are blank depending on the pilot type.
   if (this.isModified('type')) {
     if (this.type === 'individual') {
       this.businessName = null;
@@ -97,6 +98,7 @@ PilotSchema.pre('save', function (next) {
       this.lastName = null;
     }
   }
+  // Make sure the password is hashed before being stored.
   if (this.isModified('password')) {
     this.password = this.generateHash(this.password);
   }
