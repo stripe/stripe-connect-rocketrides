@@ -26,11 +26,23 @@ block content
 
       when 'profile'
         form(method='POST', autocomplete='off')
-          h4 Personal Information
+          h4 Type of Pilot
+          .pilot-options
+            label.pilot-option
+              input(type='radio', name='pilot-type', value='individual', id='po-individual', checked=true)
+              span Individual
+            label.pilot-option
+              input(type='radio', name='pilot-type', value='company', id='po-company')
+              span Corporation / LLC
+
+          h4.type-header.individual-info.is-visible Personal Information
+          h4.type-header.company-info Company Information
           fieldset
-            .row(label='* First Name')
+            .row.pilot-info.company-type(label='* Biz Name')
+              input(type='text', name='businessName', placeholder='Infinity and Beyond LLC')
+            .row.pilot-info.individual-type.is-visible(label='* First Name')
               input(type='text', name='firstName', placeholder='Jane')
-            .row(label='* Last Name')
+            .row.pilot-info.individual-type.is-visible(label='* Last Name')
               input(type='text', name='lastName', placeholder='Diaz')
             .row(label='Address')
               input(type='text', name='address', placeholder='185 Berry St', value='185 Berry St')
@@ -62,7 +74,7 @@ block content
 
       when 'payments'
         h2 Connect your Rocket Rides account to Stripe
-        p We use Stripe to make sure you get paid on time and keep your personal and bank details secure. 
+        p We use Stripe to make sure you get paid on time and keep your personal and bank details secure.
         a.button(href='/pilots/stripe/authorize') Setup Payments on Stripe
 
       when 'done'

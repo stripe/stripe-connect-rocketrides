@@ -64,7 +64,7 @@ router.post('/', async (req, res, next) => {
 
     // Return the ride info.
     res.send({
-      pilot_name: [pilot.firstName, pilot.lastName].join(' '),
+      pilot_name: pilot.displayName(),
       pilot_vehicle: pilot.rocket.model,
       pilot_license: pilot.rocket.license,
     });
