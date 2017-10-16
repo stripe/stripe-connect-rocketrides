@@ -31,7 +31,7 @@ router.get('/authorize', pilotRequired, (req, res) => {
   // Optionally, Stripe Connect accepts `first_name`, `last_name`, `email`,
   // and `phone` in the query parameters for them to be autofilled.
   parameters = Object.assign(parameters, {
-    'stripe_user[business_type]': req.user.type === 'company' ? 'company' : undefined,
+    'stripe_user[business_type]': req.user.type || 'individual',
     first_name: req.user.firstName || undefined,
     last_name: req.user.lastName || undefined,
     email: req.user.email
