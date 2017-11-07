@@ -287,11 +287,6 @@ fieldset {
   animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.65s;
 }
 
-.form input[type="radio"] {
-  display: none;
-  width: 15px;
-}
-
 .options label {
   padding: 0 40px;
 }
@@ -668,6 +663,7 @@ form a.button {
 }
 
 .pilot-option input {
+  display: none;
   height: 0;
   width: 0;
   appearance: none;
