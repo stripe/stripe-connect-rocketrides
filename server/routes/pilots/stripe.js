@@ -32,9 +32,10 @@ router.get('/authorize', pilotRequired, (req, res) => {
   // and `phone` in the query parameters for them to be autofilled.
   parameters = Object.assign(parameters, {
     'stripe_user[business_type]': req.user.type || 'individual',
-    first_name: req.user.firstName || undefined,
-    last_name: req.user.lastName || undefined,
-    email: req.user.email
+    'stripe_user[first_name]': req.user.firstName || undefined,
+    'stripe_user[last_name]': req.user.lastName || undefined,
+    'stripe_user[email]': req.user.email,
+    'stripe_user[business_name]': req.user.businessName || undefined,
   });
   // Redirect to Stripe to start the Connect onboarding.
   res.redirect(config.stripe.authorizeUri + '?' + querystring.stringify(parameters));
