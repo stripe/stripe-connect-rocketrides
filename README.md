@@ -16,7 +16,9 @@ This platform uses the Stripe API to create payments for pilots, fetch their ava
 
 <img src="server/public/images/screenshots/rocketrides-web-home.png" width="444"><img src="server/public/images/screenshots/rocketrides-web-connect.png" width="444">
 
-To integrate Stripe Connect in your own app, check out [server/pilots/stripe.js](server/routes/pilots/stripe.js) to see how to easily create Connect Express accounts and interact with the Stripe API. You can also look at [server/pilots/pilots.js](server/routes/pilots/stripe.js) to see how to create payments going straight to pilots.
+To integrate Stripe Connect in your own app, check out these two files in particular:
+1. [`server/routes/pilots/stripe.js`](server/routes/pilots/stripe.js) shows how to easily create Connect Express accounts and interact with the Stripe API.
+2. [`server/routes/pilots/pilots.js`](server/routes/pilots/pilots.js) shows how to create payments going straight to pilots.
 
 ### Requirements
 
