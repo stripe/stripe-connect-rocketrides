@@ -17,18 +17,18 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.17.2",
+    "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
-    "cookie-session": "^2.0.0-beta.2",
-    "debug": "^2.6.8",
-    "express": "^4.15.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
     "moment": "^2.21.0",
-    "mongoose": "^4.10.2",
-    "morgan": "^1.8.2",
+    "mongoose": "^5.1.2",
+    "morgan": "^1.9.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "pug": "^2.0.0-rc.1",
-    "request": "^2.81.0",
+    "request": "^2.87.0",
     "stripe": "^4.23.0"
   }
 }
