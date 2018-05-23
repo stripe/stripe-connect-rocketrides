@@ -76,16 +76,21 @@ PilotSchema.statics.getLatestOnboarded = function() {
 };
 
 // Make sure the email has not been used.
-PilotSchema.path('email').validate(function(email, callback) {
-  const Pilot = mongoose.model('Pilot');
-
-  // Check only when it is a new pilot or when the email has been modified.
-  if (this.isNew || this.isModified('email')) {
-    Pilot.find({ email: email }).exec(function(err, pilots) {
-      callback(!err && pilots.length === 0);
-    });
-  } else callback(true);
-}, 'This email already exists. Please try to login instead.');
+PilotSchema.path('email').validate({
+  isAsync: true,
+  validator: function(email, callback) {
+    const Pilot = mongoose.model('Pilot');
+    // Check only when it is a new pilot or when the email has been modified.
+    if (this.isNew || this.isModified('email')) {
+      Pilot.find({ email: email }).exec(function(err, pilots) {
+        callback(!err && pilots.length === 0);
+      });
+    } else {
+      callback(true);
+    }
+  },
+  message: 'This email already exists. Please try to login instead.',
+});
 
 // Pre-save hook to ensure consistency.
 PilotSchema.pre('save', function(next) {
