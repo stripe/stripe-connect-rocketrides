@@ -111,7 +111,6 @@ router.post('/payout', pilotRequired, async (req, res) => {
     const { amount, currency } = balance.available[0];
     // Create the instant payout.
     const payout = await stripe.payouts.create({
-      method: 'instant',
       amount: amount,
       currency: currency,
       statement_descriptor: config.appName
