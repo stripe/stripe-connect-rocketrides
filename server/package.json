@@ -24,7 +24,7 @@
     "express": "^4.16.3",
     "moment": "^2.21.0",
     "mongoose": "^5.1.2",
-    "morgan": "^1.9.0",
+    "morgan": "^1.9.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "pug": "^2.0.0-rc.1",
