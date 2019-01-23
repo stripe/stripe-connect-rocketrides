@@ -50,7 +50,9 @@ section {
 
 header {
   width: 100%;
-  background-color: #13B57D;
+  background-image: url("/images/header.jpg");
+  background-size: cover;
+  background-color: black;
 }
 
 h1 {
@@ -86,11 +88,11 @@ a.arrow {
   line-height: 60px;
   font-size: 17px;
   font-weight: bold;
-  border-bottom: 1px solid #11AB75;
 }
 
 #top .rocketrides {
   flex: 1;
+  height: 20px;
   padding-left: 75px;
   background: url(/images/rocketrides.svg) left center no-repeat;
 }
@@ -523,18 +525,17 @@ form a.button {
   margin: 15px 0;
   font-size: 20px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 28px;
   opacity: 0.8;
 }
 
 .intro a.button {
-  width: 190px;
+  width: 170px;
   height: 44px;
-  margin: 0;
+  margin: 30px 0 0 0;
   padding: 0 25px;
   line-height: 44px;
   text-align: left;
-  background: #FFF url(/images/arrow-green.svg) 158px 16px no-repeat;
 }
 
 .features {
@@ -979,6 +980,7 @@ form a.button {
     display: none;
   }
 }
+
 
 /* CSS Animations */
 
