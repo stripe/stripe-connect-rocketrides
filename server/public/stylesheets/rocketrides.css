@@ -2,30 +2,21 @@
  * Rocket Rides CSS Stylesheet.
  */
 
-* {
+ * {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: none;
   box-sizing: border-box;
-  font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Barlow', -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-::-webkit-input-placeholder {
-  color: #aab7c5;
-}
-:-moz-placeholder {
-  color: #aab7c5;
-  opacity: 1;
-}
-::-moz-placeholder {
-  color: #aab7c5;
-  opacity: 1;
-}
-:-ms-input-placeholder {
-  color: #aab7c5;
-}
+::-webkit-input-placeholder { color: #AAB7C5; }
+:-moz-placeholder { color: #AAB7C5; opacity: 1; }
+::-moz-placeholder { color: #AAB7C5; opacity: 1; }
+:-ms-input-placeholder { color: #AAB7C5; }
+
 
 /* General */
 
@@ -35,8 +26,8 @@ body {
   align-items: center;
   height: auto;
   min-height: 100vh;
-  color: #fff;
-  background-color: #f6f9fc;
+  color: #FFF;
+  background-color: #F6F9FC;
 }
 
 header,
@@ -59,18 +50,18 @@ section {
 
 header {
   width: 100%;
-  background-image: url(/images/header.jpg);
+  background-image: url("/images/header.jpg");
   background-size: cover;
-  background-color: #000;
+  background-color: black;
 }
 
 h1 {
   font-size: 36px;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 a {
-  color: #fff;
+  color: #FFF;
   text-decoration: none;
 }
 
@@ -97,6 +88,8 @@ a.arrow {
   line-height: 60px;
   font-size: 17px;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 #top .rocketrides {
@@ -117,7 +110,7 @@ a.arrow {
 nav {
   width: 100%;
   height: 50px;
-  background: #01966f;
+  background: #01966F;
 }
 
 nav ul,
@@ -148,8 +141,8 @@ nav ol li::before {
   counter-increment: steps;
   display: inline-table;
   margin-right: 10px;
-  background: #13b57d;
-  color: #fff;
+  background: #13B57D;
+  color: #FFF;
   text-align: center;
   font-weight: bold;
   width: 26px;
@@ -162,8 +155,8 @@ nav ol li.done::before {
 }
 
 nav ol li.active::before {
-  background: #fff;
-  color: #01966f;
+  background: #FFF;
+  color: #01966F;
 }
 
 /* Footer */
@@ -183,20 +176,20 @@ footer {
   font-size: 16px;
   font-weight: bold;
   line-height: 22px;
-  background: #fff;
-  border-radius: 22px;
+  background: #FFF;
+  border-radius: 10px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
 }
 
 .annotation.info {
-  background: #fff url(/images/info.svg) 10px 10px no-repeat;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 1s;
+  background: #FFF url(/images/info.svg) 10px 10px no-repeat;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 1s;
 }
 
 .annotation p {
   font-size: 15px;
   font-weight: 400;
-  color: #6a7c94;
+  color: #6A7C94;
 }
 
 .annotation.info p {
@@ -208,7 +201,7 @@ footer {
 }
 
 .annotation a {
-  color: #666ee8;
+  color: #666EE8;
 }
 
 .annotation a.github {
@@ -236,11 +229,11 @@ footer {
 .form .checkmark {
   width: 100px;
   height: 100px;
-  background: #fff url(/images/checkmark-green.svg) center center no-repeat;
+  background: #FFF url(/images/checkmark-green.svg) center center no-repeat;
   background-size: 65px 45px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   border-radius: 50%;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.5s;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.5s;
 }
 
 .form section {
@@ -251,40 +244,40 @@ footer {
   margin: 30px 0 15px;
   font-size: 19px;
   font-weight: 500;
-  color: #32315e;
+  color: #32315E;
   text-align: center;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.55s;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.55s;
 }
 
 .form p {
   margin: 0 0 30px;
   font-size: 17px;
-  color: #8798ab;
+  color: #8798AB;
   text-align: center;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.6s;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.6s;
 }
 
 .form p.error {
-  color: #fc7455;
+  color: #FC7455;
 }
 
 .form h4 {
   margin: 15px 0;
-  color: #8798ab;
+  color: #8798AB;
   font-size: 16px;
   font-weight: 500;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.5s;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.5s;
 }
 
 fieldset {
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.55s;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.55s;
 }
 
-.form input[type='submit'],
+.form input[type="submit"],
 .form button,
 .form a.button {
   text-align: center;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.6s;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.6s;
 }
 
 .form label {
@@ -293,9 +286,9 @@ fieldset {
   margin-top: 10px;
   line-height: 20px;
   font-size: 13px;
-  color: #8798ab;
+  color: #8798AB;
   padding: 0 30px;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.65s;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.65s;
 }
 
 .options label {
@@ -323,8 +316,8 @@ form aside {
   line-height: 1.3em;
   font-size: 13px;
   text-align: center;
-  color: #8798ab;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.65s;
+  color: #8798AB;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.65s;
 }
 
 fieldset {
@@ -332,7 +325,7 @@ fieldset {
   min-width: 0;
   margin-bottom: 40px;
   border-style: none;
-  background-color: #fff;
+  background-color: #FFF;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
 }
@@ -353,13 +346,13 @@ fieldset .row::before {
   content: attr(label);
   width: 130px;
   padding-right: 20px;
-  color: #8798ab;
+  color: #8798AB;
   font-weight: 500;
   text-align: right;
 }
 
 fieldset .row.select::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 9px;
   height: 5px;
@@ -375,7 +368,7 @@ fieldset .row input {
   border-style: none;
   font-size: 15px;
   outline: none;
-  color: #313b3f;
+  color: #313B3F;
 }
 
 fieldset .row select {
@@ -386,18 +379,18 @@ fieldset .row select {
   -webkit-appearance: none;
   font-size: 15px;
   outline: none;
-  color: #313b3f;
+  color: #313B3F;
   cursor: pointer;
   background: transparent;
 }
 
 fieldset .row select:focus {
-  color: #00b67c;
+  color: #00B67C;
 }
 
 fieldset .row.date span {
   padding-right: 10px;
-  color: #aab7c5;
+  color: #AAB7C5;
   font-weight: 500;
 }
 
@@ -410,7 +403,7 @@ fieldset .row.date input:last-child {
   flex: 1;
 }
 
-input[type='submit'],
+input[type="submit"],
 button,
 a.button {
   display: block;
@@ -418,12 +411,14 @@ a.button {
   margin: 20px 0;
   padding: 12px 20px;
   border-style: none;
-  border-radius: 5px;
-  background-color: #13b57d;
+  border-radius: 4px;
+  background-color: #13B57D;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   font-size: 17px;
-  font-weight: 500;
-  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFF;
   cursor: pointer;
   outline: none;
   -webkit-appearance: none;
@@ -438,13 +433,13 @@ a.button {
   background: url(/images/arrow-white.svg) right center no-repeat;
 }
 
-input[type='submit'].secondary {
-  color: #313b3f;
-  background: #fff;
+input[type="submit"].secondary {
+  color: #313B3F;
+  background: #FFF;
 }
 
-input[type='submit'].secondary:active {
-  background: #f5f6f7;
+input[type="submit"].secondary:active {
+  background: #F5F6F7;
 }
 
 button:hover,
@@ -452,29 +447,29 @@ a.button:hover {
   text-decoration: none;
 }
 
-input[type='submit']:active,
+input[type="submit"]:active,
 button:active,
 a.button:active {
-  background-color: #01966f;
+  background-color: #01966F;
 }
 
 header button,
 header a.button,
-header input[type='submit'] {
+header input[type="submit"] {
   margin: 15px 0 0;
   padding: 0 16px;
   height: 36px;
   line-height: 36px;
-  background-color: #fff;
-  color: #13b57d;
+  background-color: #FFF;
+  color: #13B57D;
   text-align: center;
 }
 
 header button:active,
 header a.button:active,
-header input[type='submit']:active {
-  background-color: #fff;
-  color: #01966f;
+header input[type="submit"]:active {
+  background-color: #FFF;
+  color: #01966F;
 }
 
 form a.button {
@@ -490,7 +485,7 @@ form a.button {
 }
 
 .illustration {
-  background: #fff;
+  background: #FFF;
   border-radius: 85px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
 }
@@ -526,7 +521,7 @@ form a.button {
 }
 
 .intro h1 {
-  font-size: 50px;
+  font-size: 42px;
   line-height: 45px;
 }
 
@@ -539,12 +534,12 @@ form a.button {
 }
 
 .intro a.button {
-  width: 170px;
+  width: 190px;
   height: 44px;
   margin: 30px 0 0 0;
-  padding: 0 25px;
+  padding: 0 22px;
   line-height: 44px;
-  text-align: left;
+  text-align: center;
 }
 
 .features {
@@ -581,15 +576,15 @@ form a.button {
 
 .features h3 {
   margin: 0 0 10px;
-  font-size: 20px;
-  font-weight: 500;
-  color: #32315e;
+  font-size: 18px
+  font-weight: bold;
+  color: #32315E;
 }
 
 .features p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 24px;
-  color: #6a7c94;
+  color: #525f7f;
 }
 
 /* User Information */
@@ -638,7 +633,7 @@ form a.button {
   left: 0;
   margin-top: -39px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #FFF;
   background-image: url(/images/avatar-large.svg);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
 }
@@ -686,14 +681,14 @@ form a.button {
   display: flex;
   position: relative;
   align-items: center;
-  color: #8798ab;
+  color: #8798AB;
   font-size: 16px;
   font-weight: 500;
   padding-left: 20px;
 }
 
 .pilot-option input + span:before {
-  content: '';
+  content: "";
   display: inline-block;
   position: relative;
   width: 20px;
@@ -705,14 +700,14 @@ form a.button {
 }
 
 .pilot-option input:checked + span:after {
-  content: '';
+  content: "";
   display: flex;
   position: absolute;
   top: 5px;
   right: calc(100% - 25px);
   width: 10px;
   height: 10px;
-  background: #13b57d;
+  background: #13B57D;
   border-radius: 10px;
 }
 
@@ -727,23 +722,23 @@ form a.button {
   max-width: 800px;
   margin: 30px 0;
   align-items: flex-start;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.55s;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.55s;
 }
 
 .rides h4 {
   margin-bottom: 15px;
-  color: #8798ab;
+  color: #8798AB;
   font-weight: 500;
 }
 
 .rides p {
   font-size: 15px;
-  color: #8798ab;
+  color: #8798AB;
 }
 
 .rides .list {
   width: 100%;
-  background-color: #fff;
+  background-color: #FFF;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
 }
@@ -763,19 +758,19 @@ form a.button {
   flex: 1;
   position: relative;
   padding: 15px 20px;
-  color: #82909b;
+  color: #82909B;
   font-size: 15px;
 }
 
 .rides .list .cell.name {
   flex: 2;
   padding-left: 60px;
-  color: #313b3f;
+  color: #313B3F;
   font-weight: 500;
 }
 
 .rides .list .cell.name::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 24px;
   height: 24px;
@@ -866,7 +861,7 @@ form a.button {
   }
 
   .user .block.stripe a.button,
-  .user .block.stripe input[type='submit'] {
+  .user .block.stripe input[type="submit"] {
     height: 32px;
     line-height: 32px;
     font-size: 15px;
@@ -876,7 +871,7 @@ form a.button {
     margin: 0 0 10px;
   }
 
-  .user .block.stripe input[type='submit'] {
+  .user .block.stripe input[type="submit"] {
     margin: 0px 0 15px;
   }
 
@@ -989,6 +984,7 @@ form a.button {
     display: none;
   }
 }
+
 
 /* CSS Animations */
 
