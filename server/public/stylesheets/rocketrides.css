@@ -2,6 +2,11 @@
  * Rocket Rides CSS Stylesheet.
  */
 
+@font-face {
+  font-family: 'Camphor';
+  src: url('https://storage.googleapis.com/stripe-fonts/400-regular.woff2') format('woff2');
+}
+
  * {
   margin: 0;
   padding: 0;
@@ -9,7 +14,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: none;
   box-sizing: border-box;
-  font-family: 'Barlow', -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 ::-webkit-input-placeholder { color: #AAB7C5; }
@@ -26,8 +30,9 @@ body {
   align-items: center;
   height: auto;
   min-height: 100vh;
-  color: #FFF;
+  color: #292F45;
   background-color: #F6F9FC;
+  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 header,
@@ -84,12 +89,13 @@ a.arrow {
 /* Header, Top Bar, Navigation */
 
 #top {
-  height: 60px;
-  line-height: 60px;
+  height: 64px;
+  line-height: 64px;
   font-size: 17px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-family: 'Barlow';
 }
 
 #top .rocketrides {
@@ -110,7 +116,7 @@ a.arrow {
 nav {
   width: 100%;
   height: 50px;
-  background: #01966F;
+  background: #29a77a;
 }
 
 nav ul,
@@ -141,7 +147,7 @@ nav ol li::before {
   counter-increment: steps;
   display: inline-table;
   margin-right: 10px;
-  background: #13B57D;
+  background: #29a77a;
   color: #FFF;
   text-align: center;
   font-weight: bold;
@@ -170,16 +176,56 @@ footer {
 }
 
 .annotation {
+  background: #FFF;
+  background: #FFFFFF;
+  box-shadow: 0 13px 27px -5px rgba(50,50,93,0.25), 0 8px 16px -8px rgba(0,0,0,0.30);
+  border-radius: 4px;
   max-width: 800px;
   margin: 25px auto;
   padding: 10px 22px;
   font-size: 16px;
   font-weight: bold;
   line-height: 22px;
-  background: #FFF;
-  border-radius: 10px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
 }
+
+.annotation h4 {
+  color: #525F7F;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.annotation.simulate {
+  flex-direction: column;
+  text-align: left;
+  padding: 20px 20px;
+  max-width: 575px;
+}
+
+/* TODO delete later the following four rules*/
+.annotation.simulate form .options {
+  display: flex;
+}
+.annotation.simulate form .options label {
+  padding: 0;
+  margin: 0;
+  width: auto;
+  margin-right: 30px;
+}
+.annotation.simulate .form {
+  width: 100%;
+  margin-bottom: 0;
+}
+.annotation.simulate input[type=submit] {
+  margin-bottom: 0;
+  width: auto;
+}
+.annotation.simulate p {
+  color: #51586D;
+  font-size: 14px;
+}
+/* END TODO delete*/
 
 .annotation.info {
   background: #FFF url(/images/info.svg) 10px 10px no-repeat;
@@ -201,6 +247,7 @@ footer {
 }
 
 .annotation a {
+  font-weight: 400;
   color: #666EE8;
 }
 
@@ -409,16 +456,14 @@ a.button {
   display: block;
   width: 100%;
   margin: 20px 0;
-  padding: 12px 20px;
+  padding: 8px 20px;
   border-style: none;
   border-radius: 4px;
-  background-color: #13B57D;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-  font-size: 17px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #FFF;
+  background-color: #fff;
+  box-shadow: 0 2px 5px -1px rgba(50,50,93,0.25), 0 1px 3px -1px rgba(0,0,0,0.30);
+  font-size: 14px;
+  font-weight: 500;
+  color: #51586D;
   cursor: pointer;
   outline: none;
   -webkit-appearance: none;
@@ -450,7 +495,7 @@ a.button:hover {
 input[type="submit"]:active,
 button:active,
 a.button:active {
-  background-color: #01966F;
+  background-color: #27BB86;
 }
 
 header button,
@@ -460,16 +505,14 @@ header input[type="submit"] {
   padding: 0 16px;
   height: 36px;
   line-height: 36px;
-  background-color: #FFF;
-  color: #13B57D;
   text-align: center;
 }
 
 header button:active,
 header a.button:active,
 header input[type="submit"]:active {
-  background-color: #FFF;
-  color: #01966F;
+  color: #FFF;
+  background-color: #27BB86;
 }
 
 form a.button {
@@ -576,7 +619,7 @@ form a.button {
 
 .features h3 {
   margin: 0 0 10px;
-  font-size: 18px
+  font-size: 18px;
   font-weight: bold;
   color: #32315E;
 }
@@ -605,7 +648,8 @@ form a.button {
 }
 
 .user .block h1 {
-  font-size: 30px;
+  font-size: 24px;
+  font-weight: 400;
 }
 
 .user .block h2 {
@@ -635,7 +679,7 @@ form a.button {
   border-radius: 50%;
   background-color: #FFF;
   background-image: url(/images/avatar-large.svg);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 5px -1px rgba(50,50,93,0.25), 0 1px 3px -1px rgba(0,0,0,0.30);
 }
 
 .user .block.profile .rating {
@@ -707,7 +751,7 @@ form a.button {
   right: calc(100% - 25px);
   width: 10px;
   height: 10px;
-  background: #13B57D;
+  background: #27BB86;
   border-radius: 10px;
 }
 

@@ -50,7 +50,7 @@ router.get('/dashboard', pilotRequired, async (req, res) => {
  *
  * Generate a test ride with sample data for the logged-in pilot.
  */
-router.post('/rides', pilotRequired, async (req, res) => {
+router.post('/rides', pilotRequired, async (req, res, next) => {
   const pilot = req.user;
   // Find a random passenger.
   const passenger = await Passenger.getRandom();
