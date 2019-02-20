@@ -1,6 +1,6 @@
 # Rocket Rides: Stripe Connect Demo
 
-Rocket Rides is a sample on-demand platform that offers passengers rides with pilots, built on top of [Stripe Connect](https://stripe.com/connect) and the [Stripe iOS SDK](https://stripe.com/docs/mobile/ios).
+Rocket Rides is a sample on-demand platform that offers passengers rides with pilots, built on top of [Stripe Connect](https://stripe.com/connect), [Connect Express](https://stripe.com/connect/express), and the [Stripe iOS SDK](https://stripe.com/docs/mobile/ios).
 
 **You can try the web app live on [rocketrides.io](https://rocketrides.io).**
 
@@ -10,9 +10,9 @@ This repository contains two components:
 
 ## Web Onboarding for Pilots
 
-Rocket Rides showcases how to sign up pilots and use [Connect Express accounts](https://stripe.com/connect/account-types) for them to get paid. It uses pre-built UI components to be up and running quickly and customize the user experience.
+Rocket Rides showcases how to sign up pilots and use [Connect Express accounts](https://stripe.com/connect/account-types) to get them paid. Express provides onboarding, account management, an account dashboard, and identity verification for your platform, and we've customized Express with Rocket Rides branding.
 
-This platform uses the Stripe API to create payments for pilots, fetch their available and pending balance, and let them view transfers. It also creates instant payouts for pilots to be paid immediately to a debit card.
+This platform also uses the Stripe API to create payments for pilots, fetch their available and pending balance, and let them view transfers. It also creates instant payouts for pilots to be paid immediately to a debit card.
 
 <img src="server/public/images/screenshots/rocketrides-web-home.png" width="444"><img src="server/public/images/screenshots/rocketrides-web-connect.png" width="444">
 
@@ -78,6 +78,6 @@ To try out the full payment experience, run the server locally as described abov
 
 ## Credits
 
-* Code: [Romain Huet](https://twitter.com/romainhuet) and [Joey Dong](https://twitter.com/joeydong_)
-* Design: [Bill Labus](https://twitter.com/billlabus)
-* Logos: [Focus Lab](https://thenounproject.com/term/comet/547848/) and [Luis Prado](https://thenounproject.com/term/jet-pack/17210/) (The Noun Project)
+* Code: [Romain Huet](https://twitter.com/romainhuet), [Joey Dong](https://twitter.com/joeydong_), and [Michael Glukhovsky](https://twitter.com/mglukhovsky)
+* Design: [Wes Mitchell](https://wes.ly/), [Bill Labus](https://twitter.com/billlabus), [Melissa Cameron](https://twitter.com/melissacameron_), and [Priidu Zilmer](https://zilmer.com/)
+* Logos: [Focus Lab](https://thenounproject.com/term/comet/547848/)

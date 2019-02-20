@@ -1,1 +1,12 @@
-<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Icon</title><defs><circle id="a" cx="39" cy="39" r="39"/><filter x="-2.6%" y="-1.3%" width="105.1%" height="105.1%" filterUnits="objectBoundingBox" id="b"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation=".5" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" in="shadowBlurOuter1"/></filter></defs><g transform="translate(1)" fill="none" fill-rule="evenodd"><mask id="c" fill="#fff"><use xlink:href="#a"/></mask><use fill="#000" filter="url(#b)" xlink:href="#a"/><use fill="#FFF" xlink:href="#a"/><circle fill="#cfd7df" mask="url(#c)" cx="39" cy="87.75" r="29.25"/><circle fill="#cfd7df" mask="url(#c)" cx="39" cy="35.75" r="16.25"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <circle id="avatar-large-a" cx="25" cy="25" r="25"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="avatar-large-b" fill="#fff">
+      <use xlink:href="#avatar-large-a"/>
+    </mask>
+    <use fill="#FFF" xlink:href="#avatar-large-a"/>
+    <path fill="#CFD7DF" fill-rule="nonzero" d="M33.54375,33.0019884 L37.17375,34.3143163 C40.0763628,35.3647606 41.9992735,38.0400994 42,41.0290609 L42,44.0116243 C42,45.1097739 41.0765873,56 39.9375,56 L11.0625,56 C9.9234127,56 9,45.1097739 9,44.0116243 L9,41.0290609 C9,38.0385439 10.9243125,35.3621903 13.82625,34.3123279 L17.45625,33 C19.6369563,34.9678032 22.5130608,36.061258 25.5,36.0581217 C28.4866576,36.0617971 31.3627254,34.9690671 33.54375,33.0019884 Z M25.1023667,13 L25.8978024,13 C27.8836986,12.9999804 29.7788927,13.8192858 31.1237073,15.2591945 C32.4685219,16.6991031 33.1401019,18.6280726 32.9755562,20.5782335 L32.6427719,24.5193148 C32.335613,28.1817399 29.2294676,31 25.5000846,31 C21.7707016,31 18.6645561,28.1817399 18.3573973,24.5193148 L18.024613,20.580233 C17.859468,18.6297419 18.5307784,16.7002325 19.8756606,15.2598714 C21.2205429,13.8195104 23.1160868,12.9999339 25.1023667,13 Z" mask="url(#avatar-large-b)"/>
+  </g>
+</svg>

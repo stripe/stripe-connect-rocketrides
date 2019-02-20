@@ -7,7 +7,7 @@ document.body.addEventListener('change', function(e) {
 
   // Show the correct header for the select legal entity.
   var headerPrefix = (e.target.value === 'individual') ? 'Personal' : 'Company';
-  document.querySelector('.pilot-header').innerText = `${headerPrefix} Information`;
+  document.querySelector('.pilot-header#account-info').innerText = `${headerPrefix} information`;
 
   // Show any fields that apply to the new pilot type.
   var pilotInfoRows = document.querySelectorAll('.pilot-info');

@@ -29,6 +29,7 @@ function pilotRequired (req, res, next) {
  */
 router.get('/dashboard', pilotRequired, async (req, res) => {
   const pilot = req.user;
+  const account = await stripe.accounts.retrieve(pilot.stripeAccountId);
   // Retrieve the balance from Stripe.
   const balance = await stripe.balance.retrieve({ stripe_account: pilot.stripeAccountId });
   // Fetch the pilot's recent rides.
@@ -64,22 +65,27 @@ router.post('/rides', pilotRequired, async (req, res, next) => {
   // Save the ride.
   await ride.save();
   try {
-    // Get a test source and pass any requested trigger for testing bahaviors.
-    const source = getTestSource(req.body.trigger);
+    // Get a test source and pass any requested trigger for testing behaviors.
+    let source;
+    if (req.body.immediate_balance) {
+      source = getTestSource('immediate_balance');
+    } else if (req.body.payout_limit) {
+      source = getTestSource('payout_limit');
+    }
     // Create a charge and set its destination to the pilot's account.
     const charge = await stripe.charges.create({
-      source: source,
+      source: source, 
       amount: ride.amount,
       currency: ride.currency,
       description: config.appName,
       statement_descriptor: config.appName,
-      // The destination parameter directs the funds.
-      destination: {
+      // The destination parameter directs the transfer of funds from platform to pilot
+      transfer_data: {
         // Send the amount for the pilot after collecting a 20% platform fee.
         // Typically, the `amountForPilot` method simply computes `ride.amount * 0.8`.
         amount: ride.amountForPilot(),
         // The destination of this charge is the pilot's Stripe account.
-        account: pilot.stripeAccountId
+        destination: pilot.stripeAccountId
       }
     });
     // Add the Stripe charge reference to the ride and save it.
@@ -153,7 +159,7 @@ router.post('/signup', (req, res, next) => {
     pilot.set(body);
     pilot.save((err, pilot) => {
       if (err) next(err);
-      return res.redirect('/pilots/signup');
+      return res.redirect('/pilots/stripe/authorize');
     });
   }
 });
@@ -219,18 +225,16 @@ passport.use('pilot-login', new LocalStrategy({
 }));
 
 // Function that returns a test card token for Stripe.
-function getTestSource(trigger) {
+function getTestSource(behavior) {
   // Important: We're using static tokens based on specific test card numbers
   // to trigger a special behavior. This is NOT how you would create real payments!
   // You should use Stripe Elements or Stripe iOS/Android SDKs to tokenize card numbers.
   // Use a static token based on a test card.
   var source = 'tok_visa';
-  // Change the test card token if a specific trigger is requested.
-  if (trigger === 'immediate-balance') {
+  // Change the test card token if a specific behavior is requested.
+  if (behavior === 'immediate_balance') {
     source = 'tok_bypassPending';
-  } else if (trigger === 'account-verification') {
-    source = 'tok_visa_triggerVerification';
-  } else if (trigger === 'payout-limit') {
+  } else if (behavior === 'payout_limit') {
     source = 'tok_visa_triggerTransferBlock';
   }
   return source;

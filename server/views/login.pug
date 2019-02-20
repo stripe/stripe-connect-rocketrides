@@ -1,10 +1,7 @@
 extends layout
 
-block header
-  .title
-    h1 Log into your pilot account
-
 block content
+  h1.title Log in to your account
   section.form.account
     form(method='POST', autocomplete='off')
       fieldset
@@ -12,4 +9,4 @@ block content
           input(type='email', name='email', placeholder='john@example.com', required, autofocus)
         .row(label='Password')
           input(type='password', name='password', placeholder='••••••••', required)
-      input(type='submit', value='Login')
+      input(class='primary', type='submit', value='Log in')

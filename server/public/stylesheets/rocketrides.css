@@ -2,11 +2,6 @@
  * Rocket Rides CSS Stylesheet.
  */
 
-@font-face {
-  font-family: 'Camphor';
-  src: url('https://storage.googleapis.com/stripe-fonts/400-regular.woff2') format('woff2');
-}
-
  * {
   margin: 0;
   padding: 0;
@@ -32,7 +27,7 @@ body {
   min-height: 100vh;
   color: #292F45;
   background-color: #F6F9FC;
-  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 header,
@@ -58,6 +53,7 @@ header {
   background-image: url("/images/header.jpg");
   background-size: cover;
   background-color: black;
+  color: #fff;
 }
 
 h1 {
@@ -82,8 +78,14 @@ a.arrow {
 }
 
 #content {
+  max-width: 800px;
+  width: 100%;
   flex: 1;
-  margin-bottom: 125px;
+  margin-bottom: 150px;
+}
+
+#content.dashboard {
+  margin-bottom: 250px;
 }
 
 /* Header, Top Bar, Navigation */
@@ -92,14 +94,18 @@ a.arrow {
   height: 64px;
   line-height: 64px;
   font-size: 17px;
+  font-family: 'Barlow';
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: 'Barlow';
 }
 
-#top .rocketrides {
+#top .logo {
   flex: 1;
+}
+#top a.rocketrides {
+  display: inline-block;
+  min-width: 215px;
   height: 20px;
   padding-left: 75px;
   background: url(/images/rocketrides.svg) left center no-repeat;
@@ -109,8 +115,15 @@ a.arrow {
   margin-left: 30px;
 }
 
-.title {
-  margin: 40px 0;
+header .button.primary {
+  width: 200px;
+}
+
+h1.title {
+  font-family: 'Barlow';
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 25px;
 }
 
 nav {
@@ -172,16 +185,24 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url(/images/mask.svg) top center repeat-x;
+  display: flex;
+  flex-direction: row;
+}
+
+.annotation-wrapper {
+  align-self: center;
+  flex-basis: 1095px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .annotation {
   background: #FFF;
-  background: #FFFFFF;
   box-shadow: 0 13px 27px -5px rgba(50,50,93,0.25), 0 8px 16px -8px rgba(0,0,0,0.30);
   border-radius: 4px;
   max-width: 800px;
-  margin: 25px auto;
+  margin: 25px auto ;
   padding: 10px 22px;
   font-size: 16px;
   font-weight: bold;
@@ -191,56 +212,61 @@ footer {
 .annotation h4 {
   color: #525F7F;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   width: 100%;
   margin-bottom: 15px;
 }
 
+.annotation ul {
+  font-weight: 400;
+  font-size: 14px;
+  color: #525F7F;
+  margin-left: 16px;
+}
+
 .annotation.simulate {
+  justify-content: flex-start;
   flex-direction: column;
   text-align: left;
   padding: 20px 20px;
-  max-width: 575px;
+  max-width: 500px;
 }
 
 /* TODO delete later the following four rules*/
-.annotation.simulate form .options {
-  display: flex;
-}
-.annotation.simulate form .options label {
-  padding: 0;
-  margin: 0;
-  width: auto;
-  margin-right: 30px;
-}
 .annotation.simulate .form {
   width: 100%;
   margin-bottom: 0;
 }
 .annotation.simulate input[type=submit] {
-  margin-bottom: 0;
+  margin: 0;
   width: auto;
+  display: inline-block;
+  margin-right: 10px;
+}
+.annotation.simulate input[type=submit].primary-action {
+  background: #556cd6;
+  color: #fff;
 }
 .annotation.simulate p {
   color: #51586D;
   font-size: 14px;
 }
 /* END TODO delete*/
-
+/* 
 .annotation.info {
   background: #FFF url(/images/info.svg) 10px 10px no-repeat;
   animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 1s;
-}
+} */
 
 .annotation p {
   font-size: 15px;
   font-weight: 400;
   color: #6A7C94;
 }
-
+/* 
 .annotation.info p {
   padding-left: 20px;
-}
+} */
 
 .annotation.info strong {
   display: block;
@@ -270,17 +296,7 @@ footer {
 }
 
 .account {
-  min-height: 400px;
-}
-
-.form .checkmark {
-  width: 100px;
-  height: 100px;
-  background: #FFF url(/images/checkmark-green.svg) center center no-repeat;
-  background-size: 65px 45px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-  border-radius: 50%;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.5s;
+  min-height: 225px;
 }
 
 .form section {
@@ -299,7 +315,8 @@ footer {
 .form p {
   margin: 0 0 30px;
   font-size: 17px;
-  color: #8798AB;
+  color: #525f7f;
+  line-height: 1.5;
   text-align: center;
   animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.6s;
 }
@@ -311,8 +328,10 @@ footer {
 .form h4 {
   margin: 15px 0;
   color: #8798AB;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .02em;
   animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.5s;
 }
 
@@ -362,7 +381,7 @@ form aside {
   margin: -30px auto 0;
   line-height: 1.3em;
   font-size: 13px;
-  text-align: center;
+  text-align: right;
   color: #8798AB;
   animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.65s;
 }
@@ -429,11 +448,11 @@ fieldset .row select {
   color: #313B3F;
   cursor: pointer;
   background: transparent;
-}
+  }
 
-fieldset .row select:focus {
-  color: #00B67C;
-}
+  fieldset .row select:focus {
+    color: #00B67C;
+  }
 
 fieldset .row.date span {
   padding-right: 10px;
@@ -469,13 +488,40 @@ a.button {
   -webkit-appearance: none;
 }
 
-#content a.button::after {
-  content: '';
-  position: absolute;
-  width: 8px;
-  height: 13px;
-  margin: 5px 10px;
-  background: url(/images/arrow-white.svg) right center no-repeat;
+input[type="submit"]:hover,
+button:hover,
+a.button:hover {
+  color: #2a2f45;
+  text-decoration: none;
+  outline: 0;
+}
+
+input[type="submit"]:active,
+button:active,
+a.button:active {
+  outline: 0;
+}
+
+.button.primary,
+button.primary,
+input[type="submit"].primary {
+  font-family: 'Barlow';
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;  
+  background: #27BB86;
+  color: white;
+  height: 44px;
+  margin: 30px 0 0 0;
+  padding: 0 22px;
+  line-height: 44px;
+} 
+
+.button.primary:hover,
+button.primary:hover,
+input[type="submit"].primary:hover {
+  color: white;
 }
 
 input[type="submit"].secondary {
@@ -492,12 +538,6 @@ a.button:hover {
   text-decoration: none;
 }
 
-input[type="submit"]:active,
-button:active,
-a.button:active {
-  background-color: #27BB86;
-}
-
 header button,
 header a.button,
 header input[type="submit"] {
@@ -508,15 +548,26 @@ header input[type="submit"] {
   text-align: center;
 }
 
-header button:active,
-header a.button:active,
-header input[type="submit"]:active {
-  color: #FFF;
-  background-color: #27BB86;
-}
-
 form a.button {
   text-align: center;
+}
+
+/* Stripe information */
+.stripe-information {
+  margin-bottom: 35px;
+  border: 2px solid #e6ebf1;
+  border-radius: 5px;
+  padding: 20px;
+  padding-right: 135px;
+  background: url(/images/stripe-grey.svg) right 25px center no-repeat;
+  background-size: 80px auto;
+}
+
+.stripe-information p {
+  color: #525f7f;
+  font-size: 14px;
+  text-align: left;
+  margin: 0;
 }
 
 /* Illustration */
@@ -540,7 +591,7 @@ form a.button {
 }
 
 .illustration.not-found {
-  margin: 50px;
+  margin: 50px auto;
 }
 
 .illustration.not-found .rocket {
@@ -555,8 +606,8 @@ form a.button {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 800px;
-  padding: 60px 0;
+  max-width: 800px; 
+  padding: 60px 0 80px;
 }
 
 .intro .pilots {
@@ -564,25 +615,18 @@ form a.button {
 }
 
 .intro h1 {
+  font-family: 'Barlow';
   font-size: 42px;
   line-height: 45px;
+  letter-spacing: .01em;
 }
 
 .intro h2 {
+  color: #cfd7df;
   margin: 15px 0;
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
-  opacity: 0.8;
-}
-
-.intro a.button {
-  width: 190px;
-  height: 44px;
-  margin: 30px 0 0 0;
-  padding: 0 22px;
-  line-height: 44px;
-  text-align: center;
 }
 
 .features {
@@ -595,8 +639,9 @@ form a.button {
 .features section {
   flex: 1;
   align-items: flex-start;
+  justify-content: flex-start;
   padding: 90px 0 0;
-  margin: 20px 40px 0 0;
+  margin: 25px 40px 0 0;
   background-position: 0 20px;
   background-repeat: no-repeat;
 }
@@ -618,10 +663,12 @@ form a.button {
 }
 
 .features h3 {
+  font-family: "Barlow";
   margin: 0 0 10px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   color: #32315E;
+  letter-spacing: .01em;
 }
 
 .features p {
@@ -641,6 +688,7 @@ form a.button {
 
 .user .block {
   position: relative;
+  color: #292F45;
 }
 
 .user .block + .block {
@@ -653,62 +701,70 @@ form a.button {
 }
 
 .user .block h2 {
-  font-size: 17px;
+  color: #8898AA;
+  font-size: 13px;
   font-weight: 500;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 .user .block p {
-  font-size: 17px;
-  opacity: 0.7;
-  margin-bottom: 5px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 7px;
+  color: #292F45;
+}
+
+.user .block a {
+  color: #219F72;
 }
 
 .user .block.profile {
   flex: 1;
-  padding-left: 95px;
+  padding-left: 65px;
 }
 
 .user .block.profile .photo {
   position: absolute;
-  width: 78px;
-  height: 78px;
-  top: 50%;
+  width: 50px;
+  height: 50px;
+  top: 36%;
   left: 0;
-  margin-top: -39px;
+  margin-top: -25px;
   border-radius: 50%;
-  background-color: #FFF;
   background-image: url(/images/avatar-large.svg);
   box-shadow: 0 2px 5px -1px rgba(50,50,93,0.25), 0 1px 3px -1px rgba(0,0,0,0.30);
 }
 
-.user .block.profile .rating {
-  position: relative;
-  width: 90px;
-  height: 16px;
-  margin-top: 5px;
-  background-image: url(/images/rating.svg);
+.user .block.stripe input[type=submit] {
+  font-size: 16px;
+  font-weight: 500;
+  background: #27BB86;
+  color: white;
+  height: 43px;
+  margin: 30px 0 0 0;
+  padding: 0 22px;
+  line-height: 44px;
+  margin: 2px 0 14px;
+  min-width: 150px;
+  text-align: center;
 }
 
-.user .block.stripe .button {
-  margin: 0;
+.user .block.stripe p {
+  text-align: center;
 }
 
 /* Pilot Onboarding Options */
 
 .pilot-options {
-  margin: 0 0 25px;
-  text-align: center;
+  margin: 0 0 35px;
 }
 
 .form label.pilot-option {
-  display: inline-block;
   width: auto;
   padding: 0;
-  align-items: center;
   cursor: pointer;
   text-align: left;
-  margin: 10px 20px;
+  margin: 17px 0;
 }
 
 .pilot-option input {
@@ -726,9 +782,9 @@ form a.button {
   position: relative;
   align-items: center;
   color: #8798AB;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 .pilot-option input + span:before {
@@ -748,7 +804,7 @@ form a.button {
   display: flex;
   position: absolute;
   top: 5px;
-  right: calc(100% - 25px);
+  right: calc(100% - 15px);
   width: 10px;
   height: 10px;
   background: #27BB86;
@@ -760,24 +816,48 @@ form a.button {
 }
 
 /* Ride History */
-
 .rides {
   width: 100%;
-  max-width: 800px;
-  margin: 30px 0;
+  margin: 0 auto;
   align-items: flex-start;
   animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.55s;
 }
 
 .rides h4 {
-  margin-bottom: 15px;
-  color: #8798AB;
+  margin-bottom: 14px;
+  color: #292F45;
   font-weight: 500;
 }
 
-.rides p {
-  font-size: 15px;
-  color: #8798AB;
+.rides .no-rides {
+  width: 100%;
+  min-height: 250px;
+  background: #edf3f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rides .no-rides .rocket {
+  width: 52px;
+  height: 52px;
+  background-image: url(/images/rocket.svg);
+}
+.rides .no-rides h1 {
+  color: #525F7F;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.rides .no-rides h2 {
+  color: #8898AA;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
 }
 
 .rides .list {
@@ -827,7 +907,7 @@ form a.button {
 }
 
 .rides .list .cell.date {
-  flex: 2;
+  flex: 1.5;
 }
 
 .rides .list .cell.price {

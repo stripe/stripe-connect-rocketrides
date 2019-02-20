@@ -1,15 +1,11 @@
 extends layout
 
-block header
-  .title
-    h1 Sign up to become a pilot
-  nav
-    ol
-      li(class=(step == 'account' ? 'active' : 'done')) Create Your Account
-      li(class=(step == 'profile' ? 'active' : step != 'account' ? 'done' : '')) Complete Your Profile
-      li(class=(step == 'payments' ? 'active' : step == 'done' ? 'done' : '')) Setup Payments
-
 block content
+  h1.title 
+    if step == 'account'
+      | Create your account
+    else if step == 'profile'
+      | Complete your profile
   section.form.account
     if error
       p.error= error
@@ -22,19 +18,20 @@ block content
               input(type='email', name='email', placeholder='jane@example.com', required, autofocus)
             .row(label='Password')
               input(type='password', name='password', placeholder='••••••••', required)
-          input(type='submit', value='Create Account')
+          input.primary(type='submit', value='Continue')
 
       when 'profile'
         form(method='POST', autocomplete='off')
+          h4.pilot-header Account type
           .pilot-options
             label.pilot-option
               input(type='radio', name='pilot-type', value='individual', id='po-individual', checked=true)
-              span Individual
+              span Independent pilot
             label.pilot-option
               input(type='radio', name='pilot-type', value='company', id='po-company')
-              span Company
+              span Company of pilots
 
-          h4.pilot-header Personal Information
+          h4.pilot-header#account-info Personal information
           fieldset
             .row.pilot-info.individual(label='* First Name')
               input(type='text', name='firstName', placeholder='Jane')
@@ -48,11 +45,13 @@ block content
               input(type='text', name='postalCode', placeholder='94103', value='94103')
             .row(label='City')
               input(type='text', name='city', placeholder='San Francisco', value='San Francisco')
+            .row(label='State')
+              input(type='text', name='state', placeholder='CA', value='CA')
             .row.select(label='Country')
               select(name='country')
                 option(value='US') United States
-          aside (*) indicates required fields for this demo.
-          h4 Rocket Information
+          aside *indicates required fields
+          h4 Rocket information
           fieldset
             .row(label='Make & Model')
               input(type='text', name='rocket[model]', placeholder='Lightspeed 3000', value='Lightspeed 3000')
@@ -68,18 +67,21 @@ block content
                 option(value='purple') Purple
                 option(value='black') Black
                 option(value='white') White
-          input(type='submit', value='Save Profile')
+          h4 Payment information
+          .stripe-information
+            p We use Stripe to make sure you get paid on time and to keep your personal bank and details secure. Click #[strong Save and continue] to set up your payments on Stripe.
+            
+          input.primary(type='submit', value='Save and continue')
 
       when 'payments'
-        h2 Connect your Rocket Rides account to Stripe
+        h1.title Connect your account to Stripe
         p We use Stripe to make sure you get paid on time and keep your personal and bank details secure.
-        a.button(href='/pilots/stripe/authorize') Set up Payments on Stripe
+        a.button.primary(href='/pilots/stripe/authorize') Set up payments
 
       when 'done'
-        .checkmark
-        h2 You’re ready to get paid!
-        p Download the app, fire up your rocket, and start taking your first passengers!
-        a.button(href='/pilots/dashboard') View Your Pilot Dashboard
+        h1.title Your account is set up
+        p Download the app, fire up your rocket, and take your first passengers.
+        a.button.primary(href='/pilots/dashboard') View your dashboard
 
 block footer
   .annotation.info
