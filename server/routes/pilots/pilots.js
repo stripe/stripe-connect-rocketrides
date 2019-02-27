@@ -16,7 +16,7 @@ function pilotRequired (req, res, next) {
     return res.redirect('/pilots/login');
   }
   next();
-}s
+}
 
 /**
  * GET /pilots/dashboard
