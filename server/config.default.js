@@ -25,9 +25,7 @@ module.exports = {
   },
 
   // Configuration for MongoDB
-  mongo: {
-    uri: 'mongodb://localhost/rocketrides'
-  },
+  mongoUri: 'mongodb://localhost/rocketrides',
 
   // Configuration for Google Cloud (only useful if you want to deploy to GCP)
   gcloud: {
