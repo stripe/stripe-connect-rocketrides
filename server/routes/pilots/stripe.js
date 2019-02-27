@@ -18,34 +18,23 @@ function pilotRequired (req, res, next) {
 /**
  * GET /pilots/stripe/authorize
  *
- * Redirect to Stripe to set up payments.
+ * Redirect to Stripe to set up payments. This initiates the Express flow and customizes it
+ * with some URL parameters.
  */
 router.get('/authorize', pilotRequired, (req, res) => {
   // Generate a random string as state to protect from CSRF and place it in the session.
   req.session.state = Math.random().toString(36).slice(2);
   // Prepare the mandatory Stripe parameters.
   let parameters = {
-    client_id: config.stripe.clientId,
-    state: req.session.state
-  };
-  // Optionally, Stripe Connect accepts `first_name`, `last_name`, `email`,
-  // and `phone` in the query parameters for them to be autofilled.
-  parameters = Object.assign(parameters, {
-    redirect_uri: config.publicDomain+'/pilots/stripe/token',
-    'stripe_user[business_type]': req.user.type || 'individual',
-    'stripe_user[business_name]': req.user.businessName || undefined,
-    'stripe_user[first_name]': req.user.firstName || undefined,
-    'stripe_user[last_name]': req.user.lastName || undefined,
-    'stripe_user[email]': req.user.email || undefined,
-    // If we're suggesting this account have the `card_payments` capability,
-    // we can pass some additional fields to autofill:
-    // 'suggested_capabilities[]': 'card_payments',
-    // 'stripe_user[street_address]': req.user.address || undefined,
-    // 'stripe_user[city]': req.user.city || undefined,
-    // 'stripe_user[zip]': req.user.postalCode || undefined,
-    // 'stripe_user[state]': req.user.city || undefined,
-    // 'stripe_user[country]': req.user.country || undefined
-  });
+    /* FIXME: Fill in two *required* URL parameters:
+    *   - The Connect client application id: `config.stripe.clientId`
+    *   - The secret `state` variable generated above
+    *   - The redirect URI we'll return to once the Express flow completes:
+    *      `config.publicDomain+'/pilots/stripe/token'`
+    *   - The following properties of `req.user`: `type`, `businessName`, `firstName`,
+    *      `lastName`, `email`
+    */
+  }
   console.log('Starting Express flow:', parameters)
   // Redirect to Stripe to start the Connect onboarding.
   res.redirect(config.stripe.authorizeUri + '?' + querystring.stringify(parameters));
@@ -54,10 +43,13 @@ router.get('/authorize', pilotRequired, (req, res) => {
 /**
  * GET /pilots/stripe/token
  *
- * Connect the new Stripe account to the platform account.
+ * Connect the new Stripe account to the platform account. This route is the
+ * redirect URI called by the Express flow once the user completes it.
+ * We confirm it's a valid request, authorize it with Stripe, save the new pilot to our database,
+ * and then redirect the user to the Rocket Rides dashboard as they're now logged in.
  */
 router.get('/token', pilotRequired, async (req, res) => {
-  // Check the state we got back equals the one we generated before proceeding.
+  // Check that the state token we got back from Express is the exact one we generated before proceeding.
   if (req.session.state != req.query.state) {
     res.redirect('/pilots/signup');
   }
@@ -98,7 +90,8 @@ router.get('/dashboard', pilotRequired, async (req, res) => {
   }
   try {
     // Generate a unique login link for the associated Stripe account.
-    const loginLink = await stripe.accounts.createLoginLink(pilot.stripeAccountId);
+    // FIXME: Produce a login link that is generated for `pilot.stripeAccountId`.
+
     // Directly link to the account tab
     if (req.query.account) {
       loginLink.url = loginLink.url + '#/account'
@@ -128,11 +121,10 @@ router.post('/payout', pilotRequired, async (req, res) => {
     const { amount, currency } = balance.available[0];
     // Create the instant payout.
     const payout = await stripe.payouts.create({
-      amount: amount,
-      currency: currency,
-      statement_descriptor: config.appName
-    }, {
-      stripe_account: pilot.stripeAccountId
+      /* FIXME: Create an instant payout using the following parameters: 
+      * `amount`, `currency`, a statement description of `config.appName`,
+      * and the destination account `pilot.stripeAccountId`
+      */
     });
   } catch (err) {
     console.log(err);

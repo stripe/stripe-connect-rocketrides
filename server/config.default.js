@@ -4,7 +4,7 @@ module.exports = {
   // App name
   appName: 'Rocket Rides',
 
-  // Public domain of Rocket Rides
+  // Public domain of Rocket Rides (the Express flow will redirect to this URL)
   publicDomain: 'http://localhost:3000',
 
   // Server port

@@ -16,7 +16,7 @@ function pilotRequired (req, res, next) {
     return res.redirect('/pilots/login');
   }
   next();
-}
+}s
 
 /**
  * GET /pilots/dashboard
@@ -36,7 +36,6 @@ router.get('/dashboard', pilotRequired, async (req, res) => {
   const rides = await pilot.listRecentRides();
   const ridesTotalAmount = rides.reduce((a, b) => { return a + b.amountForPilot(); }, 0);
   const [showBanner] = req.flash('showBanner')
-  console.log('💚  FLASH', showBanner, !!showBanner);
   // There are as maybe balances as currencies used.
   // This demo app only uses USD so we'll just use the first object.
   res.render('dashboard', {
@@ -77,19 +76,14 @@ router.post('/rides', pilotRequired, async (req, res, next) => {
     }
     // Create a charge and set its destination to the pilot's account.
     const charge = await stripe.charges.create({
-      source: source, 
-      amount: ride.amount,
-      currency: ride.currency,
-      description: config.appName,
-      statement_descriptor: config.appName,
-      // The destination parameter directs the transfer of funds from platform to pilot
-      transfer_data: {
-        // Send the amount for the pilot after collecting a 20% platform fee.
-        // Typically, the `amountForPilot` method simply computes `ride.amount * 0.8`.
-        amount: ride.amountForPilot(),
-        // The destination of this charge is the pilot's Stripe account.
-        destination: pilot.stripeAccountId
-      }
+      /* FIXME: create the charge with the specified token. 
+      * A few details you'll need:
+      * The payment source: `source`
+      * The total amount for the ride: `ride.amount`
+      * The currency: `ride.currency`
+      * The utility function `ride.amountForPilot()` which deducts the platform fee
+      * The destination account: `pilot.stripeAccountId`
+      */
     });
     // Add the Stripe charge reference to the ride and save it.
     ride.stripeChargeId = charge.id;
