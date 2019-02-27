@@ -26,13 +26,13 @@ router.get('/authorize', pilotRequired, (req, res) => {
   req.session.state = Math.random().toString(36).slice(2);
   // Prepare the mandatory Stripe parameters.
   let parameters = {
-    /* FIXME: Fill in two *required* URL parameters:
+    /* FIXME: Fill these URL parameters to set up the Express flow:
     *   - The Connect client application id: `config.stripe.clientId`
     *   - The secret `state` variable generated above
     *   - The redirect URI we'll return to once the Express flow completes:
     *      `config.publicDomain+'/pilots/stripe/token'`
     *   - The following properties of `req.user`: `type`, `businessName`, `firstName`,
-    *      `lastName`, `email`
+    *      `lastName`, `email` we'll use to prefill the form
     */
   }
   console.log('Starting Express flow:', parameters)
