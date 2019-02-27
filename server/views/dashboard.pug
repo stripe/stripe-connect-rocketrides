@@ -1,5 +1,11 @@
 extends layout
 
+block header
+  if showBanner
+    .banner
+      .message
+        strong Congratulations, your account is set up. 
+        | Fire up your rocket and take your first passengers.
 block content
   content.dashboard
     .user
@@ -11,20 +17,20 @@ block content
           a(href='/pilots/stripe/dashboard?account=true') View Stripe account
 
       .block.week
-        p This Week
+        p This week
         h1 $#{(ridesTotalAmount / 100).toFixed(2)}
-        h2 #{rides.length} Rides
+        h2 #{rides.length} rides
       .block.available
-        p Your Balance
+        p Your balance
         h1 $#{((balanceAvailable + balancePending) / 100).toFixed(2)}
-        h2 $#{(balanceAvailable / 100).toFixed(2)} Available
+        h2 $#{(balanceAvailable / 100).toFixed(2)} available
       .block.stripe
         form(action='/pilots/stripe/payout', method='POST', autocomplete='off')
-          input(type='submit', value='Pay out now')
+          input(class='primary' type='submit', value='Pay out now' disabled=(balanceAvailable===0))
         p
           a(href='/pilots/stripe/dashboard') View payouts on Stripe
     section.rides
-      h4 Recent Rides
+      h4 Recent rides
       if rides.length == 0
         .no-rides
           .rocket
@@ -41,12 +47,18 @@ block content
 block footer
   .annotation-wrapper
     .annotation.simulate
-      h4 Simulate a passenger ride to create a payment for this pilot.
-      ul
-        li The balance is automatically fetched from the Stripe API.
-        li #[strong View Transfers] lets pilots see their payments and edit their account information.
-        li #[strong Pay Out Now] uses the Stripe API to generate an instant payout of the available balance.
-      div.form
+      .dashboard-banner(class=(showBanner ? 'visible' : ''))
+        h4 The Connect Express onboarding flow is now complete
+        p The #[strong platform] can now use a simple API call to retrieve the Stripe account ID that was just created and save it to its database.
+        p This #[Stripe account ID] can then be used to retrieve the pilot’s balance, as a destination for payments, or to create instant payouts.
+        form.right
+          button.primary-action.next Next step
+      .last-step(class=(showBanner ? '' : 'visible'))
+        h4 Simulate a passenger ride to create a payment for this pilot.
+        ol
+          li The balance is automatically fetched from the Stripe API.
+          li #[strong View payouts on Stripe] lets pilots see their payouts or edit their account information.
+          li #[strong Pay out now] uses the Stripe API to generate a payout of the available balance. Instant payouts are available with a debit card.
         form(action='/pilots/rides', method='POST', autocomplete='off')
           input(type='submit', name="immediate_balance", value='Create passenger ride', class='primary-action')
           input(type='submit', name="payout_limit", value='Simulate payout limit')

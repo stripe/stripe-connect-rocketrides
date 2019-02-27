@@ -37,8 +37,8 @@ router.get('/authorize', pilotRequired, (req, res) => {
     'stripe_user[first_name]': req.user.firstName || undefined,
     'stripe_user[last_name]': req.user.lastName || undefined,
     'stripe_user[email]': req.user.email || undefined,
-    // If this account had the `card_payments` capability, we could pass some additional
-    // fields to autofill:
+    // If we're suggesting this account have the `card_payments` capability,
+    // we can pass some additional fields to autofill:
     // 'suggested_capabilities[]': 'card_payments',
     // 'stripe_user[street_address]': req.user.address || undefined,
     // 'stripe_user[city]': req.user.city || undefined,
@@ -80,7 +80,8 @@ router.get('/token', pilotRequired, async (req, res) => {
       req.user.save();
     }
     // Redirect to the final stage.
-    res.redirect('/pilots/signup');
+    req.flash('showBanner', 'true');
+    res.redirect('/pilots/dashboard');
   });
 });
 
@@ -136,7 +137,6 @@ router.post('/payout', pilotRequired, async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-  // Redirect to the pilot dashboard.
   res.redirect('/pilots/dashboard');
 });
 

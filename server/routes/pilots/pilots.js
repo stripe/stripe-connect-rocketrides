@@ -35,6 +35,8 @@ router.get('/dashboard', pilotRequired, async (req, res) => {
   // Fetch the pilot's recent rides.
   const rides = await pilot.listRecentRides();
   const ridesTotalAmount = rides.reduce((a, b) => { return a + b.amountForPilot(); }, 0);
+  const [showBanner] = req.flash('showBanner')
+  console.log('💚  FLASH', showBanner, !!showBanner);
   // There are as maybe balances as currencies used.
   // This demo app only uses USD so we'll just use the first object.
   res.render('dashboard', {
@@ -42,7 +44,8 @@ router.get('/dashboard', pilotRequired, async (req, res) => {
     balanceAvailable: balance.available[0].amount,
     balancePending: balance.pending[0].amount,
     ridesTotalAmount: ridesTotalAmount,
-    rides: rides
+    rides: rides,
+    showBanner: !!showBanner
   });
 });
 
@@ -229,9 +232,9 @@ function getTestSource(behavior) {
   // Important: We're using static tokens based on specific test card numbers
   // to trigger a special behavior. This is NOT how you would create real payments!
   // You should use Stripe Elements or Stripe iOS/Android SDKs to tokenize card numbers.
-  // Use a static token based on a test card.
+  // Use a static token based on a test card: https://stripe.com/docs/testing#cards
   var source = 'tok_visa';
-  // Change the test card token if a specific behavior is requested.
+  // We can use a different test token if a specific behavior is requested
   if (behavior === 'immediate_balance') {
     source = 'tok_bypassPending';
   } else if (behavior === 'payout_limit') {

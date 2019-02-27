@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1.title 
+  h1.title.short-form
     if step == 'account'
       | Create your account
     else if step == 'profile'
@@ -50,7 +50,7 @@ block content
             .row.select(label='Country')
               select(name='country')
                 option(value='US') United States
-          aside *indicates required fields
+          aside * Indicates required fields
           h4 Rocket information
           fieldset
             .row(label='Make & Model')
@@ -78,11 +78,6 @@ block content
         p We use Stripe to make sure you get paid on time and keep your personal and bank details secure.
         a.button.primary(href='/pilots/stripe/authorize') Set up payments
 
-      when 'done'
-        h1.title Your account is set up
-        p Download the app, fire up your rocket, and take your first passengers.
-        a.button.primary(href='/pilots/dashboard') View your dashboard
-
 block footer
   .annotation.info
 
@@ -95,6 +90,3 @@ block footer
 
       when 'payments'
         p This platform uses #[a(href='https://stripe.com/connect/account-types') Connect Express] accounts to pay its pilots. We’ll pass some of the user information we have collected to Express in order to make onboarding as simple as possible. This app is in test mode, so no real payments are going through. Use the Stripe test Visa debit card number as a payout method: #[strong 4000 0566 5566 5556]
-
-      when 'done'
-        p The Connect Express onboarding flow is now complete! The platform can now use a simple API call to retrieve the Stripe account ID that was just created and save it to its database. This Stripe account ID can then be used to retrieve the pilot’s balance, as a destination for payments, or to create instant payouts.

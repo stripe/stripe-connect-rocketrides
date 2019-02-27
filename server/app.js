@@ -8,6 +8,7 @@ const passport = require('passport');
 const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
+const flash = require('express-flash');
 const bodyParser = require('body-parser');
 const moment = require('moment');
 
@@ -16,23 +17,30 @@ app.set('trust proxy', true);
 
 // MongoDB.
 const mongoose = require('mongoose');
-mongoose.connect(config.mongo.uri);
+mongoose.connect(config.mongoUri, {
+  useNewUrlParser: true,
+  useCreateIndex: true
+});
 
 // View engine setup.
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
-// Enable sessions using encrypted cookies.
+// Enable sessions using encrypted cookies
+app.use(cookieParser(config.secret));
 app.use(session({
+  cookie: { maxAge: 60000},
   secret: config.secret,
-  signed: true
+  signed: true,
+  resave: true
 }));
+// Set up flash messages
+app.use(flash());
 
 // Useful middleware setup.
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Initialize Passport and restore any existing authentication state.
@@ -99,5 +107,5 @@ app.use((err, req, res) => {
 
 // Start the server on the correct port.
 const server = app.listen(process.env.PORT || config.port, () => {
-  console.log(`Rocket Rides listening on port ${server.address().port}`);
+  console.log('🚀 Rocket Rides server started:', config.publicDomain);
 });

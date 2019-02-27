@@ -126,6 +126,10 @@ h1.title {
   margin-bottom: 25px;
 }
 
+h1.title.short-form {
+  margin-bottom: 0;
+}
+
 nav {
   width: 100%;
   height: 50px;
@@ -178,8 +182,20 @@ nav ol li.active::before {
   color: #01966F;
 }
 
-/* Footer */
+/* Banners */
+.banner {
+  background: #15b67c;
+  color: white;
+  width: 100%;
+  min-height: 44px;
+  line-height: 44px;
+}
+.message {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
+/* Footer */
 footer {
   position: fixed;
   left: 0;
@@ -191,7 +207,7 @@ footer {
 
 .annotation-wrapper {
   align-self: center;
-  flex-basis: 1095px;
+  flex-basis: 550px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -217,7 +233,7 @@ footer {
   margin-bottom: 15px;
 }
 
-.annotation ul {
+.annotation ol {
   font-weight: 400;
   font-size: 14px;
   color: #525F7F;
@@ -230,43 +246,49 @@ footer {
   text-align: left;
   padding: 20px 20px;
   max-width: 500px;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 1s;
 }
 
-/* TODO delete later the following four rules*/
-.annotation.simulate .form {
+.annotation.simulate .dashboard-banner, .last-step {
+  display: none;
+}
+
+.annotation.simulate .visible {
+  display: block;
+}
+
+.annotation.simulate form {
   width: 100%;
+  margin-top: 15px;
   margin-bottom: 0;
 }
-.annotation.simulate input[type=submit] {
+.annotation.simulate form.right {
+  text-align: right;
+}
+.annotation.simulate input[type=submit],
+.annotation.simulate button {
   margin: 0;
   width: auto;
   display: inline-block;
   margin-right: 10px;
 }
-.annotation.simulate input[type=submit].primary-action {
+.annotation.simulate input[type=submit].primary-action,
+.annotation.simulate button.primary-action { 
   background: #556cd6;
   color: #fff;
 }
+
+
 .annotation.simulate p {
   color: #51586D;
   font-size: 14px;
 }
-/* END TODO delete*/
-/* 
-.annotation.info {
-  background: #FFF url(/images/info.svg) 10px 10px no-repeat;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 1s;
-} */
 
 .annotation p {
   font-size: 15px;
   font-weight: 400;
   color: #6A7C94;
 }
-/* 
-.annotation.info p {
-  padding-left: 20px;
-} */
 
 .annotation.info strong {
   display: block;
@@ -289,7 +311,6 @@ footer {
 }
 
 /* Forms */
-
 .form {
   width: 540px;
   margin: 15px auto;
@@ -299,7 +320,7 @@ footer {
   min-height: 225px;
 }
 
-.form section {
+.signup-form section {
   padding: 30px 10px;
 }
 
@@ -510,7 +531,7 @@ input[type="submit"].primary {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;  
-  background: #27BB86;
+  background: #15b67c;
   color: white;
   height: 44px;
   margin: 30px 0 0 0;
@@ -522,6 +543,14 @@ input[type="submit"].primary {
 button.primary:hover,
 input[type="submit"].primary:hover {
   color: white;
+}
+
+button.primary:disabled,
+.button.primary:disabled,
+input[type="submit"].primary:disabled {
+  background: #e6ebf1;
+  color: #aab7c4;
+  cursor: default;
 }
 
 input[type="submit"].secondary {
@@ -557,8 +586,7 @@ form a.button {
   margin-bottom: 35px;
   border: 2px solid #e6ebf1;
   border-radius: 5px;
-  padding: 20px;
-  padding-right: 135px;
+  padding: 20px 135px 20px 25px;
   background: url(/images/stripe-grey.svg) right 25px center no-repeat;
   background-size: 80px auto;
 }
@@ -738,12 +766,10 @@ form a.button {
 .user .block.stripe input[type=submit] {
   font-size: 16px;
   font-weight: 500;
-  background: #27BB86;
-  color: white;
+  text-transform: unset;
+  letter-spacing: 0;
   height: 43px;
   margin: 30px 0 0 0;
-  padding: 0 22px;
-  line-height: 44px;
   margin: 2px 0 14px;
   min-width: 150px;
   text-align: center;
@@ -781,7 +807,7 @@ form a.button {
   display: flex;
   position: relative;
   align-items: center;
-  color: #8798AB;
+  color: #525f7f;
   font-size: 15px;
   font-weight: 500;
   padding-left: 10px;
@@ -807,7 +833,7 @@ form a.button {
   right: calc(100% - 15px);
   width: 10px;
   height: 10px;
-  background: #27BB86;
+  background: #15b67c;
   border-radius: 10px;
 }
 
@@ -902,8 +928,8 @@ form a.button {
   top: 50%;
   margin-top: -12px;
   border-radius: 50%;
-  background-color: rgba(0, 144, 250, 0.25);
   background-image: url(/images/avatar-small.svg);
+  box-shadow: 0 2px 5px -1px rgba(50,50,93,0.25), 0 1px 3px -1px rgba(0,0,0,0.30);
 }
 
 .rides .list .cell.date {
