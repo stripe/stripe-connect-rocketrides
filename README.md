@@ -80,4 +80,4 @@ To try out the full payment experience, run the server locally as described abov
 
 * Code: [Romain Huet](https://twitter.com/romainhuet), [Joey Dong](https://twitter.com/joeydong_), and [Michael Glukhovsky](https://twitter.com/mglukhovsky)
 * Design: [Wes Mitchell](https://wes.ly/), [Bill Labus](https://twitter.com/billlabus), [Melissa Cameron](https://twitter.com/melissacameron_), and [Priidu Zilmer](https://zilmer.com/)
-* Logos: [Focus Lab](https://thenounproject.com/term/comet/547848/)
+* Original logo: [Focus Lab](https://thenounproject.com/term/comet/547848/)
