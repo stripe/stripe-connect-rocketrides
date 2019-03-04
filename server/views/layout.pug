@@ -10,7 +10,7 @@ html
     meta(name='twitter:image', content='https://rocketrides.io/images/rocketrides.png')
     title Rocket Rides
     link(rel='stylesheet', type='text/css', href='/stylesheets/rocketrides.css')
-    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Barlow')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Barlow:500,600')
     link(rel='icon', type='image/png', sizes='64x64', href='/images/favicon.png')
 
   body
@@ -24,7 +24,8 @@ html
               a(href='/pilots/dashboard') Dashboard
             a(href='/pilots/logout') Log out
         else
-          a(href='/pilots/login') Log in
+          .links
+            a(href='/pilots/login') Log in
       block header
 
     #content

@@ -18,7 +18,6 @@
 
 
 /* General */
-
 body {
   display: flex;
   flex-direction: column;
@@ -88,14 +87,13 @@ a.arrow {
   margin-bottom: 250px;
 }
 
-/* Header, Top Bar, Navigation */
-
+/* Header, top bar, navigation */
 #top {
   height: 64px;
   line-height: 64px;
   font-size: 17px;
   font-family: 'Barlow';
-  font-weight: bold;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -113,6 +111,7 @@ a.arrow {
 
 #top .links a {
   margin-left: 30px;
+  font-size: 18px;
 }
 
 header .button.primary {
@@ -121,6 +120,7 @@ header .button.primary {
 
 h1.title {
   font-family: 'Barlow';
+  font-weight: 500;
   text-align: center;
   margin-top: 40px;
   margin-bottom: 25px;
@@ -128,58 +128,6 @@ h1.title {
 
 h1.title.short-form {
   margin-bottom: 0;
-}
-
-nav {
-  width: 100%;
-  height: 50px;
-  background: #29a77a;
-}
-
-nav ul,
-nav ol {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-}
-
-nav li {
-  margin: 12px 20px;
-  font-size: 16px;
-  line-height: 26px;
-}
-
-nav li.active {
-  font-weight: bold;
-}
-
-nav ol {
-  counter-reset: steps;
-}
-
-nav ol li::before {
-  content: counter(steps);
-  counter-increment: steps;
-  display: inline-table;
-  margin-right: 10px;
-  background: #29a77a;
-  color: #FFF;
-  text-align: center;
-  font-weight: bold;
-  width: 26px;
-  height: 26px;
-  border-radius: 13px;
-}
-
-nav ol li.done::before {
-  content: url(/images/checkmark-white.svg);
-}
-
-nav ol li.active::before {
-  background: #FFF;
-  color: #01966F;
 }
 
 /* Banners */
@@ -523,7 +471,7 @@ button.primary,
 input[type="submit"].primary {
   font-family: 'Barlow';
   font-size: 17px;
-  font-weight: bold;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;  
   background: #15b67c;
@@ -594,7 +542,6 @@ form a.button {
 }
 
 /* Illustration */
-
 .illustration,
 .illustration .rocket {
   width: 170px;
@@ -622,7 +569,6 @@ form a.button {
 }
 
 /* Home */
-
 .intro {
   display: flex;
   flex-direction: row;
@@ -639,6 +585,7 @@ form a.button {
 
 .intro h1 {
   font-family: 'Barlow';
+  font-weight: 500;
   font-size: 42px;
   line-height: 45px;
   letter-spacing: .01em;
@@ -686,10 +633,10 @@ form a.button {
 }
 
 .features h3 {
-  font-family: "Barlow";
+  font-family: 'Barlow';
   margin: 0 0 10px;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 500;
   color: #32315E;
   letter-spacing: .01em;
 }
@@ -700,8 +647,7 @@ form a.button {
   color: #525f7f;
 }
 
-/* User Information */
-
+/* User information */
 .user {
   display: flex;
   width: 100%;
@@ -774,8 +720,7 @@ form a.button {
   text-align: center;
 }
 
-/* Pilot Onboarding Options */
-
+/* Pilot onboarding options */
 .pilot-options {
   margin: 0 0 35px;
 }
@@ -836,7 +781,7 @@ form a.button {
   display: none;
 }
 
-/* Ride History */
+/* Ride history */
 .rides {
   width: 100%;
   margin: 0 auto;
@@ -936,16 +881,23 @@ form a.button {
   text-align: right;
 }
 
-/* Media Queries */
-
+/* Media queries */
 @media screen and (max-width: 500px) {
+  /* Intro section */
   #top {
     font-size: 15px;
     padding: 0 15px;
+    height: auto;
+    flex-flow: row wrap;
+    line-height: inherit;
   }
 
-  #top .links a {
-    margin-left: 10px;
+  #top .logo {
+    margin: 20px 0;
+  }
+
+  #top .links {
+    margin-bottom: 20px;
   }
 
   h1 {
@@ -973,25 +925,6 @@ form a.button {
     margin: 25px 15px;
   }
 
-  nav ol {
-    position: relative;
-  }
-
-  nav ol li:not(.active) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  nav ol li.done:last-child {
-    position: inherit;
-    opacity: 1;
-  }
-
   footer {
     padding: 10px;
   }
@@ -1002,6 +935,7 @@ form a.button {
     padding: 20px;
   }
 
+  /* Landing page */
   .features {
     flex-direction: column;
     margin-bottom: 100px;
@@ -1018,11 +952,7 @@ form a.button {
     background-size: 40px auto;
   }
 
-  .banner {
-    line-height: 24px;
-    padding: 11px 20px;
-  }
-
+  /* Forms */
   form {
     margin-top: 0;
   }
@@ -1050,14 +980,11 @@ form a.button {
     display: none;
   }
 
-  .rides {
-    margin: 0 0 15px;
-  }
-
   .account {
     min-height: 250px;
   }
 
+  /* Annotation */
   .annotation.intro {
     margin: 10px auto;
   }
@@ -1076,14 +1003,55 @@ form a.button {
   }
 
   .annotation.card {
-    left: 15px;
-    bottom: 15px;
-    max-width: 93%;
+    max-width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px 15px;
   }
 
 
-  #content.dashboard {
-    padding-bottom: 400px;
+  .annotation.card h4 {
+    margin-bottom: 0;
+  }
+
+  .annotation.card .description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+  }
+
+  .annotation.card .description.expanded {
+    max-height: 500px;
+    margin-top: 10px;
+  }
+
+  .annotation.card ol {
+    margin-left: 0;
+    padding-left: 20px;
+  }
+
+  .annotation.card input[type=submit]:first-child {
+    margin-bottom: 5px;
+  }
+
+  .annotation.card input[type=submit],
+  .annotation.card button {
+    padding: 8px 14px;
+  }
+
+  /* Dashboard */
+  .banner {
+    line-height: 24px;
+    padding: 11px 20px;
+  }
+
+  #content .dashboard {
+    padding-bottom: 120px;
+  }
+
+  .rides {
+    margin: 0 0 15px;
   }
   
   .user {
@@ -1093,7 +1061,8 @@ form a.button {
 
   .user .block.profile {
     padding: 0;
-    flex-grow: 1.5;
+    flex-basis: 100%;
+    margin-bottom: 25px;
   }
 
   .user .block .photo {
@@ -1120,6 +1089,7 @@ form a.button {
 
   .user .block.stripe {
     flex-basis: 100%;
+    margin-top: 20px;
   }
 
   .user .block.stripe input[type="submit"] {
@@ -1144,71 +1114,7 @@ form a.button {
   }
 }
 
-/* Smaller mobile view */
-@media screen and (max-width: 375px) {
-  #top {
-    height: auto;
-    flex-flow: row wrap;
-    line-height: inherit;
-  }
-
-  #top .logo {
-    margin: 20px 0;
-  }
-
-  #top .links {
-    margin-bottom: 20px;
-  }
-
-  .user .block.profile {
-    flex-basis: 100%;
-    margin-bottom: 25px;
-  }
-
-  .user .block.stripe {
-    margin-top: 20px;
-  }
-
-  .annotation.card {
-    max-width: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 15px;
-  }
-
-  .annotation.card h4 {
-    margin-bottom: 0;
-  }
-
-  .annotation.card .description {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-in-out;
-  }
-
-  .annotation.card .description.expanded {
-    max-height: 500px;
-    margin-top: 10px;
-  }
-
-  .annotation.card ol {
-    margin-left: 0;
-    padding-left: 15px;
-  }
-
-  .annotation.card input[type=submit]:first-child {
-    margin-bottom: 5px;
-  }
-
-  .annotation.card input[type=submit],
-  .annotation.card button {
-    padding: 8px 14px;
-  }
-}
-
 /* CSS Animations */
-
 @keyframes slide-in-horizontal {
   0% {
     transform: translateY(100%);
