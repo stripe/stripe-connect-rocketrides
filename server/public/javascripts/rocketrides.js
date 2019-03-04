@@ -16,7 +16,16 @@ document.body.addEventListener('change', function(e) {
   });
 });
 
-document.querySelector('.annotation.simulate .dashboard-banner button.next').addEventListener('click', function(e) {
-  document.querySelector('.annotation.simulate .dashboard-banner').addClass('visible')
-  document.querySelector('.annotation.simulate .last-step').addClass('visible')
+// Enable sequence of annotation cards on the Dashboard
+document.querySelector('.annotation.dashboard-banner button.next').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.querySelector('.annotation.dashboard-banner').classList.toggle('hidden');
+  document.querySelector('.annotation.dashboard-simulate').classList.toggle('hidden');
+});
+
+// In mobile / responsive mode, toggle showing details on annotation cards
+document.querySelectorAll('.annotation.card').forEach(function(card) {
+  card.querySelector('h4').addEventListener('click', function(e) {
+    card.querySelector('.description').classList.toggle('expanded');
+  });
 });

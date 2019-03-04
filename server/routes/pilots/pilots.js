@@ -36,7 +36,6 @@ router.get('/dashboard', pilotRequired, async (req, res) => {
   const rides = await pilot.listRecentRides();
   const ridesTotalAmount = rides.reduce((a, b) => { return a + b.amountForPilot(); }, 0);
   const [showBanner] = req.flash('showBanner')
-  console.log('💚  FLASH', showBanner, !!showBanner);
   // There are as maybe balances as currencies used.
   // This demo app only uses USD so we'll just use the first object.
   res.render('dashboard', {
@@ -45,7 +44,7 @@ router.get('/dashboard', pilotRequired, async (req, res) => {
     balancePending: balance.pending[0].amount,
     ridesTotalAmount: ridesTotalAmount,
     rides: rides,
-    showBanner: !!showBanner
+    showBanner: !!showBanner || req.query.showBanner
   });
 });
 

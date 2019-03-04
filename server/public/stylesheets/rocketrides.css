@@ -201,16 +201,6 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
-  flex-direction: row;
-}
-
-.annotation-wrapper {
-  align-self: center;
-  flex-basis: 550px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
 
 .annotation {
@@ -240,50 +230,6 @@ footer {
   margin-left: 16px;
 }
 
-.annotation.simulate {
-  justify-content: flex-start;
-  flex-direction: column;
-  text-align: left;
-  padding: 20px 20px;
-  max-width: 500px;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 1s;
-}
-
-.annotation.simulate .dashboard-banner, .last-step {
-  display: none;
-}
-
-.annotation.simulate .visible {
-  display: block;
-}
-
-.annotation.simulate form {
-  width: 100%;
-  margin-top: 15px;
-  margin-bottom: 0;
-}
-.annotation.simulate form.right {
-  text-align: right;
-}
-.annotation.simulate input[type=submit],
-.annotation.simulate button {
-  margin: 0;
-  width: auto;
-  display: inline-block;
-  margin-right: 10px;
-}
-.annotation.simulate input[type=submit].primary-action,
-.annotation.simulate button.primary-action { 
-  background: #556cd6;
-  color: #fff;
-}
-
-
-.annotation.simulate p {
-  color: #51586D;
-  font-size: 14px;
-}
-
 .annotation p {
   font-size: 15px;
   font-weight: 400;
@@ -308,6 +254,55 @@ footer {
   margin-right: 10px;
   background: url(/images/stripe.svg) center center no-repeat;
   text-indent: -9999px;
+}
+
+.annotation.card {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 20px;
+  max-width: 500px;
+  animation: slide-in-vertical 0.4s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.2s;
+}
+
+.annotation.card p {
+  color: #51586D;
+  font-size: 14px;
+}
+
+.annotation.card p + p {
+  margin-top: 10px;
+}
+
+.annotation.card form {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.annotation.card form.right {
+  text-align: right;
+}
+
+.annotation.card input[type=submit],
+.annotation.card button {
+  margin: 0;
+  width: auto;
+  display: inline-block;
+  margin-right: 10px;
+}
+.annotation.card input[type=submit].primary-action,
+.annotation.card button.primary-action { 
+  background: #556cd6;
+  color: #fff;
+}
+
+.annotation.card.hidden {
+  display: none;
 }
 
 /* Forms */
@@ -846,7 +841,6 @@ form a.button {
   width: 100%;
   margin: 0 auto;
   align-items: flex-start;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.55s;
 }
 
 .rides h4 {
@@ -959,7 +953,7 @@ form a.button {
   }
 
   .intro {
-    padding: 15px;
+    padding: 15px 20px 40px 20px;
     background: none;
   }
 
@@ -977,56 +971,6 @@ form a.button {
 
   .title {
     margin: 25px 15px;
-  }
-
-  .user {
-    padding: 15px 15px 0 15px;
-    flex-flow: row wrap;
-  }
-
-  .user .block.profile {
-    padding: 0;
-  }
-
-  .user .block .photo {
-    display: none;
-  }
-
-  .user .block {
-    flex: 1;
-    min-width: 150px;
-    margin: 0 0 20px;
-  }
-
-  .user .block h1 {
-    font-size: 26px;
-  }
-
-  .user .block h2 {
-    font-size: 15px;
-  }
-
-  .user .block p {
-    font-size: 15px;
-  }
-
-  .user .block.stripe a.button,
-  .user .block.stripe input[type="submit"] {
-    height: 32px;
-    line-height: 32px;
-    font-size: 15px;
-  }
-
-  .user .block.stripe a.button {
-    margin: 0 0 10px;
-  }
-
-  .user .block.stripe input[type="submit"] {
-    margin: 0px 0 15px;
-  }
-
-  .user .block + .block {
-    margin: 0;
   }
 
   nav ol {
@@ -1055,7 +999,7 @@ form a.button {
   #content {
     width: 100%;
     margin: 10px 0;
-    padding: 15px;
+    padding: 20px;
   }
 
   .features {
@@ -1068,21 +1012,15 @@ form a.button {
   }
 
   .features section {
-    margin: 0 0 15px;
-    background-position: 0 0;
-    padding-top: 30px;
+    margin: 0 0 30px;
+    background-position: 0 top;
+    padding: 0 0 0 60px;
+    background-size: 40px auto;
   }
 
-  .features section.schedule {
-    background-size: 23px 21px;
-  }
-
-  .features section.earnings {
-    background-size: 27px 20px;
-  }
-
-  .features section.app {
-    background-size: 15px 24px;
+  .banner {
+    line-height: 24px;
+    padding: 11px 20px;
   }
 
   form {
@@ -1120,12 +1058,15 @@ form a.button {
     min-height: 250px;
   }
 
-  .annotation {
-    flex-flow: row wrap;
+  .annotation.intro {
     margin: 10px auto;
   }
 
-  .annotation p {
+  .annotation.landing {
+    flex-flow: row wrap;
+  }
+
+  .annotation.landing p {
     order: 1;
     margin-top: 5px;
   }
@@ -1133,8 +1074,138 @@ form a.button {
   .annotation.info {
     display: none;
   }
+
+  .annotation.card {
+    left: 15px;
+    bottom: 15px;
+    max-width: 93%;
+  }
+
+
+  #content.dashboard {
+    padding-bottom: 400px;
+  }
+  
+  .user {
+    flex-flow: row wrap;
+    padding-top: 0;
+  }
+
+  .user .block.profile {
+    padding: 0;
+    flex-grow: 1.5;
+  }
+
+  .user .block .photo {
+    display: none;
+  }
+
+  .user .block {
+    flex: 1;
+    min-width: 50px;
+    margin: 0 0 20px;
+  }
+
+  .user .block h1 {
+    font-size: 26px;
+  }
+
+  .user .block h2 {
+    font-size: 15px;
+  }
+
+  .user .block p {
+    font-size: 15px;
+  }
+
+  .user .block.stripe {
+    flex-basis: 100%;
+  }
+
+  .user .block.stripe input[type="submit"] {
+    margin: 10px 0
+  }
+
+  .user .block + .block {
+    margin: 0;
+  }
+
+  .rides .list .cell.name {
+    flex: 1.2;
+    padding-right: 5px;
+  }
+
+  .rides .list .cell.date {
+    padding: 10px 5px;
+  }
+
+  .rides .list .cell.price {
+    padding-left: 5px;
+  }
 }
 
+/* Smaller mobile view */
+@media screen and (max-width: 375px) {
+  #top {
+    height: auto;
+    flex-flow: row wrap;
+    line-height: inherit;
+  }
+
+  #top .logo {
+    margin: 20px 0;
+  }
+
+  #top .links {
+    margin-bottom: 20px;
+  }
+
+  .user .block.profile {
+    flex-basis: 100%;
+    margin-bottom: 25px;
+  }
+
+  .user .block.stripe {
+    margin-top: 20px;
+  }
+
+  .annotation.card {
+    max-width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px;
+  }
+
+  .annotation.card h4 {
+    margin-bottom: 0;
+  }
+
+  .annotation.card .description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+  }
+
+  .annotation.card .description.expanded {
+    max-height: 500px;
+    margin-top: 10px;
+  }
+
+  .annotation.card ol {
+    margin-left: 0;
+    padding-left: 15px;
+  }
+
+  .annotation.card input[type=submit]:first-child {
+    margin-bottom: 5px;
+  }
+
+  .annotation.card input[type=submit],
+  .annotation.card button {
+    padding: 8px 14px;
+  }
+}
 
 /* CSS Animations */
 
