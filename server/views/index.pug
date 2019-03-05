@@ -3,9 +3,12 @@ extends layout
 block header
   .intro
     .pilots
-      h1 Get ready for take off.
+      h1 Get ready for take off
       h2 Rocket Rides is the world’s leading air travel platform. #[br] Join our elite team of pilots and help people travel faster than ever.
-      a.button(href='/pilots/signup') Become a Pilot
+      if pilot && pilot.stripeAccountId
+        a.button.primary(href='/pilots/dashboard') View dashboard
+      else
+        a.button.primary(href='/pilots/signup') Become a pilot
 
 block content
   .features
@@ -17,10 +20,10 @@ block content
       p Trip fares increase with time and distance. Cash out whenever you want and get instant transfers to your account.
     section.app
       h3 Augmented reality app
-      p Ready, set, download. Get weather and air traffic updates, directions, and 24/7 support. Don’t have a smartphone? No problem.
+      p Ready, set, download. Get weather updates, directions, and 24/7 support. Don’t have a smartphone? No problem.
 
 block footer
-  .annotation
+  .annotation.landing
     a.stripe(href='https://stripe.com') Stripe
-    p Rocket Rides is a demo application for #[a(href='https://stripe.com/connect') Stripe Connect]. It is not a real product.
+    p Rocket Rides is a demo for #[a(href='https://stripe.com/connect') Stripe Connect] and #[a(href='https://stripe.com/connect/express') Express]. It is not a real product.
     a.github.arrow(href='https://github.com/stripe/stripe-connect-rocketrides') View on GitHub

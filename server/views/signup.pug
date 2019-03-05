@@ -1,15 +1,11 @@
 extends layout
 
-block header
-  .title
-    h1 Sign up to become a pilot
-  nav
-    ol
-      li(class=(step == 'account' ? 'active' : 'done')) Create Your Account
-      li(class=(step == 'profile' ? 'active' : step != 'account' ? 'done' : '')) Complete Your Profile
-      li(class=(step == 'payments' ? 'active' : step == 'done' ? 'done' : '')) Setup Payments
-
 block content
+  h1.title.short-form
+    if step == 'account'
+      | Create your account
+    else if step == 'profile'
+      | Complete your profile
   section.form.account
     if error
       p.error= error
@@ -22,19 +18,20 @@ block content
               input(type='email', name='email', placeholder='jane@example.com', required, autofocus)
             .row(label='Password')
               input(type='password', name='password', placeholder='••••••••', required)
-          input(type='submit', value='Create Account')
+          input.primary(type='submit', value='Continue')
 
       when 'profile'
         form(method='POST', autocomplete='off')
+          h4.pilot-header Account type
           .pilot-options
             label.pilot-option
               input(type='radio', name='pilot-type', value='individual', id='po-individual', checked=true)
-              span Individual
+              span Independent pilot
             label.pilot-option
               input(type='radio', name='pilot-type', value='company', id='po-company')
-              span Company
+              span Company of pilots
 
-          h4.pilot-header Personal Information
+          h4.pilot-header#account-info Personal information
           fieldset
             .row.pilot-info.individual(label='* First Name')
               input(type='text', name='firstName', placeholder='Jane')
@@ -43,16 +40,18 @@ block content
             .row.pilot-info.company.hidden(label='* Company Name')
               input(type='text', name='businessName', placeholder='Infinity & Beyond LLC')
             .row(label='Address')
-              input(type='text', name='address', placeholder='185 Berry St', value='185 Berry St')
+              input(type='text', name='address', placeholder='510 Townsend St', value='510 Townsend St')
             .row(label='Postal Code')
-              input(type='text', name='postalCode', placeholder='94107', value='94107')
+              input(type='text', name='postalCode', placeholder='94103', value='94103')
             .row(label='City')
               input(type='text', name='city', placeholder='San Francisco', value='San Francisco')
+            .row(label='State')
+              input(type='text', name='state', placeholder='CA', value='CA')
             .row.select(label='Country')
               select(name='country')
                 option(value='US') United States
-          aside (*) indicates required fields for this demo.
-          h4 Rocket Information
+          aside * Indicates required fields
+          h4 Rocket information
           fieldset
             .row(label='Make & Model')
               input(type='text', name='rocket[model]', placeholder='Lightspeed 3000', value='Lightspeed 3000')
@@ -68,18 +67,16 @@ block content
                 option(value='purple') Purple
                 option(value='black') Black
                 option(value='white') White
-          input(type='submit', value='Save Profile')
+          h4 Payment information
+          .stripe-information
+            p We use Stripe to make sure you get paid on time and to keep your personal bank and details secure. Click #[strong Save and continue] to set up your payments on Stripe.
+            
+          input.primary(type='submit', value='Save and continue')
 
       when 'payments'
-        h2 Connect your Rocket Rides account to Stripe
+        h1.title Connect your account to Stripe
         p We use Stripe to make sure you get paid on time and keep your personal and bank details secure.
-        a.button(href='/pilots/stripe/authorize') Set up Payments on Stripe
-
-      when 'done'
-        .checkmark
-        h2 You’re ready to get paid!
-        p Download the app, fire up your rocket, and start taking your first passengers!
-        a.button(href='/pilots/dashboard') View Your Pilot Dashboard
+        a.button.primary(href='/pilots/stripe/authorize') Set up payments
 
 block footer
   .annotation.info
@@ -93,6 +90,3 @@ block footer
 
       when 'payments'
         p This platform uses #[a(href='https://stripe.com/connect/account-types') Connect Express] accounts to pay its pilots. We’ll pass some of the user information we have collected to Express in order to make onboarding as simple as possible. This app is in test mode, so no real payments are going through. Use the Stripe test Visa debit card number as a payout method: #[strong 4000 0566 5566 5556]
-
-      when 'done'
-        p The Connect Express onboarding flow is now complete! The platform can now use a simple API call to retrieve the Stripe account ID that was just created and save it to its database. This Stripe account ID can then be used to retrieve the pilot’s balance, as a destination for payments, or to create instant payouts.

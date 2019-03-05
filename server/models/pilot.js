@@ -20,6 +20,7 @@ const PilotSchema = new Schema({
   address: String,
   postalCode: String,
   city: String,
+  state: { type: String}, 
   country: { type: String, default: 'US' },
   created: { type: Date, default: Date.now },
   rocket: {
@@ -89,7 +90,7 @@ PilotSchema.path('email').validate({
       callback(true);
     }
   },
-  message: 'This email already exists. Please try to login instead.',
+  message: 'This email already exists. Please try to log in instead.',
 });
 
 // Pre-save hook to ensure consistency.

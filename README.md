@@ -1,6 +1,6 @@
-# Rocket Rides: Stripe Connect Demo
+# Rocket Rides: Stripe Connect demo
 
-Rocket Rides is a sample on-demand platform that offers passengers rides with pilots, built on top of [Stripe Connect](https://stripe.com/connect) and the [Stripe iOS SDK](https://stripe.com/docs/mobile/ios).
+Rocket Rides is a sample on-demand platform that offers passengers rides with pilots, built on top of [Stripe Connect](https://stripe.com/connect), [Connect Express](https://stripe.com/connect/express), and the [Stripe iOS SDK](https://stripe.com/docs/mobile/ios).
 
 **You can try the web app live on [rocketrides.io](https://rocketrides.io).**
 
@@ -8,11 +8,11 @@ This repository contains two components:
 * [Web server in Node.js](#web-onboarding-for-pilots) to onboard pilots on the web and get them paid
 * [iOS app in Swift](#ios-app-for-passengers) for passengers to request and pay for rides
 
-## Web Onboarding for Pilots
+## Web onboarding for pilots
 
-Rocket Rides showcases how to sign up pilots and use [Connect Express accounts](https://stripe.com/connect/account-types) for them to get paid. It uses pre-built UI components to be up and running quickly and customize the user experience.
+Rocket Rides showcases how to sign up pilots and use [Connect Express accounts](https://stripe.com/connect/account-types) to get them paid. Express provides onboarding, account management, an account dashboard, and identity verification for your platform, and we've customized Express with Rocket Rides branding.
 
-This platform uses the Stripe API to create payments for pilots, fetch their available and pending balance, and let them view transfers. It also creates instant payouts for pilots to be paid immediately to a debit card.
+This platform also uses the Stripe API to create payments for pilots, fetch their available and pending balance, and let them view transfers. It also creates [Instant Payouts](https://stripe.com/docs/connect/payouts#instant-payouts) for pilots who use a debit card as their payout account.
 
 <img src="server/public/images/screenshots/rocketrides-web-home.png" width="444"><img src="server/public/images/screenshots/rocketrides-web-connect.png" width="444">
 
@@ -24,11 +24,11 @@ To integrate Stripe Connect in your own app, check out these two files in partic
 
 You'll need a Stripe account to manage pilot onboarding and payments. [Sign up for free](https://dashboard.stripe.com/register), then [enable Connect](https://dashboard.stripe.com/account/applications/settings) by filling in your Platform Settings. In the Development section, take note of your `client_id`, and enter the following in the Redirect URIs field: `http://localhost:3000/pilots/stripe/token`.
 
-For instant payouts to work, you'll need to [turn off automatic payouts](https://dashboard.stripe.com/account/payouts) in your settings.
+For Instant Payouts to work, you'll need to [turn off automatic payouts](https://dashboard.stripe.com/account/payouts) in your settings.
 
 You'll need to have [Node.js](http://nodejs.org) >= 7.x and [MongoDB](http://mongodb.org) installed to run this app.
 
-### Getting Started
+### Getting started
 
 Install dependencies using npm (or yarn):
 
@@ -49,7 +49,7 @@ Run the app:
 
 Go to http://localhost:3000 in your browser to start using the app.
 
-## iOS App for Passengers
+## iOS app for passengers
 
 The Rocket Rides iOS app is written in Swift and is built using the [Stripe iOS SDK](https://github.com/stripe/stripe-ios) to accept both card payments and Apple Pay.
 
@@ -59,7 +59,7 @@ The Rocket Rides iOS app is written in Swift and is built using the [Stripe iOS 
 
 This project is written in Swift and requires Xcode 8 to build and run, and [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) to install the dependencies. The app is compatible with iOS 10.0+. You can use it both the iOS Simulator or on your iPhone.
 
-### Getting Started
+### Getting started
 
 To get started, install the dependencies using CocoaPods:
 
@@ -78,6 +78,6 @@ To try out the full payment experience, run the server locally as described abov
 
 ## Credits
 
-* Code: [Romain Huet](https://twitter.com/romainhuet) and [Joey Dong](https://twitter.com/joeydong_)
-* Design: [Bill Labus](https://twitter.com/billlabus)
-* Logos: [Focus Lab](https://thenounproject.com/term/comet/547848/) and [Luis Prado](https://thenounproject.com/term/jet-pack/17210/) (The Noun Project)
+* Code: [Romain Huet](https://twitter.com/romainhuet), [Joey Dong](https://twitter.com/joeydong_), and [Michael Glukhovsky](https://twitter.com/mglukhovsky)
+* Design: [Wes Mitchell](https://wes.ly/), [Bill Labus](https://twitter.com/billlabus), [Melissa Cameron](https://twitter.com/melissacameron_), and [Priidu Zilmer](https://zilmer.com/)
+* Original logo: [Focus Lab](https://thenounproject.com/term/comet/547848/)

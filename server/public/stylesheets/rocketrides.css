@@ -1,5 +1,5 @@
 /**
- * Rocket Rides CSS Stylesheet.
+ * Rocket Rides CSS stylesheet
  */
 
 * {
@@ -9,7 +9,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: none;
   box-sizing: border-box;
-  font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 ::-webkit-input-placeholder {
@@ -28,15 +27,16 @@
 }
 
 /* General */
-
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: auto;
   min-height: 100vh;
-  color: #fff;
+  color: #292f45;
   background-color: #f6f9fc;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
 }
 
 header,
@@ -59,14 +59,15 @@ section {
 
 header {
   width: 100%;
-  background-image: url(/images/header.jpg);
+  background-image: url('/images/header.jpg');
   background-size: cover;
-  background-color: #000;
+  background-color: black;
+  color: #fff;
 }
 
 h1 {
   font-size: 36px;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 a {
@@ -86,21 +87,33 @@ a.arrow {
 }
 
 #content {
+  max-width: 800px;
+  width: 100%;
   flex: 1;
-  margin-bottom: 125px;
+  margin-bottom: 150px;
 }
 
-/* Header, Top Bar, Navigation */
+#content.dashboard {
+  margin-bottom: 250px;
+}
 
+/* Header, top bar, navigation */
 #top {
-  height: 60px;
-  line-height: 60px;
+  height: 64px;
+  line-height: 64px;
   font-size: 17px;
-  font-weight: bold;
+  font-family: 'Barlow';
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-#top .rocketrides {
+#top .logo {
   flex: 1;
+}
+#top a.rocketrides {
+  display: inline-block;
+  min-width: 215px;
   height: 20px;
   padding-left: 75px;
   background: url(/images/rocketrides.svg) left center no-repeat;
@@ -108,89 +121,72 @@ a.arrow {
 
 #top .links a {
   margin-left: 30px;
+  font-size: 18px;
 }
 
-.title {
-  margin: 40px 0;
+header .button.primary {
+  width: 200px;
 }
 
-nav {
-  width: 100%;
-  height: 50px;
-  background: #01966f;
-}
-
-nav ul,
-nav ol {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-}
-
-nav li {
-  margin: 12px 20px;
-  font-size: 16px;
-  line-height: 26px;
-}
-
-nav li.active {
-  font-weight: bold;
-}
-
-nav ol {
-  counter-reset: steps;
-}
-
-nav ol li::before {
-  content: counter(steps);
-  counter-increment: steps;
-  display: inline-table;
-  margin-right: 10px;
-  background: #13b57d;
-  color: #fff;
+h1.title {
+  font-family: 'Barlow';
+  font-weight: 500;
   text-align: center;
-  font-weight: bold;
-  width: 26px;
-  height: 26px;
-  border-radius: 13px;
+  margin-top: 40px;
+  margin-bottom: 25px;
 }
 
-nav ol li.done::before {
-  content: url(/images/checkmark-white.svg);
+h1.title.short-form {
+  margin-bottom: 0;
 }
 
-nav ol li.active::before {
-  background: #fff;
-  color: #01966f;
+/* Banners */
+.banner {
+  background: #15b67c;
+  color: white;
+  width: 100%;
+  min-height: 44px;
+  line-height: 44px;
+}
+.message {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Footer */
-
 footer {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url(/images/mask.svg) top center repeat-x;
 }
 
 .annotation {
+  background: #fff;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
   max-width: 800px;
   margin: 25px auto;
   padding: 10px 22px;
   font-size: 16px;
   font-weight: bold;
   line-height: 22px;
-  background: #fff;
-  border-radius: 22px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
 }
 
-.annotation.info {
-  background: #fff url(/images/info.svg) 10px 10px no-repeat;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 1s;
+.annotation h4 {
+  color: #525f7f;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.annotation ol {
+  font-weight: 400;
+  font-size: 14px;
+  color: #525f7f;
+  margin-left: 16px;
 }
 
 .annotation p {
@@ -199,15 +195,12 @@ footer {
   color: #6a7c94;
 }
 
-.annotation.info p {
-  padding-left: 20px;
-}
-
 .annotation.info strong {
   display: block;
 }
 
 .annotation a {
+  font-weight: 400;
   color: #666ee8;
 }
 
@@ -222,28 +215,66 @@ footer {
   text-indent: -9999px;
 }
 
-/* Forms */
+.annotation.card {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 20px;
+  max-width: 500px;
+  animation: slide-in-vertical 0.4s cubic-bezier(0.23, 1, 0.32, 1) both 0.2s;
+}
 
+.annotation.card p {
+  color: #51586d;
+  font-size: 14px;
+}
+
+.annotation.card p + p {
+  margin-top: 10px;
+}
+
+.annotation.card form {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.annotation.card form.right {
+  text-align: right;
+}
+
+.annotation.card input[type='submit'],
+.annotation.card button {
+  margin: 0;
+  width: auto;
+  display: inline-block;
+  margin-right: 10px;
+}
+.annotation.card input[type='submit'].primary-action,
+.annotation.card button.primary-action {
+  background: #556cd6;
+  color: #fff;
+}
+
+.annotation.card.hidden {
+  display: none;
+}
+
+/* Forms */
 .form {
   width: 540px;
   margin: 15px auto;
 }
 
 .account {
-  min-height: 400px;
+  min-height: 225px;
 }
 
-.form .checkmark {
-  width: 100px;
-  height: 100px;
-  background: #fff url(/images/checkmark-green.svg) center center no-repeat;
-  background-size: 65px 45px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-  border-radius: 50%;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.5s;
-}
-
-.form section {
+.signup-form section {
   padding: 30px 10px;
 }
 
@@ -259,7 +290,8 @@ footer {
 .form p {
   margin: 0 0 30px;
   font-size: 17px;
-  color: #8798ab;
+  color: #525f7f;
+  line-height: 1.5;
   text-align: center;
   animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.6s;
 }
@@ -271,8 +303,10 @@ footer {
 .form h4 {
   margin: 15px 0;
   color: #8798ab;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.5s;
 }
 
@@ -322,7 +356,7 @@ form aside {
   margin: -30px auto 0;
   line-height: 1.3em;
   font-size: 13px;
-  text-align: center;
+  text-align: right;
   color: #8798ab;
   animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.65s;
 }
@@ -416,26 +450,62 @@ a.button {
   display: block;
   width: 100%;
   margin: 20px 0;
-  padding: 12px 20px;
+  padding: 8px 20px;
   border-style: none;
-  border-radius: 5px;
-  background-color: #13b57d;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-  font-size: 17px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px -1px rgba(50, 50, 93, 0.25),
+    0 1px 3px -1px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
   font-weight: 500;
-  color: #fff;
+  color: #51586d;
   cursor: pointer;
   outline: none;
   -webkit-appearance: none;
 }
 
-#content a.button::after {
-  content: '';
-  position: absolute;
-  width: 8px;
-  height: 13px;
-  margin: 5px 10px;
-  background: url(/images/arrow-white.svg) right center no-repeat;
+input[type='submit']:hover,
+button:hover,
+a.button:hover {
+  color: #2a2f45;
+  text-decoration: none;
+  outline: 0;
+}
+
+input[type='submit']:active,
+button:active,
+a.button:active {
+  outline: 0;
+}
+
+.button.primary,
+button.primary,
+input[type='submit'].primary {
+  font-family: 'Barlow';
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: #15b67c;
+  color: white;
+  height: 44px;
+  margin: 30px 0 0 0;
+  padding: 0 22px;
+  line-height: 44px;
+}
+
+.button.primary:hover,
+button.primary:hover,
+input[type='submit'].primary:hover {
+  color: white;
+}
+
+button.primary:disabled,
+.button.primary:disabled,
+input[type='submit'].primary:disabled {
+  background: #e6ebf1;
+  color: #aab7c4;
+  cursor: default;
 }
 
 input[type='submit'].secondary {
@@ -452,12 +522,6 @@ a.button:hover {
   text-decoration: none;
 }
 
-input[type='submit']:active,
-button:active,
-a.button:active {
-  background-color: #01966f;
-}
-
 header button,
 header a.button,
 header input[type='submit'] {
@@ -465,24 +529,31 @@ header input[type='submit'] {
   padding: 0 16px;
   height: 36px;
   line-height: 36px;
-  background-color: #fff;
-  color: #13b57d;
   text-align: center;
-}
-
-header button:active,
-header a.button:active,
-header input[type='submit']:active {
-  background-color: #fff;
-  color: #01966f;
 }
 
 form a.button {
   text-align: center;
 }
 
-/* Illustration */
+/* Stripe information */
+.stripe-information {
+  margin-bottom: 35px;
+  border: 2px solid #e6ebf1;
+  border-radius: 5px;
+  padding: 20px 135px 20px 25px;
+  background: url(/images/stripe-grey.svg) right 25px center no-repeat;
+  background-size: 80px auto;
+}
 
+.stripe-information p {
+  color: #525f7f;
+  font-size: 14px;
+  text-align: left;
+  margin: 0;
+}
+
+/* Illustration */
 .illustration,
 .illustration .rocket {
   width: 170px;
@@ -502,7 +573,7 @@ form a.button {
 }
 
 .illustration.not-found {
-  margin: 50px;
+  margin: 50px auto;
 }
 
 .illustration.not-found .rocket {
@@ -510,7 +581,6 @@ form a.button {
 }
 
 /* Home */
-
 .intro {
   display: flex;
   flex-direction: row;
@@ -518,7 +588,7 @@ form a.button {
   align-items: center;
   width: 100%;
   max-width: 800px;
-  padding: 60px 0;
+  padding: 60px 0 80px;
 }
 
 .intro .pilots {
@@ -526,25 +596,19 @@ form a.button {
 }
 
 .intro h1 {
-  font-size: 50px;
+  font-family: 'Barlow';
+  font-weight: 500;
+  font-size: 42px;
   line-height: 45px;
+  letter-spacing: 0.01em;
 }
 
 .intro h2 {
+  color: #cfd7df;
   margin: 15px 0;
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
-  opacity: 0.8;
-}
-
-.intro a.button {
-  width: 170px;
-  height: 44px;
-  margin: 30px 0 0 0;
-  padding: 0 25px;
-  line-height: 44px;
-  text-align: left;
 }
 
 .features {
@@ -557,8 +621,9 @@ form a.button {
 .features section {
   flex: 1;
   align-items: flex-start;
+  justify-content: flex-start;
   padding: 90px 0 0;
-  margin: 20px 40px 0 0;
+  margin: 25px 40px 0 0;
   background-position: 0 20px;
   background-repeat: no-repeat;
 }
@@ -580,20 +645,21 @@ form a.button {
 }
 
 .features h3 {
+  font-family: 'Barlow';
   margin: 0 0 10px;
   font-size: 20px;
   font-weight: 500;
   color: #32315e;
+  letter-spacing: 0.01em;
 }
 
 .features p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 24px;
-  color: #6a7c94;
+  color: #525f7f;
 }
 
-/* User Information */
-
+/* User information */
 .user {
   display: flex;
   width: 100%;
@@ -603,6 +669,7 @@ form a.button {
 
 .user .block {
   position: relative;
+  color: #292f45;
 }
 
 .user .block + .block {
@@ -610,66 +677,73 @@ form a.button {
 }
 
 .user .block h1 {
-  font-size: 30px;
+  font-size: 24px;
+  font-weight: 400;
 }
 
 .user .block h2 {
-  font-size: 17px;
+  color: #8898aa;
+  font-size: 13px;
   font-weight: 500;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 .user .block p {
-  font-size: 17px;
-  opacity: 0.7;
-  margin-bottom: 5px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 7px;
+  color: #292f45;
+}
+
+.user .block a {
+  color: #219f72;
 }
 
 .user .block.profile {
   flex: 1;
-  padding-left: 95px;
+  padding-left: 65px;
 }
 
 .user .block.profile .photo {
   position: absolute;
-  width: 78px;
-  height: 78px;
-  top: 50%;
+  width: 50px;
+  height: 50px;
+  top: 36%;
   left: 0;
-  margin-top: -39px;
+  margin-top: -25px;
   border-radius: 50%;
-  background-color: #fff;
   background-image: url(/images/avatar-large.svg);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 5px -1px rgba(50, 50, 93, 0.25),
+    0 1px 3px -1px rgba(0, 0, 0, 0.3);
 }
 
-.user .block.profile .rating {
-  position: relative;
-  width: 90px;
-  height: 16px;
-  margin-top: 5px;
-  background-image: url(/images/rating.svg);
-}
-
-.user .block.stripe .button {
-  margin: 0;
-}
-
-/* Pilot Onboarding Options */
-
-.pilot-options {
-  margin: 0 0 25px;
+.user .block.stripe input[type='submit'] {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: unset;
+  letter-spacing: 0;
+  height: 43px;
+  margin: 30px 0 0 0;
+  margin: 2px 0 14px;
+  min-width: 150px;
   text-align: center;
 }
 
+.user .block.stripe p {
+  text-align: center;
+}
+
+/* Pilot onboarding options */
+.pilot-options {
+  margin: 0 0 35px;
+}
+
 .form label.pilot-option {
-  display: inline-block;
   width: auto;
   padding: 0;
-  align-items: center;
   cursor: pointer;
   text-align: left;
-  margin: 10px 20px;
+  margin: 17px 0;
 }
 
 .pilot-option input {
@@ -686,10 +760,10 @@ form a.button {
   display: flex;
   position: relative;
   align-items: center;
-  color: #8798ab;
-  font-size: 16px;
+  color: #525f7f;
+  font-size: 15px;
   font-weight: 500;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 .pilot-option input + span:before {
@@ -709,10 +783,10 @@ form a.button {
   display: flex;
   position: absolute;
   top: 5px;
-  right: calc(100% - 25px);
+  right: calc(100% - 15px);
   width: 10px;
   height: 10px;
-  background: #13b57d;
+  background: #15b67c;
   border-radius: 10px;
 }
 
@@ -720,25 +794,48 @@ form a.button {
   display: none;
 }
 
-/* Ride History */
-
+/* Ride history */
 .rides {
   width: 100%;
-  max-width: 800px;
-  margin: 30px 0;
+  margin: 0 auto;
   align-items: flex-start;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.55s;
 }
 
 .rides h4 {
-  margin-bottom: 15px;
-  color: #8798ab;
+  margin-bottom: 14px;
+  color: #292f45;
   font-weight: 500;
 }
 
-.rides p {
-  font-size: 15px;
-  color: #8798ab;
+.rides .no-rides {
+  width: 100%;
+  min-height: 250px;
+  background: #edf3f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rides .no-rides .rocket {
+  width: 52px;
+  height: 52px;
+  background-image: url(/images/rocket.svg);
+}
+.rides .no-rides h1 {
+  color: #525f7f;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.rides .no-rides h2 {
+  color: #8898aa;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
 }
 
 .rides .list {
@@ -783,12 +880,13 @@ form a.button {
   top: 50%;
   margin-top: -12px;
   border-radius: 50%;
-  background-color: rgba(0, 144, 250, 0.25);
   background-image: url(/images/avatar-small.svg);
+  box-shadow: 0 2px 5px -1px rgba(50, 50, 93, 0.25),
+    0 1px 3px -1px rgba(0, 0, 0, 0.3);
 }
 
 .rides .list .cell.date {
-  flex: 2;
+  flex: 1.5;
 }
 
 .rides .list .cell.price {
@@ -797,16 +895,23 @@ form a.button {
   text-align: right;
 }
 
-/* Media Queries */
-
+/* Media queries */
 @media screen and (max-width: 500px) {
+  /* Intro section */
   #top {
     font-size: 15px;
     padding: 0 15px;
+    height: auto;
+    flex-flow: row wrap;
+    line-height: inherit;
   }
 
-  #top .links a {
-    margin-left: 10px;
+  #top .logo {
+    margin: 20px 0;
+  }
+
+  #top .links {
+    margin-bottom: 20px;
   }
 
   h1 {
@@ -814,7 +919,7 @@ form a.button {
   }
 
   .intro {
-    padding: 15px;
+    padding: 15px 20px 40px 20px;
     background: none;
   }
 
@@ -834,75 +939,6 @@ form a.button {
     margin: 25px 15px;
   }
 
-  .user {
-    padding: 15px 15px 0 15px;
-    flex-flow: row wrap;
-  }
-
-  .user .block.profile {
-    padding: 0;
-  }
-
-  .user .block .photo {
-    display: none;
-  }
-
-  .user .block {
-    flex: 1;
-    min-width: 150px;
-    margin: 0 0 20px;
-  }
-
-  .user .block h1 {
-    font-size: 26px;
-  }
-
-  .user .block h2 {
-    font-size: 15px;
-  }
-
-  .user .block p {
-    font-size: 15px;
-  }
-
-  .user .block.stripe a.button,
-  .user .block.stripe input[type='submit'] {
-    height: 32px;
-    line-height: 32px;
-    font-size: 15px;
-  }
-
-  .user .block.stripe a.button {
-    margin: 0 0 10px;
-  }
-
-  .user .block.stripe input[type='submit'] {
-    margin: 0px 0 15px;
-  }
-
-  .user .block + .block {
-    margin: 0;
-  }
-
-  nav ol {
-    position: relative;
-  }
-
-  nav ol li:not(.active) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  nav ol li.done:last-child {
-    position: inherit;
-    opacity: 1;
-  }
-
   footer {
     padding: 10px;
   }
@@ -910,9 +946,10 @@ form a.button {
   #content {
     width: 100%;
     margin: 10px 0;
-    padding: 15px;
+    padding: 20px;
   }
 
+  /* Landing page */
   .features {
     flex-direction: column;
     margin-bottom: 100px;
@@ -923,23 +960,13 @@ form a.button {
   }
 
   .features section {
-    margin: 0 0 15px;
-    background-position: 0 0;
-    padding-top: 30px;
+    margin: 0 0 30px;
+    background-position: 0 top;
+    padding: 0 0 0 60px;
+    background-size: 40px auto;
   }
 
-  .features section.schedule {
-    background-size: 23px 21px;
-  }
-
-  .features section.earnings {
-    background-size: 27px 20px;
-  }
-
-  .features section.app {
-    background-size: 15px 24px;
-  }
-
+  /* Forms */
   form {
     margin-top: 0;
   }
@@ -967,20 +994,20 @@ form a.button {
     display: none;
   }
 
-  .rides {
-    margin: 0 0 15px;
-  }
-
   .account {
     min-height: 250px;
   }
 
-  .annotation {
-    flex-flow: row wrap;
+  /* Annotation */
+  .annotation.intro {
     margin: 10px auto;
   }
 
-  .annotation p {
+  .annotation.landing {
+    flex-flow: row wrap;
+  }
+
+  .annotation.landing p {
     order: 1;
     margin-top: 5px;
   }
@@ -988,10 +1015,119 @@ form a.button {
   .annotation.info {
     display: none;
   }
+
+  .annotation.card {
+    max-width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px 15px;
+  }
+
+  .annotation.card h4 {
+    margin-bottom: 0;
+  }
+
+  .annotation.card .description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+  }
+
+  .annotation.card .description.expanded {
+    max-height: 500px;
+    margin-top: 10px;
+  }
+
+  .annotation.card ol {
+    margin-left: 0;
+    padding-left: 20px;
+  }
+
+  .annotation.card input[type='submit']:first-child {
+    margin-bottom: 5px;
+  }
+
+  .annotation.card input[type='submit'],
+  .annotation.card button {
+    padding: 8px 14px;
+  }
+
+  /* Dashboard */
+  .banner {
+    line-height: 24px;
+    padding: 11px 20px;
+  }
+
+  #content .dashboard {
+    padding-bottom: 120px;
+  }
+
+  .rides {
+    margin: 0 0 15px;
+  }
+
+  .user {
+    flex-flow: row wrap;
+    padding-top: 0;
+  }
+
+  .user .block.profile {
+    padding: 0;
+    flex-basis: 100%;
+    margin-bottom: 25px;
+  }
+
+  .user .block .photo {
+    display: none;
+  }
+
+  .user .block {
+    flex: 1;
+    min-width: 50px;
+    margin: 0 0 20px;
+  }
+
+  .user .block h1 {
+    font-size: 26px;
+  }
+
+  .user .block h2 {
+    font-size: 15px;
+  }
+
+  .user .block p {
+    font-size: 15px;
+  }
+
+  .user .block.stripe {
+    flex-basis: 100%;
+    margin-top: 20px;
+  }
+
+  .user .block.stripe input[type='submit'] {
+    margin: 10px 0;
+  }
+
+  .user .block + .block {
+    margin: 0;
+  }
+
+  .rides .list .cell.name {
+    flex: 1.2;
+    padding-right: 5px;
+  }
+
+  .rides .list .cell.date {
+    padding: 10px 5px;
+  }
+
+  .rides .list .cell.price {
+    padding-left: 5px;
+  }
 }
 
 /* CSS Animations */
-
 @keyframes slide-in-horizontal {
   0% {
     transform: translateY(100%);

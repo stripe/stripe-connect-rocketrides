@@ -1,16 +1,19 @@
 'use strict';
 
 module.exports = {
-  // App name.
+  // App name
   appName: 'Rocket Rides',
 
-  // Server port.
+  // Public domain of Rocket Rides
+  publicDomain: 'http://localhost:3000',
+
+  // Server port
   port: 3000,
 
-  // Secret for cookie sessions.
+  // Secret for cookie sessions
   secret: 'YOUR_SECRET',
 
-  // Configuration for Stripe.
+  // Configuration for Stripe
   // API Keys: https://dashboard.stripe.com/account/apikeys
   // Connect Settings: https://dashboard.stripe.com/account/applications/settings
   stripe: {
@@ -21,12 +24,10 @@ module.exports = {
     tokenUri: 'https://connect.stripe.com/oauth/token'
   },
 
-  // Configuration for MongoDB.
-  mongo: {
-    uri: 'mongodb://localhost/rocketrides'
-  },
+  // Configuration for MongoDB
+  mongoUri: 'mongodb://localhost/rocketrides',
 
-  // Configuration for Google Cloud (only useful if you want to deploy to GCP).
+  // Configuration for Google Cloud (only useful if you want to deploy to GCP)
   gcloud: {
     projectId: 'YOUR_PROJECT_ID'
   }
