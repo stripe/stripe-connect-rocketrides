@@ -10,8 +10,8 @@ const Pilot = require('../../models/pilot');
 const Ride = require('../../models/ride');
 const Passenger = require('../../models/passenger');
 
-// Middleware that requires a logged-in pilot.
-function pilotRequired (req, res, next) {
+// Middleware: require a logged-in pilot
+function pilotRequired(req, res, next) {
   if (!req.isAuthenticated()) {
     return res.redirect('/pilots/login');
   }
@@ -29,22 +29,25 @@ function pilotRequired (req, res, next) {
  */
 router.get('/dashboard', pilotRequired, async (req, res) => {
   const pilot = req.user;
-  const account = await stripe.accounts.retrieve(pilot.stripeAccountId);
-  // Retrieve the balance from Stripe.
-  const balance = await stripe.balance.retrieve({ stripe_account: pilot.stripeAccountId });
-  // Fetch the pilot's recent rides.
+  // Retrieve the balance from Stripe
+  const balance = await stripe.balance.retrieve({
+    stripe_account: pilot.stripeAccountId,
+  });
+  // Fetch the pilot's recent rides
   const rides = await pilot.listRecentRides();
-  const ridesTotalAmount = rides.reduce((a, b) => { return a + b.amountForPilot(); }, 0);
-  const [showBanner] = req.flash('showBanner')
-  // There are as maybe balances as currencies used.
-  // This demo app only uses USD so we'll just use the first object.
+  const ridesTotalAmount = rides.reduce((a, b) => {
+    return a + b.amountForPilot();
+  }, 0);
+  const [showBanner] = req.flash('showBanner');
+  // There is one balance for each currencies used: as this 
+  // demo app only uses USD we'll just use the first object
   res.render('dashboard', {
     pilot: pilot,
     balanceAvailable: balance.available[0].amount,
     balancePending: balance.pending[0].amount,
     ridesTotalAmount: ridesTotalAmount,
     rides: rides,
-    showBanner: !!showBanner || req.query.showBanner
+    showBanner: !!showBanner || req.query.showBanner,
   });
 });
 
@@ -55,47 +58,47 @@ router.get('/dashboard', pilotRequired, async (req, res) => {
  */
 router.post('/rides', pilotRequired, async (req, res, next) => {
   const pilot = req.user;
-  // Find a random passenger.
+  // Find a random passenger
   const passenger = await Passenger.getRandom();
-  // Create a new ride for the pilot and this random passenger.
-  // Generate a random amount between $10 and $100 for this ride.
+  // Create a new ride for the pilot and this random passenger
   const ride = new Ride({
     pilot: pilot.id,
     passenger: passenger.id,
-    amount: getRandomInt(1000, 10000)
+    // Generate a random amount between $10 and $100 for this ride
+    amount: getRandomInt(1000, 10000),
   });
-  // Save the ride.
+  // Save the ride
   await ride.save();
   try {
-    // Get a test source and pass any requested trigger for testing behaviors.
+    // Get a test source, using the given testing behavior
     let source;
     if (req.body.immediate_balance) {
       source = getTestSource('immediate_balance');
     } else if (req.body.payout_limit) {
       source = getTestSource('payout_limit');
     }
-    // Create a charge and set its destination to the pilot's account.
+    // Create a charge and set its destination to the pilot's account
     const charge = await stripe.charges.create({
-      source: source, 
+      source: source,
       amount: ride.amount,
       currency: ride.currency,
       description: config.appName,
       statement_descriptor: config.appName,
       // The destination parameter directs the transfer of funds from platform to pilot
       transfer_data: {
-        // Send the amount for the pilot after collecting a 20% platform fee.
-        // Typically, the `amountForPilot` method simply computes `ride.amount * 0.8`.
+        // Send the amount for the pilot after collecting a 20% platform fee:
+        // the `amountForPilot` method simply computes `ride.amount * 0.8`
         amount: ride.amountForPilot(),
-        // The destination of this charge is the pilot's Stripe account.
-        destination: pilot.stripeAccountId
-      }
+        // The destination of this charge is the pilot's Stripe account
+        destination: pilot.stripeAccountId,
+      },
     });
-    // Add the Stripe charge reference to the ride and save it.
+    // Add the Stripe charge reference to the ride and save it
     ride.stripeChargeId = charge.id;
     ride.save();
   } catch (err) {
     console.log(err);
-    // Return a 402 Payment Required error code.
+    // Return a 402 Payment Required error code
     res.sendStatus(402);
     next(`Error adding token to customer: ${err.message}`);
   }
@@ -109,21 +112,21 @@ router.post('/rides', pilotRequired, async (req, res, next) => {
  */
 router.get('/signup', (req, res) => {
   let step = 'account';
-  // Naive way to check which step we're on via presence of profile data.
+  // Naive way to identify which step we're on: check for the presence of user profile data
   if (req.user) {
     if (
-      req.user.type === 'individual' ?
-        !req.user.firstName || !req.user.lastName :
-        !req.user.businessName
+      req.user.type === 'individual'
+        ? !req.user.firstName || !req.user.lastName
+        : !req.user.businessName
     ) {
       step = 'profile';
     } else if (!req.user.stripeAccountId) {
-      step = 'payments'
+      step = 'payments';
     } else {
       step = 'done';
     }
   }
-  res.render('signup', { step: step });
+  res.render('signup', {step: step});
 });
 
 /**
@@ -138,18 +141,20 @@ router.post('/signup', (req, res, next) => {
     'pilot-type': undefined,
   });
 
-  // Check if we have a logged-in pilot.
+  // Check if we have a logged-in pilot
   let pilot = req.user;
   if (!pilot) {
-    // Try to create and save a new pilot.
+    // Try to create and save a new pilot
     pilot = new Pilot(body);
     pilot.save((err, pilot) => {
       if (err) {
-        // Show an error message to the user.
-        const errors = Object.keys(err.errors).map(field => err.errors[field].message);
-        res.render('signup', { step: 'account', error: errors[0] });
+        // Show an error message to the user
+        const errors = Object.keys(err.errors).map(
+          field => err.errors[field].message
+        );
+        res.render('signup', {step: 'account', error: errors[0]});
       } else {
-        // Sign in and redirect to continue the signup process.
+        // Sign in and redirect to continue the signup process
         req.logIn(pilot, error => {
           if (err) next(err);
           return res.redirect('/pilots/signup');
@@ -157,7 +162,7 @@ router.post('/signup', (req, res, next) => {
       }
     });
   } else {
-    // Try to update the logged-in pilot with the newly entered profile data.
+    // Try to update the logged-in pilot using the newly entered profile data
     pilot.set(body);
     pilot.save((err, pilot) => {
       if (err) next(err);
@@ -180,10 +185,11 @@ router.get('/login', (req, res) => {
  *
  * Simple pilot login.
  */
-router.post('/login',
+router.post(
+  '/login',
   passport.authenticate('pilot-login', {
     successRedirect: '/pilots/dashboard',
-    failureRedirect: '/pilots/login'
+    failureRedirect: '/pilots/login',
   })
 );
 
@@ -197,7 +203,7 @@ router.get('/logout', (req, res) => {
   res.redirect('/');
 });
 
-// Serialize pilots sessions for Passport.
+// Serialize pilots sessions for Passport
 passport.serializeUser((user, callback) => {
   callback(null, user.id);
 });
@@ -207,26 +213,35 @@ passport.deserializeUser((id, callback) => {
   });
 });
 
-// Define the login strategy for pilots based on email and password.
-passport.use('pilot-login', new LocalStrategy({
-  usernameField: 'email',
-  passwordField: 'password'
-}, function(email, password, done) {
-  Pilot.findOne({
-    email: email
-  }, function(err, user) {
-    if (err) return done(err);
-    if (!user) {
-      return done(null, false, { message: 'Unknown user' });
+// Define the login strategy for pilots based on email and password
+passport.use(
+  'pilot-login',
+  new LocalStrategy(
+    {
+      usernameField: 'email',
+      passwordField: 'password',
+    },
+    function(email, password, done) {
+      Pilot.findOne(
+        {
+          email: email,
+        },
+        function(err, user) {
+          if (err) return done(err);
+          if (!user) {
+            return done(null, false, {message: 'Unknown user'});
+          }
+          if (!user.validatePassword(password)) {
+            return done(null, false, {message: 'Invalid password'});
+          }
+          return done(null, user);
+        }
+      );
     }
-    if (!user.validatePassword(password)) {
-      return done(null, false, { message: 'Invalid password' });
-    }
-    return done(null, user);
-  });
-}));
+  )
+);
 
-// Function that returns a test card token for Stripe.
+// Function that returns a test card token for Stripe
 function getTestSource(behavior) {
   // Important: We're using static tokens based on specific test card numbers
   // to trigger a special behavior. This is NOT how you would create real payments!
@@ -242,7 +257,7 @@ function getTestSource(behavior) {
   return source;
 }
 
-// Return a random int between two numbers.
+// Return a random int between two numbers
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }

@@ -1,8 +1,8 @@
 /**
- * Rocket Rides CSS Stylesheet.
+ * Rocket Rides CSS stylesheet
  */
 
- * {
+* {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -11,11 +11,20 @@
   box-sizing: border-box;
 }
 
-::-webkit-input-placeholder { color: #AAB7C5; }
-:-moz-placeholder { color: #AAB7C5; opacity: 1; }
-::-moz-placeholder { color: #AAB7C5; opacity: 1; }
-:-ms-input-placeholder { color: #AAB7C5; }
-
+::-webkit-input-placeholder {
+  color: #aab7c5;
+}
+:-moz-placeholder {
+  color: #aab7c5;
+  opacity: 1;
+}
+::-moz-placeholder {
+  color: #aab7c5;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: #aab7c5;
+}
 
 /* General */
 body {
@@ -24,9 +33,10 @@ body {
   align-items: center;
   height: auto;
   min-height: 100vh;
-  color: #292F45;
-  background-color: #F6F9FC;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #292f45;
+  background-color: #f6f9fc;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
 }
 
 header,
@@ -49,7 +59,7 @@ section {
 
 header {
   width: 100%;
-  background-image: url("/images/header.jpg");
+  background-image: url('/images/header.jpg');
   background-size: cover;
   background-color: black;
   color: #fff;
@@ -61,7 +71,7 @@ h1 {
 }
 
 a {
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -152,11 +162,12 @@ footer {
 }
 
 .annotation {
-  background: #FFF;
-  box-shadow: 0 13px 27px -5px rgba(50,50,93,0.25), 0 8px 16px -8px rgba(0,0,0,0.30);
+  background: #fff;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   max-width: 800px;
-  margin: 25px auto ;
+  margin: 25px auto;
   padding: 10px 22px;
   font-size: 16px;
   font-weight: bold;
@@ -164,7 +175,7 @@ footer {
 }
 
 .annotation h4 {
-  color: #525F7F;
+  color: #525f7f;
   font-size: 16px;
   font-weight: 500;
   width: 100%;
@@ -174,14 +185,14 @@ footer {
 .annotation ol {
   font-weight: 400;
   font-size: 14px;
-  color: #525F7F;
+  color: #525f7f;
   margin-left: 16px;
 }
 
 .annotation p {
   font-size: 15px;
   font-weight: 400;
-  color: #6A7C94;
+  color: #6a7c94;
 }
 
 .annotation.info strong {
@@ -190,7 +201,7 @@ footer {
 
 .annotation a {
   font-weight: 400;
-  color: #666EE8;
+  color: #666ee8;
 }
 
 .annotation a.github {
@@ -214,11 +225,11 @@ footer {
   text-align: left;
   padding: 20px;
   max-width: 500px;
-  animation: slide-in-vertical 0.4s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.2s;
+  animation: slide-in-vertical 0.4s cubic-bezier(0.23, 1, 0.32, 1) both 0.2s;
 }
 
 .annotation.card p {
-  color: #51586D;
+  color: #51586d;
   font-size: 14px;
 }
 
@@ -236,15 +247,15 @@ footer {
   text-align: right;
 }
 
-.annotation.card input[type=submit],
+.annotation.card input[type='submit'],
 .annotation.card button {
   margin: 0;
   width: auto;
   display: inline-block;
   margin-right: 10px;
 }
-.annotation.card input[type=submit].primary-action,
-.annotation.card button.primary-action { 
+.annotation.card input[type='submit'].primary-action,
+.annotation.card button.primary-action {
   background: #556cd6;
   color: #fff;
 }
@@ -271,9 +282,9 @@ footer {
   margin: 30px 0 15px;
   font-size: 19px;
   font-weight: 500;
-  color: #32315E;
+  color: #32315e;
   text-align: center;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.55s;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.55s;
 }
 
 .form p {
@@ -282,32 +293,32 @@ footer {
   color: #525f7f;
   line-height: 1.5;
   text-align: center;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.6s;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.6s;
 }
 
 .form p.error {
-  color: #FC7455;
+  color: #fc7455;
 }
 
 .form h4 {
   margin: 15px 0;
-  color: #8798AB;
+  color: #8798ab;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: .02em;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.5s;
+  letter-spacing: 0.02em;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.5s;
 }
 
 fieldset {
-  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.55s;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.55s;
 }
 
-.form input[type="submit"],
+.form input[type='submit'],
 .form button,
 .form a.button {
   text-align: center;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.6s;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.6s;
 }
 
 .form label {
@@ -316,9 +327,9 @@ fieldset {
   margin-top: 10px;
   line-height: 20px;
   font-size: 13px;
-  color: #8798AB;
+  color: #8798ab;
   padding: 0 30px;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.65s;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.65s;
 }
 
 .options label {
@@ -346,8 +357,8 @@ form aside {
   line-height: 1.3em;
   font-size: 13px;
   text-align: right;
-  color: #8798AB;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 0.65s;
+  color: #8798ab;
+  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.65s;
 }
 
 fieldset {
@@ -355,7 +366,7 @@ fieldset {
   min-width: 0;
   margin-bottom: 40px;
   border-style: none;
-  background-color: #FFF;
+  background-color: #fff;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
 }
@@ -376,13 +387,13 @@ fieldset .row::before {
   content: attr(label);
   width: 130px;
   padding-right: 20px;
-  color: #8798AB;
+  color: #8798ab;
   font-weight: 500;
   text-align: right;
 }
 
 fieldset .row.select::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 9px;
   height: 5px;
@@ -398,7 +409,7 @@ fieldset .row input {
   border-style: none;
   font-size: 15px;
   outline: none;
-  color: #313B3F;
+  color: #313b3f;
 }
 
 fieldset .row select {
@@ -409,18 +420,18 @@ fieldset .row select {
   -webkit-appearance: none;
   font-size: 15px;
   outline: none;
-  color: #313B3F;
+  color: #313b3f;
   cursor: pointer;
   background: transparent;
-  }
+}
 
-  fieldset .row select:focus {
-    color: #00B67C;
-  }
+fieldset .row select:focus {
+  color: #00b67c;
+}
 
 fieldset .row.date span {
   padding-right: 10px;
-  color: #AAB7C5;
+  color: #aab7c5;
   font-weight: 500;
 }
 
@@ -433,7 +444,7 @@ fieldset .row.date input:last-child {
   flex: 1;
 }
 
-input[type="submit"],
+input[type='submit'],
 button,
 a.button {
   display: block;
@@ -443,16 +454,17 @@ a.button {
   border-style: none;
   border-radius: 4px;
   background-color: #fff;
-  box-shadow: 0 2px 5px -1px rgba(50,50,93,0.25), 0 1px 3px -1px rgba(0,0,0,0.30);
+  box-shadow: 0 2px 5px -1px rgba(50, 50, 93, 0.25),
+    0 1px 3px -1px rgba(0, 0, 0, 0.3);
   font-size: 14px;
   font-weight: 500;
-  color: #51586D;
+  color: #51586d;
   cursor: pointer;
   outline: none;
   -webkit-appearance: none;
 }
 
-input[type="submit"]:hover,
+input[type='submit']:hover,
 button:hover,
 a.button:hover {
   color: #2a2f45;
@@ -460,7 +472,7 @@ a.button:hover {
   outline: 0;
 }
 
-input[type="submit"]:active,
+input[type='submit']:active,
 button:active,
 a.button:active {
   outline: 0;
@@ -468,41 +480,41 @@ a.button:active {
 
 .button.primary,
 button.primary,
-input[type="submit"].primary {
+input[type='submit'].primary {
   font-family: 'Barlow';
   font-size: 17px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;  
+  letter-spacing: 1px;
   background: #15b67c;
   color: white;
   height: 44px;
   margin: 30px 0 0 0;
   padding: 0 22px;
   line-height: 44px;
-} 
+}
 
 .button.primary:hover,
 button.primary:hover,
-input[type="submit"].primary:hover {
+input[type='submit'].primary:hover {
   color: white;
 }
 
 button.primary:disabled,
 .button.primary:disabled,
-input[type="submit"].primary:disabled {
+input[type='submit'].primary:disabled {
   background: #e6ebf1;
   color: #aab7c4;
   cursor: default;
 }
 
-input[type="submit"].secondary {
-  color: #313B3F;
-  background: #FFF;
+input[type='submit'].secondary {
+  color: #313b3f;
+  background: #fff;
 }
 
-input[type="submit"].secondary:active {
-  background: #F5F6F7;
+input[type='submit'].secondary:active {
+  background: #f5f6f7;
 }
 
 button:hover,
@@ -512,7 +524,7 @@ a.button:hover {
 
 header button,
 header a.button,
-header input[type="submit"] {
+header input[type='submit'] {
   margin: 15px 0 0;
   padding: 0 16px;
   height: 36px;
@@ -549,7 +561,7 @@ form a.button {
 }
 
 .illustration {
-  background: #FFF;
+  background: #fff;
   border-radius: 85px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
 }
@@ -575,7 +587,7 @@ form a.button {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 800px; 
+  max-width: 800px;
   padding: 60px 0 80px;
 }
 
@@ -588,7 +600,7 @@ form a.button {
   font-weight: 500;
   font-size: 42px;
   line-height: 45px;
-  letter-spacing: .01em;
+  letter-spacing: 0.01em;
 }
 
 .intro h2 {
@@ -637,8 +649,8 @@ form a.button {
   margin: 0 0 10px;
   font-size: 20px;
   font-weight: 500;
-  color: #32315E;
-  letter-spacing: .01em;
+  color: #32315e;
+  letter-spacing: 0.01em;
 }
 
 .features p {
@@ -657,7 +669,7 @@ form a.button {
 
 .user .block {
   position: relative;
-  color: #292F45;
+  color: #292f45;
 }
 
 .user .block + .block {
@@ -670,7 +682,7 @@ form a.button {
 }
 
 .user .block h2 {
-  color: #8898AA;
+  color: #8898aa;
   font-size: 13px;
   font-weight: 500;
   margin-top: 8px;
@@ -680,11 +692,11 @@ form a.button {
   font-size: 13px;
   font-weight: 500;
   margin-bottom: 7px;
-  color: #292F45;
+  color: #292f45;
 }
 
 .user .block a {
-  color: #219F72;
+  color: #219f72;
 }
 
 .user .block.profile {
@@ -701,10 +713,11 @@ form a.button {
   margin-top: -25px;
   border-radius: 50%;
   background-image: url(/images/avatar-large.svg);
-  box-shadow: 0 2px 5px -1px rgba(50,50,93,0.25), 0 1px 3px -1px rgba(0,0,0,0.30);
+  box-shadow: 0 2px 5px -1px rgba(50, 50, 93, 0.25),
+    0 1px 3px -1px rgba(0, 0, 0, 0.3);
 }
 
-.user .block.stripe input[type=submit] {
+.user .block.stripe input[type='submit'] {
   font-size: 16px;
   font-weight: 500;
   text-transform: unset;
@@ -754,7 +767,7 @@ form a.button {
 }
 
 .pilot-option input + span:before {
-  content: "";
+  content: '';
   display: inline-block;
   position: relative;
   width: 20px;
@@ -766,7 +779,7 @@ form a.button {
 }
 
 .pilot-option input:checked + span:after {
-  content: "";
+  content: '';
   display: flex;
   position: absolute;
   top: 5px;
@@ -790,7 +803,7 @@ form a.button {
 
 .rides h4 {
   margin-bottom: 14px;
-  color: #292F45;
+  color: #292f45;
   font-weight: 500;
 }
 
@@ -810,7 +823,7 @@ form a.button {
   background-image: url(/images/rocket.svg);
 }
 .rides .no-rides h1 {
-  color: #525F7F;
+  color: #525f7f;
   font-size: 24px;
   font-weight: 400;
   text-align: center;
@@ -819,7 +832,7 @@ form a.button {
 }
 
 .rides .no-rides h2 {
-  color: #8898AA;
+  color: #8898aa;
   font-size: 13px;
   font-weight: 500;
   text-align: center;
@@ -827,7 +840,7 @@ form a.button {
 
 .rides .list {
   width: 100%;
-  background-color: #FFF;
+  background-color: #fff;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
 }
@@ -847,19 +860,19 @@ form a.button {
   flex: 1;
   position: relative;
   padding: 15px 20px;
-  color: #82909B;
+  color: #82909b;
   font-size: 15px;
 }
 
 .rides .list .cell.name {
   flex: 2;
   padding-left: 60px;
-  color: #313B3F;
+  color: #313b3f;
   font-weight: 500;
 }
 
 .rides .list .cell.name::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 24px;
   height: 24px;
@@ -868,7 +881,8 @@ form a.button {
   margin-top: -12px;
   border-radius: 50%;
   background-image: url(/images/avatar-small.svg);
-  box-shadow: 0 2px 5px -1px rgba(50,50,93,0.25), 0 1px 3px -1px rgba(0,0,0,0.30);
+  box-shadow: 0 2px 5px -1px rgba(50, 50, 93, 0.25),
+    0 1px 3px -1px rgba(0, 0, 0, 0.3);
 }
 
 .rides .list .cell.date {
@@ -1010,7 +1024,6 @@ form a.button {
     padding: 20px 15px;
   }
 
-
   .annotation.card h4 {
     margin-bottom: 0;
   }
@@ -1031,11 +1044,11 @@ form a.button {
     padding-left: 20px;
   }
 
-  .annotation.card input[type=submit]:first-child {
+  .annotation.card input[type='submit']:first-child {
     margin-bottom: 5px;
   }
 
-  .annotation.card input[type=submit],
+  .annotation.card input[type='submit'],
   .annotation.card button {
     padding: 8px 14px;
   }
@@ -1053,7 +1066,7 @@ form a.button {
   .rides {
     margin: 0 0 15px;
   }
-  
+
   .user {
     flex-flow: row wrap;
     padding-top: 0;
@@ -1092,8 +1105,8 @@ form a.button {
     margin-top: 20px;
   }
 
-  .user .block.stripe input[type="submit"] {
-    margin: 10px 0
+  .user .block.stripe input[type='submit'] {
+    margin: 10px 0;
   }
 
   .user .block + .block {
