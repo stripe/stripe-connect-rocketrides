@@ -63,7 +63,7 @@ router.get('/authorize', pilotRequired, (req, res) => {
 router.get('/token', pilotRequired, async (req, res) => {
   // Check the `state` we got back equals the one we generated before proceeding (to protect from CSRF)
   if (req.session.state != req.query.state) {
-    res.redirect('/pilots/signup');
+    return res.redirect('/pilots/signup');
   }
   // Post the authorization code to Stripe to complete the Express onboarding flow
   request.post(
