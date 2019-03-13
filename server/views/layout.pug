@@ -16,14 +16,16 @@ html
   body
     header
       #top
-        .logo
-          a.rocketrides(href='/')
         if pilot
+          .logo
+            a.rocketrides.mark(href='/')
           .links
             if pilot.stripeAccountId
               a(href='/pilots/dashboard') Dashboard
             a(href='/pilots/logout') Log out
         else
+          .logo
+            a.rocketrides(href='/')
           .links
             a(href='/pilots/login') Log in
       block header

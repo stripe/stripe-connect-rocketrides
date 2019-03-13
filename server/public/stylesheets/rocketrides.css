@@ -264,13 +264,22 @@ footer {
   display: none;
 }
 
+.annotation a.show-more {
+  display: none;
+  text-decoration: none;
+}
+
+.annotation a.show-more.expanded {
+  display: none;
+}
+
 /* Forms */
 .form {
   width: 540px;
   margin: 15px auto;
 }
 
-.account {
+.form.login, .form.signup {
   min-height: 225px;
 }
 
@@ -284,7 +293,6 @@ footer {
   font-weight: 500;
   color: #32315e;
   text-align: center;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.55s;
 }
 
 .form p {
@@ -293,7 +301,6 @@ footer {
   color: #525f7f;
   line-height: 1.5;
   text-align: center;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.6s;
 }
 
 .form p.error {
@@ -307,18 +314,13 @@ footer {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.5s;
 }
 
-fieldset {
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.55s;
-}
 
 .form input[type='submit'],
 .form button,
 .form a.button {
   text-align: center;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.6s;
 }
 
 .form label {
@@ -329,7 +331,6 @@ fieldset {
   font-size: 13px;
   color: #8798ab;
   padding: 0 30px;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.65s;
 }
 
 .options label {
@@ -358,7 +359,6 @@ form aside {
   font-size: 13px;
   text-align: right;
   color: #8798ab;
-  animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.65s;
 }
 
 fieldset {
@@ -900,26 +900,41 @@ form a.button {
   /* Intro section */
   #top {
     font-size: 15px;
-    padding: 0 15px;
+    padding: 15px;
     height: auto;
     flex-flow: row wrap;
     line-height: inherit;
+    align-items: flex-end;
   }
 
   #top .logo {
-    margin: 20px 0;
+    margin: 0;
+  }
+
+  #top .logo a.mark {
+    min-width: 35px;
+    width: 35px;
+    padding-left: 35px;
   }
 
   #top .links {
-    margin-bottom: 20px;
+    margin: 0;
+  }
+
+  #top .links a:first-child {
+    margin-left: 0;
   }
 
   h1 {
     font-size: 28px;
   }
 
+  h1.title {
+    margin-top: 0;
+  }
+
   .intro {
-    padding: 15px 20px 40px 20px;
+    padding: 10px 20px 35px 20px;
     background: none;
   }
 
@@ -946,7 +961,7 @@ form a.button {
   #content {
     width: 100%;
     margin: 10px 0;
-    padding: 20px;
+    padding: 15px;
   }
 
   /* Landing page */
@@ -971,8 +986,25 @@ form a.button {
     margin-top: 0;
   }
 
+  form.payout {
+    margin-top: 35px;
+  }
+
   fieldset .row {
     padding: 12px 5px 13px;
+  }
+
+  fieldset .row::before {
+    width: 110px;
+  }
+
+  .form.login, fieldset .row::before,
+  .form.account fieldset .row::before {
+    width: 80px;
+  }
+
+  .form.profile fieldset .row::before {
+    width: 100px;
   }
 
   .form {
@@ -994,11 +1026,27 @@ form a.button {
     display: none;
   }
 
-  .account {
-    min-height: 250px;
+  .form.login, .form.account {
+    min-height: 210px;
   }
 
+  .stripe-information {
+    background: none;
+    padding: 20px;
+  }
   /* Annotation */
+  .annotation, .annotation.card {
+    position: absolute;
+    max-width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 17px 15px;
+    border-radius: 0;
+    box-shadow: 0 13px 27px 2px rgba(50, 50, 93, 0.2), 0 8px 16px 7px rgba(0, 0, 0, 0.15);
+  }
+
   .annotation.intro {
     margin: 10px auto;
   }
@@ -1009,19 +1057,15 @@ form a.button {
 
   .annotation.landing p {
     order: 1;
-    margin-top: 5px;
+    margin-top: 10px;
   }
 
   .annotation.info {
     display: none;
   }
 
-  .annotation.card {
-    max-width: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 20px 15px;
+  .annotation a.show-more {
+    display:inline;
   }
 
   .annotation.card h4 {
@@ -1059,6 +1103,10 @@ form a.button {
     padding: 11px 20px;
   }
 
+  .banner .secondary-text {
+    display: none;
+  }
+
   #content .dashboard {
     padding-bottom: 120px;
   }
@@ -1070,6 +1118,7 @@ form a.button {
   .user {
     flex-flow: row wrap;
     padding-top: 0;
+    padding-bottom: 35px;
   }
 
   .user .block.profile {
@@ -1114,8 +1163,13 @@ form a.button {
   }
 
   .rides .list .cell.name {
-    flex: 1.2;
+    flex: 1;
     padding-right: 5px;
+    padding-left: 15px;
+  }
+
+  .rides .list .cell.name::before {
+    display: none;
   }
 
   .rides .list .cell.date {
@@ -1123,6 +1177,7 @@ form a.button {
   }
 
   .rides .list .cell.price {
+    flex: 0.6;
     padding-left: 5px;
   }
 }
