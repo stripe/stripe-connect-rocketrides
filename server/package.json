@@ -29,7 +29,7 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "pug": "^2.0.3",
-    "request": "^2.87.0",
+    "request": "^2.88.0",
     "stripe": "^4.23.0"
   }
 }

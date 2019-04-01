@@ -14,7 +14,7 @@ Rocket Rides showcases how to sign up pilots and use [Connect Express accounts](
 
 This platform also uses the Stripe API to create payments for pilots, fetch their available and pending balance, and let them view transfers. It also creates [Instant Payouts](https://stripe.com/docs/connect/payouts#instant-payouts) for pilots who use a debit card as their payout account.
 
-<img src="server/public/images/screenshots/rocketrides-web-home.png" width="444"><img src="server/public/images/screenshots/rocketrides-web-connect.png" width="444">
+<img src="server/public/images/screenshots/rocketrides-web-home.png" width="440"><img src="server/public/images/screenshots/rocketrides-web-connect.png" width="440">
 
 To integrate Stripe Connect in your own app, check out these two files in particular:
 1. [`server/routes/pilots/stripe.js`](server/routes/pilots/stripe.js) shows how to easily create Connect Express accounts and interact with the Stripe API.
