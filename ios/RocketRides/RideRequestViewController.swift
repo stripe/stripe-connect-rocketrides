@@ -189,13 +189,13 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
             let centerCoordinate = CLLocationCoordinate2D(latitude: centerLatitude,longitude: centerLongitude)
             let distance = destinationLocation.distance(from: pickupLocation)
 
-            let region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 1.5 * distance, 1.5 * distance)
+            let region = MKCoordinateRegion.init(center: centerCoordinate, latitudinalMeters: 1.5 * distance, longitudinalMeters: 1.5 * distance)
             mapView.setRegion(region, animated: true)
         }
         else if let singleLocation = pickupPlacemark?.location ?? destinationPlacemark?.location {
             // Show either pickup or destination location in map
             let distance: CLLocationDistance = 1000.0 // 1km
-            let region = MKCoordinateRegionMakeWithDistance(singleLocation.coordinate, distance, distance)
+            let region = MKCoordinateRegion.init(center: singleLocation.coordinate, latitudinalMeters: distance, longitudinalMeters: distance)
             mapView.setRegion(region, animated: true)
         }
         else {
@@ -219,7 +219,7 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
         // Show rocket path in map view
         if let pickupCoordinate = pickupPlacemark?.coordinate, let destinationCoordinate = destinationPlacemark?.coordinate {
             let rocketPathOverlay = RocketPathOverlay(start: pickupCoordinate, end: destinationCoordinate)
-            mapView.add(rocketPathOverlay, level: .aboveLabels)
+            mapView.addOverlay(rocketPathOverlay, level: .aboveLabels)
         }
     }
 
@@ -342,7 +342,7 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
         func moveToNextPoint() {
             // Move annotation to latest map point
             let mapPoint = rocketPathMapPoints[currentMapPointIdx]
-            rocketRiderAnnotation.coordinate = MKCoordinateForMapPoint(mapPoint)
+            rocketRiderAnnotation.coordinate = mapPoint.coordinate;
 
             // Iterate to next map point
             currentMapPointIdx += 1

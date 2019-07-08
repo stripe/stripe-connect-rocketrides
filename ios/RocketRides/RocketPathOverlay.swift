@@ -19,7 +19,7 @@ class RocketPathOverlay: NSObject, MKOverlay {
         let centerX = boundingMapRect.origin.x + (boundingMapRect.size.width / 2.0)
         let centerY = boundingMapRect.origin.y + (boundingMapRect.size.height / 2.0)
 
-        return MKCoordinateForMapPoint(MKMapPoint(x: centerX, y: centerY))
+        return MKMapPoint(x: centerX, y: centerY).coordinate
     }
 
     var boundingMapRect: MKMapRect {
@@ -28,13 +28,13 @@ class RocketPathOverlay: NSObject, MKOverlay {
         let rect = MKMapRect(origin: origin, size: size)
 
         // Increase rect to accommodate rocket path arc
-        return MKMapRectInset(rect, -size.width, -size.height)
+        return rect.insetBy(dx: -size.width, dy: -size.height)
     }
 
 
     init(start: CLLocationCoordinate2D, end: CLLocationCoordinate2D) {
-        self.startPoint = MKMapPointForCoordinate(start)
-        self.endPoint = MKMapPointForCoordinate(end)
+        self.startPoint = MKMapPoint.init(start)
+        self.endPoint = MKMapPoint.init(end)
     }
 
 }

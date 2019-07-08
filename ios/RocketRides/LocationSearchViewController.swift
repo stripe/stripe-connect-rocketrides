@@ -33,7 +33,7 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
 
         let searchBarFont = UIFont.systemFont(ofSize: 17.0)
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = searchBarFont
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSFontAttributeName: searchBarFont, NSForegroundColorAttributeName: UIColor.riderDarkBlueColor]
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.font: searchBarFont, NSAttributedString.Key.foregroundColor: UIColor.riderDarkBlueColor]
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -135,14 +135,14 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         }
 
         // Setup search request
-        let searchRequest = MKLocalSearchRequest()
+        let searchRequest = MKLocalSearch.Request()
 
         searchRequest.naturalLanguageQuery = searchQuery
 
         if let centerCoordinate = delegate?.searchCenterCoordinate(for: self) {
             // Attach region to search request
             let distance: CLLocationDistance = 100 // 100km
-            searchRequest.region = MKCoordinateRegionMakeWithDistance(centerCoordinate, distance, distance)
+            searchRequest.region = MKCoordinateRegion.init(center: centerCoordinate, latitudinalMeters: distance, longitudinalMeters: distance)
         }
 
         // Perform new search request
