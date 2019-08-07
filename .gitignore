@@ -7,6 +7,9 @@ config.js
 # Xcode
 xcuserdata/
 
+# VS Code
+.vscode
+
 # Cocoapods
 Pods/
 

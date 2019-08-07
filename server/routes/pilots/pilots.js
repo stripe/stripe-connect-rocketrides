@@ -134,7 +134,7 @@ router.get('/signup', (req, res) => {
  *
  * Create a user and update profile information during the pilot onboarding process.
  */
-router.post('/signup', (req, res, next) => {
+router.post('/signup', async (req, res, next) => {
   const body = Object.assign({}, req.body, {
     // Use `type` instead of `pilot-type` for saving to the DB.
     type: req.body['pilot-type'],
@@ -144,30 +144,30 @@ router.post('/signup', (req, res, next) => {
   // Check if we have a logged-in pilot
   let pilot = req.user;
   if (!pilot) {
-    // Try to create and save a new pilot
-    pilot = new Pilot(body);
-    pilot.save((err, pilot) => {
-      if (err) {
-        // Show an error message to the user
-        const errors = Object.keys(err.errors).map(
-          field => err.errors[field].message
-        );
-        res.render('signup', {step: 'account', error: errors[0]});
-      } else {
-        // Sign in and redirect to continue the signup process
-        req.logIn(pilot, error => {
-          if (err) next(err);
-          return res.redirect('/pilots/signup');
-        });
-      }
-    });
-  } else {
-    // Try to update the logged-in pilot using the newly entered profile data
-    pilot.set(body);
-    pilot.save((err, pilot) => {
-      if (err) next(err);
+    try {
+      // Try to create and save a new pilot
+      pilot = new Pilot(body);
+      pilot = await pilot.save()
+      // Sign in and redirect to continue the signup process
+      req.logIn(pilot, err => {
+        if (err) next(err);
+        return res.redirect('/pilots/signup');
+      });
+    } catch (err) {
+      // Show an error message to the user
+      const errors = Object.keys(err.errors).map(field => err.errors[field].message);
+      res.render('signup', { step: 'account', error: errors[0] });
+    }
+  } 
+  else {
+    try {
+      // Try to update the logged-in pilot using the newly entered profile data
+      pilot.set(body);
+      await pilot.save();
       return res.redirect('/pilots/stripe/authorize');
-    });
+    } catch (err) {
+      next(err);
+    }
   }
 });
 
@@ -203,43 +203,38 @@ router.get('/logout', (req, res) => {
   res.redirect('/');
 });
 
-// Serialize pilots sessions for Passport
-passport.serializeUser((user, callback) => {
-  callback(null, user.id);
+// Serialize the pilot's sessions for Passport
+passport.serializeUser((user, done) => {
+  done(null, user.id);
 });
-passport.deserializeUser((id, callback) => {
-  Pilot.findById(id, (err, pilot) => {
-    callback(err, pilot);
-  });
+passport.deserializeUser(async (id, done) => {
+  try {
+    let user = await Pilot.findById(id);
+    done(null, user);
+  } catch (err) {
+    done(err);
+  }
 });
 
 // Define the login strategy for pilots based on email and password
-passport.use(
-  'pilot-login',
-  new LocalStrategy(
-    {
-      usernameField: 'email',
-      passwordField: 'password',
-    },
-    function(email, password, done) {
-      Pilot.findOne(
-        {
-          email: email,
-        },
-        function(err, user) {
-          if (err) return done(err);
-          if (!user) {
-            return done(null, false, {message: 'Unknown user'});
-          }
-          if (!user.validatePassword(password)) {
-            return done(null, false, {message: 'Invalid password'});
-          }
-          return done(null, user);
-        }
-      );
+passport.use('pilot-login', new LocalStrategy({
+  usernameField: 'email',
+  passwordField: 'password'
+}, async (email, password, done) => {
+  let user;
+  try {
+    user = await Pilot.findOne({email});
+    if (!user) {
+      return done(null, false, { message: 'Unknown user' });
     }
-  )
-);
+  } catch (err) {
+    return done(err);
+  }
+  if (!user.validatePassword(password)) {
+    return done(null, false, { message: 'Invalid password' });
+  }
+  return done(null, user);
+}));
 
 // Function that returns a test card token for Stripe
 function getTestSource(behavior) {

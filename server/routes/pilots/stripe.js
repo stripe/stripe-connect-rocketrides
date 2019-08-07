@@ -2,7 +2,7 @@
 
 const config = require('../../config');
 const stripe = require('stripe')(config.stripe.secretKey);
-const request = require('request');
+const request = require('request-promise-native');
 const querystring = require('querystring');
 const express = require('express');
 const router = express.Router();
@@ -11,7 +11,7 @@ const router = express.Router();
 function pilotRequired(req, res, next) {
   if (!req.isAuthenticated()) {
     return res.redirect('/pilots/login');
-  }
+  } 
   next();
 }
 
@@ -25,13 +25,13 @@ router.get('/authorize', pilotRequired, (req, res) => {
   req.session.state = Math.random()
     .toString(36)
     .slice(2);
-  // Prepare the mandatory Stripe parameters: make sure to include our platform's client ID
+  // Define the mandatory Stripe parameters: make sure to include our platform's client ID
   let parameters = {
     client_id: config.stripe.clientId,
     state: req.session.state,
   };
   // Optionally, the Express onboarding flow accepts `first_name`, `last_name`, `email`,
-  // and `phone` in the query parameters so the form fields will be prefilled
+  // and `phone` in the query parameters: those form fields will be prefilled
   parameters = Object.assign(parameters, {
     redirect_uri: config.publicDomain + '/pilots/stripe/token',
     'stripe_user[business_type]': req.user.type || 'individual',
@@ -60,37 +60,40 @@ router.get('/authorize', pilotRequired, (req, res) => {
  *
  * Connect the new Stripe account to the platform account.
  */
-router.get('/token', pilotRequired, async (req, res) => {
+router.get('/token', pilotRequired, async (req, res, next) => {
   // Check the `state` we got back equals the one we generated before proceeding (to protect from CSRF)
   if (req.session.state != req.query.state) {
     res.redirect('/pilots/signup');
   }
-  // Post the authorization code to Stripe to complete the Express onboarding flow
-  request.post(
-    config.stripe.tokenUri,
-    {
-      form: {
+  try {
+    // Post the authorization code to Stripe to complete the Express onboarding flow
+    const expressAuthorized = await request.post({
+      uri: config.stripe.tokenUri, 
+      form: { 
         grant_type: 'authorization_code',
         client_id: config.stripe.clientId,
         client_secret: config.stripe.secretKey,
-        code: req.query.code,
+        code: req.query.code
       },
-      json: true,
-    },
-    (err, response, body) => {
-      if (err || body.error) {
-        console.log('The Stripe onboarding process has not succeeded.');
-      } else {
-        // Update the model and store the Stripe account ID in the datastore:
-        // this Stripe account ID will be used to issue payouts to the pilot
-        req.user.stripeAccountId = body.stripe_user_id;
-        req.user.save();
-      }
-      // Redirect to the Rocket Rides dashboard
-      req.flash('showBanner', 'true');
-      res.redirect('/pilots/dashboard');
+      json: true
+    });
+
+    if (expressAuthorized.error) {
+      throw(expressAuthorized.error);
     }
-  );
+
+    // Update the model and store the Stripe account ID in the datastore:
+    // this Stripe account ID will be used to issue payouts to the pilot
+    req.user.stripeAccountId = expressAuthorized.stripe_user_id;
+    await req.user.save();
+
+    // Redirect to the Rocket Rides dashboard
+    req.flash('showBanner', 'true');
+    res.redirect('/pilots/dashboard');
+  } catch (err) {
+    console.log('The Stripe onboarding process has not succeeded.');
+    next(err);
+  }
 });
 
 /**
@@ -107,7 +110,9 @@ router.get('/dashboard', pilotRequired, async (req, res) => {
   try {
     // Generate a unique login link for the associated Stripe account to access their Express dashboard
     const loginLink = await stripe.accounts.createLoginLink(
-      pilot.stripeAccountId
+      pilot.stripeAccountId, {
+        redirect_url: config.publicDomain + '/pilots/dashboard'
+      }
     );
     // Directly link to the account tab
     if (req.query.account) {

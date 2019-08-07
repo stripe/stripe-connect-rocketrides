@@ -6,7 +6,7 @@ block content
       | Create your account
     else if step == 'profile'
       | Complete your profile
-  section.form.account
+  section.form(class={'account': step == 'account', 'profile': step == 'profile'})
     if error
       p.error= error
 
@@ -50,12 +50,13 @@ block content
             .row.select(label='Country')
               select(name='country')
                 option(value='US') United States
+                option(value='US') Canada
           aside * Indicates required fields
           h4 Rocket information
           fieldset
-            .row(label='Make & Model')
+            .row(label='Rocket')
               input(type='text', name='rocket[model]', placeholder='Lightspeed 3000', value='Lightspeed 3000')
-            .row(label='License Plate')
+            .row(label='License')
               input(type='text', name='rocket[license]', placeholder='FUTURE 7', value='FUTURE 7')
             .row.select(label='Color')
               select(name='rocket[color]')
