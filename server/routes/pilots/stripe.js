@@ -25,13 +25,13 @@ router.get('/authorize', pilotRequired, (req, res) => {
   req.session.state = Math.random()
     .toString(36)
     .slice(2);
-  // Prepare the mandatory Stripe parameters: make sure to include our platform's client ID
+  // Define the mandatory Stripe parameters: make sure to include our platform's client ID
   let parameters = {
     client_id: config.stripe.clientId,
     state: req.session.state,
   };
   // Optionally, the Express onboarding flow accepts `first_name`, `last_name`, `email`,
-  // and `phone` in the query parameters so the form fields will be prefilled
+  // and `phone` in the query parameters: those form fields will be prefilled
   parameters = Object.assign(parameters, {
     redirect_uri: config.publicDomain + '/pilots/stripe/token',
     'stripe_user[business_type]': req.user.type || 'individual',
@@ -69,7 +69,7 @@ router.get('/token', pilotRequired, async (req, res, next) => {
     // Post the authorization code to Stripe to complete the Express onboarding flow
     const expressAuthorized = await request.post({
       uri: config.stripe.tokenUri, 
-      form: {
+      form: { 
         grant_type: 'authorization_code',
         client_id: config.stripe.clientId,
         client_secret: config.stripe.secretKey,
@@ -110,7 +110,9 @@ router.get('/dashboard', pilotRequired, async (req, res) => {
   try {
     // Generate a unique login link for the associated Stripe account to access their Express dashboard
     const loginLink = await stripe.accounts.createLoginLink(
-      pilot.stripeAccountId
+      pilot.stripeAccountId, {
+        redirect_url: config.publicDomain + '/pilots/dashboard'
+      }
     );
     // Directly link to the account tab
     if (req.query.account) {

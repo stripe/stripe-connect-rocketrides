@@ -16,10 +16,21 @@ app.set('trust proxy', true);
 
 // MongoDB configuration
 const mongoose = require('mongoose');
-mongoose.connect(config.mongoUri, {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-});
+const connectRetry = function() {
+  mongoose.connect(config.mongoUri, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    reconnectTries: 30,
+    reconnectInterval: 1000,
+    poolSize: 50,
+  }, (err) => {
+    if (err) {
+      console.log('Mongoose connection error:', err);
+      setTimeout(5000, connectRetry);
+    }
+  });
+}
+connectRetry();
 
 // Set up the view engine
 app.set('view engine', 'pug');
