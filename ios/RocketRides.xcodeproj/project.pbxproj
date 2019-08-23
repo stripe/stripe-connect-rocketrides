@@ -166,7 +166,6 @@
 				7A1BBCCE1CF7B8E3004B1751 /* Frameworks */,
 				7A1BBCCF1CF7B8E3004B1751 /* Resources */,
 				7CA9B9BE312F9CE3DE95D784 /* [CP] Embed Pods Frameworks */,
-				638F23D17F483D5D060FE6A3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,28 +230,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		638F23D17F483D5D060FE6A3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RocketRides/Pods-RocketRides-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7CA9B9BE312F9CE3DE95D784 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RocketRides/Pods-RocketRides-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-RocketRides/Pods-RocketRides-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 			);
@@ -263,7 +247,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RocketRides/Pods-RocketRides-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RocketRides/Pods-RocketRides-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D13DD1FA3F52518D33616A20 /* [CP] Check Pods Manifest.lock */ = {
@@ -428,6 +412,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -446,6 +431,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
