@@ -33,6 +33,11 @@ router.post('/', async (req, res, next) => {
     const pilot = await Pilot.getFirstOnboarded();
     // Find the latest passenger (see note above)
     const passenger = await Passenger.getLatest();
+
+    if(!pilot || !passenger) {
+      throw `Could not get ${!pilot ? "pilot" : "passenger"} details.`
+    }
+
     // Create a new ride
     const ride = new Ride({
       pilot: pilot.id,
@@ -71,7 +76,7 @@ router.post('/', async (req, res, next) => {
     });
   } catch (err) {
     res.sendStatus(500);
-    next(`Error adding token to customer: ${err.message}`);
+    next(`Error adding token to customer: ${err.message || err}`);
   }
 });
 
