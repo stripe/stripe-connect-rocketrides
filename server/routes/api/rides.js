@@ -25,7 +25,7 @@ router.post('/', async (req, res, next) => {
    * are securely computed on the backend to make sure the user can't change
    * the payment amount from their web browser or client-side environment.
    */
-  const {source, amount, currency} = req.body;
+  const {paymentMethod, amount, currency} = req.body;
 
   try {
     // For the purpose of this demo, we'll assume we are automatically
@@ -43,9 +43,8 @@ router.post('/', async (req, res, next) => {
     // Save the ride
     await ride.save();
 
-    // Create a charge and set its destination to the pilot's account
-    const charge = await stripe.charges.create({
-      source: source,
+    // Create a Payment Intent and set its destination to the pilot's account
+    const paymentIntent = await stripe.paymentIntents.create({
       amount: ride.amount,
       currency: ride.currency,
       description: config.appName,
@@ -55,13 +54,13 @@ router.post('/', async (req, res, next) => {
         // Send the amount for the pilot after collecting a 20% platform fee:
         // the `amountForPilot` method simply computes `ride.amount * 0.8`
         amount: ride.amountForPilot(),
-        // The destination of this charge is the pilot's Stripe account
+        // The destination of this Payment Intent is the pilot's Stripe account
         destination: pilot.stripeAccountId,
       },
     });
 
-    // Add the Stripe charge reference to the ride and save it
-    ride.stripeChargeId = charge.id;
+    // Add the Stripe Payment Intent reference to the ride and save it
+    ride.stripePaymentIntentId = paymentIntent.id;
     ride.save();
 
     // Return the ride info
