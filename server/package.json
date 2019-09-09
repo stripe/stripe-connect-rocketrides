@@ -10,7 +10,7 @@
     "url": "https://github.com/stripe/stripe-connect-rocketrides.git"
   },
   "engines": {
-    "node": "8.x"
+    "node": "10.x"
   },
   "scripts": {
     "start": "node app.js"

@@ -22,7 +22,7 @@ const connectRetry = function() {
     useCreateIndex: true,
     reconnectTries: 30,
     reconnectInterval: 1000,
-    poolSize: 50,
+    poolSize: 500,
   }, (err) => {
     if (err) {
       console.log('Mongoose connection error:', err);
