@@ -28,7 +28,7 @@ PassengerSchema.methods.displayName = function() {
 PassengerSchema.statics.getLatest = async function() {
   try {
     // Count all the passengers.
-    const count = await Passenger.count().exec();
+    const count = await Passenger.countDocuments().exec();
     if (count === 0) {
       // Create default passengers.
       await Passenger.insertDefaultPassengers();
@@ -46,7 +46,7 @@ PassengerSchema.statics.getLatest = async function() {
 PassengerSchema.statics.getRandom = async function() {
   try {
     // Count all the passengers.
-    const count = await Passenger.count().exec();
+    const count = await Passenger.countDocuments().exec();
     if (count === 0) {
       // Create default passengers.
       await Passenger.insertDefaultPassengers();

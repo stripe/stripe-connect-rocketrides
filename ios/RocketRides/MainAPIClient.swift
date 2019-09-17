@@ -9,7 +9,7 @@
 import Alamofire
 import Stripe
 
-class MainAPIClient: NSObject, STPEphemeralKeyProvider {
+class MainAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
 
     static let shared = MainAPIClient()
 

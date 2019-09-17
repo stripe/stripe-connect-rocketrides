@@ -176,7 +176,7 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
         }
 
         // Present the Stripe payment methods view controller to enter payment details
-        paymentContext.presentPaymentMethodsViewController()
+        paymentContext.presentPaymentOptionsViewController()
     }
 
     private func reloadMapViewContent() {
@@ -189,13 +189,13 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
             let centerCoordinate = CLLocationCoordinate2D(latitude: centerLatitude,longitude: centerLongitude)
             let distance = destinationLocation.distance(from: pickupLocation)
 
-            let region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 1.5 * distance, 1.5 * distance)
+            let region = MKCoordinateRegion(center: centerCoordinate, latitudinalMeters: 1.5 * distance, longitudinalMeters: 1.5 * distance)
             mapView.setRegion(region, animated: true)
         }
         else if let singleLocation = pickupPlacemark?.location ?? destinationPlacemark?.location {
             // Show either pickup or destination location in map
             let distance: CLLocationDistance = 1000.0 // 1km
-            let region = MKCoordinateRegionMakeWithDistance(singleLocation.coordinate, distance, distance)
+            let region = MKCoordinateRegion(center: singleLocation.coordinate, latitudinalMeters: distance, longitudinalMeters: distance)
             mapView.setRegion(region, animated: true)
         }
         else {
@@ -219,7 +219,7 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
         // Show rocket path in map view
         if let pickupCoordinate = pickupPlacemark?.coordinate, let destinationCoordinate = destinationPlacemark?.coordinate {
             let rocketPathOverlay = RocketPathOverlay(start: pickupCoordinate, end: destinationCoordinate)
-            mapView.add(rocketPathOverlay, level: .aboveLabels)
+            mapView.addOverlay(rocketPathOverlay, level: .aboveLabels)
         }
     }
 
@@ -237,7 +237,7 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
     }
 
     private func reloadPaymentButtonContent() {
-        guard let selectedPaymentMethod = paymentContext.selectedPaymentMethod else {
+        guard let selectedPaymentMethod = paymentContext.selectedPaymentOption else {
             // Show default image, text, and color
             paymentButton.setImage(#imageLiteral(resourceName: "Payment"), for: .normal)
             paymentButton.setTitle("Payment", for: .normal)
@@ -275,7 +275,7 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
     }
 
     private func reloadRequestRideButton() {
-        guard pickupPlacemark != nil && destinationPlacemark != nil && paymentContext.selectedPaymentMethod != nil else {
+        guard pickupPlacemark != nil && destinationPlacemark != nil && paymentContext.selectedPaymentOption != nil else {
             // Show disabled state
             requestRideButton.backgroundColor = .riderGrayColor
             requestRideButton.setTitle("Request Ride", for: .normal)
@@ -342,7 +342,7 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
         func moveToNextPoint() {
             // Move annotation to latest map point
             let mapPoint = rocketPathMapPoints[currentMapPointIdx]
-            rocketRiderAnnotation.coordinate = MKCoordinateForMapPoint(mapPoint)
+            rocketRiderAnnotation.coordinate = mapPoint.coordinate
 
             // Iterate to next map point
             currentMapPointIdx += 1
@@ -416,7 +416,7 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
 
     func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPErrorBlock) {
         // Create charge using payment result
-        let source = paymentResult.source.stripeID
+        let source = paymentResult.paymentMethod.stripeId
 
         MainAPIClient.shared.requestRide(source: source, amount: price, currency: "usd") { [weak self] (ride, error) in
             guard let strongSelf = self else {

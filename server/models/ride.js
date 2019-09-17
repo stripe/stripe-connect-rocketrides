@@ -18,8 +18,8 @@ const RideSchema = new Schema({
   currency: { type: String, default: 'usd' },
   created: { type: Date, default: Date.now },
 
-  // Stripe charge ID corresponding to this ride.
-  stripeChargeId: String
+  // Stripe Payment Intent ID corresponding to this ride.
+  stripePaymentIntentId: String
 });
 
 // Return the ride amount for the pilot after collecting 20% platform fees.
