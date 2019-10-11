@@ -39,6 +39,7 @@ router.get('/authorize', pilotRequired, (req, res) => {
     'stripe_user[first_name]': req.user.firstName || undefined,
     'stripe_user[last_name]': req.user.lastName || undefined,
     'stripe_user[email]': req.user.email || undefined,
+    'stripe_user[country]': req.user.country || undefined
     // If we're suggesting this account have the `card_payments` capability,
     // we can pass some additional fields to prefill:
     // 'suggested_capabilities[]': 'card_payments',
@@ -46,7 +47,6 @@ router.get('/authorize', pilotRequired, (req, res) => {
     // 'stripe_user[city]': req.user.city || undefined,
     // 'stripe_user[zip]': req.user.postalCode || undefined,
     // 'stripe_user[state]': req.user.city || undefined,
-    // 'stripe_user[country]': req.user.country || undefined
   });
   console.log('Starting Express flow:', parameters);
   // Redirect to Stripe to start the Express onboarding flow
