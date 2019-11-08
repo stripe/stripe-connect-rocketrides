@@ -465,6 +465,8 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
         case .userCancellation:
             // Reset ride request state
             rideRequestState = .none
+        default:
+            return
         }
     }
 
