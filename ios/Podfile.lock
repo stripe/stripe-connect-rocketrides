@@ -7,7 +7,7 @@ DEPENDENCIES:
   - Stripe
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Stripe
 
@@ -17,4 +17,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: df01c2ba3d529638d327c083cdf54b9821b82a0c
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4
