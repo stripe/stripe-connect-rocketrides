@@ -1,19 +1,19 @@
 PODS:
-  - Alamofire (4.8.2)
-  - Stripe (16.0.6)
+  - Alamofire (4.9.1)
+  - Stripe (18.2.0)
 
 DEPENDENCIES:
   - Alamofire
   - Stripe
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - Alamofire
     - Stripe
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  Stripe: bbfdfb44bcc604bd3d29771f80d5d72710301fe3
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Stripe: a468d5f39703807e840fdfed39572ffad0aaf053
 
 PODFILE CHECKSUM: df01c2ba3d529638d327c083cdf54b9821b82a0c
 
