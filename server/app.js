@@ -26,7 +26,7 @@ const connectRetry = function() {
   }, (err) => {
     if (err) {
       console.log('Mongoose connection error:', err);
-      setTimeout(5000, connectRetry);
+      setTimeout(connectRetry, 5000);
     }
   });
 }
