@@ -414,9 +414,9 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
         reloadRequestRideButton()
     }
 
-    func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPErrorBlock) {
+    func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPPaymentStatusBlock) {
         // Create charge using payment result
-        let source = paymentResult.paymentMethod.stripeId
+        guard let source = paymentResult.paymentMethod?.stripeId else { return }
 
         MainAPIClient.shared.requestRide(source: source, amount: price, currency: "usd") { [weak self] (ride, error) in
             guard let strongSelf = self else {
@@ -426,13 +426,13 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
 
             guard error == nil else {
                 // Error while requesting ride
-                completion(error)
+                completion(.error, error)
                 return
             }
 
             // Save ride info to display after payment finished
             strongSelf.rideRequestState = .active(ride!)
-            completion(nil)
+            completion(.success, nil)
         }
     }
 
@@ -465,6 +465,8 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
         case .userCancellation:
             // Reset ride request state
             rideRequestState = .none
+        default:
+            return
         }
     }
 
