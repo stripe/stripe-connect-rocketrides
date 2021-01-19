@@ -143,16 +143,11 @@ router.post('/payout', pilotRequired, async (req, res) => {
     // (Note: there is one balance for each currency used in your application)
     const {amount, currency} = balance.available[0];
     // Create an instant payout
-    const payout = await stripe.payouts.create(
-      {
-        amount: amount,
-        currency: currency,
-        statement_descriptor: config.appName,
-      },
-      {
-        stripe_account: pilot.stripeAccountId,
-      }
-    );
+    const payout = await stripe.payouts.create({
+      amount: amount,
+      currency: currency,
+      statement_descriptor: config.appName,
+    }, {stripe_account: pilot.stripeAccountId });
   } catch (err) {
     console.log(err);
   }
