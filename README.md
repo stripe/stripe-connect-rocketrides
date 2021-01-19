@@ -12,19 +12,20 @@ This repository contains two components:
 
 Rocket Rides showcases how to sign up pilots and use [Connect Express accounts](https://stripe.com/connect/account-types) to get them paid. Express provides onboarding, account management, an account dashboard, and identity verification for your platform, and we've customized Express with Rocket Rides branding.
 
-This platform also uses the Stripe API to create payments for pilots, fetch their available and pending balance, and let them view transfers. It also creates [Instant Payouts](https://stripe.com/docs/connect/payouts#instant-payouts) for pilots who use a debit card as their payout account.
+This platform also uses the Stripe API to create payments for pilots, fetch their available and pending balance, and let them view transfers. It also creates [Payouts](https://stripe.com/docs/connect/payouts) for pilots who use a debit card as their payout account.
 
 <img src="server/public/images/screenshots/rocketrides-web-home.png" width="440"><img src="server/public/images/screenshots/rocketrides-web-connect.png" width="440">
 
 To integrate Stripe Connect in your own app, check out these two files in particular:
 1. [`server/routes/pilots/stripe.js`](server/routes/pilots/stripe.js) shows how to easily create Connect Express accounts and interact with the Stripe API.
-2. [`server/routes/pilots/pilots.js`](server/routes/pilots/pilots.js) shows how to create payments going straight to pilots.
+2. [`server/routes/pilots/pilots.js`](server/routes/pilots/pilots.js) shows how to create payments and transfer funds to recipient pilots.
 
 ### Requirements
 
-You'll need a Stripe account to manage pilot onboarding and payments. [Sign up for free](https://dashboard.stripe.com/register), then [enable Connect](https://dashboard.stripe.com/account/applications/settings) by filling in your Platform Settings. In the Development section, enter the following in the Redirect URIs field: `http://localhost:3000/pilots/stripe/token`.
-
-For Instant Payouts to work, you'll need to [turn off automatic payouts](https://dashboard.stripe.com/account/payouts) in your settings.
+You'll need a Stripe account to manage pilot onboarding and payments:
+- [Sign up for free](https://dashboard.stripe.com/register), then [enable Connect](https://dashboard.stripe.com/account/applications/settings) by filling in your Connect settings.
+- In the **Integration** section, add the following **Redirect URI**: `http://localhost:3000/pilots/stripe/token`.
+- Under the **Express** account type, click **Manage** to [choose from which countries](https://dashboard.stripe.com/test/settings/applications/express) users can sign up. Where possible, choose the capability to just receive **Transfers**.
 
 You'll need to have [Node.js](http://nodejs.org) >= 7.x and [MongoDB](http://mongodb.org) installed to run this app.
 

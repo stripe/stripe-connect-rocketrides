@@ -130,7 +130,7 @@ router.get('/dashboard', pilotRequired, async (req, res) => {
 /**
  * POST /pilots/stripe/payout
  *
- * Generate an instant payout with Stripe for the available balance.
+ * Generate a payout with Stripe for the available balance.
  */
 router.post('/payout', pilotRequired, async (req, res) => {
   const pilot = req.user;
@@ -142,7 +142,7 @@ router.post('/payout', pilotRequired, async (req, res) => {
     // This demo app only uses USD so we'll just use the first available balance
     // (Note: there is one balance for each currency used in your application)
     const {amount, currency} = balance.available[0];
-    // Create an instant payout
+    // Create a payout
     const payout = await stripe.payouts.create({
       amount: amount,
       currency: currency,
