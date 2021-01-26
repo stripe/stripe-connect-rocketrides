@@ -19,9 +19,8 @@ const mongoose = require('mongoose');
 const connectRetry = function() {
   mongoose.connect(config.mongoUri, {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
     useCreateIndex: true,
-    reconnectTries: 30,
-    reconnectInterval: 1000,
     poolSize: 500,
   }, (err) => {
     if (err) {

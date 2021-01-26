@@ -22,8 +22,8 @@ block content
         h2 #{rides.length} rides
       .block.available
         p Your balance
-        h1 $#{((balanceAvailable + balancePending) / 100).toFixed(2)}
-        h2 $#{(balanceAvailable / 100).toFixed(2)} available
+        h1 #{balanceCurrency}#{((balanceAvailable + balancePending) / 100).toFixed(2)}
+        h2  #{balanceCurrency}$#{(balanceAvailable / 100).toFixed(2)} available
       .block.stripe
         form.payout(action='/pilots/stripe/payout', method='POST', autocomplete='off')
           input(class='primary' type='submit', value='Pay out now' disabled=(balanceAvailable===0))
@@ -50,7 +50,7 @@ block footer
       a.show-more(href="#") &nbsp;(show more)
     .description
       p Express includes the #[strong Stripe account ID] that was just created, so after the flow redirects to Rocket Rides we can save it to the database.
-      p This account ID can then be used to #[a(href="https://stripe.com/docs/api/balance/balance_retrieve" target="_blank") retrieve the pilot’s balance], provide a #[a(href="https://stripe.com/docs/connect/destination-charges" target="_blank") destination for payments], or #[a(href="https://stripe.com/docs/connect/payouts#instant-payouts" target="_blank") create Instant Payouts].
+      p This account ID can then be used to #[a(href="https://stripe.com/docs/api/balance/balance_retrieve" target="_blank") retrieve the pilot’s balance], provide a #[a(href="https://stripe.com/docs/connect/destination-charges" target="_blank") destination for payments], or #[a(href="https://stripe.com/docs/connect/payouts" target="_blank") create payouts].
     form.right
       button.primary-action.next Next step
   .annotation.card.dashboard-simulate(class=(showBanner ? 'hidden' : ''))
@@ -60,6 +60,6 @@ block footer
       ol
         li The balance is automatically fetched from the Stripe API.
         li #[strong View payouts on Stripe] lets pilots see their payouts or edit their account information.
-        li #[strong Pay out now] uses the Stripe API to #[a(href="https://stripe.com/docs/connect/payouts#instant-payouts" target="_blank") generate a payout] of the available balance. #[a(href="https://stripe.com/docs/connect/payouts#instant-payouts" target="_blank") Instant Payouts] are available with a debit card.
+        li #[strong Pay out now] uses the Stripe API to #[a(href="https://stripe.com/docs/connect/payouts" target="_blank") generate a payout] of the available balance.
     form.right(action='/pilots/rides', method='POST', autocomplete='off')
       input(type='submit', name="immediate_balance", value='Create passenger ride', class='primary-action')

@@ -18,6 +18,15 @@ function pilotRequired(req, res, next) {
   next();
 }
 
+// Helper function: get the currency symbol for the given country ISO code
+const getCurrencySymbol = currency => {
+  const currencySymbol = new Intl.NumberFormat('en', {
+    currency,
+    style: 'currency'
+  }).formatToParts(0).find(part => part.type === 'currency');
+  return currencySymbol && currencySymbol.value;
+}
+
 /**
  * GET /pilots/dashboard
  *
@@ -46,6 +55,7 @@ router.get('/dashboard', pilotRequired, async (req, res) => {
     balanceAvailable: balance.available[0].amount,
     balancePending: balance.pending[0].amount,
     ridesTotalAmount: ridesTotalAmount,
+    balanceCurrency: getCurrencySymbol(balance.available[0].currency),
     rides: rides,
     showBanner: !!showBanner || req.query.showBanner,
   });
@@ -77,22 +87,45 @@ router.post('/rides', pilotRequired, async (req, res, next) => {
     } else if (req.body.payout_limit) {
       source = getTestSource('payout_limit');
     }
-    // Create a charge and set its destination to the pilot's account
-    const charge = await stripe.charges.create({
-      source: source,
-      amount: ride.amount,
-      currency: ride.currency,
-      description: config.appName,
-      statement_descriptor: config.appName,
-      // The destination parameter directs the transfer of funds from platform to pilot
-      transfer_data: {
-        // Send the amount for the pilot after collecting a 20% platform fee:
-        // the `amountForPilot` method simply computes `ride.amount * 0.8`
+    let charge;
+    // Accounts created in Japan have the `full` service agreement and must create their own card payments
+    if (pilot.country === 'JP') {
+      // Create a Destination Charge to the pilot's account
+      charge = await stripe.charges.create({
+        source: source,
+        amount: ride.amount,
+        currency: ride.currency,
+        description: config.appName,
+        statement_descriptor: config.appName,
+        on_behalf_of: pilot.stripeAccountId,
+        // The destination parameter directs the transfer of funds from platform to pilot
+        transfer_data: {
+          // Send the amount for the pilot after collecting a 20% platform fee:
+          // the `amountForPilot` method simply computes `ride.amount * 0.8`
+          amount: ride.amountForPilot(),
+          // The destination of this charge is the pilot's Stripe account
+          destination: pilot.stripeAccountId,
+        },
+      });
+    } else {
+      // Accounts created in any other country use the more limited `recipients` service agreement (with a simpler
+      // onboarding flow): the platform creates the charge and then separately transfers the funds to the recipient.
+      charge = await stripe.charges.create({
+        source: source,
+        amount: ride.amount,
+        currency: ride.currency,
+        description: config.appName,
+        statement_descriptor: config.appName,
+        // The `transfer_group` parameter must be a unique id for the ride; it must also match between the charge and transfer
+        transfer_group: ride.id
+      });
+      const transfer = await stripe.transfers.create({
         amount: ride.amountForPilot(),
-        // The destination of this charge is the pilot's Stripe account
+        currency: ride.currency,
         destination: pilot.stripeAccountId,
-      },
-    });
+        transfer_group: ride.id
+      })
+    }
     // Add the Stripe charge reference to the ride and save it
     ride.stripeChargeId = charge.id;
     ride.save();
@@ -154,6 +187,7 @@ router.post('/signup', async (req, res, next) => {
         return res.redirect('/pilots/signup');
       });
     } catch (err) {
+      console.log(err); 
       // Show an error message to the user
       const errors = Object.keys(err.errors).map(field => err.errors[field].message);
       res.render('signup', { step: 'account', error: errors[0] });
