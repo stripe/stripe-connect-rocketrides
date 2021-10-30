@@ -48,6 +48,14 @@ router.post('/', async (req, res, next) => {
     // Save the ride
     await ride.save();
 
+    const paymentMethods = await stripe.paymentMethods.list({
+      customer: passenger.stripeCustomerId,
+      type: 'card',
+    });
+
+    // This only works for the latest customer attached card.      
+    const latest_pm = paymentMethods.data[0].id;
+    
     // Create a Payment Intent and set its destination to the pilot's account
     const paymentIntent = await stripe.paymentIntents.create({
       amount: ride.amount,
@@ -55,6 +63,9 @@ router.post('/', async (req, res, next) => {
       description: config.appName,
       statement_descriptor: config.appName,
       // The destination parameter directs the transfer of funds from platform to pilot
+      customer: passenger.stripeCustomerId,
+      payment_method: latest_pm,
+      confirm: true,
       transfer_data: {
         // Send the amount for the pilot after collecting a 20% platform fee:
         // the `amountForPilot` method simply computes `ride.amount * 0.8`
