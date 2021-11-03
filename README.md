@@ -74,8 +74,9 @@ To try out the full payment experience, run the server locally as described abov
 1. Create a new pilot using the Rocket Rides web onboarding.
 2. Fill in the `publishableKey` property in `AppDelegate.swift`. You can find your publishable key in your [Stripe Dashboard](https://dashboard.stripe.com/account/apikeys).
 3. Fill in the `baseURLString` property in `AppDelegate.swift`. This should be `http://localhost:3000` if you haven't modified the server configuration.
-4. Relaunch the app! Tapping on "Payment" and "Price" should now work.
-5. Enter a destination, your payment option, and request a ride! You should see the payment in your Stripe Dashboard.
+4. `pod deintegrate & pod update` to update the dependancies.
+5. Relaunch the app! Tapping on "Payment" and "Price" should now work.
+6. Enter a destination, your payment option, and request a ride! You should see the payment in your Stripe Dashboard.
 
 ## Credits
 
