@@ -20,7 +20,7 @@ html
           .logo
             a.rocketrides.mark(href='/')
           .links
-            if pilot.stripeAccountId
+            if pilot.stripeAccountId && pilot.onboardingComplete
               a(href='/pilots/dashboard') Dashboard
             a(href='/pilots/logout') Log out
         else

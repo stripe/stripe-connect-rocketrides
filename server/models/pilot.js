@@ -42,6 +42,7 @@ const PilotSchema = new Schema({
   businessName: String,
   // Stripe account ID to send payments obtained with Stripe Connect.
   stripeAccountId: String,
+  onboardingComplete: Boolean
 });
 
 // Check the email addess to make sure it's unique (no existing pilot with that address).
