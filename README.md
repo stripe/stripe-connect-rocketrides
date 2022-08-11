@@ -24,7 +24,7 @@ To integrate Stripe Connect in your own app, check out these two files in partic
 
 You'll need a Stripe account to manage pilot onboarding and payments:
 - [Sign up for free](https://dashboard.stripe.com/register), then [enable Connect](https://dashboard.stripe.com/account/applications/settings) by filling in your Connect settings.
-- In the **Integration** section, add the following **Redirect URI**: `http://localhost:3000/pilots/stripe/token`.
+- Fill in the necessary information in the **Branding** section in [Connect settings](https://dashboard.stripe.com/test/settings/connect).
 - Under the **Express** account type, click **Manage** to [choose from which countries](https://dashboard.stripe.com/test/settings/applications/express) users can sign up. Where possible, choose the capability to just receive **Transfers**.
 
 You'll need to have [Node.js](http://nodejs.org) >= 7.x and [MongoDB](http://mongodb.org) installed to run this app.
