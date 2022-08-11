@@ -20,7 +20,7 @@ function pilotRequired(req, res, next) {
  *
  * Redirect to Stripe to set up payments.
  */
- router.get('/authorize', pilotRequired, async (req, res) => {
+router.get('/authorize', pilotRequired, async (req, res) => {
   // Generate a random string as `state` to protect from CSRF and include it in the session
   req.session.state = Math.random()
     .toString(36)
