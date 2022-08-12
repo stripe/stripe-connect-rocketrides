@@ -10,7 +10,7 @@
     "url": "https://github.com/stripe/stripe-connect-rocketrides.git"
   },
   "engines": {
-    "node": "10.x"
+    "node": ">10.x"
   },
   "scripts": {
     "start": "node app.js"
@@ -24,9 +24,9 @@
     "express": "^4.17.1",
     "express-flash": "0.0.2",
     "moment": "^2.29.2",
-    "mongoose": "^5.11.9",
+    "mongoose": "^6.5.2",
     "morgan": "^1.9.1",
-    "passport": "^0.4.0",
+    "passport": "^0.5.0",
     "passport-local": "^1.0.0",
     "pug": "^3.0.1",
     "request": "^2.88.0",

@@ -20,8 +20,7 @@ const connectRetry = function() {
   mongoose.connect(config.mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
-    poolSize: 500,
+    maxPoolSize: 500,
   }, (err) => {
     if (err) {
       console.log('Mongoose connection error:', err);
