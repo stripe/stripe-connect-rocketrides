@@ -20,7 +20,7 @@ function pilotRequired(req, res, next) {
  *
  * Redirect to Stripe to set up payments.
  */
-router.get('/authorize', pilotRequired, async (req, res) => {
+router.get('/authorize', pilotRequired, async (req, res, next) => {
   // Generate a random string as `state` to protect from CSRF and include it in the session
   req.session.state = Math.random()
     .toString(36)
@@ -78,7 +78,7 @@ router.get('/authorize', pilotRequired, async (req, res) => {
   } catch (err) {
     console.log('Failed to create a Stripe account.');
     console.log(err);
-    res.redirect('/pilots/signup');
+    next(err);
   }
 });
 
@@ -104,6 +104,7 @@ router.get('/onboarded', pilotRequired, async (req, res, next) => {
     }
   } catch (err) {
     console.log('Failed to retrieve Stripe account information.');
+    console.log(err);
     next(err);
   }
 })
