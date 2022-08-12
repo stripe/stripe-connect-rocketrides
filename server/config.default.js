@@ -18,10 +18,7 @@ module.exports = {
   // Connect Settings: https://dashboard.stripe.com/account/applications/settings
   stripe: {
     secretKey: 'YOUR_STRIPE_SECRET_KEY',
-    publishableKey: 'YOUR_STRIPE_PUBLISHABLE_KEY',
-    clientId: 'YOUR_STRIPE_CLIENT_ID',
-    authorizeUri: 'https://connect.stripe.com/express/oauth/authorize',
-    tokenUri: 'https://connect.stripe.com/oauth/token'
+    publishableKey: 'YOUR_STRIPE_PUBLISHABLE_KEY'
   },
 
   // Configuration for MongoDB

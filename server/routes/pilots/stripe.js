@@ -87,7 +87,7 @@ router.get('/authorize', pilotRequired, async (req, res) => {
  *
  * Return endpoint from Stripe onboarding, checks if onboarding has been completed
  */
-router.get('/onboarded', pilotRequired, async (req, res) => {
+router.get('/onboarded', pilotRequired, async (req, res, next) => {
   try {
     // Retrieve the user's Stripe account and check if they have finished onboarding
     const account = await stripe.account.retrieve(req.user.stripeAccountId);
@@ -103,8 +103,8 @@ router.get('/onboarded', pilotRequired, async (req, res) => {
       res.redirect('/pilots/signup');
     }
   } catch (err) {
-    console.log(err);
-    res.redirect('/pilots/signup');
+    console.log('Failed to retrieve Stripe account information.');
+    next(err);
   }
 })
 
