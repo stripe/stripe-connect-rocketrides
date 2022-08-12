@@ -23,7 +23,7 @@ block content
       .block.available
         p Your balance
         h1 #{balanceCurrency}#{((balanceAvailable + balancePending) / 100).toFixed(2)}
-        h2  #{balanceCurrency}$#{(balanceAvailable / 100).toFixed(2)} available
+        h2  #{balanceCurrency}#{(balanceAvailable / 100).toFixed(2)} available
       .block.stripe
         form.payout(action='/pilots/stripe/payout', method='POST', autocomplete='off')
           input(class='primary' type='submit', value='Pay out now' disabled=(balanceAvailable===0))

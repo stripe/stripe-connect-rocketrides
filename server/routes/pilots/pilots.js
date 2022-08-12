@@ -153,7 +153,7 @@ router.get('/signup', (req, res) => {
         : !req.user.businessName
     ) {
       step = 'profile';
-    } else if (!req.user.stripeAccountId) {
+    } else if (!req.user.onboardingComplete) {
       step = 'payments';
     } else {
       step = 'done';

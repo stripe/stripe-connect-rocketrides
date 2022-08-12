@@ -20,81 +20,94 @@ function pilotRequired(req, res, next) {
  *
  * Redirect to Stripe to set up payments.
  */
-router.get('/authorize', pilotRequired, (req, res) => {
+router.get('/authorize', pilotRequired, async (req, res, next) => {
   // Generate a random string as `state` to protect from CSRF and include it in the session
   req.session.state = Math.random()
     .toString(36)
     .slice(2);
-  // Define the mandatory Stripe parameters: make sure to include our platform's client ID
-  let parameters = {
-    client_id: config.stripe.clientId,
-    state: req.session.state,
-  };
-  // Optionally, the Express onboarding flow accepts `first_name`, `last_name`, `email`,
-  // and `phone` in the query parameters: those form fields will be prefilled
-  parameters = Object.assign(parameters, {
-    redirect_uri: config.publicDomain + '/pilots/stripe/token',
-    'stripe_user[business_type]': req.user.type || 'individual',
-    'stripe_user[business_name]': req.user.businessName || undefined,
-    'stripe_user[first_name]': req.user.firstName || undefined,
-    'stripe_user[last_name]': req.user.lastName || undefined,
-    'stripe_user[email]': req.user.email || undefined,
-    'stripe_user[country]': req.user.country || undefined
-    // If we're suggesting this account have the `card_payments` capability,
-    // we can pass some additional fields to prefill:
-    // 'suggested_capabilities[]': 'card_payments',
-    // 'stripe_user[street_address]': req.user.address || undefined,
-    // 'stripe_user[city]': req.user.city || undefined,
-    // 'stripe_user[zip]': req.user.postalCode || undefined,
-    // 'stripe_user[state]': req.user.city || undefined,
-  });
-  console.log('Starting Express flow:', parameters);
-  // Redirect to Stripe to start the Express onboarding flow
-  res.redirect(
-    config.stripe.authorizeUri + '?' + querystring.stringify(parameters)
-  );
-});
 
-/**
- * GET /pilots/stripe/token
- *
- * Connect the new Stripe account to the platform account.
- */
-router.get('/token', pilotRequired, async (req, res, next) => {
-  // Check the `state` we got back equals the one we generated before proceeding (to protect from CSRF)
-  if (req.session.state != req.query.state) {
-    return res.redirect('/pilots/signup');
-  }
   try {
-    // Post the authorization code to Stripe to complete the Express onboarding flow
-    const expressAuthorized = await request.post({
-      uri: config.stripe.tokenUri, 
-      form: { 
-        grant_type: 'authorization_code',
-        client_id: config.stripe.clientId,
-        client_secret: config.stripe.secretKey,
-        code: req.query.code
-      },
-      json: true
-    });
+    let accountId = req.user.stripeAccountId;
 
-    if (expressAuthorized.error) {
-      throw(expressAuthorized.error);
+    // Create a Stripe account for this user if one does not exist already
+    if (accountId == undefined) {
+      // Define the parameters to create a new Stripe account with
+      let accountParams = {
+        type: 'express',
+        country: req.user.country || undefined,
+        email: req.user.email || undefined,
+        business_type: req.user.type || 'individual', 
+      }
+  
+      // Companies and invididuals require different parameters
+      if (accountParams.business_type === 'company') {
+        accountParams = Object.assign(accountParams, {
+          company: {
+            name: req.user.businessName || undefined
+          }
+        });
+      } else {
+        accountParams = Object.assign(accountParams, {
+          individual: {
+            first_name: req.user.firstName || undefined,
+            last_name: req.user.lastName || undefined,
+            email: req.user.email || undefined
+          }
+        });
+      }
+  
+      const account = await stripe.accounts.create(accountParams);
+      accountId = account.id;
+
+      // Update the model and store the Stripe account ID in the datastore:
+      // this Stripe account ID will be used to issue payouts to the pilot
+      req.user.stripeAccountId = accountId;
+      await req.user.save();
     }
 
-    // Update the model and store the Stripe account ID in the datastore:
-    // this Stripe account ID will be used to issue payouts to the pilot
-    req.user.stripeAccountId = expressAuthorized.stripe_user_id;
-    await req.user.save();
+    // Create an account link for the user's Stripe account
+    const accountLink = await stripe.accountLinks.create({
+      account: accountId,
+      refresh_url: config.publicDomain + '/pilots/stripe/authorize',
+      return_url: config.publicDomain + '/pilots/stripe/onboarded',
+      type: 'account_onboarding'
+    });
 
-    // Redirect to the Rocket Rides dashboard
-    req.flash('showBanner', 'true');
-    res.redirect('/pilots/dashboard');
+    // Redirect to Stripe to start the Express onboarding flow
+    res.redirect(accountLink.url);
   } catch (err) {
-    console.log('The Stripe onboarding process has not succeeded.');
+    console.log('Failed to create a Stripe account.');
+    console.log(err);
     next(err);
   }
 });
+
+/**
+ * GET /pilots/stripe/onboarded
+ *
+ * Return endpoint from Stripe onboarding, checks if onboarding has been completed
+ */
+router.get('/onboarded', pilotRequired, async (req, res, next) => {
+  try {
+    // Retrieve the user's Stripe account and check if they have finished onboarding
+    const account = await stripe.account.retrieve(req.user.stripeAccountId);
+    if (account.details_submitted) {
+      req.user.onboardingComplete = true;
+      await req.user.save();
+
+      // Redirect to the Rocket Rides dashboard
+      req.flash('showBanner', 'true');
+      res.redirect('/pilots/dashboard');
+    } else {
+      console.log('The onboarding process was not completed.');
+      res.redirect('/pilots/signup');
+    }
+  } catch (err) {
+    console.log('Failed to retrieve Stripe account information.');
+    console.log(err);
+    next(err);
+  }
+})
 
 /**
  * GET /pilots/stripe/dashboard
@@ -104,7 +117,7 @@ router.get('/token', pilotRequired, async (req, res, next) => {
 router.get('/dashboard', pilotRequired, async (req, res) => {
   const pilot = req.user;
   // Make sure the logged-in pilot completed the Express onboarding
-  if (!pilot.stripeAccountId) {
+  if (!pilot.onboardingComplete) {
     return res.redirect('/pilots/signup');
   }
   try {
