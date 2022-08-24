@@ -1,6 +1,6 @@
 # Configuration for Node in App Engine standard on Google Cloud Platform.
 
-runtime: nodejs10
+runtime: nodejs12
 instance_class: F1
 
 handlers:
