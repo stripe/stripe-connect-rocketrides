@@ -1,7 +1,9 @@
 'use strict';
 
 const config = require('../config');
-const stripe = require('stripe')(config.stripe.secretKey);
+const stripe = require('stripe')(config.stripe.secretKey, {
+  apiVersion: config.stripe.apiVersion || '2022-08-01'
+});
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
