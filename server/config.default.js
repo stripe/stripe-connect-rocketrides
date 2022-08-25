@@ -18,7 +18,8 @@ module.exports = {
   // Connect Settings: https://dashboard.stripe.com/account/applications/settings
   stripe: {
     secretKey: 'YOUR_STRIPE_SECRET_KEY',
-    publishableKey: 'YOUR_STRIPE_PUBLISHABLE_KEY'
+    publishableKey: 'YOUR_STRIPE_PUBLISHABLE_KEY',
+    apiVersion: '2022-08-01'
   },
 
   // Configuration for MongoDB
