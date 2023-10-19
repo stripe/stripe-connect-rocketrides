@@ -90,8 +90,8 @@ router.post('/rides', pilotRequired, async (req, res, next) => {
       source = getTestSource('payout_limit');
     }
     let charge;
-    // Accounts created in Japan have the `full` service agreement and must create their own card payments
-    if (pilot.country === 'JP') {
+    // Accounts created in Japan/Germany have the `full` service agreement and must create their own card payments
+    if (pilot.country === 'JP' || pilot.country === 'DE') {
       // Create a Destination Charge to the pilot's account
       charge = await stripe.charges.create({
         source: source,
